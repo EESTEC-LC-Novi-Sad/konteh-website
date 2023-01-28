@@ -7,17 +7,16 @@ stages:
 cache:
   key: ${CI_COMMIT_REF_SLUG}
   paths:
-  - node_modules/
-  - dist/
-  
-before_script:
-  - npm install
+    - dist/
 
 build_master: 
   stage: build
+  before_script:
+    - npm install
   script:
-  - npm run build --prod
-  only: ['master']
+    - npm run build --omit=dev
+  only:
+    - master
 
 deploy_master:
   image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
@@ -25,4 +24,5 @@ deploy_master:
   script:
     - aws s3 sync ./dist s3://${BUCKET_NAME}/ --delete
     - aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths "/*"
-  only: ['master']
+  only:
+    - master
