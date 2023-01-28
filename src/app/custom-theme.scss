@@ -1,0 +1,41 @@
+@use "@angular/material" as mat;
+@include mat.core();
+
+$application-primary: (
+  default: #26a9e1,
+  lighter: #88cfef,
+  darker: #117caa,
+  text: black,
+  text-light: #ececec,
+);
+
+$application-accent: (
+  default: #3c4e7c,
+  lighter: #9aa5bb,
+  darker: #484e5e,
+  text: #000,
+  text-light: #e2e4f8,
+);
+
+$application-warn: mat.define-palette(mat.$red-palette, 600, 500, 800);
+
+$application-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $application-primary,
+      accent: $application-accent,
+      warn: $application-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($application-theme);
+
+$default-background: #ebebeb;
+$text-color: rgb(31, 31, 31);
+$blue: #26a9e1;
+$light-blue: #d0e8f3;
+$gradient-start: #3b4f7c;
+$gradient-end: #2AA9E0;
+$red: #c21218;
+$blue-gray: #3a465d;

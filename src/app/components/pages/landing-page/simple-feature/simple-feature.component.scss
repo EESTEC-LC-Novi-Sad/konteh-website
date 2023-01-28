@@ -1,0 +1,13 @@
+@import "./../../../../../app/custom-theme.scss";
+
+img {
+  display: block;
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+}
+
+h3 {
+  color: $blue;
+  margin-top: 10px;
+}
