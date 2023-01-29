@@ -106,5 +106,21 @@ body {
 }
 
 .auto-margin {
-  margin: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, $gradient-start, $gradient-end);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-background {
+  background: linear-gradient(90deg, $gradient-start, $gradient-end);
+}
+
+.columns {
+  margin-left: 0px;
+  margin-right: 0px;
 }

@@ -18,6 +18,7 @@ import { CompanyPageComponent } from './components/pages/company-page/company-pa
 import { FeatureCardComponent } from './components/pages/landing-page/feature-card/feature-card.component';
 import { SimpleFeatureComponent } from './components/pages/landing-page/simple-feature/simple-feature.component';
 import { NotFoundComponent } from './components/pages/not-found/not-found.component';
+import { TestimonialCardComponent } from './components/pages/landing-page/testimonial-card/testimonial-card.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { NotFoundComponent } from './components/pages/not-found/not-found.compon
     FeatureCardComponent,
     SimpleFeatureComponent,
     NotFoundComponent,
+    TestimonialCardComponent,
   ],
   imports: [
     BrowserModule,
