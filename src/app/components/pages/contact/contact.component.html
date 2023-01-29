@@ -6,11 +6,14 @@
   </div>
 
   <div class="max-width-1200 auto-margin coordinators">
-    <div
-      class="coordinator-card p-5 auto-margin"
-      *ngFor="let coordinator of coordinators"
-    >
-      <coordinator-card [coordinator]="coordinator"></coordinator-card>
+    <mat-spinner *ngIf="coordinators.length < 7"></mat-spinner>
+    <div *ngIf="coordinators.length == 7">
+      <div
+        class="coordinator-card p-5 auto-margin"
+        *ngFor="let coordinator of coordinators"
+      >
+        <coordinator-card [coordinator]="coordinator"></coordinator-card>
+      </div>
     </div>
   </div>
 

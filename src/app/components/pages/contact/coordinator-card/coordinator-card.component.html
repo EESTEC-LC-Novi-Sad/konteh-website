@@ -1,25 +1,29 @@
-<div
-  class="card-container is-flex is-flex-direction-column is-justify-content-space-evenly has-text-centered py-5 px-5"
->
-  <img src="{{ coordinator.picture.fields.file.url }}" />
-  <div>
-    <h1>{{ coordinator.name }}</h1>
-    <h2 class="alt-font">{{ coordinator.position }}</h2>
-  </div>
+<div class="card-container">
+  <mat-spinner *ngIf="coordinator.name == ''"></mat-spinner>
+  <div
+    class="is-flex is-flex-direction-column is-justify-content-space-evenly has-text-centered py-5 px-5 stretch-height"
+    *ngIf="coordinator.name != ''"
+  >
+    <img src="{{ coordinator.picture.fields.file.url }}" />
+    <div>
+      <h1>{{ coordinator.name }}</h1>
+      <h2 class="alt-font">{{ coordinator.position }}</h2>
+    </div>
 
-  <hr />
+    <hr />
 
-  <div class="auto-margin">
-    <p>
-      <a href="mailto:{{ coordinator.email }}">{{ coordinator.email }}</a>
-    </p>
-    <button
-      mat-flat-button
-      color="primary"
-      (click)="redirectLinkedIn()"
-      *ngIf="linkedIn == true"
-    >
-      LinkedIn
-    </button>
+    <div class="auto-margin">
+      <p>
+        <a href="mailto:{{ coordinator.email }}">{{ coordinator.email }}</a>
+      </p>
+      <button
+        mat-flat-button
+        color="primary"
+        (click)="redirectLinkedIn()"
+        *ngIf="linkedIn == true"
+      >
+        LinkedIn
+      </button>
+    </div>
   </div>
 </div>

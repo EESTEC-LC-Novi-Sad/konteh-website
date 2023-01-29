@@ -13,7 +13,7 @@ export class CoordinatorCardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    if (this.coordinator.linkedIn.length == 0) {
+    if (this.coordinator.linkedIn == undefined) {
       this.linkedIn = false;
     }
   }
