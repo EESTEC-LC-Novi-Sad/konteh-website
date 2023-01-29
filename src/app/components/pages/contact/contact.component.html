@@ -1,14 +1,16 @@
 <div class="header-cover"></div>
 
-<div class="is-flex is-flex-direction-column has-text-centered contact-section">
-  <h1>Kontakt</h1>
-  <h2 class="alt-font">USKORO!</h2>
-  <p>Za sve informacije možete nam pisati na:</p>
-  <a href="mailto:konteh@eestecns.org">konteh@eestecns.org</a>
+<div class="is-flex is-flex-direction-column contact-section">
+  <div class="has-text-centered stretch-width">
+    <h1>Kontakt</h1>
+  </div>
 
-  <div class="mt-5">
-    <button mat-flat-button color="primary" (click)="openHomepage()">
-      Povratak na početnu stranicu
-    </button>
+  <div class="max-width-1200 auto-margin coordinators">
+    <div
+      class="coordinator-card p-5 auto-margin"
+      *ngFor="let coordinator of coordinators"
+    >
+      <coordinator-card [coordinator]="coordinator"></coordinator-card>
+    </div>
   </div>
 </div>

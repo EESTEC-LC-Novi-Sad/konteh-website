@@ -1,0 +1,25 @@
+<div
+  class="card-container is-flex is-flex-direction-column is-justify-content-space-evenly has-text-centered py-5 px-5"
+>
+  <img src="{{ coordinator.picture.fields.file.url }}" />
+  <div>
+    <h1>{{ coordinator.name }}</h1>
+    <h2 class="alt-font">{{ coordinator.position }}</h2>
+  </div>
+
+  <hr />
+
+  <div class="auto-margin">
+    <p>
+      <a href="mailto:{{ coordinator.email }}">{{ coordinator.email }}</a>
+    </p>
+    <button
+      mat-flat-button
+      color="primary"
+      (click)="redirectLinkedIn()"
+      *ngIf="coordinator.linkedIn.length > 0"
+    >
+      LinkedIn
+    </button>
+  </div>
+</div>

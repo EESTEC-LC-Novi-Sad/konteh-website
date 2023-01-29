@@ -21,6 +21,7 @@ import { NotFoundComponent } from './components/pages/not-found/not-found.compon
 import { TestimonialCardComponent } from './components/pages/landing-page/testimonial-card/testimonial-card.component';
 import { SquareImageComponent } from './components/pages/about-konteh/square-image/square-image.component';
 import { PhotoLightboxComponent } from './components/pages/about-konteh/photo-lightbox/photo-lightbox.component';
+import { CoordinatorCardComponent } from './components/pages/contact/coordinator-card/coordinator-card.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { PhotoLightboxComponent } from './components/pages/about-konteh/photo-li
     TestimonialCardComponent,
     SquareImageComponent,
     PhotoLightboxComponent,
+    CoordinatorCardComponent,
   ],
   imports: [
     BrowserModule,

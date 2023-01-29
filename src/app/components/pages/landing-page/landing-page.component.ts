@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BlogPost } from 'src/app/model/blogPost';
-import { BlogService } from 'src/app/services/blog.service';
 
 @Component({
   selector: 'landing-page',
