@@ -20,12 +20,14 @@
 
 .coordinators {
   text-align: center;
+  display: inline;
 }
 
 .coordinator-card {
-  max-width: 300px;
+  width: 300px;
   margin: 0px;
   display: inline-block;
+  vertical-align: top;
 }
 
 .button-section {
