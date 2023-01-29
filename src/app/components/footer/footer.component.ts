@@ -23,6 +23,6 @@ export class FooterComponent implements OnInit {
   }
 
   openEestec() {
-    window.open('https://www.eestecns.org', '_blank');
+    window.open('http://www.eestecns.org', '_blank');
   }
 }

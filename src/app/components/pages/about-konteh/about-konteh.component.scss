@@ -5,15 +5,52 @@
 
 .about-section h1 {
   font-size: 60px;
-  line-height: 60px;
+  line-height: 68px;
   font-weight: 500;
   margin: 20px auto;
 }
 
 .about-section h2 {
-  font-size: 50px;
-  line-height: 50px;
+  font-size: 30px;
+  line-height: 35px;
   font-weight: 600;
   color: $blue;
   margin: 40px auto;
+}
+
+hr {
+  width: 40%;
+  border: 1px solid $blue;
+}
+
+.section-2 {
+  background-color: white;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+.section-3 img {
+  margin: 5px;
+  transition: all 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 5px 10px $light-blue;
+  }
+}
+
+
+.section-4 {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.section-4 p {
+  color: white;
+  font-size: 18px;
+  font-weight: 800;
 }
