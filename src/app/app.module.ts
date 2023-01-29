@@ -19,6 +19,8 @@ import { FeatureCardComponent } from './components/pages/landing-page/feature-ca
 import { SimpleFeatureComponent } from './components/pages/landing-page/simple-feature/simple-feature.component';
 import { NotFoundComponent } from './components/pages/not-found/not-found.component';
 import { TestimonialCardComponent } from './components/pages/landing-page/testimonial-card/testimonial-card.component';
+import { SquareImageComponent } from './components/pages/about-konteh/square-image/square-image.component';
+import { PhotoLightboxComponent } from './components/pages/about-konteh/photo-lightbox/photo-lightbox.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { TestimonialCardComponent } from './components/pages/landing-page/testim
     SimpleFeatureComponent,
     NotFoundComponent,
     TestimonialCardComponent,
+    SquareImageComponent,
+    PhotoLightboxComponent,
   ],
   imports: [
     BrowserModule,
