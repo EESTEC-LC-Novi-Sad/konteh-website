@@ -22,6 +22,7 @@ import { TestimonialCardComponent } from './components/pages/landing-page/testim
 import { SquareImageComponent } from './components/pages/about-konteh/square-image/square-image.component';
 import { PhotoLightboxComponent } from './components/pages/about-konteh/photo-lightbox/photo-lightbox.component';
 import { CoordinatorCardComponent } from './components/pages/contact/coordinator-card/coordinator-card.component';
+import { PolicyComponent } from './components/pages/about-konteh/policy/policy.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { CoordinatorCardComponent } from './components/pages/contact/coordinator
     SquareImageComponent,
     PhotoLightboxComponent,
     CoordinatorCardComponent,
+    PolicyComponent,
   ],
   imports: [
     BrowserModule,

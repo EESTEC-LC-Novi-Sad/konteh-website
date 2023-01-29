@@ -25,4 +25,8 @@ export class ContactComponent implements OnInit {
       }
     });
   }
+
+  openMail() {
+    window.open('mailto:konteh@eestecns.org', '_blank');
+  }
 }
