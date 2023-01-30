@@ -3,6 +3,7 @@
 .landing-section {
   width: 100%;
   min-height: 850px;
+  height: fit-content;
   background-image: url("./../../../../assets/backgroundWithSeparator.jpg");
   background-size: cover;
   background-position: left;
@@ -19,16 +20,27 @@
   font-size: 85px;
   margin-top: 45px;
   line-height: 85px;
+
+  @media (max-width: 425px) {
+    font-size: 55px;
+    line-height: 60px;
+  }
 }
 
 .landing-content h2 {
   font-size: 16px;
   text-transform: uppercase;
+
+  display: flex;
+  @media (max-width: 425px) {
+    display: none;
+  }
 }
 
 .landing-content button {
-  margin-top: 40px;
-  padding: 30px;
+  margin-top: 20px;
+  padding: 20px;
+  height: auto;
   background-color: $orange;
   font-size: 24px;
   border-radius: 50px;
