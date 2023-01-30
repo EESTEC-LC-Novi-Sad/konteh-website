@@ -23,6 +23,8 @@ import { SquareImageComponent } from './components/pages/about-konteh/square-ima
 import { PhotoLightboxComponent } from './components/pages/about-konteh/photo-lightbox/photo-lightbox.component';
 import { CoordinatorCardComponent } from './components/pages/contact/coordinator-card/coordinator-card.component';
 import { PolicyComponent } from './components/pages/about-konteh/policy/policy.component';
+import { OffersComponent } from './components/pages/offers/offers.component';
+import { OfferPageComponent } from './components/pages/offer-page/offer-page.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { PolicyComponent } from './components/pages/about-konteh/policy/policy.c
     PhotoLightboxComponent,
     CoordinatorCardComponent,
     PolicyComponent,
+    OffersComponent,
+    OfferPageComponent,
   ],
   imports: [
     BrowserModule,

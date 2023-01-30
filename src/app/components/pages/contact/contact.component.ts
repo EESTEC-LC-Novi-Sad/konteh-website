@@ -19,8 +19,18 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
     this.coordinatorService.getAllCoordinators().subscribe((data) => {
       if (data != null) {
-        this.coordinators = this.coordinatorService
-          .convertDataToCoordinators(data)
+        let coordinators: Coordinator[] = [];
+        coordinators = this.coordinatorService.convertDataToCoordinators(data);
+
+        this.coordinators = coordinators.sort((a, b) => {
+          if (a.position == 'Glavni organizator') {
+            return -1;
+          } else if (a.position == 'Koordinator za odnose sa kompanijama') {
+            return -1;
+          } else {
+            return 1;
+          }
+        });
       }
     });
   }
