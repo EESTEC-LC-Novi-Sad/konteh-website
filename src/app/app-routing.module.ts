@@ -47,6 +47,16 @@ const routes: Routes = [
     title: baseTitle + 'Pokrovitelji',
   },
   {
+    path: 'ponuda/:id',
+    component: CompanyPageComponent,
+    title: baseTitle + 'Ponude',
+  },
+  {
+    path: 'ponude',
+    component: CompaniesComponent,
+    title: baseTitle + 'Ponude',
+  },
+  {
     path: '**',
     component: NotFoundComponent,
     title: baseTitle + '404',
