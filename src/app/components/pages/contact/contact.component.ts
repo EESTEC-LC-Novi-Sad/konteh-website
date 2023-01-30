@@ -21,7 +21,6 @@ export class ContactComponent implements OnInit {
       if (data != null) {
         this.coordinators = this.coordinatorService
           .convertDataToCoordinators(data)
-          .reverse();
       }
     });
   }

@@ -44,34 +44,34 @@
 </div>
 
 <div class="stretch-width cards-section-mobile">
-    <div class="column">
-      <feature-card
-        title="Predavanja"
-        description="Uputi se o najnovijim tehnologijama i trendovima posredsvom kompetentnih predavača."
-        imgUrl="/assets/isometric1.png"
-      ></feature-card>
-    </div>
-    <div class="column">
-      <feature-card
-        title="Intervjui"
-        description="Isprobaj svoje veštine u simulaciji intervjua sa HR-om ili tehničkim licem gostujućih kompanija."
-        imgUrl="/assets/isometric2.png"
-      ></feature-card>
-    </div>
-    <div class="column">
-      <feature-card
-        title="Treninzi"
-        description="Prisustvuj treninzima i stekni nove soft-skills i tehničke veštine."
-        imgUrl="/assets/isometric3.png"
-      ></feature-card>
-    </div>
-    <div class="column">
-      <feature-card
-        title="Štandovi"
-        description="Uputi se o informacijama o radu i praksama najatraktivnijih IT kompanija iz regiona."
-        imgUrl="/assets/isometric4.png"
-      ></feature-card>
-    </div>
+  <div class="column">
+    <feature-card
+      title="Predavanja"
+      description="Uputi se o najnovijim tehnologijama i trendovima posredsvom kompetentnih predavača."
+      imgUrl="/assets/isometric1.png"
+    ></feature-card>
+  </div>
+  <div class="column">
+    <feature-card
+      title="Intervjui"
+      description="Isprobaj svoje veštine u simulaciji intervjua sa HR-om ili tehničkim licem gostujućih kompanija."
+      imgUrl="/assets/isometric2.png"
+    ></feature-card>
+  </div>
+  <div class="column">
+    <feature-card
+      title="Treninzi"
+      description="Prisustvuj treninzima i stekni nove soft-skills i tehničke veštine."
+      imgUrl="/assets/isometric3.png"
+    ></feature-card>
+  </div>
+  <div class="column">
+    <feature-card
+      title="Štandovi"
+      description="Uputi se o informacijama o radu i praksama najatraktivnijih IT kompanija iz regiona."
+      imgUrl="/assets/isometric4.png"
+    ></feature-card>
+  </div>
 </div>
 
 <div class="stretch-width companies-section">
@@ -145,8 +145,10 @@
 
 <div class="max-width-1200 auto-margin about-section">
   <div class="columns px-5">
-    <div class="column">
-      <img src="/assets/kontehatmosfera.jpg" />
+    <div
+      class="column is-flex is-flex-direction-column is-justify-content-center"
+    >
+      <img class="round-borders" src="/assets/kontehatmosfera.jpg" />
     </div>
     <div class="column auto-margin px-5">
       <h1 class="gradient-text">Preko 30 kompanija</h1>
@@ -159,11 +161,12 @@
         CV poslodavcima za koje su zainteresovani, moći isti da ostave i u
         elektronskoj bazi koja će biti na raspolaganju svim
         kompanijama-učesnicama tokom narednih godinu dana, čime direktno sebi
-        uvećavaju šansu za dobijanje radnog mesta ili prakse. Pored prezentacija
-        kompanija, u toku trajanja Sajma u Svečanoj sali Fakulteta tehničkih
-        nauka biće organizovane tribine i treninzi čiji je glavni cilj obuka
-        mladih interesenata za posao da pravilno napišu CV i što uspešnije obave
-        intervju za posao.
+        uvećavaju šansu za dobijanje radnog mesta ili prakse.
+        <br /><br />
+        Pored prezentacija kompanija, u toku trajanja Sajma u Svečanoj sali
+        Fakulteta tehničkih nauka biće organizovane tribine i treninzi čiji je
+        glavni cilj obuka mladih interesenata za posao da pravilno napišu CV i
+        što uspešnije obave intervju za posao.
       </p>
       <div class="is-flex is-flex-direction-row">
         <button mat-flat-button color="primary" (click)="openCompanies()">

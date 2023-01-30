@@ -125,3 +125,11 @@ body {
   margin-left: 0px;
   margin-right: 0px;
 }
+
+.mdc-button.mat-primary {
+  --mdc-filled-button-label-text-color: white !important;
+}
+
+.round-borders {
+  border-radius: 15px;
+}

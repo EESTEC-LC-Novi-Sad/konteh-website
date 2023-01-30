@@ -25,7 +25,7 @@
 }
 
 .navigation-item {
-  padding: 20px;
+  padding: 10px;
   font-size: 18px;
   font-weight: 100;
   transition: ease-in-out 0.3s;
@@ -39,11 +39,6 @@
   }
 }
 
-.search-button {
-  width: 60px;
-  height: 60px;
-}
-
 .selected {
   color: $light-blue !important;
   font-weight: 600;
@@ -55,7 +50,7 @@ $medium: 900px;
 .wide-menu {
   display: none !important;
 
-  @media (min-width: 1101px) {
+  @media (min-width: 1191px) {
     display: flex !important;
   }
 }
@@ -65,7 +60,7 @@ $medium: 900px;
   padding-top: 10px;
   padding-bottom: 10px;
 
-  @media (max-width: 1100px) and (min-width: 0px) {
+  @media (max-width: 1190px) and (min-width: 0px) {
     display: flex !important;
   }
 }
@@ -91,10 +86,15 @@ $medium: 900px;
 .header-button {
   margin-left: 20px;
   border-radius: 50px;
+  margin-top: 8px;
 }
 
 .mat-icon {
   color: white;
   position: relative;
   bottom: 8px;
+}
+
+.home-button {
+  margin-top: 6px;
 }
