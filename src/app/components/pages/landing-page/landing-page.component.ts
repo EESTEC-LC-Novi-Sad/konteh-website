@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'landing-page',
@@ -7,6 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./landing-page.component.scss'],
 })
 export class LandingPageComponent implements OnInit {
+  showOffers = environment.showOffers;
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
@@ -21,5 +24,13 @@ export class LandingPageComponent implements OnInit {
 
   openCompanies() {
     this.router.navigate(['/pokrovitelji']);
+  }
+
+  openCv() {
+    window.open('https://cv.konteh.org/auth/login', '_blank');
+  }
+
+  openOffers() {
+    this.router.navigate(['/ponude']);
   }
 }

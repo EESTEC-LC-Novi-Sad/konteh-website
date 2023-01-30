@@ -4,11 +4,15 @@
   class="is-flex is-flex-direction-column has-text-centered companies-section"
 >
   <h1>Kompanije</h1>
-  <h2 class="alt-font">USKORO!</h2>
+  <div *ngIf="!showCompanies">
+    <h2 class="alt-font">USKORO!</h2>
 
-  <div>
-    <button mat-flat-button color="primary" (click)="openHomepage()">
-      Povratak na početnu stranicu
-    </button>
+    <div>
+      <button mat-flat-button color="primary" (click)="openHomepage()">
+        Povratak na početnu stranicu
+      </button>
+    </div>
   </div>
+
+  <div *ngIf="showCompanies">123</div>
 </div>

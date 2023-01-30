@@ -21,7 +21,11 @@
 
 .header-content {
   margin: auto;
-  min-width: 80%;
+  width: 95%;
+
+  @media (min-width: 1400px) {
+    width: 80%;
+  }
 }
 
 .navigation-item {
@@ -50,7 +54,7 @@ $medium: 900px;
 .wide-menu {
   display: none !important;
 
-  @media (min-width: 1191px) {
+  @media (min-width: 1141px) {
     display: flex !important;
   }
 }
@@ -60,7 +64,7 @@ $medium: 900px;
   padding-top: 10px;
   padding-bottom: 10px;
 
-  @media (max-width: 1190px) and (min-width: 0px) {
+  @media (max-width: 1140px) and (min-width: 0px) {
     display: flex !important;
   }
 }

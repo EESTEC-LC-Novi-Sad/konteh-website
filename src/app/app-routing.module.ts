@@ -6,6 +6,8 @@ import { CompanyPageComponent } from './components/pages/company-page/company-pa
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { LandingPageComponent } from './components/pages/landing-page/landing-page.component';
 import { NotFoundComponent } from './components/pages/not-found/not-found.component';
+import { OfferPageComponent } from './components/pages/offer-page/offer-page.component';
+import { OffersComponent } from './components/pages/offers/offers.component';
 import { ScheduleComponent } from './components/pages/schedule/schedule.component';
 import { SponsorsComponent } from './components/pages/sponsors/sponsors.component';
 
@@ -48,12 +50,12 @@ const routes: Routes = [
   },
   {
     path: 'ponuda/:id',
-    component: CompanyPageComponent,
+    component: OfferPageComponent,
     title: baseTitle + 'Ponude',
   },
   {
     path: 'ponude',
-    component: CompaniesComponent,
+    component: OffersComponent,
     title: baseTitle + 'Ponude',
   },
   {

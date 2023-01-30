@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   tab: number = 0;
+  showOffers = environment.showOffers;
 
   constructor(private router: Router) {}
 

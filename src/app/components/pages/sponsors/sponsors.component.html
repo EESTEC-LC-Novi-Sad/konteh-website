@@ -4,11 +4,15 @@
   class="is-flex is-flex-direction-column has-text-centered sponsors-section"
 >
   <h1>Pokrovitelji</h1>
-  <h2 class="alt-font">USKORO!</h2>
+  <div *ngIf="!showSponsors">
+    <h2 class="alt-font">USKORO!</h2>
 
-  <div>
-    <button mat-flat-button color="primary" (click)="openHomepage()">
-      Povratak na početnu stranicu
-    </button>
+    <div>
+      <button mat-flat-button color="primary" (click)="openHomepage()">
+        Povratak na početnu stranicu
+      </button>
+    </div>
   </div>
+
+  <div *ngIf="showSponsors">123</div>
 </div>

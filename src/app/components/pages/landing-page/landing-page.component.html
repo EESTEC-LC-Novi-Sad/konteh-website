@@ -5,7 +5,16 @@
     <div class="column">
       <h2>Sajam poslovnih mogućnosti i stručnih praksi u Novom Sadu</h2>
       <h1 class="alt-font">21. i 22. mart 2023.</h1>
-      <button mat-flat-button color="accent">Ostavi CV</button>
+      <div *ngIf="showOffers">
+        <button mat-flat-button color="accent" (click)="openOffers()">
+          Pogledaj prakse i juniorske pozicije
+        </button>
+      </div>
+      <div>
+        <button mat-flat-button class="white-button" (click)="openCv()">
+          Ostavi CV
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -179,6 +188,15 @@
           class="ml-5"
         >
           Raspored
+        </button>
+        <button
+          mat-flat-button
+          color="primary"
+          (click)="openOffers()"
+          class="ml-5 orange-button"
+          *ngIf="showOffers"
+        >
+          Ponude
         </button>
       </div>
     </div>
