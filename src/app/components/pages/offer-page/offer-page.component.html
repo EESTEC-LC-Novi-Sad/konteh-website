@@ -1,1 +1,125 @@
-<p>offer-page works!</p>
+<div class="header-cover"></div>
+
+<div class="max-width-1200 auto-margin my-5 pl-5">
+  <nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+      <li><a href="/">KONTEH</a></li>
+      <li><a href="/ponude">Ponude</a></li>
+      <li class="is-active">
+        <a href="#" aria-current="page">{{ offer.positionName }}</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<div class="card-dontainer max-width-1200 auto-margin my-5">
+  <div class="columns">
+    <div class="column">
+      <div class="is-flex is-flex-direction-column is-align-items-start">
+        <h2>
+          {{ offer.positionName }} - <b>{{ offer.offerType }}</b>
+        </h2>
+        <h3>{{ offer.company.fields.name }}</h3>
+        <div class="columns stretch-width">
+          <div class="column">
+            <div
+              class="is-flex is-flex-direction-row is-align-items-center location mb-3"
+            >
+              <mat-icon>location_on</mat-icon>
+              <h5>• {{ offer.location }}</h5>
+            </div>
+            <div
+              class="is-flex is-flex-direction-row is-align-items-center remote"
+              *ngIf="offer.remoteOption"
+            >
+              <mat-icon>settings_input_antenna</mat-icon>
+              <h5>• Mogućnost remote rada</h5>
+            </div>
+            <div
+              class="is-flex is-flex-direction-row is-align-items-center non-remote"
+              *ngIf="!offer.remoteOption"
+            >
+              <mat-icon>apartment</mat-icon>
+              <h5>• Rad iz kancelarije</h5>
+            </div>
+          </div>
+          <div class="column">
+            <div
+              class="is-flex is-flex-direction-row is-align-items-center working-hours mb-3"
+            >
+              <mat-icon>schedule</mat-icon>
+              <h5>• Radno vreme: {{ offer.workingHours }}h</h5>
+            </div>
+            <div
+              class="is-flex is-flex-direction-row is-align-items-center starting"
+            >
+              <mat-icon>calendar_month</mat-icon>
+              <h5>• Početak: {{ offer.startingTime }}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="column is-4 is-flex is-flex-direction-column is-justify-content-center p-5 logo"
+    >
+      <img src="{{ offer.company.fields.logo.fields.file.url }}" />
+    </div>
+  </div>
+  <div>
+    <h1>Opis pozicije</h1>
+    <div [innerHtml]="returnHtmlFromRichText(offer.positionDescription)"></div>
+    <hr />
+  </div>
+  <div>
+    <h1>Potrebne veštine</h1>
+    <div [innerHtml]="returnHtmlFromRichText(offer.requiredKnowledge)"></div>
+    <hr />
+  </div>
+  <div class="columns">
+    <div class="column">
+      <div>
+        <h2>Tehnologije</h2>
+        <div
+          class="is-flex is-flex-direction-row is-align-items-start chips tags mt-5"
+        >
+          <div>
+            <mat-chip color="accent" *ngFor="let tag of offer.tags">
+              {{ tag }}
+            </mat-chip>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div>
+        <h2>Pogodni FTN smerovi</h2>
+
+        <div
+          class="is-flex is-flex-direction-row is-align-items-start chips departments"
+        >
+          <div>
+            <mat-chip color="primary" *ngFor="let tag of offer.uniDepartments">
+              {{ tag }}
+            </mat-chip>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+  <div class="columns">
+    <div class="column">
+      <h1>Kako se prijaviti?</h1>
+      <div [innerHtml]="returnHtmlFromRichText(offer.howToApply)"></div>
+      <button mat-flat-button color="primary" (click)="apply()" class="mt-5">
+        Prijavi se!
+      </button>
+    </div>
+    <div class="column">
+      <div class="image">
+        <img src="{{ offer.picture.fields.file.url }}" />
+      </div>
+    </div>
+  </div>
+</div>

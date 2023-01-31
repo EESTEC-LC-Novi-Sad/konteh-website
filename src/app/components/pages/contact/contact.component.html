@@ -6,8 +6,8 @@
   </div>
 
   <div class="max-width-1200 auto-margin coordinators">
-    <mat-spinner *ngIf="coordinators.length < 7"></mat-spinner>
-    <div *ngIf="coordinators.length == 7">
+    <mat-spinner *ngIf="coordinators.length == 0"></mat-spinner>
+    <div *ngIf="coordinators.length > 0">
       <div
         class="coordinator-card p-5 auto-margin"
         *ngFor="let coordinator of coordinators"

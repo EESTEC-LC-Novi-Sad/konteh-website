@@ -1,16 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
+import { Offer } from 'src/app/model/offer';
+import { OfferService } from 'src/app/services/offer.service';
 import { environment } from 'src/environments/environment';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 @Component({
   selector: 'offers',
   templateUrl: './offers.component.html',
   styleUrls: ['./offers.component.scss'],
 })
-export class OffersComponent {
+export class OffersComponent implements OnInit {
   showOffers = environment.showOffers;
+  offers: Offer[] = [];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private offerService: OfferService) {}
+
+  ngOnInit(): void {
+    this.offerService.getAllOffers().subscribe((data) => {
+      this.offers = this.offerService.convertDataToOffers(data);
+
+      for (let i = 0; i < 30; i++) {
+        this.offers.push(this.offers[0]);
+      }
+    });
+  }
 
   openHomepage() {
     this.router.navigate(['']);

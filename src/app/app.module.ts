@@ -25,6 +25,7 @@ import { CoordinatorCardComponent } from './components/pages/contact/coordinator
 import { PolicyComponent } from './components/pages/about-konteh/policy/policy.component';
 import { OffersComponent } from './components/pages/offers/offers.component';
 import { OfferPageComponent } from './components/pages/offer-page/offer-page.component';
+import { OfferCardComponent } from './components/pages/offers/offer-card/offer-card.component';
 
 @NgModule({
   declarations: [
@@ -48,15 +49,16 @@ import { OfferPageComponent } from './components/pages/offer-page/offer-page.com
     PolicyComponent,
     OffersComponent,
     OfferPageComponent,
+    OfferCardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule, 
+    BrowserAnimationsModule,
     MaterialModule,
-    FormsModule 
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

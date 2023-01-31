@@ -1,8 +1,11 @@
 export class Offer {
   constructor(
+    public id: string = '',
     public company: any = null,
     public offerType: string = '',
     public positionName: string = '',
+    public location: string = '',
+    public remoteOption: boolean = true,
     public positionDescription: any = null,
     public requiredKnowledge: any = null,
     public startingTime: string = '',
@@ -11,6 +14,6 @@ export class Offer {
     public uniDepartments: string[] = [],
     public picture: any = null,
     public callToActionUrl: string = '',
-    public howToapply: any = null
+    public howToApply: any = null
   ) {}
 }

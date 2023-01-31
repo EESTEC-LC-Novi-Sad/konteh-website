@@ -1,7 +1,7 @@
 <div class="header-cover"></div>
 
 <div class="is-flex is-flex-direction-column has-text-centered offers-section">
-  <h1>Ponude</h1>
+  <h1>Otvorene juiorske pozicije i prakse</h1>
   <div *ngIf="!showOffers">
     <h2 class="alt-font">USKORO!</h2>
 
@@ -12,5 +12,9 @@
     </div>
   </div>
 
-  <div *ngIf="showOffers">123</div>
+  <div *ngIf="showOffers">
+    <div *ngFor="let offer of offers" class="mt-5 max-width-1200 auto-margin">
+      <offer-card [offer]="offer"></offer-card>
+    </div>
+  </div>
 </div>

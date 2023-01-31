@@ -22,22 +22,50 @@ export class OfferService {
     return from(promise);
   }
 
+  getById(id: string) {
+    const promise = this.client.getEntry(id);
+    return from(promise);
+  }
+
+  convertDataToOffer(item: any): Offer {
+    let offer: Offer = new Offer();
+    offer.company = item.fields.company;
+    offer.id = item.sys.id;
+    offer.offerType = item.fields.offerType;
+    offer.positionName = item.fields.positionName;
+    offer.location = item.fields.location;
+    offer.remoteOption = item.fields.remoteOption;
+    offer.positionDescription = item.fields.positionDescription;
+    offer.requiredKnowledge = item.fields.requiredKnowledge;
+    offer.startingTime = item.fields.startingTime;
+    offer.workingHours = item.fields.workHours;
+    offer.tags = item.fields.tags;
+    offer.uniDepartments = item.fields.uniDepartments;
+    offer.picture = item.fields.picture;
+    offer.callToActionUrl = item.fields.callToActionUrl;
+    offer.howToApply = item.fields.howToApply;
+    return offer;
+  }
+
   convertDataToOffers(data: any): Offer[] {
     let retVal: Offer[] = [];
     for (let item of data.items) {
       let offer: Offer = new Offer();
       offer.company = item.fields.company;
+      offer.id = item.sys.id;
       offer.offerType = item.fields.offerType;
       offer.positionName = item.fields.positionName;
+      offer.location = item.fields.location;
+      offer.remoteOption = item.fields.remoteOption;
       offer.positionDescription = item.fields.positionDescription;
       offer.requiredKnowledge = item.fields.requiredKnowledge;
       offer.startingTime = item.fields.startingTime;
-      offer.workingHours = item.fields.workingHours;
+      offer.workingHours = item.fields.workHours;
       offer.tags = item.fields.tags;
       offer.uniDepartments = item.fields.uniDepartments;
       offer.picture = item.fields.picture;
       offer.callToActionUrl = item.fields.callToActionUrl;
-      offer.howToapply = item.fields.howToapply;
+      offer.howToApply = item.fields.howToApply;
       retVal.push(offer);
     }
 

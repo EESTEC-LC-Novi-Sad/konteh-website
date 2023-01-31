@@ -1,4 +1,4 @@
-@import "./../../../../app/custom-theme.scss";
+@import "./../../../../../app/custom-theme.scss";
 
 .offer-description {
   text-align: start;
@@ -12,18 +12,14 @@
   box-shadow: 0px 5px 10px lightgray;
   transition: 0.2s all;
   text-align: start;
-}
 
-.logo {
-  max-height: 150px;
-}
+  &:hover {
+    background-color: $light-blue;
+  }
 
-.logo img {
-  max-height: 150px;
-  max-width: 380px;
-  height: auto;
-  width: auto;
-  margin: auto;
+  &:hover .departments mat-chip {
+    background-color: white !important;
+  }
 }
 
 h2 {
@@ -79,8 +75,4 @@ h5 {
 
 .chips.tags {
   margin-bottom: 0px;
-}
-
-hr {
-  border: 1px $blue solid;
 }
