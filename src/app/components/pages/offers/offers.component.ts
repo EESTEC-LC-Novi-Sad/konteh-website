@@ -14,6 +14,19 @@ export class OffersComponent implements OnInit {
   showOffers = environment.showOffers;
   offers: Offer[] = [];
 
+  departments = [
+    'Animacija u inženjerstvu',
+    'Biomedicinsko inženjerstvo',
+    'Energetika, elektronika i telekomunikacije',
+    'Informacioni inženjering',
+    'Mehatronika',
+    'Primenjeno softversko inženjerstvo',
+    'Računarstvo i automatika',
+    'Softversko inženjerstvo i informacione tehnologije',
+  ];
+
+  searchValue = '';
+
   constructor(private router: Router, private offerService: OfferService) {}
 
   ngOnInit(): void {

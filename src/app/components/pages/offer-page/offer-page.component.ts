@@ -24,7 +24,6 @@ export class OfferPageComponent implements OnInit {
 
       this.offerService.getById(id).subscribe((data) => {
         this.offer = this.offerService.convertDataToOffer(data);
-        console.log(this.offer);
       });
     });
   }
@@ -42,5 +41,9 @@ export class OfferPageComponent implements OnInit {
 
   apply() {
     window.open(this.offer.callToActionUrl, '_blank');
+  }
+
+  openCompany() {
+    this.router.navigate(['/kompanija/' + this.offer.company.sys.id]);
   }
 }

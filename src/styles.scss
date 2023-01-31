@@ -94,7 +94,11 @@ body {
 }
 
 .max-width-1000 {
-  max-width: 900px;
+  max-width: 1000px;
+}
+
+.max-width-1100 {
+  max-width: 1100px;
 }
 
 .max-width-1200 {
@@ -131,7 +135,7 @@ body {
 }
 
 .round-borders {
-  border-radius: 15px;
+  border-radius: 15px !important;
 }
 
 .white-button {

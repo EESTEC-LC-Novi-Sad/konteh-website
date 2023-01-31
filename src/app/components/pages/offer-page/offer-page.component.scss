@@ -14,12 +14,9 @@
   text-align: start;
 }
 
-.logo {
-  max-height: 150px;
-}
 
 .logo img {
-  max-height: 150px;
+  max-height: 160px;
   max-width: 380px;
   height: auto;
   width: auto;
@@ -34,6 +31,10 @@ h2 {
 h3 {
   margin-bottom: 20px;
   font-weight: bold;
+
+  &:hover {
+    color: $blue;
+  }
 }
 
 .chips {
@@ -83,4 +84,8 @@ h5 {
 
 hr {
   border: 1px $blue solid;
+}
+
+::ng-deep .picture {
+  border-radius: 15px;
 }

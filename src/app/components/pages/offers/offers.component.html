@@ -12,6 +12,65 @@
   </div>
 
   <div *ngIf="showOffers">
+    <div>
+      <div
+        class="is-flex is-flex-direction-row is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between max-width-1000 auto-margin mt-5 form"
+      >
+        <div>
+          <mat-form-field>
+            <mat-label>Pretraga</mat-label>
+            <input matInput type="text" [(ngModel)]="searchValue" />
+            <button
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              (click)="searchValue = ''"
+            >
+              <mat-icon class="close-icon">close</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-button-toggle-group multiple name="offerType">
+            <mat-button-toggle value="Posao">Posao</mat-button-toggle>
+            <mat-button-toggle value="Plaćena praksa"
+              >Plaćena praksa</mat-button-toggle
+            >
+            <mat-button-toggle value="Neplaćena praksa"
+              >Neplaćena praksa</mat-button-toggle
+            >
+          </mat-button-toggle-group>
+        </div>
+        <div>
+          <button mat-flat-button color="accent" [matMenuTriggerFor]="menu">
+            <div class="is-flex is-flex-direction-row is-align-items-center">
+              Pogodni FTN smerovi
+              <mat-icon>keyboard_arrow_down</mat-icon>
+            </div>
+          </button>
+          <mat-menu #menu="matMenu">
+            <div class="menu-container">
+              <div *ngFor="let departmen of departments">
+                <mat-checkbox (click)="$event.stopPropagation()">{{
+                  departmen
+                }}</mat-checkbox>
+              </div>
+            </div>
+          </mat-menu>
+        </div>
+        <div>
+          <button mat-fab color="primary" matTooltip="Pretraga" class="mx-5">
+            <mat-icon>search</mat-icon>
+          </button>
+
+          <button mat-fab color="info" matTooltip="Poništi pretragu">
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+
     <mat-spinner
       class="auto-margin m-5"
       *ngIf="offers.length == 0"

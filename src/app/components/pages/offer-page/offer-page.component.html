@@ -27,7 +27,9 @@
         <h2>
           {{ offer.positionName }} - <b>{{ offer.offerType }}</b>
         </h2>
-        <h3>{{ offer.company.fields.name }}</h3>
+        <h3 class="clickable" (click)="openCompany()">
+          {{ offer.company.fields.name }}
+        </h3>
         <div class="columns stretch-width">
           <div class="column">
             <div
@@ -126,9 +128,7 @@
       </button>
     </div>
     <div class="column">
-      <div class="image">
-        <img src="{{ offer.picture.fields.file.url }}" />
-      </div>
+      <img class="picture" src="{{ offer.picture.fields.file.url }}" />
     </div>
   </div>
 </div>

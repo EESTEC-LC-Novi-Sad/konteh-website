@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { Offer } from 'src/app/model/offer';
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { Router } from '@angular/router';
 
 @Component({

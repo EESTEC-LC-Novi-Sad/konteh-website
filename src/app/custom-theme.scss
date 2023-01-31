@@ -17,7 +17,7 @@ $application-accent: (
   text-light: #e2e4f8,
 );
 
-$application-warn: mat.define-palette(mat.$red-palette, 600, 500, 800);
+$application-warn: mat.define-palette(mat.$red-palette, 800, 700, 900);
 
 $application-theme: mat.define-light-theme(
   (
