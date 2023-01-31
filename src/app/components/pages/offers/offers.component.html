@@ -51,9 +51,9 @@
           </button>
           <mat-menu #menu="matMenu">
             <div class="menu-container">
-              <div *ngFor="let departmen of departments">
+              <div *ngFor="let department of departments">
                 <mat-checkbox (click)="$event.stopPropagation()">{{
-                  departmen
+                  department
                 }}</mat-checkbox>
               </div>
             </div>
@@ -80,6 +80,41 @@
       <div *ngFor="let offer of offers" class="mt-5 max-width-1200 auto-margin">
         <offer-card [offer]="offer"></offer-card>
       </div>
+    </div>
+
+    <div class="auto-margin max-width-600 my-5 breadcrumb">
+      <nav class="pagination" role="navigation">
+        <div class="auto-margin">
+          <ul class="pagination-list">
+            <li>
+              <a class="pagination-link" aria-label="Goto page 1">1</a>
+            </li>
+            <li>
+              <span class="pagination-ellipsis">&hellip;</span>
+            </li>
+            <li>
+              <a class="pagination-link" aria-label="Goto page 45">45</a>
+            </li>
+            <li>
+              <a
+                class="pagination-link is-current"
+                aria-label="Page 46"
+                aria-current="page"
+                >46</a
+              >
+            </li>
+            <li>
+              <a class="pagination-link" aria-label="Goto page 47">47</a>
+            </li>
+            <li>
+              <span class="pagination-ellipsis">&hellip;</span>
+            </li>
+            <li>
+              <a class="pagination-link" aria-label="Goto page 86">86</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </div>
   </div>
 </div>

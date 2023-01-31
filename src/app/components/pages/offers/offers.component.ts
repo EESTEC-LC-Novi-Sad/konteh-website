@@ -13,6 +13,7 @@ import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 export class OffersComponent implements OnInit {
   showOffers = environment.showOffers;
   offers: Offer[] = [];
+  displayOffers: Offer[] = [];
 
   departments = [
     'Animacija u inženjerstvu',
@@ -33,8 +34,9 @@ export class OffersComponent implements OnInit {
     this.offerService.getAllOffers().subscribe((data) => {
       this.offers = this.offerService.convertDataToOffers(data);
 
-      for (let i = 0; i < 30; i++) {
+      for (let i = 0; i < 5; i++) {
         this.offers.push(this.offers[0]);
+        this.displayOffers = this.offers;
       }
     });
   }
