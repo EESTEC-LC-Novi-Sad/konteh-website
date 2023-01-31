@@ -11,7 +11,16 @@
     </ul>
   </nav>
 </div>
-<div class="card-dontainer max-width-1200 auto-margin my-5">
+
+<mat-spinner
+  class="auto-margin m-5"
+  *ngIf="offer.positionName == ''"
+></mat-spinner>
+
+<div
+  class="card-dontainer max-width-1200 auto-margin my-5"
+  *ngIf="offer.positionName != ''"
+>
   <div class="columns">
     <div class="column">
       <div class="is-flex is-flex-direction-column is-align-items-start">

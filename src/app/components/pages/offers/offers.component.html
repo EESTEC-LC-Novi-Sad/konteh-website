@@ -4,7 +4,6 @@
   <h1>Otvorene juiorske pozicije i prakse</h1>
   <div *ngIf="!showOffers">
     <h2 class="alt-font">USKORO!</h2>
-
     <div>
       <button mat-flat-button color="primary" (click)="openHomepage()">
         Povratak na početnu stranicu
@@ -13,8 +12,15 @@
   </div>
 
   <div *ngIf="showOffers">
-    <div *ngFor="let offer of offers" class="mt-5 max-width-1200 auto-margin">
-      <offer-card [offer]="offer"></offer-card>
+    <mat-spinner
+      class="auto-margin m-5"
+      *ngIf="offers.length == 0"
+    ></mat-spinner>
+
+    <div *ngIf="offers.length != 0">
+      <div *ngFor="let offer of offers" class="mt-5 max-width-1200 auto-margin">
+        <offer-card [offer]="offer"></offer-card>
+      </div>
     </div>
   </div>
 </div>
