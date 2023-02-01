@@ -14,6 +14,7 @@ export class Offer {
     public uniDepartments: string[] = [],
     public picture: any = null,
     public callToActionUrl: string = '',
-    public howToApply: any = null
+    public howToApply: any = null,
+    public visibleUntil: any = Date()
   ) {}
 }

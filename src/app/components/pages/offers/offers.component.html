@@ -32,12 +32,16 @@
         </div>
 
         <div>
-          <mat-button-toggle-group multiple name="offerType">
+          <mat-button-toggle-group
+            multiple
+            #toggleGroup2="matButtonToggleGroup"
+            [(ngModel)]="offerType"
+          >
             <mat-button-toggle value="Posao">Posao</mat-button-toggle>
-            <mat-button-toggle value="Plaćena praksa"
+            <mat-button-toggle value="Placena praksa"
               >Plaćena praksa</mat-button-toggle
             >
-            <mat-button-toggle value="Neplaćena praksa"
+            <mat-button-toggle value="Neplacena praksa"
               >Neplaćena praksa</mat-button-toggle
             >
           </mat-button-toggle-group>
@@ -51,20 +55,33 @@
           </button>
           <mat-menu #menu="matMenu">
             <div class="menu-container">
-              <div *ngFor="let department of departments">
-                <mat-checkbox (click)="$event.stopPropagation()">{{
-                  department
-                }}</mat-checkbox>
+              <div *ngFor="let department of selectedDepartments">
+                <mat-checkbox
+                  (click)="$event.stopPropagation()"
+                  [(ngModel)]="department.selected"
+                  >{{ department.name }}</mat-checkbox
+                >
               </div>
             </div>
           </mat-menu>
         </div>
         <div>
-          <button mat-fab color="primary" matTooltip="Pretraga" class="mx-5">
+          <button
+            mat-fab
+            color="primary"
+            matTooltip="Pretraga"
+            class="mx-5"
+            (click)="search()"
+          >
             <mat-icon>search</mat-icon>
           </button>
 
-          <button mat-fab color="info" matTooltip="Poništi pretragu">
+          <button
+            mat-fab
+            color="info"
+            matTooltip="Poništi pretragu"
+            (click)="cancelSearch()"
+          >
             <mat-icon>cancel</mat-icon>
           </button>
         </div>
@@ -77,12 +94,23 @@
     ></mat-spinner>
 
     <div *ngIf="offers.length != 0">
-      <div *ngFor="let offer of offers" class="mt-5 max-width-1200 auto-margin">
+      <div *ngIf="filteredOffers.length == 0" class="my-5 py-5">
+        <p class="my-5 py-5">
+          Nema ponuda koje odgovaraju datim kriterijumima.
+        </p>
+      </div>
+      <div
+        *ngFor="let offer of filteredOffers"
+        class="mt-5 max-width-1200 auto-margin"
+      >
         <offer-card [offer]="offer"></offer-card>
       </div>
     </div>
 
-    <div class="auto-margin max-width-600 my-5 breadcrumb">
+    <div
+      class="auto-margin max-width-600 my-5 breadcrumb"
+      *ngIf="filteredOffers.length != 0"
+    >
       <nav class="pagination" role="navigation">
         <div class="auto-margin">
           <ul class="pagination-list">

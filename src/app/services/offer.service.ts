@@ -44,6 +44,7 @@ export class OfferService {
     offer.picture = item.fields.picture;
     offer.callToActionUrl = item.fields.callToActionUrl;
     offer.howToApply = item.fields.howToApply;
+    offer.visibleUntil = item.fields.visibleUntil;
     return offer;
   }
 
@@ -66,6 +67,7 @@ export class OfferService {
       offer.picture = item.fields.picture;
       offer.callToActionUrl = item.fields.callToActionUrl;
       offer.howToApply = item.fields.howToApply;
+      offer.visibleUntil = item.fields.visibleUntil;
       retVal.push(offer);
     }
 

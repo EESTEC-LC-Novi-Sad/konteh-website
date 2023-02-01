@@ -17,7 +17,6 @@ NPM - 8.19.3
 
 ## Stvari koje je neophodno promeniti na godišnjem nivou
 
-- Broj članova izvršnog odbora u contact component
 - Sve podatke u contentfulu
 - Po mogućnosti obrisati stare slike koordinatora i logoa kompanija radi očuvanja prostora
 - Postaviti / skloniti USKORO sa stranica (css)
