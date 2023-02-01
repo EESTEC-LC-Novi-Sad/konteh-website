@@ -8,6 +8,11 @@
   line-height: 60px;
   font-weight: 500;
   margin: 20px auto;
+
+  @media (max-width: 425px) {
+    font-size: 40px;
+    line-height: 45px;
+  }
 }
 
 .offers-section h2 {
@@ -20,6 +25,27 @@
 
 .form {
   margin-bottom: -10px;
+  display: none !important;
+
+  @media (min-width: 1040px) {
+    display: flex !important;
+  }
+}
+
+.form-tablet {
+  display: none !important;
+
+  @media (min-width: 615px) and (max-width: 1039px) {
+    display: flex !important;
+  }
+}
+
+.form-mobile {
+  display: none !important;
+
+  @media (min-width: 0px) and (max-width: 614px) {
+    display: flex !important;
+  }
 }
 
 mat-form-field {
@@ -41,6 +67,14 @@ mat-form-field {
 
 .close-icon {
   margin-bottom: 6px;
+}
+
+.breadcrumb {
+  transform: scale(0.5);
+
+  @media (min-width: 375px) {
+    transform: scale(1);
+  }
 }
 
 .breadcrumb .pagination-link {

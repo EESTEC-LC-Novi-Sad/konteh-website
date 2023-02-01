@@ -86,15 +86,173 @@
           </button>
         </div>
       </div>
+
+      <div
+        class="is-flex is-flex-direction-column is-align-items-center is-justify-content-space-between max-width-1000 auto-margin mt-5 form-tablet"
+      >
+        <div
+          class="is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between stretch-width px-5"
+        >
+          <div>
+            <mat-form-field>
+              <mat-label>Pretraga</mat-label>
+              <input matInput type="text" [(ngModel)]="searchValue" />
+              <button
+                matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                (click)="searchValue = ''"
+              >
+                <mat-icon class="close-icon">close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-button-toggle-group
+              multiple
+              #toggleGroup2="matButtonToggleGroup"
+              [(ngModel)]="offerType"
+            >
+              <mat-button-toggle value="Posao">Posao</mat-button-toggle>
+              <mat-button-toggle value="Placena praksa"
+                >Plaćena praksa</mat-button-toggle
+              >
+              <mat-button-toggle value="Neplacena praksa"
+                >Neplaćena praksa</mat-button-toggle
+              >
+            </mat-button-toggle-group>
+          </div>
+        </div>
+
+        <div
+          class="is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between stretch-width px-5 mt-3"
+        >
+          <button mat-flat-button color="accent" [matMenuTriggerFor]="menu">
+            <div class="is-flex is-flex-direction-row is-align-items-center">
+              Pogodni FTN smerovi
+              <mat-icon>keyboard_arrow_down</mat-icon>
+            </div>
+          </button>
+          <mat-menu #menu="matMenu">
+            <div class="menu-container">
+              <div *ngFor="let department of selectedDepartments">
+                <mat-checkbox
+                  (click)="$event.stopPropagation()"
+                  [(ngModel)]="department.selected"
+                  >{{ department.name }}</mat-checkbox
+                >
+              </div>
+            </div>
+          </mat-menu>
+
+          <div>
+            <button
+              mat-fab
+              color="primary"
+              matTooltip="Pretraga"
+              class="mx-5"
+              (click)="search()"
+            >
+              <mat-icon>search</mat-icon>
+            </button>
+
+            <button
+              mat-fab
+              color="info"
+              matTooltip="Poništi pretragu"
+              (click)="cancelSearch()"
+            >
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="is-flex is-flex-direction-column is-align-items-center is-justify-content-space-between max-width-1000 auto-margin mt-5 form-mobile"
+      >
+        <div class="my-1">
+          <mat-form-field>
+            <mat-label>Pretraga</mat-label>
+            <input matInput type="text" [(ngModel)]="searchValue" />
+            <button
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              (click)="searchValue = ''"
+            >
+              <mat-icon class="close-icon">close</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+
+        <div class="my-1">
+          <mat-button-toggle-group
+            multiple
+            #toggleGroup2="matButtonToggleGroup"
+            [(ngModel)]="offerType"
+          >
+            <mat-button-toggle value="Posao">Posao</mat-button-toggle>
+            <mat-button-toggle value="Placena praksa"
+              >Plaćena praksa</mat-button-toggle
+            >
+            <mat-button-toggle value="Neplacena praksa"
+              >Neplaćena praksa</mat-button-toggle
+            >
+          </mat-button-toggle-group>
+        </div>
+
+        <button
+          mat-flat-button
+          color="accent"
+          class="my-1"
+          [matMenuTriggerFor]="menu"
+        >
+          <div class="is-flex is-flex-direction-row is-align-items-center">
+            Pogodni FTN smerovi
+            <mat-icon>keyboard_arrow_down</mat-icon>
+          </div>
+        </button>
+        <mat-menu #menu="matMenu">
+          <div class="menu-container">
+            <div *ngFor="let department of selectedDepartments">
+              <mat-checkbox
+                (click)="$event.stopPropagation()"
+                [(ngModel)]="department.selected"
+                >{{ department.name }}</mat-checkbox
+              >
+            </div>
+          </div>
+        </mat-menu>
+
+        <div class="my-1">
+          <button
+            mat-fab
+            color="primary"
+            matTooltip="Pretraga"
+            class="mx-5"
+            (click)="search()"
+          >
+            <mat-icon>search</mat-icon>
+          </button>
+
+          <button
+            mat-fab
+            color="info"
+            matTooltip="Poništi pretragu"
+            (click)="cancelSearch()"
+          >
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </div>
+      </div>
     </div>
 
-    <mat-spinner
-      class="auto-margin m-5"
-      *ngIf="offers.length == 0"
-    ></mat-spinner>
+    <mat-spinner class="auto-margin m-5" *ngIf="loading"></mat-spinner>
 
-    <div *ngIf="offers.length != 0">
-      <div *ngIf="filteredOffers.length == 0" class="my-5 py-5">
+    <div *ngIf="!loading">
+      <div *ngIf="filteredOffers.length == 0 && !loading" class="my-5 py-5">
         <p class="my-5 py-5">
           Nema ponuda koje odgovaraju datim kriterijumima.
         </p>
@@ -107,10 +265,7 @@
       </div>
     </div>
 
-    <div
-      class="auto-margin max-width-600 my-5 breadcrumb"
-      *ngIf="filteredOffers.length != 0"
-    >
+    <div class="auto-margin my-5 breadcrumb" *ngIf="filteredOffers.length != 0">
       <nav class="pagination" role="navigation">
         <div class="auto-margin">
           <ul class="pagination-list">

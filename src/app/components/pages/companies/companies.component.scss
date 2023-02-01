@@ -8,6 +8,11 @@
   line-height: 60px;
   font-weight: 500;
   margin: 20px auto;
+
+  @media (max-width: 425px) {
+    font-size: 40px;
+    line-height: 45px;
+  }
 }
 
 .companies-section h2 {

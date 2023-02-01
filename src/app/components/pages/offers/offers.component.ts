@@ -17,6 +17,8 @@ export class OffersComponent implements OnInit {
   filteredOffers: Offer[] = [];
   displayOffers: Offer[] = [];
 
+  loading = true;
+
   departments = [
     'Animacija u inženjerstvu',
     'Biomedicinsko inženjerstvo',
@@ -50,6 +52,8 @@ export class OffersComponent implements OnInit {
         this.displayOffers = this.offers;
       }
     });
+
+    this.loading = false;
   }
 
   resetDepartments() {
@@ -67,6 +71,7 @@ export class OffersComponent implements OnInit {
   }
 
   search() {
+    this.loading = true;
     this.selectedJob = this.offerType.includes('Posao');
     this.selectedPaidInternship = this.offerType.includes('Placena praksa');
     this.selectedUnpaidInternship = this.offerType.includes('Neplacena praksa');
@@ -128,6 +133,8 @@ export class OffersComponent implements OnInit {
 
       return offerText.includes(filterText);
     });
+
+    this.loading = false;
   }
 
   cancelSearch() {
