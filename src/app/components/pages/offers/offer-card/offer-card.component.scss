@@ -82,7 +82,8 @@ h5 {
 }
 
 ::ng-deep .mdc-evolution-chip__text-label {
-  font-size: 10px !important;
+  font-size: 12px !important;
+  font-weight: bold;
 
   @media (min-width: 380px) {
     font-size: 14px !important;

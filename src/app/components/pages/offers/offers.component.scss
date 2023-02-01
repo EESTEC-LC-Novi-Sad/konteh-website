@@ -69,14 +69,6 @@ mat-form-field {
   margin-bottom: 6px;
 }
 
-.breadcrumb {
-  transform: scale(0.5);
-
-  @media (min-width: 375px) {
-    transform: scale(1);
-  }
-}
-
 .breadcrumb .pagination-link {
   background-color: white;
 }

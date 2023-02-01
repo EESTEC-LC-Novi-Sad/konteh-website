@@ -12,24 +12,29 @@ import { MatCheckboxChange } from '@angular/material/checkbox';
   styleUrls: ['./offers.component.scss'],
 })
 export class OffersComponent implements OnInit {
+  ITEMS_PER_PAGE = 10;
+
   showOffers = environment.showOffers;
   offers: Offer[] = [];
   filteredOffers: Offer[] = [];
   displayOffers: Offer[] = [];
 
+  maxPages = 1;
+  currentPage = 0;
   loading = true;
 
   departments = [
-    'Animacija u inženjerstvu',
-    'Biomedicinsko inženjerstvo',
-    'Energetika, elektronika i telekomunikacije',
-    'Informacioni inženjering',
+    'E1',
+    'E2',
+    'E3',
+    'Biomedicinsko inž.',
+    'Informacioni inž.',
     'Mehatronika',
-    'Primenjeno softversko inženjerstvo',
-    'Računarstvo i automatika',
-    'Softversko inženjerstvo i informacione tehnologije',
-    'Grafičko inženjerstvo i dizajn',
-    'Inženjerstvo informacionih sistema',
+    'Softversko inž. i inf. tehnologije',
+    'Inženjerstvo inf. sistema',
+    'Inž. menadžment',
+    'Animacija u inženjerstvu',
+    'GRID',
   ];
 
   offerType = '';
@@ -46,11 +51,20 @@ export class OffersComponent implements OnInit {
     this.offerService.getAllOffers().subscribe((data) => {
       this.offers = this.offerService.convertDataToOffers(data);
 
-      for (let i = 0; i < 5; i++) {
-        this.offers.push(this.offers[0]);
-        this.filteredOffers = this.offers;
-        this.displayOffers = this.offers;
+      for (let i = 0; i < 20; i++) {
+        let o = Object.assign({}, this.offers[0]);
+
+        o.positionName = i.toString();
+        this.offers.push(o);
       }
+
+      this.maxPages = Math.floor(this.offers.length / this.ITEMS_PER_PAGE) + 1;
+      if (this.offers.length % this.ITEMS_PER_PAGE == 0) {
+        this.maxPages = this.maxPages - 1;
+      }
+
+      this.filteredOffers = this.offers;
+      this.refreshDisplayedItems();
     });
 
     this.loading = false;
@@ -134,6 +148,9 @@ export class OffersComponent implements OnInit {
       return offerText.includes(filterText);
     });
 
+    this.currentPage = 0;
+    this.refreshDisplayedItems();
+
     this.loading = false;
   }
 
@@ -147,5 +164,34 @@ export class OffersComponent implements OnInit {
 
     this.filteredOffers = this.offers;
     this.displayOffers = this.offers;
+
+    this.currentPage = 0;
+    this.refreshDisplayedItems();
+  }
+
+  nextPage() {
+    if (this.currentPage + 1 <= this.maxPages) {
+      this.currentPage = this.currentPage + 1;
+      this.refreshDisplayedItems();
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+    }
+  }
+
+  prevPage() {
+    if (this.currentPage - 1 >= 0) {
+      this.currentPage = this.currentPage - 1;
+      this.refreshDisplayedItems();
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+    }
+  }
+
+  refreshDisplayedItems() {
+    this.displayOffers = this.filteredOffers.slice(
+      this.ITEMS_PER_PAGE * this.currentPage,
+      this.ITEMS_PER_PAGE * (this.currentPage + 1)
+    );
+
+    console.log(this.ITEMS_PER_PAGE * this.currentPage);
+    console.log(this.ITEMS_PER_PAGE * (this.currentPage + 1));
   }
 }

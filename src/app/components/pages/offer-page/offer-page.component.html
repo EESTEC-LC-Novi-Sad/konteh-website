@@ -26,7 +26,7 @@
       <div class="column">
         <div class="is-flex is-flex-direction-column is-align-items-start">
           <h2>
-            {{ offer.positionName }} - <b>{{ offer.offerType }}</b>
+            {{ offer.positionName }} - <i>{{ offer.offerType }}</i>
           </h2>
           <h3 class="clickable" (click)="openCompany()">
             {{ offer.company.fields.name }}
@@ -96,7 +96,7 @@
           <div
             class="is-flex is-flex-direction-row is-align-items-start chips tags mt-5"
           >
-            <div>
+            <div class="tags-container">
               <mat-chip color="accent" *ngFor="let tag of offer.tags">
                 {{ tag }}
               </mat-chip>
@@ -111,7 +111,7 @@
           <div
             class="is-flex is-flex-direction-row is-align-items-start chips departments"
           >
-            <div>
+            <div class="tags-container">
               <mat-chip
                 color="primary"
                 *ngFor="let tag of offer.uniDepartments"
@@ -129,7 +129,12 @@
       <div class="column">
         <h1>Kako se prijaviti?</h1>
         <div [innerHtml]="returnHtmlFromRichText(offer.howToApply)"></div>
-        <button mat-flat-button color="primary" (click)="apply()" class="mt-5 call-to-action">
+        <button
+          mat-flat-button
+          color="primary"
+          (click)="apply()"
+          class="mt-5 call-to-action"
+        >
           Prijavi se!
         </button>
       </div>
