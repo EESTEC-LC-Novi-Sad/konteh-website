@@ -4,6 +4,7 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 @import "./app/custom-theme.scss";
 @import url("https://fonts.googleapis.com/css2?family=Cuprum&family=Montserrat:wght@500&family=Palanquin:wght@300&display=swap");
+@import "lightgallery/scss/lightgallery";
 
 * {
   font-family: "Palanquin", sans-serif !important;
@@ -148,4 +149,12 @@ body {
 
 b {
   font-weight: bold;
+}
+
+.lg-sub-html {
+  display: none !important;
+}
+
+._ngcontent-uqh-c124 {
+  margin-right: -5% !important;
 }

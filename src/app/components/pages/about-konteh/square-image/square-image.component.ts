@@ -13,8 +13,10 @@ export class SquareImageComponent {
   constructor(public dialog: MatDialog) {}
 
   openImageLightbox() {
+    /*  
     this.dialog.open(PhotoLightboxComponent, {
       data: { imgData: this.imgSrc },
     });
+    */
   }
 }

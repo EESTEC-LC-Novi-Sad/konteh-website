@@ -30,6 +30,7 @@ import { PlatinumCompanyCardComponent } from './components/pages/companies/plati
 import { ExclusiveCompanyCardComponent } from './components/pages/companies/exclusive-company-card/exclusive-company-card.component';
 import { GoldCompanyCardComponent } from './components/pages/companies/gold-company-card/gold-company-card.component';
 import { SilverCompanyCardComponent } from './components/pages/companies/silver-company-card/silver-company-card.component';
+import { LightgalleryModule } from 'lightgallery/angular';
 import { BronzeCompanyCardComponent } from './components/pages/companies/bronze-company-card/bronze-company-card.component';
 
 @NgModule({
@@ -67,6 +68,7 @@ import { BronzeCompanyCardComponent } from './components/pages/companies/bronze-
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
+    LightgalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent],

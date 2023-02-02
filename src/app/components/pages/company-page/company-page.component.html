@@ -69,9 +69,18 @@
     <hr />
 
     <div>
-      <h2>Galerija</h2>
-      <div class="picture" >
-        
+      <h2 class="mb-5">Galerija</h2>
+      <div>
+        <lightgallery [settings]="settings">
+          <a
+            *ngFor="let image of company.gallery"
+            [href]="image.fields.file.url"
+          >
+           <div class="square-image">
+             <square-image [imgSrc]="image.fields.file.url"> </square-image>
+           </div>
+          </a>
+        </lightgallery>
       </div>
     </div>
     <div></div>
