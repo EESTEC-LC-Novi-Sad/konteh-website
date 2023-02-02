@@ -26,6 +26,11 @@ import { PolicyComponent } from './components/pages/about-konteh/policy/policy.c
 import { OffersComponent } from './components/pages/offers/offers.component';
 import { OfferPageComponent } from './components/pages/offer-page/offer-page.component';
 import { OfferCardComponent } from './components/pages/offers/offer-card/offer-card.component';
+import { PlatinumCompanyCardComponent } from './components/pages/companies/platinum-company-card/platinum-company-card.component';
+import { ExclusiveCompanyCardComponent } from './components/pages/companies/exclusive-company-card/exclusive-company-card.component';
+import { GoldCompanyCardComponent } from './components/pages/companies/gold-company-card/gold-company-card.component';
+import { SilverCompanyCardComponent } from './components/pages/companies/silver-company-card/silver-company-card.component';
+import { BronzeCompanyCardComponent } from './components/pages/companies/bronze-company-card/bronze-company-card.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +55,11 @@ import { OfferCardComponent } from './components/pages/offers/offer-card/offer-c
     OffersComponent,
     OfferPageComponent,
     OfferCardComponent,
+    PlatinumCompanyCardComponent,
+    ExclusiveCompanyCardComponent,
+    GoldCompanyCardComponent,
+    SilverCompanyCardComponent,
+    BronzeCompanyCardComponent,
   ],
   imports: [
     BrowserModule,

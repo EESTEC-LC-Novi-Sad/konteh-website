@@ -14,5 +14,49 @@
     </div>
   </div>
 
-  <div *ngIf="showCompanies">123</div>
+  <div *ngIf="showCompanies" class="max-width-1200 auto-margin content">
+    <div
+      class="auto-margin stretch-width my-5 py-5"
+      *ngIf="companies.length == 0"
+    >
+      <mat-spinner></mat-spinner>
+    </div>
+
+    <div *ngIf="companies.length != 0" class="has-text-centered">
+      <h3>Ekskluzivni pokrovitelj</h3>
+      <div class="exclusive-card company-card">
+        <exclusive-company-card
+          [company]="exclusiveCompany"
+        ></exclusive-company-card>
+      </div>
+
+      <h3>Platinum pokrovitelji</h3>
+      <div>
+        <div class="company-card" *ngFor="let company of platinumCompanies">
+          <platinum-company-card [company]="company"></platinum-company-card>
+        </div>
+      </div>
+
+      <h3>Zlatni pokrovitelji</h3>
+      <div>
+        <div class="company-card" *ngFor="let company of goldCompanies">
+          <gold-company-card [company]="company"></gold-company-card>
+        </div>
+      </div>
+
+      <h3>Srebrni pokrovitelji</h3>
+      <div>
+        <div class="company-card" *ngFor="let company of silverCompanies">
+          <silver-company-card [company]="company"></silver-company-card>
+        </div>
+      </div>
+
+      <h3>Bronzani pokrovitelji</h3>
+      <div>
+        <div class="company-card" *ngFor="let company of bronzeCompanies">
+          <bronze-company-card [company]="company"></bronze-company-card>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

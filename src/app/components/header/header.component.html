@@ -66,7 +66,7 @@
             Kontakt
           </a>
         </div>
-        <div>
+        <div *ngIf="showOffers">
           <a mat-flat-button href="/ponude" class="header-button" color="accent"
             >PONUDE</a
           >
@@ -129,7 +129,7 @@
           Kontakt
         </a>
       </div>
-      <div class="py-2">
+      <div class="py-2" *ngIf="showOffers">
         <a mat-flat-button href="/ponude" class="header-button" color="accent"
           >PONUDE</a
         >
