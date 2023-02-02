@@ -19,7 +19,8 @@ NPM - 8.19.3
 
 - Sve podatke u contentfulu
 - Po mogućnosti obrisati stare slike koordinatora i logoa kompanija radi očuvanja prostora
-- Postaviti / skloniti USKORO sa stranica (css)
 - Postaviti / skloniti glavne kompanije sa landing page component (css)
 - Pokrenuti update na najnovije verzije angulara i node paketa: [https://update.angular.io/](https://update.angular.io/)
 - Promeniti po potrebi mejl na kontakt stranici i policy strani
+- Promeniti PROD varijable na false, da se ne prikazuju kompanije dok barem ekskluzivni nije postavljen u bazi, i da se ne prikazuju oglasi za posao dok ih nema barem nekoliko
+- Obrisati stare oglase na kraju kalendarske godine
