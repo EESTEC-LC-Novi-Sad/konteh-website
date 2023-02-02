@@ -1,3 +1,79 @@
 <div class="header-cover"></div>
 
-<p>company-page works!</p>
+<div class="max-width-1200 auto-margin my-5 pl-5">
+  <nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+      <li><a href="/">KONTEH</a></li>
+      <li><a href="/kompanije">Kompanije</a></li>
+      <li class="is-active">
+        <a href="#" aria-current="page">{{ company.name }}</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<mat-spinner class="auto-margin m-5" *ngIf="company.name == ''"></mat-spinner>
+
+<div class="p-2">
+  <div
+    class="card-dontainer max-width-1200 auto-margin my-5"
+    *ngIf="company.name != ''"
+  >
+    <div class="columns">
+      <div class="column">
+        <div class="is-flex is-flex-direction-column is-align-items-start">
+          <h2>
+            {{ company.name }}
+          </h2>
+          <button
+            mat-flat-button
+            color="primary"
+            (click)="openWebsite()"
+            class="call-to-action"
+          >
+            Poseti vebsajt
+          </button>
+        </div>
+      </div>
+      <div
+        class="column is-4 is-flex is-flex-direction-column is-justify-content-center p-5 logo"
+      >
+        <img src="{{ company.logo.fields.file.url }}" />
+      </div>
+    </div>
+    <div>
+      <h1>Opis</h1>
+      <div [innerHtml]="returnHtmlFromRichText(company.description)"></div>
+      <hr />
+    </div>
+    <div>
+      <h1>Prilike za studente</h1>
+      <div
+        [innerHtml]="returnHtmlFromRichText(company.studentOpportunities)"
+      ></div>
+      <hr />
+    </div>
+    <div>
+      <h2>Tehnologije</h2>
+      <div
+        class="is-flex is-flex-direction-row is-align-items-start chips tags mt-5"
+      >
+        <div class="tags-container">
+          <mat-chip color="accent" *ngFor="let tag of company.technologies">
+            {{ tag }}
+          </mat-chip>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h2>Galerija</h2>
+      <div class="picture" >
+        
+      </div>
+    </div>
+    <div></div>
+  </div>
+</div>

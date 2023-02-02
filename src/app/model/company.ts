@@ -1,7 +1,7 @@
 export class Company {
   constructor(
     public name: string = '',
-    public companyUrl: string = '',
+    public id: string = '',
     public website: string = '',
     public logo: any = null,
     public technologies: string[] = [],

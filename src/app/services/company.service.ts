@@ -22,12 +22,30 @@ export class CompanyService {
     return from(promise);
   }
 
+  getById(id: string) {
+    const promise = this.client.getEntry(id);
+    return from(promise);
+  }
+
+  convertDataToCompany(item: any): Company {
+    let company: Company = new Company();
+    company.id = item.sys.id;
+    company.name = item.fields.name;
+    company.website = item.fields.website;
+    company.logo = item.fields.logo;
+    company.technologies = item.fields.technologies;
+    company.description = item.fields.description;
+    company.studentOpportunities = item.fields.studentOpportunities;
+    company.gallery = item.fields.gallery;
+    return company;
+  }
+
   convertDataToCompanies(data: any): Company[] {
     let retVal: Company[] = [];
     for (let item of data.items) {
       let company: Company = new Company();
+      company.id = item.sys.id;
       company.name = item.fields.name;
-      company.companyUrl = item.fields.companyUrl;
       company.website = item.fields.website;
       company.logo = item.fields.logo;
       company.technologies = item.fields.technologies;

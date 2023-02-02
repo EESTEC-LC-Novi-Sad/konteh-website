@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Offer } from 'src/app/model/offer';
 import { OfferService } from 'src/app/services/offer.service';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'offer-page',
@@ -15,7 +16,8 @@ export class OfferPageComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private offerService: OfferService
+    private offerService: OfferService,
+    private titleService: Title
   ) {}
 
   ngOnInit(): void {
@@ -24,6 +26,7 @@ export class OfferPageComponent implements OnInit {
 
       this.offerService.getById(id).subscribe((data) => {
         this.offer = this.offerService.convertDataToOffer(data);
+        this.titleService.setTitle('KONTEH - ' + this.offer.positionName);
       });
     });
   }

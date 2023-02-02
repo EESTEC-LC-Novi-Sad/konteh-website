@@ -100,12 +100,18 @@
   <mat-menu #menu="matMenu" xPosition="before">
     <div class="navbar-container mat-menu">
       <div class="mb-2 py-2" (click)="switchSelectedMenuItem(0)">
-        <a class="navigation-item-mobile" [ngClass]="{ selected: tab == 0 }">
+        <a
+          class="navigation-item-mobile"
+          [ngClass]="{ selected: tab == 0 }"
+        >
           Početna
         </a>
       </div>
       <div class="mb-2 py-2" (click)="switchSelectedMenuItem(1)">
-        <a class="navigation-item-mobile" [ngClass]="{ selected: tab == 1 }">
+        <a
+          class="navigation-item-mobile"
+          [ngClass]="{ selected: tab == 1 }"
+        >
           O KONTEH-u
         </a>
       </div>
