@@ -3,21 +3,15 @@
     class="header-content is-flex is-flex-direction-row is-justify-content-space-between py-5 is-align-items-center"
   >
     <div>
-      <img
-        class="logo clickable"
-        src="../../../assets/logoWhite.png"
-        (click)="switchSelectedMenuItem(0)"
-      />
+      <a href="/">
+        <img class="logo clickable" src="../../../assets/logoWhite.png" />
+      </a>
     </div>
 
     <div class="navbar-container">
       <div class="is-flex is-flex-direction-row is-align-items-center">
         <span class="home-button">
-          <button
-            mat-icon-button
-            color="primary"
-            (click)="switchSelectedMenuItem(0)"
-          >
+          <button mat-icon-button color="primary" href="/">
             <mat-icon>home</mat-icon>
           </button>
         </span>
@@ -25,7 +19,7 @@
           <a
             class="navigation-item"
             [ngClass]="{ selected: tab == 1 }"
-            (click)="switchSelectedMenuItem(1)"
+            href="/o-konteh-u"
           >
             O KONTEH-u
           </a>
@@ -34,7 +28,7 @@
           <a
             class="navigation-item"
             [ngClass]="{ selected: tab == 2 }"
-            (click)="switchSelectedMenuItem(2)"
+            href="/raspored"
           >
             Raspored
           </a>
@@ -43,7 +37,7 @@
           <a
             class="navigation-item"
             [ngClass]="{ selected: tab == 3 }"
-            (click)="switchSelectedMenuItem(3)"
+            href="/kompanije"
           >
             Kompanije
           </a>
@@ -52,7 +46,7 @@
           <a
             class="navigation-item"
             [ngClass]="{ selected: tab == 4 }"
-            (click)="switchSelectedMenuItem(4)"
+            href="/pokrovitelji"
           >
             Pokrovitelji
           </a>
@@ -61,14 +55,14 @@
           <a
             class="navigation-item"
             [ngClass]="{ selected: tab == 5 }"
-            (click)="switchSelectedMenuItem(5)"
+            href="/kontakt"
           >
             Kontakt
           </a>
         </div>
         <div *ngIf="showOffers">
-          <a mat-flat-button href="/ponude" class="header-button" color="accent"
-            >PONUDE</a
+          <a mat-flat-button href="/oglasi" class="header-button" color="accent"
+            >OGLASI</a
           >
         </div>
         <div>
@@ -88,11 +82,9 @@
 <div
   class="mobile-menu header-container-mobile is-flex is-justify-content-space-between"
 >
-  <img
-    class="logo clickable"
-    src="../../../assets/logoWhite.png"
-    (click)="switchSelectedMenuItem(0)"
-  />
+  <a href="/">
+    <img class="logo clickable" src="../../../assets/logoWhite.png" />
+  </a>
 
   <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon>more_vert</mat-icon>
@@ -100,18 +92,12 @@
   <mat-menu #menu="matMenu" xPosition="before">
     <div class="navbar-container mat-menu">
       <div class="mb-2 py-2" (click)="switchSelectedMenuItem(0)">
-        <a
-          class="navigation-item-mobile"
-          [ngClass]="{ selected: tab == 0 }"
-        >
+        <a class="navigation-item-mobile" [ngClass]="{ selected: tab == 0 }">
           Početna
         </a>
       </div>
       <div class="mb-2 py-2" (click)="switchSelectedMenuItem(1)">
-        <a
-          class="navigation-item-mobile"
-          [ngClass]="{ selected: tab == 1 }"
-        >
+        <a class="navigation-item-mobile" [ngClass]="{ selected: tab == 1 }">
           O KONTEH-u
         </a>
       </div>
@@ -136,8 +122,8 @@
         </a>
       </div>
       <div class="py-2" *ngIf="showOffers">
-        <a mat-flat-button href="/ponude" class="header-button" color="accent"
-          >PONUDE</a
+        <a mat-flat-button href="/oglasi" class="header-button" color="accent"
+          >OGLASI</a
         >
       </div>
       <div class="py-2">

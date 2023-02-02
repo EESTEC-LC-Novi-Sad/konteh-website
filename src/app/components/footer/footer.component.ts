@@ -10,19 +10,4 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  openFacebook() {
-    window.open('https://www.facebook.com/konteh.eestec/', '_blank');
-  }
-
-  openInstagram() {
-    window.open('https://www.instagram.com/konteh_sajam', '_blank');
-  }
-
-  openLinkedin() {
-    window.open('https://www.linkedin.com/company/konteh', '_blank');
-  }
-
-  openEestec() {
-    window.open('http://www.eestecns.org', '_blank');
-  }
 }

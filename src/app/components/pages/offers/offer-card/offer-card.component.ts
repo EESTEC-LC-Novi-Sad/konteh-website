@@ -13,6 +13,6 @@ export class OfferCardComponent {
   constructor(private router: Router) {}
 
   openOffer() {
-    this.router.navigate(['/ponuda/' + this.offer.id]);
+    this.router.navigate(['/oglas/' + this.offer.id]);
   }
 }

@@ -4,7 +4,7 @@
   <nav class="breadcrumb" aria-label="breadcrumbs">
     <ul>
       <li><a href="/">KONTEH</a></li>
-      <li><a href="/ponude">Ponude</a></li>
+      <li><a href="/oglasi">Oglasi</a></li>
       <li class="is-active">
         <a href="#" aria-current="page">{{ offer.positionName }}</a>
       </li>
@@ -28,9 +28,11 @@
           <h2>
             {{ offer.positionName }} - <i>{{ offer.offerType }}</i>
           </h2>
-          <h3 class="clickable" (click)="openCompany()">
-            {{ offer.company.fields.name }}
-          </h3>
+          <a href="/kompanija/{{ offer.company.sys.id }}">
+            <h3 class="clickable">
+              {{ offer.company.fields.name }}
+            </h3>
+          </a>
           <div class="columns stretch-width">
             <div class="column">
               <div
@@ -129,14 +131,11 @@
       <div class="column">
         <h1>Kako se prijaviti?</h1>
         <div [innerHtml]="returnHtmlFromRichText(offer.howToApply)"></div>
-        <button
-          mat-flat-button
-          color="primary"
-          (click)="apply()"
-          class="mt-5 call-to-action"
-        >
-          Prijavi se!
-        </button>
+        <a href="{{ offer.callToActionUrl }}" target="_blank">
+          <button mat-flat-button color="primary" class="mt-5 call-to-action">
+            Prijavi se!
+          </button>
+        </a>
       </div>
       <div class="column">
         <img class="picture" src="{{ offer.picture.fields.file.url }}" />

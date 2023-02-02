@@ -1,58 +1,63 @@
-<div class="card-dontainer clickable" (click)="openOffer()">
-  <div class="columns">
-    <div class="column">
-      <div class="is-flex is-flex-direction-column is-align-items-start">
-        <h2>
-          {{ offer.positionName }} - <i>{{ offer.offerType }}</i>
-        </h2>
-        <h3>{{ offer.company.fields.name }}</h3>
-        <div
-          class="is-flex is-flex-direction-row is-align-items-center location mb-3"
-        >
-          <mat-icon>location_on</mat-icon>
-          <h5>• {{ offer.location }}</h5>
-        </div>
-        <div
-          class="is-flex is-flex-direction-row is-align-items-center remote"
-          *ngIf="offer.remoteOption"
-        >
-          <mat-icon>settings_input_antenna</mat-icon>
-          <h5>• Mogućnost remote rada</h5>
-        </div>
-        <div
-          class="is-flex is-flex-direction-row is-align-items-center non-remote"
-          *ngIf="!offer.remoteOption"
-        >
-          <mat-icon>apartment</mat-icon>
-          <h5>• Rad iz kancelarije</h5>
-        </div>
-        <div
-          class="is-flex is-flex-direction-row is-align-items-start chips tags mt-5"
-        >
-          <div>
-            <mat-chip color="accent" *ngFor="let tag of offer.tags">
-              {{ tag }}
-            </mat-chip>
+<a href="/oglas/{{offer.id}}">
+  <div class="card-dontainer clickable" (click)="openOffer()">
+    <div class="columns">
+      <div class="column">
+        <div class="is-flex is-flex-direction-column is-align-items-start">
+          <h2>
+            {{ offer.positionName }} - <i>{{ offer.offerType }}</i>
+          </h2>
+          <h3>{{ offer.company.fields.name }}</h3>
+          <div
+            class="is-flex is-flex-direction-row is-align-items-center location mb-3"
+          >
+            <mat-icon>location_on</mat-icon>
+            <h5>• {{ offer.location }}</h5>
           </div>
-        </div>
-        <div
-          class="is-flex is-flex-direction-row is-align-items-start chips departments"
-        >
-          <div>
-            <mat-chip color="primary" *ngFor="let tag of offer.uniDepartments">
-              {{ tag }}
-            </mat-chip>
+          <div
+            class="is-flex is-flex-direction-row is-align-items-center remote"
+            *ngIf="offer.remoteOption"
+          >
+            <mat-icon>settings_input_antenna</mat-icon>
+            <h5>• Mogućnost remote rada</h5>
+          </div>
+          <div
+            class="is-flex is-flex-direction-row is-align-items-center non-remote"
+            *ngIf="!offer.remoteOption"
+          >
+            <mat-icon>apartment</mat-icon>
+            <h5>• Rad iz kancelarije</h5>
+          </div>
+          <div
+            class="is-flex is-flex-direction-row is-align-items-start chips tags mt-5"
+          >
+            <div>
+              <mat-chip color="accent" *ngFor="let tag of offer.tags">
+                {{ tag }}
+              </mat-chip>
+            </div>
+          </div>
+          <div
+            class="is-flex is-flex-direction-row is-align-items-start chips departments"
+          >
+            <div>
+              <mat-chip
+                color="primary"
+                *ngFor="let tag of offer.uniDepartments"
+              >
+                {{ tag }}
+              </mat-chip>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div
-      class="column is-4 is-flex is-flex-direction-column is-justify-content-center is-align-content-center"
-    >
-      <img
-        src="{{ offer.company.fields.logo.fields.file.url }}"
-        class="round-borders"
-      />
+      <div
+        class="column is-4 is-flex is-flex-direction-column is-justify-content-center is-align-content-center"
+      >
+        <img
+          src="{{ offer.company.fields.logo.fields.file.url }}"
+          class="round-borders"
+        />
+      </div>
     </div>
   </div>
-</div>
+</a>

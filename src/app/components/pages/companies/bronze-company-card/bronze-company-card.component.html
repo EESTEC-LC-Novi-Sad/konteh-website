@@ -1,9 +1,11 @@
-<div
-  class="card-container clickable p-4 is-flex is-flex-direction-column is-justify-content-center"
-  (click)="openCompany()"
->
-  <div>
-    <img src="{{ company.logo.fields.file.url }}" />
+<a href="/kompanija/{{company.id}}">
+  <div
+    class="card-container clickable p-4 is-flex is-flex-direction-column is-justify-content-center"
+  >
+    <div>
+      <img src="{{ company.logo.fields.file.url }}" />
+    </div>
+    <h1>{{ company.name }}</h1>
   </div>
-  <h1>{{ company.name }}</h1>
-</div>
+  
+</a>

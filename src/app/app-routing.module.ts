@@ -49,14 +49,14 @@ const routes: Routes = [
     title: baseTitle + 'Pokrovitelji',
   },
   {
-    path: 'ponuda/:id',
+    path: 'oglas/:id',
     component: OfferPageComponent,
-    title: baseTitle + 'Ponude',
+    title: baseTitle + 'Oglasi',
   },
   {
-    path: 'ponude',
+    path: 'oglasi',
     component: OffersComponent,
-    title: baseTitle + 'Ponude',
+    title: baseTitle + 'Oglasi',
   },
   {
     path: '**',

@@ -41,12 +41,4 @@ export class OfferPageComponent implements OnInit {
     }
     return documentToHtmlString(richText);
   }
-
-  apply() {
-    window.open(this.offer.callToActionUrl, '_blank');
-  }
-
-  openCompany() {
-    this.router.navigate(['/kompanija/' + this.offer.company.sys.id]);
-  }
 }

@@ -2,6 +2,7 @@ export class Company {
   constructor(
     public name: string = '',
     public id: string = '',
+    public tier: string = '',
     public website: string = '',
     public logo: any = null,
     public technologies: string[] = [],

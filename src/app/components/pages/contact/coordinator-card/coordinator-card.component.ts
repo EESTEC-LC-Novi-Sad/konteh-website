@@ -17,8 +17,4 @@ export class CoordinatorCardComponent implements OnInit {
       this.linkedIn = false;
     }
   }
-
-  redirectLinkedIn() {
-    window.open(this.coordinator.linkedIn, '_blank');
-  }
 }

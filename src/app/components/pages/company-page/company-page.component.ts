@@ -48,7 +48,4 @@ export class CompanyPageComponent implements OnInit {
     return documentToHtmlString(richText);
   }
 
-  openWebsite() {
-    window.open(this.company.website, '_blank');
-  }
 }

@@ -32,6 +32,7 @@
 
       <h3>Platinum pokrovitelji</h3>
       <div>
+        <p *ngIf="platinumCompanies.length == 0" class="my-5">Uskoro!</p>
         <div class="company-card" *ngFor="let company of platinumCompanies">
           <platinum-company-card [company]="company"></platinum-company-card>
         </div>
@@ -39,6 +40,7 @@
 
       <h3>Zlatni pokrovitelji</h3>
       <div>
+        <p *ngIf="goldCompanies.length == 0" class="my-5">Uskoro!</p>
         <div class="company-card" *ngFor="let company of goldCompanies">
           <gold-company-card [company]="company"></gold-company-card>
         </div>
@@ -46,6 +48,7 @@
 
       <h3>Srebrni pokrovitelji</h3>
       <div>
+        <p *ngIf="silverCompanies.length == 0" class="my-5">Uskoro!</p>
         <div class="company-card" *ngFor="let company of silverCompanies">
           <silver-company-card [company]="company"></silver-company-card>
         </div>
@@ -53,6 +56,7 @@
 
       <h3>Bronzani pokrovitelji</h3>
       <div>
+        <p *ngIf="bronzeCompanies.length == 0" class="my-5">Uskoro!</p>
         <div class="company-card" *ngFor="let company of bronzeCompanies">
           <bronze-company-card [company]="company"></bronze-company-card>
         </div>

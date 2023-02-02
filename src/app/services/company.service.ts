@@ -37,6 +37,7 @@ export class CompanyService {
     company.description = item.fields.description;
     company.studentOpportunities = item.fields.studentOpportunities;
     company.gallery = item.fields.gallery;
+    company.tier = item.fields.tier;
     return company;
   }
 
@@ -52,6 +53,7 @@ export class CompanyService {
       company.description = item.fields.description;
       company.studentOpportunities = item.fields.studentOpportunities;
       company.gallery = item.fields.gallery;
+      company.tier = item.fields.tier;
       retVal.push(company);
     }
 

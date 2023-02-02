@@ -31,6 +31,6 @@ export class LandingPageComponent implements OnInit {
   }
 
   openOffers() {
-    this.router.navigate(['/ponude']);
+    this.router.navigate(['/oglasi']);
   }
 }

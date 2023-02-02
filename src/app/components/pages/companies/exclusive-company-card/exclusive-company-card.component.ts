@@ -12,7 +12,4 @@ export class ExclusiveCompanyCardComponent {
 
   constructor(private router: Router) {}
 
-  openCompany() {
-    this.router.navigate(['/kompanija/' + this.company.id]);
-  }
 }

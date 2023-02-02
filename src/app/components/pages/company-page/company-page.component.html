@@ -25,14 +25,11 @@
           <h2>
             {{ company.name }}
           </h2>
-          <button
-            mat-flat-button
-            color="primary"
-            (click)="openWebsite()"
-            class="call-to-action"
-          >
-            Poseti vebsajt
-          </button>
+          <a href="{{ this.company.website }}" target="_blank">
+            <button mat-flat-button color="primary" class="call-to-action">
+              Poseti vebsajt
+            </button>
+          </a>
         </div>
       </div>
       <div
@@ -76,9 +73,9 @@
             *ngFor="let image of company.gallery"
             [href]="image.fields.file.url"
           >
-           <div class="square-image">
-             <square-image [imgSrc]="image.fields.file.url"> </square-image>
-           </div>
+            <div class="square-image">
+              <square-image [imgSrc]="image.fields.file.url"> </square-image>
+            </div>
           </a>
         </lightgallery>
       </div>

@@ -23,36 +23,20 @@ export class CompaniesComponent implements OnInit {
 
   ngOnInit(): void {
     this.companyService.getAllCompanies().subscribe((data) => {
-      let companyList = this.companyService.convertDataToCompanies(data);
+      this.companies = this.companyService.convertDataToCompanies(data);
 
-      for (let i = 0; i < 10; i++) {
-        let o = Object.assign({}, companyList[0]);
-        this.companies.push(o);
-      }
-
-      for (let i = 0; i < 1; i++) {
-        let o = Object.assign({}, companyList[0]);
-        this.exclusiveCompany = o;
-      }
-
-      for (let i = 0; i < 3; i++) {
-        let o = Object.assign({}, companyList[0]);
-        this.platinumCompanies.push(o);
-      }
-
-      for (let i = 0; i < 7; i++) {
-        let o = Object.assign({}, companyList[0]);
-        this.goldCompanies.push(o);
-      }
-
-      for (let i = 0; i < 9; i++) {
-        let o = Object.assign({}, companyList[0]);
-        this.silverCompanies.push(o);
-      }
-
-      for (let i = 0; i < 11; i++) {
-        let o = Object.assign({}, companyList[0]);
-        this.bronzeCompanies.push(o);
+      for (let company of this.companies) {
+        if (company.tier == 'Ekskluzivni') {
+          this.exclusiveCompany = company;
+        } else if (company.tier == 'Platinum') {
+          this.platinumCompanies.push(company);
+        } else if (company.tier == 'Zlatni') {
+          this.goldCompanies.push(company);
+        } else if (company.tier == 'Srebrni') {
+          this.silverCompanies.push(company);
+        } else if (company.tier == 'Bronzani') {
+          this.bronzeCompanies.push(company);
+        }
       }
     });
   }

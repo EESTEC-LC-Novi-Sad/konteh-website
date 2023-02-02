@@ -17,14 +17,13 @@
       <p>
         <a href="mailto:{{ coordinator.email }}">{{ coordinator.email }}</a>
       </p>
-      <button
-        mat-flat-button
-        color="primary"
-        (click)="redirectLinkedIn()"
+      <a
+        href="{{ this.coordinator.linkedIn }}"
         *ngIf="linkedIn == true"
+        target="_blank"
       >
-        LinkedIn
-      </button>
+        <button mat-flat-button color="primary">LinkedIn</button>
+      </a>
     </div>
   </div>
 </div>
