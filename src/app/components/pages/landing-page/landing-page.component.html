@@ -6,14 +6,16 @@
       <h2>Sajam poslovnih mogućnosti i stručnih praksi u Novom Sadu</h2>
       <h1 class="alt-font">21. i 22. mart 2023.</h1>
       <div *ngIf="showOffers">
-        <button mat-flat-button color="accent" (click)="openOffers()">
-          Pogledaj prakse i juniorske pozicije
-        </button>
+        <a href="/oglasi">
+          <button mat-flat-button color="accent">
+            Pogledaj prakse i juniorske pozicije
+          </button>
+        </a>
       </div>
       <div>
-        <button mat-flat-button class="white-button" (click)="openCv()">
-          Ostavi CV
-        </button>
+        <a href="https://cv.konteh.org/auth/login" target="_blank">
+          <button mat-flat-button class="white-button">Ostavi CV</button>
+        </a>
       </div>
     </div>
   </div>
@@ -86,34 +88,29 @@
 <div class="stretch-width companies-section">
   <div class="columns max-width-1200 auto-margin">
     <div class="column">
-      <img
-        src="/assets/vega.png"
-        (click)="openLink('https://www.vegaitglobal.com/')"
-      />
+      <a href="https://www.vegaitglobal.com" target="_blank">
+        <img src="/assets/vega.png" />
+      </a>
     </div>
     <div class="column">
-      <img
-        src="/assets/levi9.png"
-        (click)="openLink('https://www.levi9.com/')"
-      />
+      <a href="https://www.levi9.com" target="_blank">
+        <img src="/assets/levi9.png" />
+      </a>
     </div>
     <div class="column">
-      <img
-        src="/assets/continental.png"
-        (click)="openLink('https://www.continental.com/en/')"
-      />
+      <a href="https://www.continental.com/en" target="_blank">
+        <img src="/assets/continental.png" />
+      </a>
     </div>
     <div class="column">
-      <img
-        src="/assets/rtrk.png"
-        (click)="openLink('https://www.se.com/us/en/')"
-      />
+      <a href="https://www.rt-rk.com/" target="_blank">
+        <img src="/assets/rtrk.png" />
+      </a>
     </div>
     <div class="column">
-      <img
-        src="/assets/elsys.png"
-        (click)="openLink('https://www.se.com/us/en/')"
-      />
+      <a href="https://www.elsys-eastern.com/" target="_blank">
+        <img src="/assets/elsys.png" />
+      </a>
     </div>
   </div>
 </div>
@@ -178,26 +175,22 @@
         što uspešnije obave intervju za posao.
       </p>
       <div class="is-flex is-flex-direction-row">
-        <button mat-flat-button color="primary" (click)="openCompanies()">
-          Kompanije
-        </button>
-        <button
-          mat-flat-button
-          color="accent"
-          (click)="openSchedule()"
-          class="ml-2"
-        >
-          Raspored
-        </button>
-        <button
-          mat-flat-button
-          color="primary"
-          (click)="openOffers()"
-          class="ml-2 orange-button"
-          *ngIf="showOffers"
-        >
-          Oglasi
-        </button>
+        <a href="/kompanije">
+          <button mat-flat-button color="primary">Kompanije</button>
+        </a>
+        <a href="/raspored">
+          <button mat-flat-button color="accent" class="ml-2">Raspored</button>
+        </a>
+        <a href="/oglasi">
+          <button
+            mat-flat-button
+            color="primary"
+            class="ml-2 orange-button"
+            *ngIf="showOffers"
+          >
+            Oglasi
+          </button>
+        </a>
       </div>
     </div>
   </div>

@@ -49,14 +49,7 @@ export class OffersComponent implements OnInit {
   ngOnInit(): void {
     this.resetDepartments();
     this.offerService.getAllOffers().subscribe((data) => {
-      this.offers = this.offerService.convertDataToOffers(data);
-
-      for (let i = 0; i < 20; i++) {
-        let o = Object.assign({}, this.offers[0]);
-
-        o.positionName = i.toString();
-        this.offers.push(o);
-      }
+      this.offers = this.shuffle(this.offerService.convertDataToOffers(data));
 
       this.maxPages = Math.floor(this.offers.length / this.ITEMS_PER_PAGE) + 1;
       if (this.offers.length % this.ITEMS_PER_PAGE == 0) {
@@ -193,5 +186,25 @@ export class OffersComponent implements OnInit {
 
     console.log(this.ITEMS_PER_PAGE * this.currentPage);
     console.log(this.ITEMS_PER_PAGE * (this.currentPage + 1));
+  }
+
+  shuffle(array: any[]) {
+    let currentIndex = array.length,
+      randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+
+    return array;
   }
 }

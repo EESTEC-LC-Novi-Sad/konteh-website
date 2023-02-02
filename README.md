@@ -18,6 +18,7 @@ NPM - 8.19.3
 ## Stvari koje je neophodno promeniti na godišnjem nivou
 
 - Sve podatke u contentfulu
+- Slike koordinatora bi trebale biti kockaste - 1:1
 - Po mogućnosti obrisati stare slike koordinatora i logoa kompanija radi očuvanja prostora
 - Postaviti / skloniti glavne kompanije sa landing page component (css)
 - Pokrenuti update na najnovije verzije angulara i node paketa: [https://update.angular.io/](https://update.angular.io/)
