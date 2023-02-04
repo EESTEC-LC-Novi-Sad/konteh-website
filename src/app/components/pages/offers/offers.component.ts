@@ -24,17 +24,11 @@ export class OffersComponent implements OnInit {
   loading = true;
 
   departments = [
-    'E1',
-    'E2',
-    'E3',
-    'Biomedicinsko inž.',
-    'Informacioni inž.',
-    'Mehatronika',
-    'Softversko inž. i inf. tehnologije',
-    'Inženjerstvo inf. sistema',
-    'Inž. menadžment',
-    'Animacija u inženjerstvu',
-    'GRID',
+    'Informacione tehnologije',
+    'Elektronika',
+    'Mašinstvo',
+    'Grafički dizajn',
+    'Menadžment',
   ];
 
   offerType = '';
