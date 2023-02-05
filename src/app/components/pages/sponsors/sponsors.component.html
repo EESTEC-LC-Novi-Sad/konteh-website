@@ -14,5 +14,29 @@
     </div>
   </div>
 
-  <div *ngIf="showSponsors">123</div>
+  <div *ngIf="showSponsors" class="max-width-1200 auto-margin content">
+    <h3>Medijski pokrovitelji</h3>
+    <div>
+      <p *ngIf="mediaSponsors.length == 0" class="my-5">Uskoro!</p>
+      <div class="sponsor-card" *ngFor="let sponsor of mediaSponsors">
+        <sponsor-card [sponsor]="sponsor"></sponsor-card>
+      </div>
+    </div>
+
+    <h3>Robni sponzori</h3>
+    <div>
+      <p *ngIf="merchSponsors.length == 0" class="my-5">Uskoro!</p>
+      <div class="sponsor-card" *ngFor="let sponsor of merchSponsors">
+        <sponsor-card [sponsor]="sponsor"></sponsor-card>
+      </div>
+    </div>
+
+    <h3>Partneri sajma</h3>
+    <div>
+      <p *ngIf="partnerSponsors.length == 0" class="my-5">Uskoro!</p>
+      <div class="sponsor-card" *ngFor="let sponsor of partnerSponsors">
+        <sponsor-card [sponsor]="sponsor"></sponsor-card>
+      </div>
+    </div>
+  </div>
 </div>

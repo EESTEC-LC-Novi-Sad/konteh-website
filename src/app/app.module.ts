@@ -32,6 +32,7 @@ import { GoldCompanyCardComponent } from './components/pages/companies/gold-comp
 import { SilverCompanyCardComponent } from './components/pages/companies/silver-company-card/silver-company-card.component';
 import { LightgalleryModule } from 'lightgallery/angular';
 import { BronzeCompanyCardComponent } from './components/pages/companies/bronze-company-card/bronze-company-card.component';
+import { SponsorCardComponent } from './components/pages/sponsors/sponsor-card/sponsor-card.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { BronzeCompanyCardComponent } from './components/pages/companies/bronze-
     GoldCompanyCardComponent,
     SilverCompanyCardComponent,
     BronzeCompanyCardComponent,
+    SponsorCardComponent,
   ],
   imports: [
     BrowserModule,
