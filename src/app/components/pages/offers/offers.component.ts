@@ -52,9 +52,9 @@ export class OffersComponent implements OnInit {
 
       this.filteredOffers = this.offers;
       this.refreshDisplayedItems();
-    });
 
-    this.loading = false;
+      this.loading = false;
+    });
   }
 
   resetDepartments() {

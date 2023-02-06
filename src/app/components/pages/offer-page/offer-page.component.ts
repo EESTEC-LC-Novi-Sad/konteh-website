@@ -24,10 +24,15 @@ export class OfferPageComponent implements OnInit {
     this.route.params.subscribe((params) => {
       const id = params['id'];
 
-      this.offerService.getById(id).subscribe((data) => {
-        this.offer = this.offerService.convertDataToOffer(data);
-        this.titleService.setTitle('KONTEH - ' + this.offer.positionName);
-      });
+      this.offerService.getById(id).subscribe(
+        (data) => {
+          this.offer = this.offerService.convertDataToOffer(data);
+          this.titleService.setTitle('KONTEH - ' + this.offer.positionName);
+        },
+        (err) => {
+          this.router.navigate(['/404']);
+        }
+      );
     });
   }
 

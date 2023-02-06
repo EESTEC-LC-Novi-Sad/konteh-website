@@ -29,11 +29,17 @@ export class CompanyPageComponent implements OnInit {
     this.route.params.subscribe((params) => {
       const id = params['id'];
 
-      this.companyService.getById(id).subscribe((data) => {
-        this.company = this.companyService.convertDataToCompany(data);
-        console.log(this.company);
-        this.titleService.setTitle('KONTEH - ' + this.company.name);
-      });
+      this.companyService.getById(id).subscribe(
+        (data) => {
+          this.company = this.companyService.convertDataToCompany(data);
+          console.log(this.company);
+          this.titleService.setTitle('KONTEH - ' + this.company.name);
+        },
+
+        (err) => {
+          this.router.navigate(['/404']);
+        }
+      );
     });
   }
 
@@ -47,5 +53,4 @@ export class CompanyPageComponent implements OnInit {
     }
     return documentToHtmlString(richText);
   }
-
 }
