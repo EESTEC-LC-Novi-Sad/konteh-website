@@ -3,7 +3,7 @@
     class="header-content is-flex is-flex-direction-row is-justify-content-space-between py-5 is-align-items-center"
   >
     <div>
-      <a href="/">
+      <a [routerLink]="['/']">
         <img class="logo clickable" src="../../../assets/logoWhite.png" />
       </a>
     </div>
@@ -11,15 +11,17 @@
     <div class="navbar-container">
       <div class="is-flex is-flex-direction-row is-align-items-center">
         <span class="home-button">
-          <button mat-icon-button color="primary" href="/">
-            <mat-icon>home</mat-icon>
-          </button>
+          <a [routerLink]="['/']">
+            <button mat-icon-button color="primary">
+              <mat-icon>home</mat-icon>
+            </button>
+          </a>
         </span>
         <div>
           <a
             class="navigation-item"
             [ngClass]="{ selected: tab == 1 }"
-            href="/o-konteh-u"
+            [routerLink]="['/o-konteh-u']"
           >
             O KONTEH-u
           </a>
@@ -28,7 +30,7 @@
           <a
             class="navigation-item"
             [ngClass]="{ selected: tab == 2 }"
-            href="/raspored"
+            [routerLink]="['/raspored']"
           >
             Raspored
           </a>
@@ -37,7 +39,7 @@
           <a
             class="navigation-item"
             [ngClass]="{ selected: tab == 3 }"
-            href="/kompanije"
+            [routerLink]="['/kompanije']"
           >
             Kompanije
           </a>
@@ -46,7 +48,7 @@
           <a
             class="navigation-item"
             [ngClass]="{ selected: tab == 4 }"
-            href="/pokrovitelji"
+            [routerLink]="['/pokrovitelji']"
           >
             Pokrovitelji
           </a>
@@ -55,13 +57,17 @@
           <a
             class="navigation-item"
             [ngClass]="{ selected: tab == 5 }"
-            href="/kontakt"
+            [routerLink]="['/kontakt']"
           >
             Kontakt
           </a>
         </div>
         <div *ngIf="showOffers">
-          <a mat-flat-button href="/oglasi" class="header-button" color="accent"
+          <a
+            mat-flat-button
+            [routerLink]="['/oglasi']"
+            class="header-button"
+            color="accent"
             >OGLASI</a
           >
         </div>
@@ -82,7 +88,7 @@
 <div
   class="mobile-menu header-container-mobile is-flex is-justify-content-space-between"
 >
-  <a href="/">
+  <a [routerLink]="['/']">
     <img class="logo clickable" src="../../../assets/logoWhite.png" />
   </a>
 
@@ -122,7 +128,11 @@
         </a>
       </div>
       <div class="py-2" *ngIf="showOffers">
-        <a mat-flat-button href="/oglasi" class="header-button" color="accent"
+        <a
+          mat-flat-button
+          [routerLink]="['/oglasi']"
+          class="header-button"
+          color="accent"
           >OGLASI</a
         >
       </div>

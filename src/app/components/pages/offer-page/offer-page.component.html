@@ -3,8 +3,8 @@
 <div class="max-width-1200 auto-margin my-5 pl-5">
   <nav class="breadcrumb" aria-label="breadcrumbs">
     <ul>
-      <li><a href="/">KONTEH</a></li>
-      <li><a href="/oglasi">Oglasi</a></li>
+      <li><a [routerLink]="['/']">KONTEH</a></li>
+      <li><a [routerLink]="['/oglasi']">Oglasi</a></li>
       <li class="is-active">
         <a href="#" aria-current="page">{{ offer.positionName }}</a>
       </li>
@@ -28,7 +28,7 @@
           <h2>
             {{ offer.positionName }} - <i>{{ offer.offerType }}</i>
           </h2>
-          <a href="/kompanija/{{ offer.company.sys.id }}">
+          <a routerLink="/kompanija/{{ offer.company.sys.id }}">
             <h3 class="clickable">
               {{ offer.company.fields.name }}
             </h3>

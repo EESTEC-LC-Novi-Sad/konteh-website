@@ -38,6 +38,9 @@ export class CompanyService {
     company.studentOpportunities = item.fields.studentOpportunities;
     company.gallery = item.fields.gallery;
     company.tier = item.fields.tier;
+    company.linkedInUrl = item.fields.linkedInUrl;
+    company.instagramUrl = item.fields.instagramUrl;
+    company.facebookUrl = item.fields.facebookUrl;
     return company;
   }
 
@@ -54,6 +57,9 @@ export class CompanyService {
       company.studentOpportunities = item.fields.studentOpportunities;
       company.gallery = item.fields.gallery;
       company.tier = item.fields.tier;
+      company.linkedInUrl = item.fields.linkedInUrl;
+      company.instagramUrl = item.fields.instagramUrl;
+      company.facebookUrl = item.fields.facebookUrl;
       retVal.push(company);
     }
 

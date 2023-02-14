@@ -24,7 +24,11 @@
 
     <div *ngIf="companies.length != 0" class="has-text-centered">
       <h3>Ekskluzivni pokrovitelj</h3>
-      <div class="exclusive-card company-card">
+      <p *ngIf="exclusiveCompany.name == ''" class="my-5">Uskoro!</p>
+      <div
+        class="exclusive-card company-card"
+        *ngIf="exclusiveCompany.name != ''"
+      >
         <exclusive-company-card
           [company]="exclusiveCompany"
         ></exclusive-company-card>

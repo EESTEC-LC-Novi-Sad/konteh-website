@@ -6,7 +6,7 @@
       <h2>Sajam poslovnih mogućnosti i stručnih praksi u Novom Sadu</h2>
       <h1 class="alt-font">21. i 22. mart 2023.</h1>
       <div *ngIf="showOffers">
-        <a href="/oglasi">
+        <a [routerLink]="['/oglasi']">
           <button mat-flat-button color="accent">
             Pogledaj prakse i juniorske pozicije
           </button>
@@ -175,13 +175,13 @@
         što uspešnije obave intervju za posao.
       </p>
       <div class="is-flex is-flex-direction-row">
-        <a href="/kompanije">
+        <a [routerLink]="['/kompanije']">
           <button mat-flat-button color="primary">Kompanije</button>
         </a>
-        <a href="/raspored">
+        <a [routerLink]="['/raspored']">
           <button mat-flat-button color="accent" class="ml-2">Raspored</button>
         </a>
-        <a href="/oglasi">
+        <a [routerLink]="['/oglasi']">
           <button
             mat-flat-button
             color="primary"

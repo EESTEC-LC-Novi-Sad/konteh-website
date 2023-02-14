@@ -1,4 +1,4 @@
-<a href="/oglas/{{offer.id}}">
+<a routerLink="/oglas/{{ offer.id }}">
   <div class="card-dontainer clickable" (click)="openOffer()">
     <div class="columns">
       <div class="column">
@@ -53,9 +53,7 @@
       <div
         class="column is-4 is-flex is-flex-direction-column is-justify-content-center is-align-content-center"
       >
-        <img
-          src="{{ offer.company.fields.logo.fields.file.url }}"
-        />
+        <img src="{{ offer.company.fields.logo.fields.file.url }}" />
       </div>
     </div>
   </div>

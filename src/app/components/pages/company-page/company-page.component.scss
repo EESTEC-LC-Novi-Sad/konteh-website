@@ -120,3 +120,22 @@ hr {
   width: 33% !important;
   display: inline-block;
 }
+
+.social-icons {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.social-button {
+  width: 50px;
+  height: 50px;
+}
+
+.social-icon {
+  width: 25px;
+}
+
+.social-icons img {
+  filter: invert(0.8);
+  margin-bottom: 8px !important;
+}

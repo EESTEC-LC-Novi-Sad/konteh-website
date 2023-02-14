@@ -252,7 +252,13 @@
     <mat-spinner class="auto-margin m-5" *ngIf="loading"></mat-spinner>
 
     <div *ngIf="!loading">
-      <div *ngIf="filteredOffers.length == 0 && !loading" class="my-5 py-5">
+      <div *ngIf="offers.length == 0 && !loading" class="my-5 py-5">
+        <p class="my-5 py-5">Oglasi će uskoro biti postavljeni!</p>
+      </div>
+      <div
+        *ngIf="filteredOffers.length == 0 && !loading && offers.length != 0"
+        class="my-5 py-5"
+      >
         <p class="my-5 py-5">
           Nema oglasa koji odgovaraju datim kriterijumima.
         </p>

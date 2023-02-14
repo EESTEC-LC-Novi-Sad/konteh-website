@@ -3,8 +3,8 @@
 <div class="max-width-1200 auto-margin my-5 pl-5">
   <nav class="breadcrumb" aria-label="breadcrumbs">
     <ul>
-      <li><a href="/">KONTEH</a></li>
-      <li><a href="/kompanije">Kompanije</a></li>
+      <li><a [routerLink]="['/']">KONTEH</a></li>
+      <li><a [routerLink]="['/kompanije']">Kompanije</a></li>
       <li class="is-active">
         <a href="#" aria-current="page">{{ company.name }}</a>
       </li>
@@ -25,11 +25,53 @@
           <h2>
             {{ company.name }}
           </h2>
-          <a href="{{ this.company.website }}" target="_blank" class="mb-5">
+          <a href="{{ company.website }}" target="_blank" class="mb-5">
             <button mat-flat-button color="primary" class="call-to-action">
               Poseti vebsajt
             </button>
           </a>
+          <div
+            class="social-icons is-flex is-flex-direction-row is-justify-content-space-between is-centered"
+          >
+            <a
+              href="{{ company.facebookUrl }}"
+              target="_blank"
+              *ngIf="company.facebookUrl != undefined"
+            >
+              <button mat-icon-button class="social-button">
+                <img
+                  class="social-icon clickable"
+                  src="../../../assets/facebook.png"
+                />
+              </button>
+            </a>
+
+            <a
+              href="{{ company.instagramUrl }}"
+              target="_blank"
+              *ngIf="company.instagramUrl != undefined"
+            >
+              <button mat-icon-button class="social-button ml-5">
+                <img
+                  class="social-icon clickable"
+                  src="../../../assets/instagram.png"
+                />
+              </button>
+            </a>
+
+            <a
+              href="{{ company.linkedInUrl }}"
+              target="_blank"
+              *ngIf="company.linkedInUrl != undefined"
+            >
+              <button mat-icon-button class="social-button ml-5">
+                <img
+                  class="social-icon clickable"
+                  src="../../../assets/linkedin.png"
+                />
+              </button>
+            </a>
+          </div>
         </div>
       </div>
       <div
