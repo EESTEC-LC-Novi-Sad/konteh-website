@@ -49,6 +49,7 @@ export class OfferService {
   }
 
   convertDataToOffers(data: any): Offer[] {
+    let today = new Date();
     let retVal: Offer[] = [];
     for (let item of data.items) {
       let offer: Offer = new Offer();
@@ -67,8 +68,11 @@ export class OfferService {
       offer.picture = item.fields.picture;
       offer.callToActionUrl = item.fields.callToActionUrl;
       offer.howToApply = item.fields.howToApply;
-      offer.visibleUntil = item.fields.visibleUntil;
-      retVal.push(offer);
+      offer.visibleUntil = new Date(item.fields.visibleUntil);
+
+      if (today < offer.visibleUntil) {
+        retVal.push(offer);
+      }
     }
 
     return retVal;

@@ -129,9 +129,6 @@ export class OffersComponent implements OnInit {
 
       let filterText = this.searchValue.toLowerCase().replace(/ /g, '').trim();
 
-      console.log(filterText);
-      console.log(offerText);
-
       return offerText.includes(filterText);
     });
 
@@ -177,9 +174,12 @@ export class OffersComponent implements OnInit {
       this.ITEMS_PER_PAGE * this.currentPage,
       this.ITEMS_PER_PAGE * (this.currentPage + 1)
     );
-
-    console.log(this.ITEMS_PER_PAGE * this.currentPage);
-    console.log(this.ITEMS_PER_PAGE * (this.currentPage + 1));
+	
+	    this.maxPages =
+      Math.floor(this.filteredOffers.length / this.ITEMS_PER_PAGE) + 1;
+    if (this.filteredOffers.length % this.ITEMS_PER_PAGE == 0) {
+      this.maxPages = this.maxPages - 1;
+    }
   }
 
   shuffle(array: any[]) {

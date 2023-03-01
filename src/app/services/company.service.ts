@@ -41,6 +41,7 @@ export class CompanyService {
     company.linkedInUrl = item.fields.linkedInUrl;
     company.instagramUrl = item.fields.instagramUrl;
     company.facebookUrl = item.fields.facebookUrl;
+    company.youtubeUrl = item.fields.youtubeUrl;
     return company;
   }
 
@@ -60,6 +61,7 @@ export class CompanyService {
       company.linkedInUrl = item.fields.linkedInUrl;
       company.instagramUrl = item.fields.instagramUrl;
       company.facebookUrl = item.fields.facebookUrl;
+      company.youtubeUrl = item.fields.youtubeUrl;
       retVal.push(company);
     }
 

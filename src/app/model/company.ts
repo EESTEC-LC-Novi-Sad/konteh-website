@@ -11,6 +11,7 @@ export class Company {
     public technologies: string[] = [],
     public description: any = null,
     public studentOpportunities: any = null,
-    public gallery: any[] = []
+    public gallery: any[] = [],
+    public youtubeUrl: string = ''
   ) {}
 }

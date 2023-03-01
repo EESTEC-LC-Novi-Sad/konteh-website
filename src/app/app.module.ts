@@ -33,6 +33,7 @@ import { SilverCompanyCardComponent } from './components/pages/companies/silver-
 import { LightgalleryModule } from 'lightgallery/angular';
 import { BronzeCompanyCardComponent } from './components/pages/companies/bronze-company-card/bronze-company-card.component';
 import { SponsorCardComponent } from './components/pages/sponsors/sponsor-card/sponsor-card.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { SponsorCardComponent } from './components/pages/sponsors/sponsor-card/s
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    LightgalleryModule
+    LightgalleryModule,
+    YouTubePlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

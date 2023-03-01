@@ -16,7 +16,7 @@
 
 <div class="p-2">
   <div
-    class="card-dontainer max-width-1200 auto-margin my-5"
+    class="card-container max-width-1200 auto-margin my-5"
     *ngIf="company.name != ''"
   >
     <div class="columns">
@@ -122,6 +122,14 @@
         </lightgallery>
       </div>
     </div>
+
+    <div
+      class="stretch-width"
+      *ngIf="company.youtubeUrl != undefined && company.youtubeUrl != ''"
+    >
+      <youtube-player [videoId]="company.youtubeUrl"> </youtube-player>
+    </div>
+
     <div></div>
   </div>
 </div>

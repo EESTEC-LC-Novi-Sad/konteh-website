@@ -174,18 +174,22 @@
         glavni cilj obuka mladih interesenata za posao da pravilno napišu CV i
         što uspešnije obave intervju za posao.
       </p>
-      <div class="is-flex is-flex-direction-row">
+      <div>
         <a [routerLink]="['/kompanije']">
-          <button mat-flat-button color="primary">Kompanije</button>
+          <button mat-flat-button color="primary" class="mr-2 mt-2">
+            Kompanije
+          </button>
         </a>
         <a [routerLink]="['/raspored']">
-          <button mat-flat-button color="accent" class="ml-2">Raspored</button>
+          <button mat-flat-button color="accent" class="mr-2 mt-2">
+            Raspored
+          </button>
         </a>
         <a [routerLink]="['/oglasi']">
           <button
             mat-flat-button
             color="primary"
-            class="ml-2 orange-button"
+            class="orange-button mt-2"
             *ngIf="showOffers"
           >
             Oglasi
