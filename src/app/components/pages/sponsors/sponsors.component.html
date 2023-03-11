@@ -17,7 +17,10 @@
   <div *ngIf="showSponsors" class="max-width-1200 auto-margin content">
     <h3>Medijski pokrovitelji</h3>
     <div>
-      <p *ngIf="mediaSponsors.length == 0" class="my-5">Uskoro!</p>
+      <mat-spinner class="auto-margin my-5" *ngIf="mediaLoading"></mat-spinner>
+      <p *ngIf="mediaSponsors.length == 0 && !mediaLoading" class="my-5">
+        Uskoro!
+      </p>
       <div class="sponsor-card" *ngFor="let sponsor of mediaSponsors">
         <sponsor-card [sponsor]="sponsor"></sponsor-card>
       </div>
@@ -25,7 +28,10 @@
 
     <h3>Robni sponzori</h3>
     <div>
-      <p *ngIf="merchSponsors.length == 0" class="my-5">Uskoro!</p>
+      <mat-spinner class="auto-margin my-5" *ngIf="merchLoading"></mat-spinner>
+      <p *ngIf="merchSponsors.length == 0 && !merchLoading" class="my-5">
+        Uskoro!
+      </p>
       <div class="sponsor-card" *ngFor="let sponsor of merchSponsors">
         <sponsor-card [sponsor]="sponsor"></sponsor-card>
       </div>
@@ -33,7 +39,13 @@
 
     <h3>Partneri sajma</h3>
     <div>
-      <p *ngIf="partnerSponsors.length == 0" class="my-5">Uskoro!</p>
+      <mat-spinner
+        class="auto-margin my-5"
+        *ngIf="partnerLoading"
+      ></mat-spinner>
+      <p *ngIf="partnerSponsors.length == 0 && !partnerLoading" class="my-5">
+        Uskoro!
+      </p>
       <div class="sponsor-card" *ngFor="let sponsor of partnerSponsors">
         <sponsor-card [sponsor]="sponsor"></sponsor-card>
       </div>

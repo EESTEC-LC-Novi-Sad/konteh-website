@@ -1,0 +1,99 @@
+@import "./../../../../../app/custom-theme.scss";
+
+.description {
+  text-align: start;
+}
+
+.card-dontainer {
+  margin: auto 20px;
+  padding: 30px 10px;
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 0px 5px 10px lightgray;
+  transition: 0.2s all;
+  text-align: start;
+
+  &:hover {
+    background-color: $light-blue;
+  }
+
+  &:hover .departments mat-chip {
+    background-color: white !important;
+  }
+
+  @media (min-width: 450px) {
+    padding: 30px;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 0px;
+}
+
+h3 {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.chips {
+  text-align: start;
+  margin-top: 5px;
+}
+
+mat-chip {
+  transition: 0.2s all;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.departments mat-chip {
+  background-color: $light-blue !important;
+}
+
+.tags mat-chip {
+  background-color: $blue !important;
+}
+
+.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled)
+  .mdc-evolution-chip__text-label {
+  color: white !important;
+}
+
+.location {
+  color: $dark-blue;
+}
+
+.non-remote {
+  color: $orange;
+}
+
+.remote {
+  color: $green;
+}
+
+h5 {
+  margin-bottom: 0px;
+  margin-left: 10px;
+}
+
+.chips.tags {
+  margin-bottom: 0px;
+}
+
+::ng-deep .mdc-evolution-chip__text-label {
+  font-size: 12px !important;
+  font-weight: bold;
+
+  @media (min-width: 380px) {
+    font-size: 14px !important;
+  }
+}
+
+img {
+  width: auto;
+  height: auto;
+  margin: auto;
+  max-width: 200px;
+  max-height: 200px;
+}

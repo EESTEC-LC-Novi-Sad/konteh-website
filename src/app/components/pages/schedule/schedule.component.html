@@ -3,15 +3,19 @@
 <div
   class="is-flex is-flex-direction-column has-text-centered schedule-section"
 >
-  <h1>Raspored</h1>
-  <div *ngIf="!showSchedule">
-    <h2 class="alt-font">USKORO!</h2>
-
-    <div>
-      <button mat-flat-button color="primary" (click)="openHomepage()">
-        Povratak na početnu stranicu
-      </button>
-    </div>
+  <div *ngIf="showSchedule">
+    <h1>Raspored</h1>
   </div>
-  <div *ngIf="showSchedule">123</div>
+
+  <h1>Aktivnosti</h1>
+  <mat-spinner class="auto-margin my-5" *ngIf="activityLoading"></mat-spinner>
+  <p *ngIf="activities.length == 0 && !activityLoading">
+    Trenutno nema objavljenih aktivnosti.
+  </p>
+  <div
+    *ngFor="let activity of activities"
+    class="mt-5 max-width-1200 auto-margin"
+  >
+    <activity-card [activity]="activity"></activity-card>
+  </div>
 </div>

@@ -1,0 +1,64 @@
+<div class="header-cover"></div>
+
+<div class="max-width-1200 auto-margin mt-5 pl-5">
+  <nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+      <li><a [routerLink]="['/']">KONTEH</a></li>
+      <li><a [routerLink]="['/raspored']">Aktivnosti</a></li>
+    </ul>
+  </nav>
+</div>
+
+<mat-spinner class="auto-margin m-5" *ngIf="activity.name == ''"></mat-spinner>
+
+<div class="p-2">
+  <div
+    class="card-dontainer max-width-1200 auto-margin my-5"
+    *ngIf="activity.name != ''"
+  >
+    <div class="columns">
+      <div class="column">
+        <div class="is-flex is-flex-direction-column is-align-items-start">
+          <h2>
+            {{ activity.name }} <br /><i>{{ activity.type }}</i>
+          </h2>
+          <a routerLink="/kompanija/{{ activity.company.sys.id }}">
+            <h3 class="clickable">
+              {{ activity.company.fields.name }}
+            </h3>
+          </a>
+          <div class="columns stretch-width">
+            <div class="column">
+              <div
+                class="is-flex is-flex-direction-row is-align-items-center location mb-3"
+              >
+                <mat-icon>location_on</mat-icon>
+                <h5>• {{ activity.location }}</h5>
+              </div>
+
+              <div
+                class="is-flex is-flex-direction-row is-align-items-center location mb-3"
+              >
+                <mat-icon>calendar_today</mat-icon>
+                <h5>• {{ activity.date | date : "dd/MM/yyyy, HH:mm" }}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="column is-4 is-flex is-flex-direction-column is-justify-content-center p-5 logo"
+      >
+        <img src="{{ activity.company.fields.logo.fields.file.url }}" />
+      </div>
+    </div>
+    <div>
+      <h1>Opis aktivnosti</h1>
+      <div [innerHtml]="returnHtmlFromRichText(activity.description)"></div>
+
+      <div class="auto-margin picture-container">
+        <img class="picture" src="{{ activity.photo.fields.file.url }}" />
+      </div>
+    </div>
+  </div>
+</div>

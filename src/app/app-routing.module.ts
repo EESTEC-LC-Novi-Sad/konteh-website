@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutKontehComponent } from './components/pages/about-konteh/about-konteh.component';
+import { ActivityPageComponent } from './components/pages/activity-page/activity-page.component';
 import { CompaniesComponent } from './components/pages/companies/companies.component';
 import { CompanyPageComponent } from './components/pages/company-page/company-page.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
@@ -57,6 +58,11 @@ const routes: Routes = [
     path: 'oglasi',
     component: OffersComponent,
     title: baseTitle + 'Oglasi',
+  },
+  {
+    path: 'aktivnost/:id',
+    component: ActivityPageComponent,
+    title: baseTitle + 'Aktivnosti',
   },
   {
     path: '**',

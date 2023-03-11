@@ -34,6 +34,8 @@ import { LightgalleryModule } from 'lightgallery/angular';
 import { BronzeCompanyCardComponent } from './components/pages/companies/bronze-company-card/bronze-company-card.component';
 import { SponsorCardComponent } from './components/pages/sponsors/sponsor-card/sponsor-card.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
+import { ActivityCardComponent } from './components/pages/schedule/activity-card/activity-card.component';
+import { ActivityPageComponent } from './components/pages/activity-page/activity-page.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +66,8 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     SilverCompanyCardComponent,
     BronzeCompanyCardComponent,
     SponsorCardComponent,
+    ActivityCardComponent,
+    ActivityPageComponent,
   ],
   imports: [
     BrowserModule,

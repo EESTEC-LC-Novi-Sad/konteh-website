@@ -3,8 +3,6 @@ import { Route, Router } from '@angular/router';
 import { Offer } from 'src/app/model/offer';
 import { OfferService } from 'src/app/services/offer.service';
 import { environment } from 'src/environments/environment';
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-import { MatCheckboxChange } from '@angular/material/checkbox';
 
 @Component({
   selector: 'offers',
@@ -174,8 +172,8 @@ export class OffersComponent implements OnInit {
       this.ITEMS_PER_PAGE * this.currentPage,
       this.ITEMS_PER_PAGE * (this.currentPage + 1)
     );
-	
-	    this.maxPages =
+
+    this.maxPages =
       Math.floor(this.filteredOffers.length / this.ITEMS_PER_PAGE) + 1;
     if (this.filteredOffers.length % this.ITEMS_PER_PAGE == 0) {
       this.maxPages = this.maxPages - 1;

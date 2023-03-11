@@ -20,6 +20,10 @@ export class SponsorsComponent implements OnInit {
   merchSponsors: MerchSponsor[] = [];
   partnerSponsors: ParnerSponsor[] = [];
 
+  mediaLoading: boolean = true;
+  merchLoading: boolean = true;
+  partnerLoading: boolean = true;
+
   constructor(
     private router: Router,
     private partnerService: PartnerService,
@@ -31,14 +35,17 @@ export class SponsorsComponent implements OnInit {
     this.partnerService.getAllPartnerSponsors().subscribe((data) => {
       this.partnerSponsors =
         this.partnerService.convertDataToPartnerSponsors(data);
+      this.partnerLoading = false;
     });
 
     this.mediaService.getAllMediaSponsors().subscribe((data) => {
       this.mediaSponsors = this.mediaService.convertDataToMediaSponsors(data);
+      this.mediaLoading = false;
     });
 
     this.merchService.getAllMerchSponsors().subscribe((data) => {
       this.merchSponsors = this.merchService.convertDataToMerchSponsors(data);
+      this.merchLoading = false;
     });
   }
 

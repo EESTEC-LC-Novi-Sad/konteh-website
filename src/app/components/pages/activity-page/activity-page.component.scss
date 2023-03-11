@@ -1,0 +1,125 @@
+@import "./../../../../app/custom-theme.scss";
+
+.offer-description {
+  text-align: start;
+}
+
+.card-dontainer {
+  margin: auto 20px;
+  padding: 30px 10px;
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 0px 5px 10px lightgray;
+  transition: 0.2s all;
+  text-align: start;
+
+  @media (min-width: 450px) {
+    padding: 30px;
+  }
+}
+
+.logo img {
+  max-height: 130px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  margin: auto;
+
+  @media (min-width: 750px) {
+    max-width: 100%;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 0px;
+}
+
+h3 {
+  margin-bottom: 20px;
+  font-weight: bold;
+
+  &:hover {
+    color: $blue;
+  }
+}
+
+.chips {
+  text-align: start;
+  margin-top: 5px;
+}
+
+mat-chip {
+  transition: 0.2s all;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.departments mat-chip {
+  background-color: $light-blue !important;
+}
+
+.tags mat-chip {
+  background-color: $blue !important;
+}
+
+.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled)
+  .mdc-evolution-chip__text-label {
+  color: white !important;
+}
+
+.location {
+  color: $dark-blue;
+}
+
+.non-remote {
+  color: $orange;
+}
+
+.remote {
+  color: $green;
+}
+
+h5 {
+  margin-bottom: 0px;
+  margin-left: 10px;
+}
+
+.chips.tags {
+  margin-bottom: 0px;
+}
+
+hr {
+  border: 1px $blue solid;
+}
+
+::ng-deep .picture {
+  border-radius: 15px;
+}
+
+.picture-container {
+  margin-top: 50px;
+  width: fit-content;
+}
+
+::ng-deep .mdc-evolution-chip__text-label {
+  font-size: 12px !important;
+  font-weight: bold;
+
+  @media (min-width: 380px) {
+    font-size: 14px !important;
+  }
+}
+
+.tags-container {
+  margin: auto -10px;
+
+  @media (min-width: 380px) {
+    margin: 0px;
+  }
+}
+
+.call-to-action {
+  margin-left: 35px;
+  transform: scale(1.5);
+}
