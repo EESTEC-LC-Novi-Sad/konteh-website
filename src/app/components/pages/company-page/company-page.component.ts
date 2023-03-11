@@ -43,7 +43,6 @@ export class CompanyPageComponent implements OnInit {
       this.companyService.getById(id).subscribe(
         (data) => {
           this.company = this.companyService.convertDataToCompany(data);
-          console.log(this.company);
           this.titleService.setTitle('KONTEH - ' + this.company.name);
 
           this.offerService.getAllOffers().subscribe((data) => {

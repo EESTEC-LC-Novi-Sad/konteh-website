@@ -36,6 +36,8 @@ import { SponsorCardComponent } from './components/pages/sponsors/sponsor-card/s
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { ActivityCardComponent } from './components/pages/schedule/activity-card/activity-card.component';
 import { ActivityPageComponent } from './components/pages/activity-page/activity-page.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 @NgModule({
   declarations: [
@@ -76,7 +78,8 @@ import { ActivityPageComponent } from './components/pages/activity-page/activity
     MaterialModule,
     FormsModule,
     LightgalleryModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
   providers: [],
   bootstrap: [AppComponent],

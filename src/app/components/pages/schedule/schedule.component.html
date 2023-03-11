@@ -5,6 +5,32 @@
 >
   <div *ngIf="showSchedule">
     <h1>Raspored</h1>
+
+    <mat-spinner class="auto-margin my-5" *ngIf="scheduleLoading"></mat-spinner>
+    <div class="max-width-1200 auto-margin columns" *ngIf="!scheduleLoading">
+      <div class="column">
+        <h2 class="is-centered">21/03/2023</h2>
+        <mwl-calendar-day-view
+          [viewDate]="viewDate1"
+          [events]="events"
+          [dayStartHour]="9"
+          [dayEndHour]="17"
+          [hourSegments]="4"
+        >
+        </mwl-calendar-day-view>
+      </div>
+      <div class="column">
+        <h2 class="is-centered">22/03/2023</h2>
+        <mwl-calendar-day-view
+          [viewDate]="viewDate2"
+          [events]="events"
+          [dayStartHour]="9"
+          [dayEndHour]="17"
+          [hourSegments]="4"
+        >
+        </mwl-calendar-day-view>
+      </div>
+    </div>
   </div>
 
   <h1>Aktivnosti</h1>

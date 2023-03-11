@@ -16,9 +16,15 @@
 }
 
 .schedule-section h2 {
-  font-size: 50px;
-  line-height: 50px;
+  font-size: 30px;
+  line-height: 35px;
   font-weight: 600;
   color: $blue;
   margin: 40px auto;
+}
+
+::ng-deep .cal-event-title {
+  font-size: 14px;
+  padding: 5px;
+  white-space: normal;
 }

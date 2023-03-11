@@ -5,6 +5,7 @@
 @import "./app/custom-theme.scss";
 @import url("https://fonts.googleapis.com/css2?family=Cuprum&family=Montserrat:wght@500&family=Palanquin:wght@300&display=swap");
 @import "lightgallery/scss/lightgallery";
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
 
 * {
   font-family: "Palanquin", sans-serif !important;
