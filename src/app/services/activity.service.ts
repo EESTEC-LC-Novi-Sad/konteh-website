@@ -54,12 +54,16 @@ export class ActivityService {
       activity.description = item.fields.description;
       activity.photo = item.fields.photo;
       activity.date = item.fields.date;
-      activity.visibleUntil = item.fields.visibleUntil;
+      activity.visibleUntil = new Date(item.fields.visibleUntil);
 
-      // if (today < activity.visibleUntil) {
-      retVal.push(activity);
-      //   }
+      if (today < activity.visibleUntil) {
+        retVal.push(activity);
+      }
     }
+
+    retVal.sort(
+      (a: Activity, b: Activity) => +new Date(a.date) - +new Date(b.date)
+    );
 
     return retVal;
   }

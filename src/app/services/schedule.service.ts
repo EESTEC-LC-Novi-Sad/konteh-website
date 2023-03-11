@@ -22,7 +22,7 @@ export class ScheduleService {
     return from(promise);
   }
 
-  convertDataToActivities(data: any): Schedule[] {
+  convertDataToSchedules(data: any): Schedule[] {
     let today = new Date();
     let retVal: Schedule[] = [];
     for (let item of data.items) {

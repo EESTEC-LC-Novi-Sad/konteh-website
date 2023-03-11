@@ -133,3 +133,41 @@
     <div></div>
   </div>
 </div>
+
+<mat-spinner
+  class="auto-margin m-5"
+  *ngIf="offersLoading && company.name != ''"
+></mat-spinner>
+<div *ngIf="!offersLoading && company.name != ''">
+  <div class="centered-text mt-5">
+    <h2>Oglasi kompanije</h2>
+  </div>
+  <div class="centered-text">
+    <p *ngIf="offers.length == 0">Kompanija nema objavljenih oglasa.</p>
+  </div>
+  <div *ngFor="let offer of offers">
+    <div class="mt-5 max-width-1200 auto-margin">
+      <offer-card [offer]="offer"></offer-card>
+    </div>
+  </div>
+</div>
+
+<mat-spinner
+  class="auto-margin m-5"
+  *ngIf="activitiesLoading && company.name != ''"
+></mat-spinner>
+<div *ngIf="!activitiesLoading && company.name != ''">
+  <div class="centered-text mt-5">
+    <h2>Aktivnosti kompanije</h2>
+  </div>
+  <div *ngFor="let activity of activities">
+    <div class="centered-text">
+      <p *ngIf="activities.length == 0">
+        Kompanija nema objavljenih aktivnosti.
+      </p>
+    </div>
+    <div class="mt-5 max-width-1200 auto-margin">
+      <activity-card [activity]="activity"></activity-card>
+    </div>
+  </div>
+</div>

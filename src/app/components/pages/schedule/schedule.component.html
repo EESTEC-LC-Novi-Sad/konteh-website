@@ -12,10 +12,9 @@
   <p *ngIf="activities.length == 0 && !activityLoading">
     Trenutno nema objavljenih aktivnosti.
   </p>
-  <div
-    *ngFor="let activity of activities"
-    class="mt-5 max-width-1200 auto-margin"
-  >
-    <activity-card [activity]="activity"></activity-card>
+  <div *ngFor="let activity of activities" class="mt-5 stretch-width">
+    <div class="max-width-1200 auto-margin">
+      <activity-card [activity]="activity"></activity-card>
+    </div>
   </div>
 </div>
