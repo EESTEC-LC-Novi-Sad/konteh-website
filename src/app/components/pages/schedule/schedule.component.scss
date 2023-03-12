@@ -28,3 +28,7 @@
   padding: 5px;
   white-space: normal;
 }
+
+::ng-deep .cal-week-view .cal-event-container:not(.cal-draggable) {
+  cursor: default !important;
+}

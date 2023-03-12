@@ -7,6 +7,19 @@ import { environment } from 'src/environments/environment';
 import { Schedule } from 'src/app/model/schedule';
 import { Activity } from 'src/app/model/activity';
 import { CalendarEvent, CalendarView } from 'angular-calendar';
+3;
+import { EventColor } from 'calendar-utils';
+
+const colors: Record<string, EventColor> = {
+  accent: {
+    primary: '#21a8ad',
+    secondary: '#e3faf5',
+  },
+  blue: {
+    primary: '#1e90ff',
+    secondary: '#D1E8FF',
+  },
+};
 
 @Component({
   selector: 'schedule',
@@ -48,10 +61,15 @@ export class ScheduleComponent implements OnInit {
           end: new Date(schedule.endTime),
           title: schedule.title,
           location: schedule.location,
+          color: colors.blue,
         };
 
         if (event.location != null) {
           event.title = '<b>' + event.title + '</b><br/>' + event.location;
+        }
+
+        if (event.title.includes('simulacija')) {
+          event.color = colors.accent;
         }
 
         this.events.push(event);
