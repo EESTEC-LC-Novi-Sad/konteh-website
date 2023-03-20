@@ -75,8 +75,6 @@ export class ScheduleComponent implements OnInit {
         this.events.push(event);
       }
 
-      console.log(this.events[0]);
-
       this.scheduleLoading = false;
     });
   }

@@ -160,12 +160,10 @@
   <div class="centered-text mt-5">
     <h2>Aktivnosti kompanije</h2>
   </div>
+  <div class="centered-text">
+    <p *ngIf="activities.length == 0">Kompanija nema objavljenih aktivnosti.</p>
+  </div>
   <div *ngFor="let activity of activities">
-    <div class="centered-text">
-      <p *ngIf="activities.length == 0">
-        Kompanija nema objavljenih aktivnosti.
-      </p>
-    </div>
     <div class="mt-5 max-width-1200 auto-margin">
       <activity-card [activity]="activity"></activity-card>
     </div>
