@@ -18,12 +18,13 @@
 
 .landing-content h1 {
   font-size: 40px;
-  /*margin-top: 45px;*/
-  line-height: 70px;
+  margin-top: 45px;
+  line-height: 45px;
 
   @media (max-width: 425px) {
-    font-size: 55px;
-    line-height: 60px;
+    font-size: 25px;
+    line-height: 45px;
+    margin-top: 25%;
   }
 }
 
