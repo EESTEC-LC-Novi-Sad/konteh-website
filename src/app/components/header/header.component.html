@@ -30,7 +30,7 @@
           <a
             class="navigation-item"
             [ngClass]="{ selected: tab == 2 }"
-            [routerLink]="['/raspored']"
+            [routerLink]="['/aktivnosti']"   
           >
             Aktivnosti
           </a>
@@ -39,6 +39,15 @@
           <a
             class="navigation-item"
             [ngClass]="{ selected: tab == 3 }"
+            [routerLink]="['/raspored']"
+          >
+            Raspored
+          </a>
+        </div>
+        <div>
+          <a
+            class="navigation-item"
+            [ngClass]="{ selected: tab == 4 }"
             [routerLink]="['/kompanije']"
           >
             Kompanije
@@ -47,7 +56,7 @@
         <div>
           <a
             class="navigation-item"
-            [ngClass]="{ selected: tab == 4 }"
+            [ngClass]="{ selected: tab == 5 }"
             [routerLink]="['/pokrovitelji']"
           >
             Pokrovitelji
@@ -56,7 +65,7 @@
         <div>
           <a
             class="navigation-item"
-            [ngClass]="{ selected: tab == 5 }"
+            [ngClass]="{ selected: tab == 6 }"
             [routerLink]="['/kontakt']"
           >
             Kontakt
@@ -114,16 +123,21 @@
       </div>
       <div class="mb-2 py-2" (click)="switchSelectedMenuItem(3)">
         <a class="navigation-item-mobile" [ngClass]="{ selected: tab == 3 }">
-          Kompanije
+          Raspored
         </a>
       </div>
       <div class="mb-2 py-2" (click)="switchSelectedMenuItem(4)">
         <a class="navigation-item-mobile" [ngClass]="{ selected: tab == 4 }">
-          Pokrovitelji
+          Kompanije
         </a>
       </div>
       <div class="mb-2 py-2" (click)="switchSelectedMenuItem(5)">
         <a class="navigation-item-mobile" [ngClass]="{ selected: tab == 5 }">
+          Pokrovitelji
+        </a>
+      </div>
+      <div class="mb-2 py-2" (click)="switchSelectedMenuItem(6)">
+        <a class="navigation-item-mobile" [ngClass]="{ selected: tab == 6 }">
           Kontakt
         </a>
       </div>

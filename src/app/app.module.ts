@@ -38,6 +38,7 @@ import { ActivityCardComponent } from './components/pages/schedule/activity-card
 import { ActivityPageComponent } from './components/pages/activity-page/activity-page.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { ActivityListViewComponent } from './components/pages/activity-page/activity-list-view/activity-list-view.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
     SponsorCardComponent,
     ActivityCardComponent,
     ActivityPageComponent,
+    ActivityListViewComponent,
   ],
   imports: [
     BrowserModule,

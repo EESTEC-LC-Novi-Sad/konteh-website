@@ -1,23 +1,19 @@
 <div
   class="stretch-width transparent-header landing-section is-flex is-flex-direction-column"
 >
-  <div class="landing-content columns">
-    <div class="column">
-      <h2>Sajam poslovnih mogućnosti i stručnih praksi u Novom Sadu</h2>
-      <h1 class="alt-font">21. i 22. mart 2023.</h1>
-      <div *ngIf="showOffers">
-        <a [routerLink]="['/oglasi']">
-          <button mat-flat-button color="accent">
-            Pogledaj prakse i juniorske pozicije
-          </button>
-        </a>
-      </div>
-      <div>
-        <a href="https://cv.konteh.org/auth/login" target="_blank">
-          <button mat-flat-button class="white-button">Ostavi CV</button>
-        </a>
-      </div>
-    </div>
+<div class="cards-wrapper landing-content">
+  <div class="card-big">      
+    <h2 class="card-title">Akademski dani</h2>
+    <h3 class="card-title">6, 8. i 9. mart</h3>
+    <button>Predavanja</button>
+    <button>Studija slučaja</button>
+    <button>Panel diskusija</button>
+  </div>
+  <div class="card-big">
+    <h2 class="card-title">Sajam</h2>
+    <h3 class="card-title">13. i 14. mart</h3>
+    <button>O Sajmu</button>
+    <button>Ostavi CV</button></div>
   </div>
 </div>
 

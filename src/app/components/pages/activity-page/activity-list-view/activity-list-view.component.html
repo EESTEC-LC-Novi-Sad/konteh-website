@@ -1,0 +1,16 @@
+<div class="header-cover"></div>
+
+<div
+class="is-flex is-flex-direction-column has-text-centered activity-section"
+>
+  <h1>Aktivnosti</h1>
+  <mat-spinner class="auto-margin my-5" *ngIf="activityLoading"></mat-spinner>
+  <p *ngIf="activities.length == 0 && !activityLoading">
+    Trenutno nema objavljenih aktivnosti.
+  </p>
+  <div *ngFor="let activity of activities" class="mt-5 stretch-width">
+    <div class="max-width-1200 auto-margin">
+      <activity-card [activity]="activity"></activity-card>
+    </div>
+  </div>
+</div>

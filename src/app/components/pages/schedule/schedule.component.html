@@ -3,6 +3,12 @@
 <div
   class="is-flex is-flex-direction-column has-text-centered schedule-section"
 >
+  <div *ngIf="!showSchedule">
+    <h1>Raspored</h1>
+    <p>
+      Trenutno nema objavljenih rasporeda.
+    </p>
+  </div>
   <div *ngIf="showSchedule">
     <h1>Raspored</h1>
 
@@ -32,19 +38,8 @@
       </div>
     </div>
   </div>
-
+  
   <div class="max-width-1200 my-5 py-5 px-3 auto-margin" *ngIf="showSchedule">
     <img src="/assets/mapa2023.jpg" class="round-borders" />
-  </div>
-
-  <h1>Aktivnosti</h1>
-  <mat-spinner class="auto-margin my-5" *ngIf="activityLoading"></mat-spinner>
-  <p *ngIf="activities.length == 0 && !activityLoading">
-    Trenutno nema objavljenih aktivnosti.
-  </p>
-  <div *ngFor="let activity of activities" class="mt-5 stretch-width">
-    <div class="max-width-1200 auto-margin">
-      <activity-card [activity]="activity"></activity-card>
-    </div>
   </div>
 </div>
