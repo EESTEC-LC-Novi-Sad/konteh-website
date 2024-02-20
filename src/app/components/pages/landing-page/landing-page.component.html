@@ -5,15 +5,17 @@
   <div class="card-big">      
     <h2 class="card-title">Akademski dani</h2>
     <h3 class="card-title">6, 8. i 9. mart</h3>
-    <button>Predavanja</button>
-    <button>Studija slučaja</button>
-    <button>Panel diskusija</button>
+    <button (click)="redirectToWebsite('https://docs.google.com/forms/d/e/1FAIpQLSdbnYJteDXdqXUEK9Cr7QhB8y4mxBgNFv-Bqja4XNu-RjExgQ/viewform')">
+      Predavanja</button>
+    <button (click)="redirectToWebsite('https://docs.google.com/forms/d/e/1FAIpQLSdI_vOlWeS30PQd_h1OgOhf3iqab_26lCHQNdGtZAfeDEyl0g/viewform')">
+      Studija slučaja</button>
+    <button (click)="route('/')">Panel diskusija</button>
   </div>
   <div class="card-big">
     <h2 class="card-title">Sajam</h2>
     <h3 class="card-title">13. i 14. mart</h3>
-    <button>O Sajmu</button>
-    <button>Ostavi CV</button></div>
+    <button (click)="route('o-konteh-u')" >O Sajmu</button>
+    <button (click)="redirectToWebsite('https://cv.konteh.org/auth/login')">Ostavi CV</button></div>
   </div>
 </div>
 

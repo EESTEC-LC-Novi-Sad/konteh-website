@@ -68,6 +68,11 @@
   color: white;
   border: none;
   width: 80% !important;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $dark-blue;
+  }
 }
 
 .cards-section {

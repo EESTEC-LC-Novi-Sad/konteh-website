@@ -19,10 +19,11 @@ export class ActivityListViewComponent {
     private router: Router,) { }
 
   ngOnInit(): void {
-
     this.activityService.getAllActivities().subscribe((data) => {
+      console.log(data);
       this.activities = this.activityService.convertDataToActivities(data);
       this.activityLoading = false;
+      console.log(this.activities.length, "    ", !this.activityLoading);
     });
   }
 
