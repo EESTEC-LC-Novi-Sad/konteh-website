@@ -95,8 +95,15 @@ img {
   width: auto;
   height: auto;
   margin: auto;
-  max-width: 230px !important;
+  max-width: 230px ;
   border-radius: 0 20px 20px 0;
+  @media (max-width: 770px) {
+    border-radius: 0 !important;    
+  }
+
+  @media (max-width: 350px){
+    max-width: 200px !important;
+  }
 //   max-height: 200px;
 }
 

@@ -34,7 +34,6 @@
 
 .date{
   margin:0 10px;
-  font-size: 24px;
   font-weight: 600;
   background-color: $gradient-start;
   color: white;
@@ -45,6 +44,10 @@
 .date h3{
   margin: 0;
   padding: 5px 25px;
+
+  @media(max-width: 410px){
+    padding: 5px 15px !important;
+  }
 }
 
 .schedule-single{
