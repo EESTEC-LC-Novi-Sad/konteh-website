@@ -14,14 +14,6 @@
   text-align: start;
   padding-right: 20px !important;
 
-  &:hover {
-    background-color: $light-blue;
-  }
-
-  &:hover .departments mat-chip {
-    background-color: white !important;
-  }
-
   @media (min-width: 450px) {
     padding: 30px;
   }

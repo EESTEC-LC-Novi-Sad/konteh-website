@@ -1,31 +1,30 @@
-<a routerLink="/raspored/{{schedule.id}}">
-    <div class="card-dontainer clickable" (click)="openSchedule()">
-        <div class="columns">
-          <div class="column">
-            <div class="is-flex is-flex-direction-column is-align-items-start">
-              <h2>
-                {{ schedule.title }}
-              </h2>
-              <div
-                class="is-flex is-flex-direction-row is-align-items-center location mb-3"
-              >
-                <mat-icon>location_on</mat-icon>
-                <h5>• {{ schedule.location }}</h5>
-              </div>
-              <div
-                class="is-flex is-flex-direction-row is-align-items-center location mb-3"
-              >
-                <mat-icon>calendar_today</mat-icon>
-                <h5>• {{ schedule.startTime | date : "dd/MM/yyyy" }}</h5>
-                <h5> {{schedule.startTime | date: "HH:mm"}} - {{schedule.endTime | date: "HH:mm"}}</h5>
-              </div>
-            </div>
+
+<div class="card-dontainer">
+    <div class="columns">
+      <div class="column">
+        <div class="is-flex is-flex-direction-column is-align-items-start">
+          <h2>
+            {{ schedule.title }}
+          </h2>
+          <div
+            class="is-flex is-flex-direction-row is-align-items-center location mb-3"
+          >
+            <mat-icon>location_on</mat-icon>
+            <h5>• {{ schedule.location }}</h5>
           </div>
           <div
-            class="is-4 is-flex is-flex-direction-column "
-            >
-            <img src="{{ schedule.image }}" />
-         </div>
+            class="is-flex is-flex-direction-row is-align-items-center location mb-3"
+          >
+            <mat-icon>calendar_today</mat-icon>
+            <h5>• {{ schedule.startTime | date : "dd/MM/yyyy" }}</h5>
+            <h5> {{schedule.startTime | date: "HH:mm"}} - {{schedule.endTime | date: "HH:mm"}}</h5>
+          </div>
         </div>
       </div>
-</a>
+      <div
+        class="is-4 is-flex is-flex-direction-column "
+        >
+        <img src="{{ schedule.image }}" />
+      </div>
+    </div>
+  </div>

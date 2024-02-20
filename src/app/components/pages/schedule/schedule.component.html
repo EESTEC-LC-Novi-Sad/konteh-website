@@ -3,13 +3,13 @@
 <div
   class="is-flex is-flex-direction-column has-text-centered schedule-section"
 >
-  <div *ngIf="!showSchedule">
+  <div *ngIf="schedules.length == 0">
     <h1>Raspored</h1>
     <p>
       Trenutno nema objavljenih rasporeda.
     </p>
   </div>
-  <div *ngIf="showSchedule">
+  <div *ngIf="schedules.length != 0">
     <h1>Raspored</h1>
 
     <mat-spinner class="auto-margin my-5" *ngIf="scheduleLoading"></mat-spinner>

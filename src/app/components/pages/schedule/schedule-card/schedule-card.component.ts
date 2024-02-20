@@ -13,8 +13,4 @@ export class ScheduleCardComponent {
 
   constructor(private router: Router) { }
 
-  openSchedule(){
-    this.router.navigate(['/raspored/' + this.schedule.id]);
-  }
-
 }

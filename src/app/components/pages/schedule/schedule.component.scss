@@ -39,19 +39,28 @@
   color: white;
   cursor: pointer;
   border-radius: 7px;
-}
 
-.date h3{
-  margin: 0;
-  padding: 5px 25px;
+  h3{
+    margin: 0;
+    padding: 5px 25px;
+  
+    @media(max-width: 410px){
+      padding: 5px 15px !important;
+    }
+  }
 
-  @media(max-width: 410px){
-    padding: 5px 15px !important;
+  &:hover{
+    background-color: $dark-blue;
   }
 }
 
+
 .active{
   background-color: $gradient-end;
+
+  &:hover{
+    background-color: $gradient-end !important;
+  }
 }
 
 .schedule-single{

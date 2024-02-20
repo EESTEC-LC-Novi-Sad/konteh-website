@@ -56,9 +56,9 @@ export class ActivityService {
       activity.date = item.fields.date;
       activity.visibleUntil = new Date(item.fields.visibleUntil);
 
-      // if (today < activity.visibleUntil) {
+      if (today < activity.visibleUntil) {
         retVal.push(activity);
-      // }
+      }
     }
 
     retVal.sort(
