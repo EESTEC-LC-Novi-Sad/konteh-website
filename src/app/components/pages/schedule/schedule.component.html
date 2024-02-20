@@ -13,33 +13,26 @@
     <h1>Raspored</h1>
 
     <mat-spinner class="auto-margin my-5" *ngIf="scheduleLoading"></mat-spinner>
-    <div class="max-width-1200 auto-margin columns" *ngIf="!scheduleLoading">
-      <div class="column">
-        <h2 class="is-centered">21/03/2023, utorak</h2>
-        <mwl-calendar-day-view
-          [viewDate]="viewDate1"
-          [events]="events"
-          [dayStartHour]="9"
-          [dayEndHour]="17"
-          [hourSegments]="4"
-        >
-        </mwl-calendar-day-view>
+    <div class="max-width-1200 auto-margin column" *ngIf="!scheduleLoading">
+      <div class="date-filter">
+        <div class="date">
+          <h3>6. mart</h3>
+        </div>
+        <div class="date">
+          <h3>8. mart</h3>
+        </div>
+        <div class="date">
+          <h3>9. mart</h3>
+        </div>
       </div>
-      <div class="column">
-        <h2 class="is-centered">22/03/2023, sreda</h2>
-        <mwl-calendar-day-view
-          [viewDate]="viewDate2"
-          [events]="events"
-          [dayStartHour]="9"
-          [dayEndHour]="17"
-          [hourSegments]="4"
-        >
-        </mwl-calendar-day-view>
+
+      <div *ngFor="let schedule of schedules">
+        <div class="max-width-1200 auto-margin schedule-single">
+          <schedule-card [schedule]="schedule"></schedule-card>
+        </div>
       </div>
     </div>
+  
   </div>
   
-  <div class="max-width-1200 my-5 py-5 px-3 auto-margin" *ngIf="showSchedule">
-    <img src="/assets/mapa2023.jpg" class="round-borders" />
-  </div>
 </div>

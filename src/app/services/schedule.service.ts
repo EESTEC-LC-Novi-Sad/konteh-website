@@ -32,7 +32,7 @@ export class ScheduleService {
       schedule.location = item.fields.location;
       schedule.startTime = item.fields.startTime;
       schedule.endTime = item.fields.endTime;
-
+      schedule.image = item.fields.image.fields.file.url;
       retVal.push(schedule);
     }
 

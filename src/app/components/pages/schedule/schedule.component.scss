@@ -24,6 +24,33 @@
   margin: 40px auto;
 }
 
+.date-filter{
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.date{
+  margin:0 10px;
+  font-size: 24px;
+  font-weight: 600;
+  background-color: $gradient-start;
+  color: white;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+.date h3{
+  margin: 0;
+  padding: 5px 25px;
+}
+
+.schedule-single{
+  margin: 30px;
+}
+
 ::ng-deep .cal-event-title {
   font-size: 14px;
   padding: 5px;
