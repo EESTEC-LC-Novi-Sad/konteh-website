@@ -50,6 +50,10 @@
   }
 }
 
+.active{
+  background-color: $gradient-end;
+}
+
 .schedule-single{
   margin: 30px;
 }

@@ -31,8 +31,11 @@ export class ScheduleComponent implements OnInit {
   showSchedule = environment.showSchedule;
 
   schedules: Schedule[] = [];
+  filteredSchedules: Schedule[] = [];
 
   scheduleLoading: boolean = true;
+
+  selectedDay: number = 0;
 
   constructor(
     private router: Router,
@@ -45,8 +48,14 @@ export class ScheduleComponent implements OnInit {
       console.log(data);
       this.schedules = this.scheduleService.convertDataToSchedules(data);
       this.schedules.sort((a, b) => new Date(a.startTime).getTime() - new Date(b.startTime).getTime());
+      this.filteredSchedules = this.schedules;
       this.scheduleLoading = false;
     });
+  }
+
+  filterSchedule(day: number){
+    this.selectedDay = day;
+    this.filteredSchedules = this.schedules.filter((schedule) => new Date(schedule.startTime).getDay() === day);
   }
 
   openHomepage() {

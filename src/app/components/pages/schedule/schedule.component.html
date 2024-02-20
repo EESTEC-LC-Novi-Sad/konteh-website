@@ -15,21 +15,35 @@
     <mat-spinner class="auto-margin my-5" *ngIf="scheduleLoading"></mat-spinner>
     <div class="max-width-1200 auto-margin column" *ngIf="!scheduleLoading">
       <div class="date-filter">
-        <div class="date">
+        <div class="date" (click)="filterSchedule(6)"
+          [ngClass]="{'active': selectedDay == 6}"
+        >
           <h3>6. mart</h3>
         </div>
-        <div class="date">
+        <div class="date" (click)="filterSchedule(8)"
+          [ngClass]="{'active': selectedDay == 8}"
+
+        >
           <h3>8. mart</h3>
         </div>
-        <div class="date">
+        <div class="date" (click)="filterSchedule(9)"
+          [ngClass]="{'active': selectedDay == 9}"
+
+        >
           <h3>9. mart</h3>
         </div>
       </div>
 
-      <div *ngFor="let schedule of schedules">
+      <div *ngFor="let schedule of filteredSchedules">
         <div class="max-width-1200 auto-margin schedule-single">
           <schedule-card [schedule]="schedule"></schedule-card>
         </div>
+      </div>
+
+      <div *ngIf="filteredSchedules.length == 0">
+        <p style="margin-top: 80px;">
+          Nema objavljenih rasporeda za izabrani datum.
+        </p>
       </div>
     </div>
   
