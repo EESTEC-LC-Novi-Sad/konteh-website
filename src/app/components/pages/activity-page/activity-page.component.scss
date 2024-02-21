@@ -21,7 +21,6 @@ button {
   border-radius: 50px;
   color: white;
   border: none;
-  font-weight: bold;
 
   &:hover {
     cursor: pointer;
@@ -47,14 +46,13 @@ button {
 }
 
 .text{
-  font-weight: 600;
   font-size: 17px;
   width: 65% !important;
   text-align: left;
   
   @media (max-width: 850px) {
     width: 80% !important;
-    text-align: center;
+    text-align: justify;
     margin: auto
   }
 }
@@ -65,12 +63,15 @@ button {
   background-position: center;
   background-size: cover;
   border-radius: 20px;
+  min-height: 200px;
+
 
   @media (max-width: 850px) {
     margin: auto;
     margin-top: 30px;
-    height: 300px;
     width: 250px !important;
     max-width: 250px !important;
+    min-height: 0;
+    height: 300px;
   }
 }

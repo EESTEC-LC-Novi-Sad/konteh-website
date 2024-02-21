@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Schedule } from 'src/app/model/schedule';
 
 @Component({
@@ -11,6 +11,16 @@ export class ScheduleCardComponent {
 
   @Input() schedule: Schedule = new Schedule();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+
+  route(){
+    this.router.navigate(['/raspored/', this.schedule.id]);
+  }
+
+  ngOnInit(): void {
+    this.activatedRoute.params.subscribe((params) => {
+      const id = params['id'];
+    });
+  }
 
 }

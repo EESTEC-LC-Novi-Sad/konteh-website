@@ -19,6 +19,7 @@ export class SchedulePageComponent {
     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit . Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit ",
     lecturers: [
       {
+        id: 1,
         name: 'John Doe',
         company: {
           name: 'Test Company',
@@ -28,6 +29,7 @@ export class SchedulePageComponent {
 
       },
       {
+        id: 2,
         name: 'John Doe',
         company: {
           name: 'Test Company',
@@ -42,4 +44,8 @@ export class SchedulePageComponent {
   lecturerTxt : String = this.schedule.type == "Panel diskusija" ? "Panelisti" : "Više o predavačima";
   descriptionTxt : String = this.schedule.type == "Panel diskusija" ? "O temi" : "Sadržaj predavanja";
 
+
+  getLecturerEntries(lecturers: any): any[] {
+    return Object.entries(lecturers);
+  }
 }

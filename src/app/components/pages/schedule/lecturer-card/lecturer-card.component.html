@@ -1,0 +1,9 @@
+<div [ngClass]="{'is-flex': true, 'is-flex-direction-row': true, 'wrap': true, 'is-justify-content-space-between': true, 'reverse': idx % 2 != 0}" class="layout-container">
+    <div class="description">
+        <h3>{{lecturer.name}}</h3>
+        <h5>{{lecturer.company.name}}</h5>
+        <p>{{lecturer.biography}}</p>
+    </div>
+    
+    <div class="img" [style.backgroundImage]="'url(' + lecturer.photo + ')'"></div>
+</div>

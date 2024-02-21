@@ -22,6 +22,14 @@
         <div>
            <h4>{{schedule.location}}</h4>
         </div>
+
+        <h2>{{descriptionTxt}}</h2>
+        <p>{{schedule.content}}</p>
+
+        <h2>{{lecturerTxt}}</h2>
+        <div *ngFor="let entry of getLecturerEntries(schedule.lecturers)">
+            <lecturer-card [lecturer]="entry[1]" [idx]="entry[0]"></lecturer-card>
+        </div>
     </div>
 
 
