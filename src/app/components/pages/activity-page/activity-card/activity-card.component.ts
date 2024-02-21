@@ -8,7 +8,7 @@ import { Activity } from 'src/app/model/activity';
   styleUrls: ['./activity-card.component.scss'],
 })
 export class ActivityCardComponent {
-  @Input() activity: Activity = new Activity();
+  @Input() activity: any;
 
   constructor(private router: Router) {}
 

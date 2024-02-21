@@ -10,21 +10,19 @@ import { ActivityService } from 'src/app/services/activity.service';
 })
 export class ActivityListViewComponent {
 
-  activities: Activity[] = [];
+  activities = [
+    {name: "Panel diskusija", location: "NTP", date: "2021-03-06", photo: "assets/panelDisc.png"},
+    {name: "Predavanja", location: "NTP", date: "2021-03-08", photo: "assets/panelDisc.png"},
+    {name: "Studija slučaja", location: "NTP", date: "2021-03-09", photo: "assets/studSluc.png"},
+];
 
   activityLoading: boolean = true;
 
   constructor(
-    private activityService: ActivityService,
     private router: Router,) { }
 
   ngOnInit(): void {
-    this.activityService.getAllActivities().subscribe((data) => {
-      console.log(data);
-      this.activities = this.activityService.convertDataToActivities(data);
-      this.activityLoading = false;
-      console.log(this.activities.length, "    ", !this.activityLoading);
-    });
+    this.activityLoading = false;
   }
 
   openHomepage() {

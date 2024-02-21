@@ -10,14 +10,14 @@
             class="is-flex is-flex-direction-row is-align-items-center location mb-3"
           >
             <mat-icon>location_on</mat-icon>
-            <h5>• {{ schedule.location }}</h5>
+            <h4> {{ schedule.location }}</h4>
           </div>
           <div
             class="is-flex is-flex-direction-row is-align-items-center location mb-3"
           >
             <mat-icon>calendar_today</mat-icon>
-            <h5>• {{ schedule.startTime | date : "dd/MM/yyyy" }}</h5>
-            <h5> {{schedule.startTime | date: "HH:mm"}} - {{schedule.endTime | date: "HH:mm"}}</h5>
+            <h4> {{ schedule.startTime | date : "dd/MM/yyyy" }}</h4>
+            <h4> {{schedule.startTime | date: "HH:mm"}} - {{schedule.endTime | date: "HH:mm"}}</h4>
           </div>
         </div>
       </div>
