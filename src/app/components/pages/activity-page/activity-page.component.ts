@@ -11,7 +11,13 @@ import { ActivityService } from 'src/app/services/activity.service';
   styleUrls: ['./activity-page.component.scss'],
 })
 export class ActivityPageComponent {
-  activity: Activity = new Activity();
+  activity: any;
+
+  activities = [
+    {id: 1, name: "Panel diskusija", location: "NTP", date: "2021-03-06", photo: "assets/panelDisc.png"},
+    {id: 2, name: "Predavanja", location: "NTP", date: "2021-03-08", photo: "assets/panelDisc.png"},
+    {id: 3, name: "Studija slučaja", location: "NTP", date: "2021-03-09", photo: "assets/studSluc.png"},
+];
 
   constructor(
     private router: Router,
@@ -24,15 +30,7 @@ export class ActivityPageComponent {
     this.route.params.subscribe((params) => {
       const id = params['id'];
 
-      this.activityService.getById(id).subscribe(
-        (data) => {
-          this.activity = this.activityService.convertDataToActivity(data);
-          this.titleService.setTitle('KONTEH - ' + this.activity.name);
-        },
-        (err) => {
-          this.router.navigate(['/404']);
-        }
-      );
+      this.activity = this.activities.find((activity) => activity.id == id);
     });
   }
 

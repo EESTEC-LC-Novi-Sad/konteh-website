@@ -1,125 +1,57 @@
 @import "./../../../../app/custom-theme.scss";
 
-.offer-description {
-  text-align: start;
-}
+.activity-div{
+  h1{
+    font-size: 55px;
+    line-height: 60px;
+    font-weight: 500;
+    margin: 20px auto;
 
-.card-dontainer {
-  margin: auto 20px;
-  padding: 30px 10px;
-  background-color: white;
-  border-radius: 30px;
-  box-shadow: 0px 5px 10px lightgray;
-  transition: 0.2s all;
-  text-align: start;
-
-  @media (min-width: 450px) {
-    padding: 30px;
+    @media (max-width: 425px) {
+      font-size: 40px;
+      line-height: 45px;
+    }
   }
 }
 
-.logo img {
-  max-height: 130px;
-  max-width: 200px;
-  height: auto;
-  width: auto;
-  margin: auto;
-
-  @media (min-width: 750px) {
-    max-width: 100%;
-  }
-}
-
-h2 {
+button {
+  font-family: "Roboto Flex" sans-serif !important;
+  padding: 5px 30px;
   font-size: 24px;
-  margin-bottom: 0px;
-}
-
-h3 {
-  margin-bottom: 20px;
+  border-radius: 50px;
+  color: white;
+  border: none;
   font-weight: bold;
 
   &:hover {
-    color: $blue;
+    cursor: pointer;
+    opacity: 0.85;
   }
 }
 
-.chips {
-  text-align: start;
-  margin-top: 5px;
+.orange{
+  margin-top: 15px;
+  margin-bottom: 35px;
+  background-color: $orange;
 }
 
-mat-chip {
-  transition: 0.2s all;
-  margin-top: 5px;
-  margin-left: 5px;
+.blue{
+  margin: 50px 0;
+  background-color: $blue;
 }
 
-.departments mat-chip {
-  background-color: $light-blue !important;
+.text{
+  font-weight: 600;
+  font-size: 17px;
+  width: 65% !important;
+  text-align: left;
+  
 }
 
-.tags mat-chip {
-  background-color: $blue !important;
-}
-
-.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled)
-  .mdc-evolution-chip__text-label {
-  color: white !important;
-}
-
-.location {
-  color: $dark-blue;
-}
-
-.non-remote {
-  color: $orange;
-}
-
-.remote {
-  color: $green;
-}
-
-h5 {
-  margin-bottom: 0px;
-  margin-left: 10px;
-}
-
-.chips.tags {
-  margin-bottom: 0px;
-}
-
-hr {
-  border: 1px $blue solid;
-}
-
-::ng-deep .picture {
-  border-radius: 15px;
-}
-
-.picture-container {
-  margin-top: 50px;
-  width: fit-content;
-}
-
-::ng-deep .mdc-evolution-chip__text-label {
-  font-size: 12px !important;
-  font-weight: bold;
-
-  @media (min-width: 380px) {
-    font-size: 14px !important;
-  }
-}
-
-.tags-container {
-  margin: auto -10px;
-
-  @media (min-width: 380px) {
-    margin: 0px;
-  }
-}
-
-.call-to-action {
-  margin-left: 35px;
-  transform: scale(1.5);
+.img{
+  width: 35% !important;
+  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
 }

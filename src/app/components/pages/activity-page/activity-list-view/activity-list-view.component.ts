@@ -11,9 +11,9 @@ import { ActivityService } from 'src/app/services/activity.service';
 export class ActivityListViewComponent {
 
   activities = [
-    {name: "Panel diskusija", location: "NTP", date: "2021-03-06", photo: "assets/panelDisc.png"},
-    {name: "Predavanja", location: "NTP", date: "2021-03-08", photo: "assets/panelDisc.png"},
-    {name: "Studija slučaja", location: "NTP", date: "2021-03-09", photo: "assets/studSluc.png"},
+    {id: 1, name: "Panel diskusija", location: "NTP", date: "2021-03-06", photo: "assets/panelDisc.png"},
+    {id: 2, name: "Predavanja", location: "NTP", date: "2021-03-08", photo: "assets/panelDisc.png"},
+    {id: 3, name: "Studija slučaja", location: "NTP", date: "2021-03-09", photo: "assets/studSluc.png"},
 ];
 
   activityLoading: boolean = true;
