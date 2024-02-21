@@ -34,14 +34,19 @@ export class ActivityPageComponent {
     });
   }
 
-  returnHtmlFromRichText(richText: any) {
-    if (
-      richText === undefined ||
-      richText === null ||
-      richText.nodeType !== 'document'
-    ) {
-      return '<p>Error</p>';
+  redirect(): void {
+    switch (this.activity.id) {
+      case 1:
+        window.open("", '_blank');
+        break;
+      case 2:
+        window.open("https://docs.google.com/forms/d/e/1FAIpQLSdbnYJteDXdqXUEK9Cr7QhB8y4mxBgNFv-Bqja4XNu-RjExgQ/viewform", '_blank');
+
+        break;
+      case 3:
+        window.open("https://docs.google.com/forms/d/e/1FAIpQLSdI_vOlWeS30PQd_h1OgOhf3iqab_26lCHQNdGtZAfeDEyl0g/viewform", '_blank');
+
+        break;
     }
-    return documentToHtmlString(richText);
   }
 }

@@ -13,7 +13,7 @@
 <div class="is-flex is-justify-content-center">
   <div class="max-width-1200 is-flex is-flex-direction-column has-text-centered activity-div is-align-items-center">
     <h1>{{activity.name}}</h1>
-    <button class="orange">
+    <button class="orange" (click)="redirect()">
       Prijavi se!
     </button>
 
@@ -24,7 +24,7 @@
       <div class="img" [style.backgroundImage]="'url(' + activity.photo + ')'">
       </div>
     </div>
-    <button class="blue">
+    <button class="blue" [routerLink]="['/raspored']">
       Pogledaj raspored
     </button>
   </div>
