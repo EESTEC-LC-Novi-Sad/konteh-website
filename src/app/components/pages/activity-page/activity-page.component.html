@@ -17,7 +17,7 @@
       Prijavi se!
     </button>
 
-    <div class="is-flex is-flex-direction-row max-width-800">
+    <div class="is-flex is-flex-direction-row max-width-800 center-wrapper">
       <div class="text is-flex is-align-items-center">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dapibus ultrices in iaculis nunc sed. Sem integer vitae justo eget magna fermentum iaculis eu. In eu mi bibendum neque egestas congue quisque egestas. Elit duis tristique sollicitudin nibh. Arcu dictum varius duis at consectetur lorem donec massa. Mauris nunc congue nisi vitae suscipit tellus mauris a. Rutrum tellus pellentesque eu tincidunt. Diam maecenas sed enim ut sem viverra. Est sit amet facilisis magna etiam tempor orci. Vulputate enim nulla aliquet porttitor lacus. Volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris..
       </div>
@@ -30,55 +30,3 @@
   </div>
 </div>
 
-
-<!-- <div class="p-2">
-  <div
-    class="card-dontainer max-width-1200 auto-margin my-5"
-    *ngIf="activity.name != ''"
-  >
-    <div class="columns">
-      <div class="column">
-        <div class="is-flex is-flex-direction-column is-align-items-start">
-          <h2>
-            {{ activity.name }} <br /><i>{{ activity.type }}</i>
-          </h2>
-          <a routerLink="/kompanija/{{ activity.company.sys.id }}">
-            <h3 class="clickable">
-              {{ activity.company.fields.name }}
-            </h3>
-          </a>
-          <div class="columns stretch-width">
-            <div class="column">
-              <div
-                class="is-flex is-flex-direction-row is-align-items-center location mb-3"
-              >
-                <mat-icon>location_on</mat-icon>
-                <h5>• {{ activity.location }}</h5>
-              </div>
-
-              <div
-                class="is-flex is-flex-direction-row is-align-items-center location mb-3"
-              >
-                <mat-icon>calendar_today</mat-icon>
-                <h5>• {{ activity.date | date : "dd/MM/yyyy, HH:mm" }}</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="column is-4 is-flex is-flex-direction-column is-justify-content-center p-5 logo"
-      >
-        <img src="{{ activity.company.fields.logo.fields.file.url }}" />
-      </div>
-    </div>
-    <div>
-      <h1>Opis aktivnosti</h1>
-      <div [innerHtml]="returnHtmlFromRichText(activity.description)"></div>
-
-      <div class="auto-margin picture-container">
-        <img class="picture" src="{{ activity.photo.fields.file.url }}" />
-      </div>
-    </div>
-  </div> -->
-<!-- </div> -->

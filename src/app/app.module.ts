@@ -40,6 +40,7 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { ActivityListViewComponent } from './components/pages/activity-page/activity-list-view/activity-list-view.component';
 import { ScheduleCardComponent } from './components/pages/schedule/schedule-card/schedule-card.component';
+import { SchedulePageComponent } from './components/pages/schedule/schedule-page/schedule-page.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { ScheduleCardComponent } from './components/pages/schedule/schedule-card
     ActivityPageComponent,
     ActivityListViewComponent,
     ScheduleCardComponent,
+    SchedulePageComponent,
   ],
   imports: [
     BrowserModule,
