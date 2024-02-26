@@ -11,8 +11,4 @@ export class ActivityCardComponent {
   @Input() activity: any;
 
   constructor(private router: Router) {}
-
-  openActivity() {
-    this.router.navigate(['/aktivnost/' + this.activity.id]);
-  }
 }
