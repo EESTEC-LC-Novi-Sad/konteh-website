@@ -49,7 +49,7 @@ button {
   font-size: 17px;
   width: 65% !important;
   text-align: left;
-  
+
   @media (max-width: 850px) {
     width: 80% !important;
     text-align: justify;
@@ -60,10 +60,13 @@ button {
 .img{
   width: 35% !important;
   margin-left: 30px;
+  margin-top: 30px;
   background-position: center;
   background-size: cover;
   border-radius: 20px;
   min-height: 200px;
+  min-width: 300px;
+  max-height: 900px;
 
 
   @media (max-width: 850px) {

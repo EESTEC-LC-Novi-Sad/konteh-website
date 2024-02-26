@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { Activity } from 'src/app/model/activity';
 import { ActivityService } from 'src/app/services/activity.service';
+import { activities } from './activities';
 
 @Component({
   selector: 'activity-page',
@@ -12,12 +13,6 @@ import { ActivityService } from 'src/app/services/activity.service';
 })
 export class ActivityPageComponent {
   activity: any;
-
-  activities = [
-    {id: 1, name: "Panel diskusija", location: "NTP", date: "2021-03-06", photo: "assets/panelDisc.png"},
-    {id: 2, name: "Predavanja", location: "NTP", date: "2021-03-08", photo: "assets/panelDisc.png"},
-    {id: 3, name: "Studija slučaja", location: "NTP", date: "2021-03-09", photo: "assets/studSluc.png"},
-];
 
   constructor(
     private router: Router,
@@ -30,7 +25,7 @@ export class ActivityPageComponent {
     this.route.params.subscribe((params) => {
       const id = params['id'];
 
-      this.activity = this.activities.find((activity) => activity.id == id);
+      this.activity = activities.find((activity) => activity.id == id);
     });
   }
 

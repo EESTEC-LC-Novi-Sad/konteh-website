@@ -13,13 +13,13 @@
 <div class="is-flex is-justify-content-center">
   <div class="max-width-1200 is-flex is-flex-direction-column has-text-centered activity-div is-align-items-center">
     <h1>{{activity.name}}</h1>
-    <button class="orange" (click)="redirect()">
+    <button *ngIf="activity.hasLink" class="orange" (click)="redirect()">
       Prijavi se!
     </button>
 
-    <div class="is-flex is-flex-direction-row max-width-800 center-wrapper">
+    <div class="is-flex is-flex-direction-row max-width-1000 center-wrapper">
       <div class="text is-flex is-align-items-center">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dapibus ultrices in iaculis nunc sed. Sem integer vitae justo eget magna fermentum iaculis eu. In eu mi bibendum neque egestas congue quisque egestas. Elit duis tristique sollicitudin nibh. Arcu dictum varius duis at consectetur lorem donec massa. Mauris nunc congue nisi vitae suscipit tellus mauris a. Rutrum tellus pellentesque eu tincidunt. Diam maecenas sed enim ut sem viverra. Est sit amet facilisis magna etiam tempor orci. Vulputate enim nulla aliquet porttitor lacus. Volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris..
+        <div [innerHTML]="activity.text"></div>
       </div>
       <div class="img" [style.backgroundImage]="'url(' + activity.photo + ')'">
       </div>
