@@ -48,7 +48,7 @@ export const activities = [
     name: "Predavanja",
     location: "NTP",
     dates: ["2024-03-08"],
-    photo: "assets/panelDisc.png",
+    photo: "assets/predavanja.png",
     text: textPredavanja,
     hasLink: true
   },
@@ -57,7 +57,7 @@ export const activities = [
     name: "Studija slučaja",
     location: "NTP",
     dates: ["2024-03-09"],
-    photo: "assets/studSluc.png",
+    photo: "assets/research.jpg",
     text: textStudija,
     hasLink: true
   },
@@ -66,7 +66,7 @@ export const activities = [
     name: "Simulacije razgovora za posao",
     location: "Kula FTN",
     dates: ["2024-03-13","2024-03-14"],
-    photo: "assets/studSluc.png",
+    photo: "assets/interview.jpg",
     text: textSimulacije,
     hasLink: false
   },
@@ -75,7 +75,7 @@ export const activities = [
     name: "EESTEC Zona",
     location: "FTN",
     dates: ["2024-03-13", "2024-03-14"],
-    photo: "assets/studSluc.png",
+    photo: "assets/eestec.jpg",
     text: textEestecZona,
     hasLink: false
   },
@@ -84,7 +84,7 @@ export const activities = [
     name: "CV i LinkedIn radionica",
     location: "FTN",
     dates: ["2024-02-29"],
-    photo: "assets/studSluc.png",
+    photo: "assets/cvRadionica.png",
     text: textCvRadionica,
     hasLink: false
   },
@@ -93,7 +93,7 @@ export const activities = [
     name: "Speed dating",
     location: "NTP",
     dates: ["2024-03-08"],
-    photo: "assets/studSluc.png",
+    photo: "assets/speedDating.jpg",
     text: textSpeedDating,
     hasLink: false
   },
@@ -102,7 +102,7 @@ export const activities = [
     name: "NGO Zona",
     location: "NTP",
     dates: ["2024-03-08"],
-    photo: "assets/studSluc.png",
+    photo: "assets/ngo.jpg",
     text: textNgo,
     hasLink: false
   }
