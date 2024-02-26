@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Schedule } from 'src/app/model/schedule';
 
 @Component({
@@ -8,8 +8,14 @@ import { Schedule } from 'src/app/model/schedule';
 })
 export class SchedulePageComponent {
 
+  schedule: Schedule = new Schedule();
 
-  schedule = {
+  ngOnInit(): void {
+    this.schedule = history.state.schedule;
+  }
+
+
+  /*schedule = {
     id: 1,
     type: "Panel diskusija",
     name: 'Test Schedule',
@@ -43,7 +49,7 @@ export class SchedulePageComponent {
 
   lecturerTxt : String = this.schedule.type == "Panel diskusija" ? "Panelisti" : "Više o predavačima";
   descriptionTxt : String = this.schedule.type == "Panel diskusija" ? "O temi" : "Sadržaj predavanja";
-
+*/
 
   getLecturerEntries(lecturers: any): any[] {
     return Object.entries(lecturers);

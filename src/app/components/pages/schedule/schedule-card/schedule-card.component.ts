@@ -14,7 +14,7 @@ export class ScheduleCardComponent {
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 
   route(){
-    this.router.navigate(['/raspored/', this.schedule.id]);
+    this.router.navigate(['/raspored/', this.schedule.id], { state: { schedule: this.schedule } });
   }
 
   ngOnInit(): void {

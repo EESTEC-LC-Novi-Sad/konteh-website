@@ -33,7 +33,8 @@ export class ScheduleService {
       schedule.startTime = item.fields.startTime;
       schedule.endTime = item.fields.endTime;
       schedule.image = item.fields.image.fields.file.url;
-      if(new Date(schedule.startTime) > today){
+      schedule.content = item.fields.content;
+      if(new Date(schedule.startTime) > today){ Bring this back later when needed
         retVal.push(schedule);
       }
     }

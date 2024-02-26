@@ -39,6 +39,11 @@ export class ScheduleComponent implements OnInit {
   }
 
   filterSchedule(day: number){
+    if(day === this.selectedDay) {
+      this.selectedDay = 0;
+      this.filteredSchedules = this.schedules;
+      return;
+    }
     this.selectedDay = day;
     this.filteredSchedules = this.schedules.filter((schedule) => new Date(schedule.startTime).getDay() === day);
   }
