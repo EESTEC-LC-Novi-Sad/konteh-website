@@ -31,18 +31,34 @@ Izazov KONTEH studije slučaja podrazumeva dve faze - polufinale i finale, gde �
 const textSimulacije = "<b>Održaće se u Sali za konferencije u Kuli FTN-a, 13. i 14. Od 12 do 15h.</b> Nudimo vam jedinstvenu priliku da unapredite svoje veštine kroz Simulacije Razgovora za posao!<br/>Ovaj segment Sajma vam omogućava da <b>doživite realističnu atmosferu intervjuisanja</b>, dobijete dragocene povratne informacije od iskusnih HR profesionalaca, i <b>pripremite se za prave razgovore za posao.</b><br/> Kroz ovo iskustvo, možete identifikovati oblasti za unapređenje, naučiti kako da efikasno prezentujete svoje kvalifikacije i veštine, i steći samopouzdanje potrebno za buduće profesionalne izazove.<br/>Prijavite se i iskoristite šansu da poboljšate svoje šanse za uspeh u procesu zapošljavanja!"
 const textEestecZona = "Udruženje studenata elektrotehnike Evrope, lokalni komitet Novi Sad, u svojstvu organizatora KONTEH-a, srdačno vas poziva da posetite <b>EESTEC Zonu.</b> Ovde ćete imati priliku da se opustite i upoznate sa organizatorima ovog događaja.<br/><br/> EESTEC Zona nudi <b>bogat spektar aktivnosti</b> uključujući šah, gaming kutak, podcast i \"Change my mind\" kutak, retro konzole, raznovrsne kvizove, kao i priliku da se družite sa brojnim EESTEC-ovcima koji su tu da vam prenesu duh EESTEC-a. Ne propustite ovu jedinstvenu priliku da se zabavite i obogatite svoje iskustvo na Sajmu!"
 const textCvRadionica = "29. februara, održaće se radionica koja je posvećena obuci mladih za pravilno <b>pisanje CV-ja i LinkedIn-a.</b><br/><br/>Ova radionica ima za cilj da pripremi studente da se istaknu u procesu zapošljavanja i <b>izgrade svoje profesionalne puteve.</b> Prijavi se i zauzmi svoje mesto!"
-
+const textPanel = "<b>Panel diskusija: \"Ključne Veštine za 21. vek: Prikazivanje potencijala i uspon na tržištu rada\"</b><br/><br/>\
+<b>EESTEC Komitet Novi Sad</b> sa ponosom najavljuje predstojeći panel diskusiju pod nazivom \"Ključne veštine za 21. vek: Prikazivanje potencijala i uspon na tržištu rada\". Ovaj događaj će okupiti istaknute lidere iz IT industrije, eksperte za ljudske resurse i medijske profesionalce kako bi razgovarali o najvažnijim <b>veštinama i izazovima koje donosi budućnost<b/>, posebno u svetlu brzog razvoja veštačke inteligencije i njenog uticaja na tržište rada, i podelili svoja iskustva i uvide sa  studentima.<br/><br/>\
+U dinamičnom i interaktivnom okruženju, panelisti će raspravljati o vitalnim temama kao što su <b>aktuelni trendovi na tržištu rada</b> u IT sektoru, značaj soft i tehničkih veština, kao i strategije za efikasno prikazivanje potencijala i značaju u procesu zapošljavanja. Diskutovaće se i o važnosti ličnog brendinga, umrežavanja, inovacija, kao i o etičkim i društvenim aspektima karijere u tehnologiji.<br/><br/>\
+Panel će se fokusirati na različite aspekte karijere u oblasti tehnologije, od trenutnih trendova do predviđanja budućih potreba tržišta rada, koje postaju sve neizvesnije zbog ubrzanog napretka u veštačkoj inteligenciji. Diskutovaće se o tome kako pripremiti studente za poslove koji možda još uvek ne postoje, važnosti adaptabilnosti, kontinuiranog učenja i razvoja kako mekih, tako i tehničkih veština.<br/><br/>\
+Ovaj panel je odlična prilika za studente da dobiju saznaju koji su realni izazovi i prilike na tržištu rada, razviju razumevanje o tome <b>šta poslodavci zaista traže</b>, te kako najbolje iskoristiti svoje veštine i obrazovanje za izgradnju uspešne karijere.<br/><br/>\
+Pored toga, istražićemo kako se lični brending i umrežavanje mogu koristiti kao alati za kretanje kroz promenljivo tržište rada, te kako inovacije i preduzetništvo mogu služiti kao ključ za uspeh u sve dinamičnijem ekonomskom okruženju.<br/><br/>\
+Pridružite nam se i <b>budite deo inspirativne diskusije</b> koja može oblikovati vašu profesionalnu budućnost. Ne propustite priliku da se budete deo ove vitalne diskusije koja će osvetliti kako se najbolje pripremiti za buduće izazove i iskoristiti potencijale koji dolaze sa razvojem veštačke inteligencije. Savršena prilika da postavite temelje za uspeh u 21. veku čeka na vas!<br/><br/>\
+Panelisti:<br/>\
+<ol>\
+<li><b>Dragoljub Damljanović</b>, direktor sektora energetike i servisa za oblast Jugoistočne Evrope kompanije Schneider Electric.</li>\
+<li><b>Boban Poznanović</b>, Delivery Manager at Levi9, Chairman at Serbian AI Society</li>\
+<li><b>Adam Kovac</b>, Specijalista za odnose s klijentima</li>\
+<li><b>Robert Čoban</b>, direktor Color Media Group</li>\
+</ol><br/>\
+Moderator:<br/>\
+<b>Nikola Božić</b>, Senior Education Consultant\
+"
 
 export const activities = [
-  /*{
+  {
     id: 1,
     name: "Panel diskusija",
     location: "NTP",
     dates: ["2024-03-06"],
-    photo: "assets/panelDisc.png",
-    text: "Trenutno nema podataka...",
+    photo: "assets/panel.jpg",
+    text: textPanel,
     hasLink: false
-  },*/
+  },
   {
     id: 2,
     name: "Predavanja",
@@ -86,7 +102,7 @@ export const activities = [
     dates: ["2024-02-29"],
     photo: "assets/cvRadionica.png",
     text: textCvRadionica,
-    hasLink: false
+    hasLink: true
   },
   {
     id: 7,
