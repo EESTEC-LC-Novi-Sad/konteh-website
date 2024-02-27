@@ -49,15 +49,18 @@ export class HeaderComponent implements OnInit {
         this.router.navigate(['o-konteh-u']);
         break;
       case 2:
-        this.router.navigate(['raspored']);
+        this.router.navigate(['aktivnosti']);
         break;
       case 3:
-        this.router.navigate(['kompanije']);
+        this.router.navigate(['raspored']);
         break;
       case 4:
-        this.router.navigate(['pokrovitelji']);
+        this.router.navigate(['kompanije']);
         break;
       case 5:
+        this.router.navigate(['pokrovitelji']);
+        break;
+      case 6:
         this.router.navigate(['kontakt']);
         break;
       default:

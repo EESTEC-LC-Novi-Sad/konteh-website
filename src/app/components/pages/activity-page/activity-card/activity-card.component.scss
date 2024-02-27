@@ -12,6 +12,7 @@
   box-shadow: 0px 5px 10px lightgray;
   transition: 0.2s all;
   text-align: start;
+  padding-right: 20px !important;
 
   &:hover {
     background-color: $light-blue;
@@ -28,7 +29,7 @@
 
 h2 {
   font-size: 24px;
-  margin-bottom: 0px;
+  // margin-bottom: 0px;
 }
 
 h3 {
@@ -72,7 +73,7 @@ mat-chip {
   color: $green;
 }
 
-h5 {
+h4 {
   margin-bottom: 0px;
   margin-left: 10px;
 }
@@ -94,6 +95,10 @@ img {
   width: auto;
   height: auto;
   margin: auto;
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 230px ;
+  border-radius: 20px;
+  @media (max-width: 350px){
+    max-width: 200px !important;
+  }
+//   max-height: 200px;
 }

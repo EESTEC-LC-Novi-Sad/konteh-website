@@ -34,10 +34,14 @@ import { LightgalleryModule } from 'lightgallery/angular';
 import { BronzeCompanyCardComponent } from './components/pages/companies/bronze-company-card/bronze-company-card.component';
 import { SponsorCardComponent } from './components/pages/sponsors/sponsor-card/sponsor-card.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
-import { ActivityCardComponent } from './components/pages/schedule/activity-card/activity-card.component';
+import { ActivityCardComponent } from './components/pages/activity-page/activity-card/activity-card.component';
 import { ActivityPageComponent } from './components/pages/activity-page/activity-page.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { ActivityListViewComponent } from './components/pages/activity-page/activity-list-view/activity-list-view.component';
+import { ScheduleCardComponent } from './components/pages/schedule/schedule-card/schedule-card.component';
+import { SchedulePageComponent } from './components/pages/schedule/schedule-page/schedule-page.component';
+import { LecturerCardComponent } from './components/pages/schedule/lecturer-card/lecturer-card.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +74,10 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
     SponsorCardComponent,
     ActivityCardComponent,
     ActivityPageComponent,
+    ActivityListViewComponent,
+    ScheduleCardComponent,
+    SchedulePageComponent,
+    LecturerCardComponent,
   ],
   imports: [
     BrowserModule,

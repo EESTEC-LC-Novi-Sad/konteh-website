@@ -1,0 +1,68 @@
+@import "./../../../../../app/custom-theme.scss";
+
+.wrap {
+    @media (max-width: 850px) {
+        flex-direction: column !important;
+    }
+}
+
+.description {
+    font-weight: 600;
+    width: 75% !important;
+    text-align: left;
+
+    @media (max-width: 850px) {
+        text-align: justify;
+        width: 100% !important;
+    }
+
+    h3 {
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+}
+
+.img {
+    width: 20% !important;
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+    min-height: 200px;
+
+    @media (max-width: 850px) {
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 35px;
+        width: 250px !important;
+        max-width: 250px !important;
+        min-height: 0;
+        height: 300px;
+    }
+}
+
+.layout-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &.reverse {
+        .description {
+            order: 2;
+        }
+
+        .img {
+            order: 1;
+        }
+    }
+
+    @media (max-width: 850px) {
+        &.reverse {
+            flex-direction: column;
+
+            .description, .img {
+                order: unset !important;
+            }
+        }
+    }
+}

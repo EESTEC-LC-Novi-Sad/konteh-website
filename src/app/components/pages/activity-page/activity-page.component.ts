@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { Activity } from 'src/app/model/activity';
 import { ActivityService } from 'src/app/services/activity.service';
+import { activities } from './activities';
 
 @Component({
   selector: 'activity-page',
@@ -11,7 +12,7 @@ import { ActivityService } from 'src/app/services/activity.service';
   styleUrls: ['./activity-page.component.scss'],
 })
 export class ActivityPageComponent {
-  activity: Activity = new Activity();
+  activity: any;
 
   constructor(
     private router: Router,
@@ -24,26 +25,21 @@ export class ActivityPageComponent {
     this.route.params.subscribe((params) => {
       const id = params['id'];
 
-      this.activityService.getById(id).subscribe(
-        (data) => {
-          this.activity = this.activityService.convertDataToActivity(data);
-          this.titleService.setTitle('KONTEH - ' + this.activity.name);
-        },
-        (err) => {
-          this.router.navigate(['/404']);
-        }
-      );
+      this.activity = activities.find((activity) => activity.id == id);
     });
   }
 
-  returnHtmlFromRichText(richText: any) {
-    if (
-      richText === undefined ||
-      richText === null ||
-      richText.nodeType !== 'document'
-    ) {
-      return '<p>Error</p>';
+  redirect(): void {
+    switch (this.activity.id) {
+      case 1:
+        window.open("", '_blank');
+        break;
+      case 2:
+        window.open("https://docs.google.com/forms/d/e/1FAIpQLSdbnYJteDXdqXUEK9Cr7QhB8y4mxBgNFv-Bqja4XNu-RjExgQ/viewform", '_blank');
+        break;
+      case 3:
+        window.open("https://docs.google.com/forms/d/e/1FAIpQLSdI_vOlWeS30PQd_h1OgOhf3iqab_26lCHQNdGtZAfeDEyl0g/viewform", '_blank');
+        break;
     }
-    return documentToHtmlString(richText);
   }
 }

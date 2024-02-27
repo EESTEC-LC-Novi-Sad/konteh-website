@@ -14,4 +14,12 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  redirectToWebsite(url: string): void {
+    console.log('Redirecting to website...');
+    window.open(url, '_blank');
+  }
+
+  route(page: string): void {
+    this.router.navigate([page]);
+  }
 }

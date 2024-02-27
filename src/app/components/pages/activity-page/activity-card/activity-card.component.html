@@ -1,33 +1,29 @@
 <a routerLink="/aktivnost/{{ activity.id }}">
-  <div class="card-dontainer clickable" (click)="openActivity()">
+  <div class="card-dontainer">
     <div class="columns">
       <div class="column">
         <div class="is-flex is-flex-direction-column is-align-items-start">
           <h2>
             {{ activity.name }}
           </h2>
-          <h2>
-            <i>{{ activity.type }}</i>
-          </h2>
-          <h3>{{ activity.company.fields.name }}</h3>
           <div
             class="is-flex is-flex-direction-row is-align-items-center location mb-3"
           >
             <mat-icon>location_on</mat-icon>
-            <h5>• {{ activity.location }}</h5>
+            <h4> {{ activity.location }}</h4>
           </div>
           <div
             class="is-flex is-flex-direction-row is-align-items-center location mb-3"
           >
             <mat-icon>calendar_today</mat-icon>
-            <h5>• {{ activity.date | date : "dd/MM/yyyy, HH:mm" }}</h5>
+            <h4 *ngFor="let date of activity.dates; let i = index"> {{ date | date : "dd/MM/yyyy" }}{{(i < activity.dates.length-1?", ":"")}}</h4>
           </div>
         </div>
       </div>
       <div
-        class="column is-4 is-flex is-flex-direction-column is-justify-content-center is-align-content-center"
+        class="is-flex is-flex-direction-column "
       >
-        <img src="{{ activity.company.fields.logo.fields.file.url }}" />
+        <img src="{{ activity.photo }}" />
       </div>
     </div>
   </div>

@@ -11,6 +11,8 @@ import { OfferPageComponent } from './components/pages/offer-page/offer-page.com
 import { OffersComponent } from './components/pages/offers/offers.component';
 import { ScheduleComponent } from './components/pages/schedule/schedule.component';
 import { SponsorsComponent } from './components/pages/sponsors/sponsors.component';
+import { ActivityListViewComponent } from './components/pages/activity-page/activity-list-view/activity-list-view.component';
+import { SchedulePageComponent } from './components/pages/schedule/schedule-page/schedule-page.component';
 
 var baseTitle = 'KONTEH - ';
 
@@ -27,6 +29,11 @@ const routes: Routes = [
   {
     path: 'raspored',
     component: ScheduleComponent,
+    title: baseTitle + 'Raspored',
+  },
+  {
+    path: 'raspored/:id',
+    component: SchedulePageComponent,
     title: baseTitle + 'Raspored',
   },
   {
@@ -62,13 +69,18 @@ const routes: Routes = [
   {
     path: 'aktivnost/:id',
     component: ActivityPageComponent,
+    title: baseTitle + 'Aktivnost',
+  },
+  {
+    path: 'aktivnosti',
+    component: ActivityListViewComponent,
     title: baseTitle + 'Aktivnosti',
   },
   {
     path: '**',
     component: NotFoundComponent,
     title: baseTitle + '404',
-  },
+  }
 ];
 
 @NgModule({

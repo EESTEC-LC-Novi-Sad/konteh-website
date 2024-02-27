@@ -1,24 +1,21 @@
 <div
   class="stretch-width transparent-header landing-section is-flex is-flex-direction-column"
 >
-  <div class="landing-content columns">
-    <div class="column">
-      <h2>Sajam poslovnih mogućnosti i stručnih praksi u Novom Sadu</h2>
-      <h1 class="alt-font">6, 8. i 9. mart 2024. - Akademski dani</h1>
-      <h1 class="alt-font">13. i 14. mart 2024. - Sajam</h1>
-      <div *ngIf="showOffers">
-        <a [routerLink]="['/oglasi']">
-          <button mat-flat-button color="accent">
-            Pogledaj prakse i juniorske pozicije
-          </button>
-        </a>
-      </div>
-      <div>
-        <a href="https://cv.konteh.org/auth/login" target="_blank">
-          <button mat-flat-button class="white-button">Ostavi CV</button>
-        </a>
-      </div>
-    </div>
+<div class="cards-wrapper landing-content">
+  <div class="card-big">
+    <h2 class="card-title">Akademski dani</h2>
+    <h3 class="card-title">6, 8. i 9. mart</h3>
+    <button>Panel diskusija</button>
+    <button (click)="route('/aktivnost/2')">
+      Predavanja</button>
+    <button (click)="route('/aktivnost/3')">
+      Studija slučaja</button>
+  </div>
+  <div class="card-big">
+    <h2 class="card-title">Sajam</h2>
+    <h3 class="card-title">13. i 14. mart</h3>
+    <button (click)="route('o-konteh-u')" >O Sajmu</button>
+    <button (click)="redirectToWebsite('https://cv.konteh.org/auth/login')">Ostavi CV</button></div>
   </div>
 </div>
 
@@ -89,11 +86,6 @@
 <div class="stretch-width companies-section">
   <div class="columns max-width-1200 auto-margin">
     <div class="column">
-      <a href="https://www.vegaitglobal.com" target="_blank">
-        <img src="/assets/vega.png" />
-      </a>
-    </div>
-    <div class="column">
       <a href="https://www.levi9.com" target="_blank">
         <img src="/assets/levi9.png" />
       </a>
@@ -160,21 +152,21 @@
     <div class="column auto-margin px-5">
       <h1 class="gradient-text">Preko 30 kompanija</h1>
       <p class="my-5">
-        U toku Sajma kompanije izlagači će, kao i prethodnih godina, 
-        imati priliku da predstave svoju delatnost studentima kroz neposredni 
-        kontakt sa njima i pomoću promotivnog materijala. Studenti, pored mogućnosti 
-        da na licu mesta uruče svoj CV poslodavcima za koje su zainteresovani, moći 
-        isti da ostave i u elektronskoj bazi koja će biti na raspolaganju svim 
-        kompanijama učesnicama tokom narednih godinu dana. Ove godine, pored Sajma, 
-        uvode se Akademski dani. Ovaj trodnevni program pruža studentima priliku da 
-        učestvuju u raznovrsnim aktivnostima, uključujući panel diskusiju, predavanja 
-        i studiju slučaja. Svi zainteresovani mogu se prijaviti za učešće u 
-        ovom akademskom programu, gde će imati priliku da se upuste u dublje analize 
-        aktuelnih tema, razmene ideje s predavačima i stručnjacima iz industrije, 
+        U toku Sajma kompanije izlagači će, kao i prethodnih godina,
+        imati priliku da predstave svoju delatnost studentima kroz neposredni
+        kontakt sa njima i pomoću promotivnog materijala. Studenti, pored mogućnosti
+        da na licu mesta uruče svoj CV poslodavcima za koje su zainteresovani, moći
+        isti da ostave i u elektronskoj bazi koja će biti na raspolaganju svim
+        kompanijama učesnicama tokom narednih godinu dana. Ove godine, pored Sajma,
+        uvode se Akademski dani. Ovaj trodnevni program pruža studentima priliku da
+        učestvuju u raznovrsnim aktivnostima, uključujući panel diskusiju, predavanja
+        i studiju slučaja. Svi zainteresovani mogu se prijaviti za učešće u
+        ovom akademskom programu, gde će imati priliku da se upuste u dublje analize
+        aktuelnih tema, razmene ideje s predavačima i stručnjacima iz industrije,
         kao i da se suoče sa realnim poslovnim izazovima.
         <br /><br />
-        Pred sam Sajam u Svečanoj sali Fakulteta tehničkih nauka biće organizovane 
-        tribine i treninzi čiji je glavni cilj obuka mladih, zainteresovanih za posao, 
+        Pred sam Sajam u Svečanoj sali Fakulteta tehničkih nauka biće organizovane
+        tribine i treninzi čiji je glavni cilj obuka mladih, zainteresovanih za posao,
         da pravilno napišu CV i što uspešnije obave intervju za posao.
       </p>
       <div>

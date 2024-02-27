@@ -1,6 +1,7 @@
 @import "./../../../../app/custom-theme.scss";
 
 .schedule-section {
+  z-index: 1;
 }
 
 .schedule-section h1 {
@@ -21,6 +22,49 @@
   font-weight: 600;
   color: $blue;
   margin: 40px auto;
+}
+
+.date-filter{
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.date{
+  margin:0 10px;
+  font-weight: 600;
+  background-color: $gradient-start;
+  color: white;
+  cursor: pointer;
+  border-radius: 7px;
+
+  h3{
+    margin: 0;
+    padding: 5px 25px;
+  
+    @media(max-width: 410px){
+      padding: 5px 15px !important;
+    }
+  }
+
+  &:hover{
+    background-color: $dark-blue;
+  }
+}
+
+
+.active{
+  background-color: $gradient-end;
+
+  &:hover{
+    background-color: $gradient-end !important;
+  }
+}
+
+.schedule-single{
+  margin: 30px;
 }
 
 ::ng-deep .cal-event-title {

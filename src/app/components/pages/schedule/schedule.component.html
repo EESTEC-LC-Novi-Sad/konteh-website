@@ -3,48 +3,50 @@
 <div
   class="is-flex is-flex-direction-column has-text-centered schedule-section"
 >
-  <div *ngIf="showSchedule">
+  <div *ngIf="schedules.length == 0">
+    <h1>Raspored</h1>
+    <p>
+      Trenutno nema objavljenih rasporeda.
+    </p>
+  </div>
+  <div *ngIf="schedules.length != 0">
     <h1>Raspored</h1>
 
     <mat-spinner class="auto-margin my-5" *ngIf="scheduleLoading"></mat-spinner>
-    <div class="max-width-1200 auto-margin columns" *ngIf="!scheduleLoading">
-      <div class="column">
-        <h2 class="is-centered">21/03/2023, utorak</h2>
-        <mwl-calendar-day-view
-          [viewDate]="viewDate1"
-          [events]="events"
-          [dayStartHour]="9"
-          [dayEndHour]="17"
-          [hourSegments]="4"
+    <div class="max-width-1200 auto-margin column" *ngIf="!scheduleLoading">
+      <div class="date-filter">
+        <div class="date" (click)="filterSchedule(6)"
+          [ngClass]="{'active': selectedDay == 6}"
         >
-        </mwl-calendar-day-view>
+          <h3>6. mart</h3>
+        </div>
+        <div class="date" (click)="filterSchedule(8)"
+          [ngClass]="{'active': selectedDay == 8}"
+
+        >
+          <h3>8. mart</h3>
+        </div>
+        <div class="date" (click)="filterSchedule(9)"
+          [ngClass]="{'active': selectedDay == 9}"
+
+        >
+          <h3>9. mart</h3>
+        </div>
       </div>
-      <div class="column">
-        <h2 class="is-centered">22/03/2023, sreda</h2>
-        <mwl-calendar-day-view
-          [viewDate]="viewDate2"
-          [events]="events"
-          [dayStartHour]="9"
-          [dayEndHour]="17"
-          [hourSegments]="4"
-        >
-        </mwl-calendar-day-view>
+
+      <div *ngFor="let schedule of filteredSchedules">
+        <div class="max-width-1200 auto-margin schedule-single">
+          <schedule-card [schedule]="schedule"></schedule-card>
+        </div>
+      </div>
+
+      <div *ngIf="filteredSchedules.length == 0">
+        <p style="margin-top: 80px;">
+          Nema objavljenih rasporeda za izabrani datum.
+        </p>
       </div>
     </div>
+  
   </div>
-
-  <div class="max-width-1200 my-5 py-5 px-3 auto-margin" *ngIf="showSchedule">
-    <img src="/assets/mapa2023.jpg" class="round-borders" />
-  </div>
-
-  <h1>Aktivnosti</h1>
-  <mat-spinner class="auto-margin my-5" *ngIf="activityLoading"></mat-spinner>
-  <p *ngIf="activities.length == 0 && !activityLoading">
-    Trenutno nema objavljenih aktivnosti.
-  </p>
-  <div *ngFor="let activity of activities" class="mt-5 stretch-width">
-    <div class="max-width-1200 auto-margin">
-      <activity-card [activity]="activity"></activity-card>
-    </div>
-  </div>
+  
 </div>

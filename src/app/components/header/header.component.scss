@@ -31,9 +31,9 @@
 .navigation-item {
   padding: 10px;
   font-size: 18px;
-  font-weight: 100;
+  font-weight: 100 !important;
   transition: ease-in-out 0.3s;
-  color: white;
+  color: white !important;
   position: relative;
   bottom: -3px;
   transition: all 0.3s;

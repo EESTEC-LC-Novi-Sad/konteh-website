@@ -1,0 +1,35 @@
+<div class="header-cover"></div>
+
+<div class="max-width-1200 auto-margin mt-5 pl-5">
+  <nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+      <li><a [routerLink]="['/']">KONTEH</a></li>
+      <li><a [routerLink]="['/raspored']">Raspored</a></li>
+    </ul>
+  </nav>
+</div>
+
+<mat-spinner class="auto-margin m-5" *ngIf="schedule.title== ''"></mat-spinner>
+
+<!-- <div class="is-flex is-align-items-center is-justify-content-center"> -->
+    <div class="card-container max-width-1200 auto-margin is-flex is-flex-direction-column">
+        <h1>{{schedule.title}}</h1>
+        <div class="is-flex is-flex-direction-row is-align-items-center date">
+            <h4>{{schedule.startTime | date : "dd/MM/yyyy"}}</h4>
+            <div style="width: 20px;"></div>
+            <h4>{{schedule.startTime | date : "HH:mm"}}-{{schedule.endTime | date : "HH:mm"}}</h4>
+        </div>
+        <div>
+           <h4>{{schedule.location}}</h4>
+        </div>
+<!--
+        <h2>{{descriptionTxt}}</h2>
+--><p>{{schedule.content}}</p><!--
+
+        <h2>{{lecturerTxt}}</h2>
+        <div *ngFor="let entry of getLecturerEntries(schedule.lecturers)">
+            <lecturer-card [lecturer]="entry[1]" [idx]="entry[0]"></lecturer-card>
+        </div>-->
+    </div>
+<!-- </div> -->
+
