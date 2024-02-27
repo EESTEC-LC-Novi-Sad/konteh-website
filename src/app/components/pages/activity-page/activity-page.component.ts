@@ -40,6 +40,9 @@ export class ActivityPageComponent {
       case 3:
         window.open("https://docs.google.com/forms/d/e/1FAIpQLSdI_vOlWeS30PQd_h1OgOhf3iqab_26lCHQNdGtZAfeDEyl0g/viewform", '_blank');
         break;
+      case 6:
+        window.open("https://docs.google.com/forms/d/e/1FAIpQLScF6uXtiTy4SvUtjF9HiyCjDSwMznakbsNuXfRmjbxiz67rRw/viewform", '_blank');
+        break;
     }
   }
 }

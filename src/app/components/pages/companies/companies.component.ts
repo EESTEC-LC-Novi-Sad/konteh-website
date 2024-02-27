@@ -24,6 +24,9 @@ export class CompaniesComponent implements OnInit {
   ngOnInit(): void {
     this.companyService.getAllCompanies().subscribe((data) => {
       this.companies = this.companyService.convertDataToCompanies(data);
+      this.companies.sort((a,b) => {
+        return a.name.localeCompare(b.name);
+      });
 
       for (let company of this.companies) {
         if (company.tier == 'Ekskluzivni') {
