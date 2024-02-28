@@ -28,14 +28,13 @@ export class ScheduleComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
-    this.scheduleService.getAllSchedule().subscribe((data) => {
+    /*this.scheduleService.getAllSchedule().subscribe((data) => {
       console.log(data);
       this.schedules = this.scheduleService.convertDataToSchedules(data);
       this.schedules.sort((a, b) => new Date(a.startTime).getTime() - new Date(b.startTime).getTime());
       this.filteredSchedules = this.schedules;
       this.scheduleLoading = false;
-    });
+    });*/
   }
 
   filterSchedule(day: number){
