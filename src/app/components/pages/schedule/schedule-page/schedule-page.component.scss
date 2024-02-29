@@ -10,6 +10,7 @@
         font-size: 30px;
         font-weight: 600;
         margin: 0;
+        margin-bottom: 20px;
         color: $gradient-start;
 
         @media (max-width: 425px) {
@@ -21,13 +22,38 @@
     @media (max-width: 850px) {
         p{
             text-align: justify;
-        
+
         }
     }
 }
 
 .date{
     margin-top: 25px;
+}
+
+button{
+  padding: 12px;
+  border-radius: 50px;
+  color: white;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.85;
+  }
+}
+
+img {
+  width: auto;
+  height: auto;
+  margin: auto;
+  max-width: 230px ;
+  border-radius: 20px;
+
+  @media (max-width: 350px){
+    max-width: 200px !important;
+  }
+//   max-height: 200px;
 }
 
 h2{
@@ -37,8 +63,20 @@ h2{
     font-size: 23px;
 }
 
-h4{
-    margin-bottom: 10px;
-    font-size: 15px;
-    color: $blue-gray;
+h4 {
+  margin-bottom: 0px;
+  margin-left: 10px;
+}
+
+.departments mat-chip {
+  background-color: $light-blue !important;
+}
+
+.tags mat-chip {
+  background-color: $blue !important;
+}
+
+.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled)
+  .mdc-evolution-chip__text-label {
+  color: white !important;
 }

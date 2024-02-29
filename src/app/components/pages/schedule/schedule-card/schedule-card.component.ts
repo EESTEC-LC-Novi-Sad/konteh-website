@@ -10,7 +10,8 @@ import { Schedule } from 'src/app/model/schedule';
 export class ScheduleCardComponent {
 
   @Input() schedule: Schedule = new Schedule();
-
+  color: string = '';
+  trackName: string = '';
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 
   route(){
@@ -21,6 +22,20 @@ export class ScheduleCardComponent {
     this.activatedRoute.params.subscribe((params) => {
       const id = params['id'];
     });
+
+    if(this.schedule.track === 'odiseja'){
+      this.trackName = "Odiseja podataka: AI i ono što sledi";
+      this.color = 'rgb(143, 179, 231)';
+    } else if(this.schedule.track === 'autorobo'){
+      this.trackName = "AutoRobo evolucija: Sledeća brzina";
+      this.color = 'rgb(185, 37, 37)';
+    } else if(this.schedule.track === 'igraliste'){
+      this.trackName = "Igralište Inovatora: Tehnologija i trendovi";
+      this.color = 'rgb(27, 56, 105)';
+    } else if(this.schedule.track === 'kiber'){
+      this.trackName = "KiberProstor: Poslednja granica";
+      this.color = 'rgb(4, 5, 4)';
+    }
   }
 
 }

@@ -7,6 +7,9 @@ export class Schedule {
     public endTime: any = Date(),
     public image: any = null,
     public content: string = '',
-    public lecturers: any = null
+    public lecturers: any = null,
+    public type: string = '',
+    public company: string = '',
+    public track: string = ''
   ) {}
 }

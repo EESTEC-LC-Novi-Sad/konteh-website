@@ -28,13 +28,13 @@ export class ScheduleComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    /*this.scheduleService.getAllSchedule().subscribe((data) => {
+    this.scheduleService.getAllSchedule().subscribe((data) => {
       console.log(data);
       this.schedules = this.scheduleService.convertDataToSchedules(data);
       this.schedules.sort((a, b) => new Date(a.startTime).getTime() - new Date(b.startTime).getTime());
       this.filteredSchedules = this.schedules;
       this.scheduleLoading = false;
-    });*/
+    });
   }
 
   filterSchedule(day: number){
@@ -44,7 +44,7 @@ export class ScheduleComponent implements OnInit {
       return;
     }
     this.selectedDay = day;
-    this.filteredSchedules = this.schedules.filter((schedule) => new Date(schedule.startTime).getDay() === day);
+    this.filteredSchedules = this.schedules.filter((schedule) => new Date(schedule.startTime).getDate() === day);
   }
 
   openHomepage() {
