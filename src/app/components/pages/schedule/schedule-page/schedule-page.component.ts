@@ -6,52 +6,30 @@ import { Schedule } from 'src/app/model/schedule';
   templateUrl: './schedule-page.component.html',
   styleUrls: ['./schedule-page.component.scss']
 })
+
 export class SchedulePageComponent {
 
   schedule: Schedule = new Schedule();
-
+  trackName: string = '';
+  color: string = '';
   ngOnInit(): void {
     this.schedule = history.state.schedule;
+    if(this.schedule.track === 'odiseja'){
+      this.trackName = "Odiseja podataka: AI i ono što sledi";
+      this.color = 'rgb(143, 179, 231)';
+    } else if(this.schedule.track === 'autorobo'){
+      this.trackName = "AutoRobo evolucija: Sledeća brzina";
+      this.color = 'rgb(185, 37, 37)';
+    } else if(this.schedule.track === 'igraliste'){
+      this.trackName = "Igralište Inovatora: Tehnologija i trendovi";
+      this.color = 'rgb(27, 56, 105)';
+    } else if(this.schedule.track === 'kiber'){
+      this.trackName = "KiberProstor: Poslednja granica";
+      this.color = 'rgb(4, 5, 4)';
+    }
+
   }
 
-
-  /*schedule = {
-    id: 1,
-    type: "Panel diskusija",
-    name: 'Test Schedule',
-    startDate: new Date(),
-    endDate: new Date().setHours(new Date().getHours() + 1),
-    location: 'Test Location',
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit . Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit ",
-    lecturers: [
-      {
-        id: 1,
-        name: 'John Doe',
-        company: {
-          name: 'Test Company',
-        },
-        biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit ."
-        ,photo: "/assets/konteh6.jpg"
-
-      },
-      {
-        id: 2,
-        name: 'John Doe',
-        company: {
-          name: 'Test Company',
-        },
-        biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit ."
-        ,photo: "/assets/konteh6.jpg"
-
-      },
-    ]
-  }
-
-  lecturerTxt : String = this.schedule.type == "Panel diskusija" ? "Panelisti" : "Više o predavačima";
-  descriptionTxt : String = this.schedule.type == "Panel diskusija" ? "O temi" : "Sadržaj predavanja";
-*/
-
-  getLecturerEntries(lecturers: any): any[] {
-    return Object.entries(lecturers);
-  }
+  lecturerTxt : String = this.schedule.type == "panel" ? "Panelisti" : "Predavači";
+  descriptionTxt : String = this.schedule.type == "panel" ? "O temi" : "Sadržaj predavanja";
 }

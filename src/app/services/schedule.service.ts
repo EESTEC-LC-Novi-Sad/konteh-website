@@ -32,8 +32,12 @@ export class ScheduleService {
       schedule.location = item.fields.location;
       schedule.startTime = item.fields.startTime;
       schedule.endTime = item.fields.endTime;
-      schedule.image = item.fields.image.fields.file.url;
+      schedule.image = item.fields.image?.fields.file.url;
       schedule.content = item.fields.content;
+      schedule.lecturers = item.fields.lecturers;
+      schedule.type = item.fields.type;
+      schedule.company = item.fields.company;
+      schedule.track = item.fields.track;
       if(new Date(schedule.startTime) > today){
         retVal.push(schedule);
       }

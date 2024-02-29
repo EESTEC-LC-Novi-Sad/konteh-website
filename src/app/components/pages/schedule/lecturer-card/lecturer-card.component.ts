@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'lecturer-card',
@@ -6,9 +6,11 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./lecturer-card.component.scss']
 })
 export class LecturerCardComponent {
-
-
-  @Input() lecturer: any; 
+  @Input() lecturer: any;
   @Input() idx: number = 0;
 
-}
+  ngOnInit(): void {
+    console.log(this.lecturer);
+  }
+
+} //Skontati sto se ne prikazuju predavaci????
