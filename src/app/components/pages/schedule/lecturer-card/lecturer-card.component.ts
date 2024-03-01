@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'lecturer-card',
@@ -9,8 +9,9 @@ export class LecturerCardComponent {
   @Input() lecturer: any;
   @Input() idx: number = 0;
 
-  ngOnInit(): void {
-    console.log(this.lecturer);
-  }
+  align = "left";
 
-} //Skontati sto se ne prikazuju predavaci????
+  ngOnInit(): void {
+    this.align = this.idx%2 === 0 ? "right" : "left";
+  }
+}

@@ -1,9 +1,7 @@
-<div [ngClass]="{'is-flex': true, 'is-flex-direction-row': true, 'wrap': true, 'is-justify-content-space-between': true, 'reverse': idx % 2 != 0}" class="layout-container">
-    <div class="description">
-        <h3>{{lecturer.fields.name}}</h3>
-        <h5 >{{lecturer.fields.company}}</h5>
-        <p>{{lecturer.fields.biography}}</p>
-    </div>
-
-    <div class="img" [style.backgroundImage]="'url(' + lecturer.photo + ')'"></div>
+<div  [ngClass]="{'is-flex': true, 'is-flex-direction-row': true, 'wrap': true, 'is-justify-content-space-between': true, 'reverse': idx % 2 != 0}" class="layout-container">
+  <div style="text-align: {{align}};" class="description">
+    <h3>{{lecturer.fields.name}}</h3>
+    <h5>{{lecturer.fields.bio}}</h5>
+  </div>
+  <div *ngIf="lecturer.fields.profileImg != null" class="img" [style.backgroundImage]="'url(https:' + lecturer.fields.profileImg.fields.file.url + ')'"></div>
 </div>
