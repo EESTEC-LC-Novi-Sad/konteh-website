@@ -11,7 +11,6 @@
 
 <mat-spinner class="auto-margin m-5" *ngIf="schedule.title== ''"></mat-spinner>
 
-<!-- <div class="is-flex is-align-items-center is-justify-content-center"> -->
 <div class="card-container max-width-1200 auto-margin is-flex is-flex-direction-column">
   <h1>{{schedule.title}}</h1>
   <div class="columns">
@@ -42,12 +41,18 @@
         <img src="{{ schedule.image }}" />
     </div>
   </div>
-  <h2>{{descriptionTxt}}</h2>
+  <h2
+    *ngIf="schedule.content != null && schedule.content != ''"
+    >
+    {{descriptionTxt}}
+  </h2>
   <p>{{schedule.content}}</p>
 
   <h2>{{lecturerTxt}}</h2>
-  <div *ngFor="let lecturer of schedule.lecturers; let id = index">
-    <lecturer-card [lecturer]="lecturer" [idx]="id"></lecturer-card>
+  <div *ngIf="schedule.lecturers != null" class="lecturer-wraper">
+    <div *ngFor="let lecturer of schedule.lecturers; let id = index">
+      <lecturer-card [lecturer]="lecturer" [idx]="id"></lecturer-card>
+    </div>
   </div>
   <h4 *ngIf="schedule.company != null" >{{schedule.company}}</h4>
 </div>
