@@ -2,7 +2,7 @@
   <div
     class="card-container clickable p-4 is-flex is-flex-direction-column is-justify-content-center"
   >
-    <div>
+    <div *ngIf="sponsor.logo != null">
       <img src="{{ sponsor.logo.fields.file.url }}" />
     </div>
     <h1>{{ sponsor.name }}</h1>

@@ -27,17 +27,9 @@
     </div>
 
     <h3>Generalni robni pokrovitelj</h3>
-    <a href="https://knjaz.rs/" target="_blank">
-      <div
-        class="card-container clickable p-4 is-flex is-flex-direction-column is-justify-content-center"
-      >
-        <div>
-          <img src="src\assets\knjazMilos.png" />
-        </div>
-        <h1>Knjaz Miloš</h1>
-      </div>
-    </a>
-
+    <div class="sponsor-card">
+      <sponsor-card [sponsor]="knjaz"></sponsor-card>
+    </div>
     <h3>Robni sponzori</h3>
     <div>
       <mat-spinner class="auto-margin my-5" *ngIf="merchLoading"></mat-spinner>
