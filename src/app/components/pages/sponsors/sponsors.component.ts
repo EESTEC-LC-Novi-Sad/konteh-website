@@ -19,6 +19,7 @@ export class SponsorsComponent implements OnInit {
   mediaSponsors: MediaSponsor[] = [];
   merchSponsors: MerchSponsor[] = [];
   partnerSponsors: ParnerSponsor[] = [];
+  knjaz: MerchSponsor = new MerchSponsor();
 
   mediaLoading: boolean = true;
   merchLoading: boolean = true;
@@ -33,8 +34,7 @@ export class SponsorsComponent implements OnInit {
 
   ngOnInit(): void {
     this.partnerService.getAllPartnerSponsors().subscribe((data) => {
-      this.partnerSponsors =
-        this.partnerService.convertDataToPartnerSponsors(data);
+      this.partnerSponsors = this.partnerService.convertDataToPartnerSponsors(data);
       this.partnerLoading = false;
     });
 
@@ -42,9 +42,11 @@ export class SponsorsComponent implements OnInit {
       this.mediaSponsors = this.mediaService.convertDataToMediaSponsors(data);
       this.mediaLoading = false;
     });
-
     this.merchService.getAllMerchSponsors().subscribe((data) => {
-      this.merchSponsors = this.merchService.convertDataToMerchSponsors(data);
+      var all = this.merchService.convertDataToMerchSponsors(data);
+      this.merchSponsors = all.filter(e => e.name !== 'Knjaz Miloš');
+      var k = all.find(e => e.name === 'Knjaz Miloš');
+      this.knjaz = k != undefined ? k : this.knjaz;
       this.merchLoading = false;
     });
   }
