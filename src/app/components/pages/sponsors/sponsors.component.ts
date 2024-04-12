@@ -20,6 +20,7 @@ export class SponsorsComponent implements OnInit {
   merchSponsors: MerchSponsor[] = [];
   partnerSponsors: ParnerSponsor[] = [];
   knjaz: MerchSponsor = new MerchSponsor();
+  rtv: MediaSponsor = new MediaSponsor();
 
   mediaLoading: boolean = true;
   merchLoading: boolean = true;
@@ -30,7 +31,7 @@ export class SponsorsComponent implements OnInit {
     private partnerService: PartnerService,
     private merchService: MerchService,
     private mediaService: MediaService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.partnerService.getAllPartnerSponsors().subscribe((data) => {
@@ -39,13 +40,16 @@ export class SponsorsComponent implements OnInit {
     });
 
     this.mediaService.getAllMediaSponsors().subscribe((data) => {
-      this.mediaSponsors = this.mediaService.convertDataToMediaSponsors(data);
+      const all = this.mediaService.convertDataToMediaSponsors(data);
+      this.mediaSponsors = all.filter(e => e.name !== 'RTV');
+      const r = all.find(e => e.name === 'RTV');
+      this.rtv = r !== undefined ? r : this.rtv;
       this.mediaLoading = false;
     });
     this.merchService.getAllMerchSponsors().subscribe((data) => {
-      var all = this.merchService.convertDataToMerchSponsors(data);
+      const all = this.merchService.convertDataToMerchSponsors(data);
       this.merchSponsors = all.filter(e => e.name !== 'Knjaz Miloš');
-      var k = all.find(e => e.name === 'Knjaz Miloš');
+      const k = all.find(e => e.name === 'Knjaz Miloš');
       this.knjaz = k != undefined ? k : this.knjaz;
       this.merchLoading = false;
     });
