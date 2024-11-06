@@ -1,0 +1,107 @@
+@import "./../../../../app/custom-theme.scss";
+
+.landing-section {
+  width: 100%;
+  min-height: 850px;
+  background-image: url("./../../../../assets/backgroundWithSeparator.jpg");
+  background-size: cover;
+  background-position: left;
+}
+
+.landing-content {
+  color: white;
+  margin: auto;
+  max-width: 1200px;
+  width: 90%;
+}
+
+.landing-content h1 {
+  font-size: 85px;
+  margin-top: 45px;
+  line-height: 85px;
+}
+
+.landing-content h2 {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.landing-content button {
+  margin-top: 40px;
+  padding: 30px;
+  background-color: $red;
+  font-size: 24px;
+  border-radius: 50px;
+}
+
+.cards-section {
+  margin-top: -65px;
+}
+
+.companies-section {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.companies-section img {
+  display: block;
+  margin: auto;
+  object-fit: contain;
+  width: 80%;
+  height: 100%;
+  transition: all 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 769px) {
+    width: 50%;
+    max-width: 200px;
+    margin-top: 20px;
+  }
+}
+
+.starting-section {
+  background: linear-gradient(90deg, $gradient-start, $gradient-end);
+  margin-top: 200px;
+  padding: 100px;
+}
+
+.starting-section .card {
+  border-radius: 20px;
+  padding: 50px;
+  margin-top: -150px;
+}
+
+.starting-section h1 {
+  font-size: 36px;
+}
+
+.starting-section .column {
+  transition: all 0.2s;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.about-section {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.about-section h1 {
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 50px;
+  background: linear-gradient(90deg, $gradient-start, $gradient-end);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.companies-section {
+  // CHANGE THIS vvvv
+  display: none;
+  // CHANGE THIS ^^^
+}

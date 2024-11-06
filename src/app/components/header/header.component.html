@@ -1,0 +1,110 @@
+<div class="header-container wide-menu">
+  <div
+    class="header-content is-flex is-flex-direction-row is-justify-content-space-between py-5 is-align-items-center"
+  >
+    <img
+      class="logo clickable"
+      src="../../../assets/logoWhite.png"
+      (click)="switchSelectedMenuItem(0)"
+    />
+
+    <div class="is-flex is-flex-direction-row is-align-content-center">
+      <div class="navbar-container">
+        <a
+          class="navigation-item"
+          [ngClass]="{ selected: tab == 1 }"
+          (click)="switchSelectedMenuItem(1)"
+        >
+          O KONTEH-u
+        </a>
+        <a
+          class="navigation-item"
+          [ngClass]="{ selected: tab == 2 }"
+          (click)="switchSelectedMenuItem(2)"
+        >
+          Raspored
+        </a>
+        <a
+          class="navigation-item"
+          [ngClass]="{ selected: tab == 3 }"
+          (click)="switchSelectedMenuItem(3)"
+        >
+          Kompanije
+        </a>
+        <a
+          class="navigation-item"
+          [ngClass]="{ selected: tab == 4 }"
+          (click)="switchSelectedMenuItem(4)"
+        >
+          Pokrovitelji
+        </a>
+        <a
+          class="navigation-item"
+          [ngClass]="{ selected: tab == 5 }"
+          (click)="switchSelectedMenuItem(5)"
+        >
+          Kontakt
+        </a>
+        <a
+          mat-flat-button
+          href="https://cv.konteh.org/"
+          target="_blank"
+          class="header-button"
+          >OSTAVI CV</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="mobile-menu header-container-mobile is-flex is-justify-content-space-between"
+>
+  <img
+    class="logo clickable"
+    src="../../../assets/logoWhite.png"
+    (click)="switchSelectedMenuItem(0)"
+  />
+
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu" xPosition="before">
+    <div class="navbar-container mat-menu">
+      <div class="mb-2 py-2" (click)="switchSelectedMenuItem(1)">
+        <a class="navigation-item-mobile" [ngClass]="{ selected: tab == 1 }">
+          O KONTEH-u
+        </a>
+      </div>
+      <div class="mb-2 py-2" (click)="switchSelectedMenuItem(2)">
+        <a class="navigation-item-mobile" [ngClass]="{ selected: tab == 2 }">
+          Raspored
+        </a>
+      </div>
+      <div class="mb-2 py-2" (click)="switchSelectedMenuItem(3)">
+        <a class="navigation-item-mobile" [ngClass]="{ selected: tab == 3 }">
+          Kompanije
+        </a>
+      </div>
+      <div class="mb-2 py-2" (click)="switchSelectedMenuItem(4)">
+        <a class="navigation-item-mobile" [ngClass]="{ selected: tab == 4 }">
+          Pokrovitelji
+        </a>
+      </div>
+      <div class="mb-2 py-2" (click)="switchSelectedMenuItem(5)">
+        <a class="navigation-item-mobile" [ngClass]="{ selected: tab == 5 }">
+          Kontakt
+        </a>
+      </div>
+      <div class="py-2">
+        <a
+          mat-flat-button
+          href="https://cv.konteh.org/"
+          target="_blank"
+          class="header-button"
+          >OSTAVI CV</a
+        >
+      </div>
+    </div>
+  </mat-menu>
+</div>

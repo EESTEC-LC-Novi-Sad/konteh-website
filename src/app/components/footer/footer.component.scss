@@ -1,0 +1,40 @@
+@import "./../../../app/custom-theme.scss";
+
+.footer-container {
+  border-top: solid 1px $text-color;
+  width: 80%;
+  margin: 40px auto 10px auto;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.mat-icon {
+  color: $text-color;
+}
+
+.social-icons {
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.social-button {
+  width: 50px;
+  height: 50px;
+}
+
+.social-icon {
+  width: 25px;
+}
+
+img {
+  filter: invert(0.8);
+  margin-bottom: 8px !important;
+}
+
+h2 {
+  &:hover {
+    color: $blue;
+  }
+}
