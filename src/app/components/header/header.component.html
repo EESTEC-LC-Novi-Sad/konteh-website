@@ -1,40 +1,34 @@
 <div class="header-container wide-menu">
   <div
-    class="header-content is-flex is-flex-direction-row is-justify-content-space-between py-5 is-align-items-center"
+    class="header-content is-flex is-flex-direction-row is-justify-content-space-between is-align-items-center"
   >
     <div>
       <a [routerLink]="['/']">
-        <img class="logo clickable" src="../../../assets/logoWhite.png" />
+        <img class="logo clickable" src="../../../assets/logoWhiteSimple.png" />
       </a>
     </div>
 
     <div class="navbar-container">
       <div class="is-flex is-flex-direction-row is-align-items-center">
-        <span class="home-button">
-          <a [routerLink]="['/']">
-            <button mat-icon-button color="primary">
-              <mat-icon>home</mat-icon>
-            </button>
-          </a>
-        </span>
         <div>
           <a
-            class="navigation-item"
             [ngClass]="{ selected: tab == 1 }"
             [routerLink]="['/o-konteh-u']"
           >
             O KONTEH-u
           </a>
         </div>
+
         <div>
           <a
             class="navigation-item"
             [ngClass]="{ selected: tab == 2 }"
-            [routerLink]="['/aktivnosti']"   
+            [routerLink]="['/aktivnosti']"
           >
             Aktivnosti
           </a>
         </div>
+
         <div>
           <a
             class="navigation-item"
@@ -98,7 +92,7 @@
   class="mobile-menu header-container-mobile is-flex is-justify-content-space-between"
 >
   <a [routerLink]="['/']">
-    <img class="logo clickable" src="../../../assets/logoWhite.png" />
+    <img class="logo clickable" src="../../../assets/logoWhiteSimple.png" />
   </a>
 
   <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -141,22 +135,20 @@
           Kontakt
         </a>
       </div>
-      <div class="py-2" *ngIf="showOffers">
+      <div class="py-2 primary-button" *ngIf="showOffers">
         <a
           mat-flat-button
           [routerLink]="['/oglasi']"
-          class="header-button"
-          color="accent"
+          class="header-button primary-button"
           >OGLASI</a
         >
       </div>
       <div class="py-2">
         <a
           mat-flat-button
-          color="primary"
           href="https://cv.konteh.org/"
           target="_blank"
-          class="header-button"
+          class="header-button primary-button"
           >OSTAVI CV</a
         >
       </div>

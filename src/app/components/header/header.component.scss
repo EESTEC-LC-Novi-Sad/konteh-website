@@ -1,8 +1,9 @@
 @import "./../../../app/custom-theme.scss";
 
 .logo {
-  height: 65px;
+  height: 3em;
   transition: all 0.3s;
+  padding-top: 10px;
 
   &:hover {
     transform: scale(1.05);
@@ -15,6 +16,7 @@
 
 .header-container {
   position: relative;
+  padding: 0.5em 0;
   z-index: 99;
   // background: linear-gradient(90deg, $gradient-start, $gradient-end);
 }
@@ -27,6 +29,8 @@
     width: 80%;
   }
 }
+
+
 
 .navigation-item {
   padding: 10px;
@@ -71,7 +75,7 @@ $medium: 900px;
 
 .header-container-mobile {
   //background: linear-gradient(90deg, $gradient-start, $gradient-end);
-  padding: 20px 20px;
+  padding: 10px 10px;
   position: relative;
   z-index: 99;
 }
@@ -89,8 +93,6 @@ $medium: 900px;
 
 .header-button {
   margin-left: 20px;
-  border-radius: 50px;
-  margin-top: 8px;
 }
 
 .mat-icon {
@@ -99,6 +101,13 @@ $medium: 900px;
   bottom: 8px;
 }
 
-.home-button {
-  margin-top: 6px;
+.primary-button.mat-accent.mat-flat-button {
+  --mdc-filled-button-container-color: var(--primary-color) !important;
+  --mdc-filled-button-label-text-color: white !important;
+
+  background-color: var(--primary-color) !important;
+  text-transform: uppercase;
+  border-radius: 10px;
+  color: white !important;
+  padding: 8px 16px;
 }

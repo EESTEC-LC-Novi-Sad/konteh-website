@@ -8,7 +8,7 @@
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
 
 * {
-  font-family: "Palanquin", sans-serif !important;
+  font-family: "Calibri", sans-serif !important;
   font-weight: 300;
 }
 
@@ -21,11 +21,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", sans-serif !important;
+  font-family: "Calibri", sans-serif !important;
 }
 
 .alt-font {
-  font-family: "Cuprum", sans-serif !important;
+  font-family: "Calibri", sans-serif !important;
 }
 
 p {
@@ -143,6 +143,14 @@ body {
 .white-button {
   background-color: white !important;
 }
+
+.primary-button {
+  background-color: var(--primary-color) !important;
+  text-transform: uppercase;
+  border-radius: 10px;
+  color: white;
+}
+
 
 .orange-button {
   background-color: $orange !important;
