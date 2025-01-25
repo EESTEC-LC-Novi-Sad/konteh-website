@@ -144,13 +144,13 @@ body {
   background-color: white !important;
 }
 
-.primary-button {
+::ng-deep .primary-button {
   background-color: var(--primary-color) !important;
   text-transform: uppercase;
   border-radius: 10px;
   color: white;
+  padding-right: 30px;
 }
-
 
 .orange-button {
   background-color: $orange !important;

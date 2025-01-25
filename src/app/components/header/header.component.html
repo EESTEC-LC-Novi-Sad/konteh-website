@@ -12,6 +12,7 @@
       <div class="is-flex is-flex-direction-row is-align-items-center">
         <div>
           <a
+            class="navigation-item"
             [ngClass]="{ selected: tab == 1 }"
             [routerLink]="['/o-konteh-u']"
           >
@@ -69,8 +70,7 @@
           <a
             mat-flat-button
             [routerLink]="['/oglasi']"
-            class="header-button"
-            color="accent"
+            class="header-button primary-button"
             >OGLASI</a
           >
         </div>
@@ -79,7 +79,7 @@
             mat-flat-button
             href="https://cv.konteh.org/"
             target="_blank"
-            class="header-button"
+            class="header-button primary-button"
             >OSTAVI CV</a
           >
         </div>

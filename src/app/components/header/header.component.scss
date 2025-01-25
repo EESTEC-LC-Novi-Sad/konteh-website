@@ -17,6 +17,7 @@
 .header-container {
   position: relative;
   padding: 0.5em 0;
+  background: var(--black-with-opacity);
   z-index: 99;
   // background: linear-gradient(90deg, $gradient-start, $gradient-end);
 }
@@ -101,13 +102,12 @@ $medium: 900px;
   bottom: 8px;
 }
 
-.primary-button.mat-accent.mat-flat-button {
-  --mdc-filled-button-container-color: var(--primary-color) !important;
-  --mdc-filled-button-label-text-color: white !important;
+.mat-mdc-unelevated-button {
+  --mdc-filled-button-container-color: var(--primary-color) !important; /* Your desired color */
+  --mdc-filled-button-label-text-color: white !important; /* Text color */
+}
 
-  background-color: var(--primary-color) !important;
-  text-transform: uppercase;
-  border-radius: 10px;
-  color: white !important;
-  padding: 8px 16px;
+.mat-mdc-unelevated-button.mat-accent {
+  --mdc-filled-button-container-color: var(--primary-color) !important; /* Your desired color */
+  --mdc-filled-button-label-text-color: white !important; /* Text color */
 }
