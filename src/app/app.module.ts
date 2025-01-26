@@ -42,6 +42,7 @@ import { ActivityListViewComponent } from './components/pages/activity-page/acti
 import { ScheduleCardComponent } from './components/pages/schedule/schedule-card/schedule-card.component';
 import { SchedulePageComponent } from './components/pages/schedule/schedule-page/schedule-page.component';
 import { LecturerCardComponent } from './components/pages/schedule/lecturer-card/lecturer-card.component';
+import { DiamondCompanyCardComponent } from './components/pages/companies/diamond-company-card/diamond-company-card.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { LecturerCardComponent } from './components/pages/schedule/lecturer-card
     ScheduleCardComponent,
     SchedulePageComponent,
     LecturerCardComponent,
+    DiamondCompanyCardComponent,
   ],
   imports: [
     BrowserModule,

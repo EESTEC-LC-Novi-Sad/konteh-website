@@ -14,6 +14,7 @@ export class CompaniesComponent implements OnInit {
 
   companies: Company[] = [];
   exclusiveCompany = new Company();
+  diamondCompanies: Company[] = [];
   platinumCompanies: Company[] = [];
   goldCompanies: Company[] = [];
   silverCompanies: Company[] = [];
@@ -31,6 +32,8 @@ export class CompaniesComponent implements OnInit {
       for (let company of this.companies) {
         if (company.tier == 'Ekskluzivni') {
           this.exclusiveCompany = company;
+        }else if(company.tier == 'Dijamant'){
+          this.diamondCompanies.push(company);
         } else if (company.tier == 'Platinum') {
           this.platinumCompanies.push(company);
         } else if (company.tier == 'Zlatni') {

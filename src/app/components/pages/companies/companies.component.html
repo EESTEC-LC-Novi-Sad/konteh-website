@@ -34,6 +34,14 @@
         ></exclusive-company-card>
       </div>
 
+      <h3>Diamantni pokrovitelj</h3>
+      <div>
+        <p *ngIf="diamondCompanies.length == 0" class="my-5">Uskoro!</p>
+        <div class="company-card" *ngFor="let company of diamondCompanies">
+          <diamond-company-card [company]="company"></diamond-company-card>
+        </div>
+      </div>
+
       <h3>Platinum pokrovitelji</h3>
       <div>
         <p *ngIf="platinumCompanies.length == 0" class="my-5">Uskoro!</p>
