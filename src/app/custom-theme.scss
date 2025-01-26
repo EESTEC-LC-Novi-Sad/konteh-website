@@ -5,7 +5,7 @@ $application-primary: (
   default: #26a9e1,
   lighter: #88cfef,
   darker: #117caa,
-  text: black,
+  text: white,
   text-light: #ececec,
 );
 
@@ -40,4 +40,3 @@ $gradient-start: var(--dark-blue-primary);
 $gradient-end: var(--dark-blue-primary);
 $orange: rgb(236, 114, 0);
 $green: rgb(10, 161, 86);
-$blue-gray: #3a465d;

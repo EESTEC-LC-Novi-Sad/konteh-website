@@ -98,7 +98,7 @@
   <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon>more_vert</mat-icon>
   </button>
-  <mat-menu #menu="matMenu" xPosition="before">
+  <mat-menu #menu="matMenu" xPosition="before" >
     <div class="navbar-container mat-menu">
       <div class="mb-2 py-2" (click)="switchSelectedMenuItem(0)">
         <a class="navigation-item-mobile" [ngClass]="{ selected: tab == 0 }">
