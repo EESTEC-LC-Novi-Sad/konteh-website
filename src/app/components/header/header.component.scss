@@ -1,5 +1,5 @@
 @import "./../../../app/custom-theme.scss";
-
+@import "../../colors.scss";
 .logo {
   height: 3em;
   transition: all 0.3s;
@@ -103,6 +103,7 @@ $medium: 900px;
 }
 
 .header-button {
+  background: var(--primary-color) !important;
   margin-left: 20px;
 }
 

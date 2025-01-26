@@ -31,7 +31,7 @@ $application-theme: mat.define-light-theme(
 
 @include mat.all-component-themes($application-theme);
 
-$default-background: var(--dark-blue-primary);
+$default-background: #09153B;
 $text-color: #ffffff;
 $blue: #26a9e1;
 $light-blue: #d0e8f3;
