@@ -4,17 +4,14 @@
   z-index: 1;
 }
 
-.schedule-section h1 {
-  font-size: 55px;
-  line-height: 60px;
-  font-weight: 500;
-  margin: 20px auto;
-
-  @media (max-width: 425px) {
-    font-size: 40px;
-    line-height: 45px;
-  }
+.title {
+  color:white;
+  margin: 40px auto;
+  letter-spacing: 0.2em;
+  font-size: 2rem;
+  text-transform: uppercase;
 }
+
 
 .schedule-section h2 {
   font-size: 30px;
@@ -43,7 +40,7 @@
   h3{
     margin: 0;
     padding: 5px 25px;
-  
+
     @media(max-width: 410px){
       padding: 5px 15px !important;
     }

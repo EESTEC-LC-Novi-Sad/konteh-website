@@ -1,5 +1,12 @@
 @import "./../../../../app/custom-theme.scss";
 
+.title {
+  color:white;
+  margin: 30px auto;
+  letter-spacing: 0.3em;
+  font-size: 2rem;
+}
+
 .activity-div{
   h1{
     font-size: 55px;

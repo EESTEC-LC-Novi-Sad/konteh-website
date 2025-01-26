@@ -27,9 +27,6 @@ export class HeaderComponent implements OnInit {
 
 
   toggleSelectedMenuItem() {
-    console.log("TAB IS ", this.tab);
-    const route = this.router.url.split('?')[0]; // Remove query params
-    console.log('Current route:', route);
     switch (this.router.url) {
       case '/o-konteh-u':
         this.tab = 1;

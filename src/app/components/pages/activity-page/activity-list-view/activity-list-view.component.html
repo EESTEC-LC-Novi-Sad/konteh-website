@@ -1,9 +1,10 @@
+<div class = "background-image">
 <div class="header-cover"></div>
 
 <div
 class="is-flex is-flex-direction-column has-text-centered activity-section"
 >
-  <h1>Aktivnosti</h1>
+  <h1 class="title">AKTIVNOSTI</h1>
   <mat-spinner class="auto-margin my-5" *ngIf="activityLoading"></mat-spinner>
   <p *ngIf="activities.length == 0 && !activityLoading">
     Trenutno nema objavljenih aktivnosti.
@@ -13,4 +14,5 @@ class="is-flex is-flex-direction-column has-text-centered activity-section"
       <activity-card [activity]="activity"></activity-card>
     </div>
   </div>
+</div>
 </div>
