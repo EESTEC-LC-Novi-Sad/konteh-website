@@ -19,7 +19,6 @@
   padding: 0.5em 0;
   background: var(--black-with-opacity);
   z-index: 99;
-  // background: linear-gradient(90deg, $gradient-start, $gradient-end);
 }
 
 .header-content {
@@ -43,13 +42,10 @@
   bottom: -3px;
   transition: all 0.3s;
 
-  &:hover {
-    color: $light-blue;
-  }
 }
 
 .selected {
-  color: $light-blue !important;
+  color: var(--primary-color) !important;
   font-weight: 600;
 }
 
