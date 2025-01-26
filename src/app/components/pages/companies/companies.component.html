@@ -3,7 +3,7 @@
 <div
   class="is-flex is-flex-direction-column has-text-centered companies-section"
 >
-  <h1>Kompanije</h1>
+  <h1 class="company-title">Kompanije</h1>
   <div *ngIf="!showCompanies">
     <h2 class="alt-font">USKORO!</h2>
 
@@ -34,7 +34,7 @@
         ></exclusive-company-card>
       </div>
 
-      <h3>Diamantni pokrovitelj</h3>
+      <h3>Dijamantni pokrovitelj</h3>
       <div>
         <p *ngIf="diamondCompanies.length == 0" class="my-5">Uskoro!</p>
         <div class="company-card" *ngFor="let company of diamondCompanies">
