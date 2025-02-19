@@ -73,9 +73,9 @@ $medium: 900px;
 }
 
 .mat-menu-panel {
-  background: #020B29 !important; /* Mat-menu dropdown background */
-  color: white !important; /* Text color for mat-menu items */
-  border: 1px solid white; /* Optional: Adds a slight border */
+  background: #020B29 !important;
+  color: white !important;
+  border: 1px solid white;
 }
 
 
@@ -110,13 +110,13 @@ $medium: 900px;
 }
 
 .mat-mdc-unelevated-button {
-  --mdc-filled-button-container-color: var(--primary-color) !important; /* Your desired color */
-  --mdc-filled-button-label-text-color: white !important; /* Text color */
+  --mdc-filled-button-container-color: var(--primary-color) !important;
+  --mdc-filled-button-label-text-color: white !important;
 }
 
 .mat-mdc-unelevated-button.mat-accent {
-  --mdc-filled-button-container-color: var(--primary-color) !important; /* Your desired color */
-  --mdc-filled-button-label-text-color: white !important; /* Text color */
+  --mdc-filled-button-container-color: var(--primary-color) !important;
+  --mdc-filled-button-label-text-color: white !important;
 }
 
 .mat-menu-content {
@@ -127,26 +127,26 @@ $medium: 900px;
   color: white !important;
 
   &:hover {
-    color: var(--primary-color) !important; /* Hover text color */
+    color: var(--primary-color) !important;
   }
 }
 
 
 ::ng-deep .mat-menu-panel {
-  background-color: #020B29 !important; /* Force the background color */
-  color: white !important; /* Force the text color */
-  border: 1px solid #ffffff33; /* Optional: Add a border */
-  box-shadow: none !important; /* Remove Material shadow */
+  background-color: #020B29 !important;
+  color: white !important;
+  border: 1px solid #ffffff33;
+  box-shadow: none !important;
 }
 
 ::ng-deep .mat-menu-item {
-  color: white !important; /* Force the text color */
-  font-size: 16px; /* Optional: Adjust font size */
+  color: white !important;
+  font-size: 16px;
 }
 
 ::ng-deep .mat-menu-item:hover {
-  background-color: #ffffff1a !important; /* Add hover effect */
-  color: var(--primary-color) !important; /* Text color on hover */
+  background-color: #ffffff1a !important;
+  color: var(--primary-color) !important;
 }
 
 .navbar-container .mat-menu{
