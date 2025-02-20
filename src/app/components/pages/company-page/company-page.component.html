@@ -25,14 +25,15 @@
           <h2>
             {{ company.name }}
           </h2>
-          <a href="{{ company.website }}" target="_blank" class="mb-5">
-            <button mat-flat-button color="primary" class="call-to-action">
-              Poseti vebsajt
-            </button>
-          </a>
+
           <div
             class="social-icons is-flex is-flex-direction-row is-justify-content-space-between is-centered"
           >
+            <a href="{{ company.website }}" target="_blank" class="mb-5">
+              <button mat-flat-button class="call-to-action">
+                Poseti vebsajt
+              </button>
+            </a>
             <a
               href="{{ company.facebookUrl }}"
               target="_blank"
@@ -73,6 +74,8 @@
             </a>
           </div>
         </div>
+
+
       </div>
       <div
         class="column is-4 is-flex is-flex-direction-column is-justify-content-center p-5 logo"
@@ -93,7 +96,7 @@
       <hr />
     </div>
     <div>
-      <h2>Tehnologije</h2>
+      <h1>Tehnologije</h1>
       <div
         class="is-flex is-flex-direction-row is-align-items-start chips tags mt-5"
       >
@@ -108,7 +111,7 @@
     <hr />
 
     <div>
-      <h2 class="mb-5">Galerija</h2>
+      <h1 class="mb-5">Galerija</h1>
       <div>
         <lightgallery [settings]="settings">
           <a
