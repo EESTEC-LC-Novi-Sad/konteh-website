@@ -3,6 +3,11 @@
 <div
   class="is-flex is-flex-direction-column has-text-centered companies-section"
 >
+  <video autoplay muted loop class="video-bg">
+    <source src="/assets/background_video1.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+  <div class="page_content">
   <h1 class="company-title">Kompanije</h1>
   <div *ngIf="!showCompanies">
     <h2 class="alt-font">USKORO!</h2>
@@ -74,5 +79,6 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </div>

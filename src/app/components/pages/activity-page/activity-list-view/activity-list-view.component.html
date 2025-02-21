@@ -4,6 +4,11 @@
 <div
 class="is-flex is-flex-direction-column has-text-centered activity-section"
 >
+  <video autoplay muted loop class="video-bg">
+    <source src="/assets/background_video1.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+  <div class = "page_content">
   <h1 class="title">AKTIVNOSTI</h1>
   <mat-spinner class="auto-margin my-5" *ngIf="activityLoading"></mat-spinner>
   <p *ngIf="activities.length == 0 && !activityLoading">
@@ -13,6 +18,7 @@ class="is-flex is-flex-direction-column has-text-centered activity-section"
     <div class="max-width-900 auto-margin">
       <activity-card [activity]="activity"></activity-card>
     </div>
+  </div>
   </div>
 </div>
 </div>

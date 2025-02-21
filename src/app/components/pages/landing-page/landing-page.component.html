@@ -1,231 +1,59 @@
-<div
-  class="stretch-width transparent-header landing-section is-flex is-flex-direction-column"
->
-<div class="cards-wrapper landing-content">
-  <div class="card-big">
-    <h2 class="card-title">Akademski dani</h2>
-    <h3 class="card-title">6, 8. i 9. mart</h3>
-    <button (click)="route('/aktivnost/1')">
-      Panel diskusija
-    </button>
-    <button (click)="route('/aktivnost/2')">
-      Predavanja</button>
-    <button (click)="route('/aktivnost/3')">
-      Studija slučaja</button>
-  </div>
-  <div class="card-big">
-    <h2 class="card-title">Sajam</h2>
-    <h3 class="card-title">13. i 14. mart</h3>
-    <button (click)="route('o-konteh-u')" >O Sajmu</button>
-    <button (click)="redirectToWebsite('https://cv.konteh.org/auth/login')">Ostavi CV</button></div>
-  </div>
-</div>
-
-<div class="stretch-width cards-section">
-  <div class="columns max-width-1200 auto-margin">
-    <div class="column">
-      <feature-card
-        title="Predavanja"
-        description="Uputi se o najnovijim tehnologijama i trendovima posredsvom kompetentnih predavača."
-        imgUrl="/assets/isometric1.png"
-      ></feature-card>
-    </div>
-    <div class="column">
-      <feature-card
-        title="Intervjui"
-        description="Isprobaj svoje veštine u simulaciji intervjua sa HR-om ili tehničkim licem gostujućih kompanija."
-        imgUrl="/assets/isometric2.png"
-      ></feature-card>
-    </div>
-    <div class="column">
-      <feature-card
-        title="Treninzi"
-        description="Prisustvuj treninzima i stekni nove soft-skills i tehničke veštine."
-        imgUrl="/assets/isometric3.png"
-      ></feature-card>
-    </div>
-    <div class="column">
-      <feature-card
-        title="Štandovi"
-        description="Uputi se o informacijama o radu i praksama najatraktivnijih IT kompanija iz regiona."
-        imgUrl="/assets/isometric4.png"
-      ></feature-card>
-    </div>
-  </div>
-</div>
-
-<div class="stretch-width cards-section-mobile">
-  <div class="column">
-    <feature-card
-      title="Predavanja"
-      description="Uputi se o najnovijim tehnologijama i trendovima posredsvom kompetentnih predavača."
-      imgUrl="/assets/isometric1.png"
-    ></feature-card>
-  </div>
-  <div class="column">
-    <feature-card
-      title="Intervjui"
-      description="Isprobaj svoje veštine u simulaciji intervjua sa HR-om ili tehničkim licem gostujućih kompanija."
-      imgUrl="/assets/isometric2.png"
-    ></feature-card>
-  </div>
-  <div class="column">
-    <feature-card
-      title="Treninzi"
-      description="Prisustvuj treninzima i stekni nove soft-skills i tehničke veštine."
-      imgUrl="/assets/isometric3.png"
-    ></feature-card>
-  </div>
-  <div class="column">
-    <feature-card
-      title="Štandovi"
-      description="Uputi se o informacijama o radu i praksama najatraktivnijih IT kompanija iz regiona."
-      imgUrl="/assets/isometric4.png"
-    ></feature-card>
-  </div>
-</div>
-
-<div class="stretch-width companies-section">
-  <div class="columns max-width-1200 auto-margin">
-    <div class="column">
-      <a href="https://www.youtube.com/@SchneiderElectricSerbia" target="_blank">
-        <img src="/assets/schneider.png" />
-      </a>
-    </div>
-    <div class="column">
-      <a href="https://www.continental.com/en" target="_blank">
-        <img src="/assets/continental.png" />
-      </a>
-    </div>
-    <div class="column">
-      <a href="https://www.rt-rk.com/" target="_blank">
-        <img src="/assets/rtrk.png" />
-      </a>
-    </div>
-    <div class="column">
-      <a href="https://www.elsys-eastern.com/" target="_blank">
-        <img src="/assets/elsys.png" />
-      </a>
-    </div>
-  </div>
-</div>
-
-<div class="stretch-width starting-section">
-  <div class="card max-width-800 auto-margin has-text-centered">
-    <h1 class="alt-font">Mesto na kome vaša karijera počinje</h1>
-    <h3>
-      KONTEH se tradicionalno održava od 2006. godine i hiljadama studenata
-      predstavlja odskočnu dasku u prolasku svoje idealne prve karijere.
-    </h3>
-
-    <div class="columns mt-5 pt-5">
-      <div class="column">
-        <simple-feature
-          title="Upoznaj kompanije"
-          description="Upoznaj preko 30 najboljih kompanija iz regiona, spremnih da obuče studente na praksi ili nekoj od dostupnih pozicija."
-          imgUrl="/assets/global-network.png"
-        ></simple-feature>
-      </div>
-      <div class="column">
-        <simple-feature
-          title="Informiši se"
-          description="Saznaj koje su prakse aktuelne i koje tehnologije su u ponudi."
-          imgUrl="/assets/laptop.png"
-        ></simple-feature>
-      </div>
-      <div class="column">
-        <simple-feature
-          title="Ostavi CV"
-          description="Ostavi CV u našoj bazi koja će bit dostupna kompanijama kako bi vas kontaktirale nakon sajma."
-          imgUrl="/assets/checklist.png"
-        ></simple-feature>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="max-width-1200 auto-margin about-section">
-  <div class="columns px-5">
-    <div
-      class="column is-flex is-flex-direction-column is-justify-content-center"
-    >
-      <img class="round-borders" src="/assets/kontehatmosfera.jpg" />
-    </div>
-    <div class="column auto-margin px-5">
-      <h1 class="gradient-text">Preko 30 kompanija</h1>
-      <p class="my-5">
-        U toku Sajma kompanije izlagači će, kao i prethodnih godina,
-        imati priliku da predstave svoju delatnost studentima kroz neposredni
-        kontakt sa njima i pomoću promotivnog materijala. Studenti, pored mogućnosti
-        da na licu mesta uruče svoj CV poslodavcima za koje su zainteresovani, moći
-        isti da ostave i u elektronskoj bazi koja će biti na raspolaganju svim
-        kompanijama učesnicama tokom narednih godinu dana. Ove godine, pored Sajma,
-        uvode se Akademski dani. Ovaj trodnevni program pruža studentima priliku da
-        učestvuju u raznovrsnim aktivnostima, uključujući panel diskusiju, predavanja
-        i studiju slučaja. Svi zainteresovani mogu se prijaviti za učešće u
-        ovom akademskom programu, gde će imati priliku da se upuste u dublje analize
-        aktuelnih tema, razmene ideje s predavačima i stručnjacima iz industrije,
-        kao i da se suoče sa realnim poslovnim izazovima.
-        <br /><br />
-        Pred sam Sajam u Svečanoj sali Fakulteta tehničkih nauka biće organizovane
-        tribine i treninzi čiji je glavni cilj obuka mladih, zainteresovanih za posao,
-        da pravilno napišu CV i što uspešnije obave intervju za posao.
-      </p>
+<div class="header">
+  <video autoplay muted loop class="video-bg">
+    <source src="/assets/background_video1.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+  <div class="header-content">
+    <h1>KONTEH</h1>
+    <p>Najveći sajam poslovnih mogućnosti i praksi u regionu</p>
+    <div class="event-info">
       <div>
-        <a [routerLink]="['/kompanije']">
-          <button mat-flat-button color="primary" class="mr-2 mt-2">
-            Kompanije
-          </button>
-        </a>
-        <a [routerLink]="['/raspored']">
-          <button mat-flat-button color="accent" class="mr-2 mt-2">
-            Raspored
-          </button>
-        </a>
-        <a [routerLink]="['/oglasi']">
-          <button
-            mat-flat-button
-            color="primary"
-            class="orange-button mt-2"
-            *ngIf="showOffers"
-          >
-            Oglasi
-          </button>
-        </a>
+        <h3>Akademski Program</h3>
+        <p>Naučno-tehnološki park <br> 6.3 - 9.3</p>
+      </div>
+      <div>
+        <h3>Sajam</h3>
+        <p>Fakultet Tehničkih nauka <br> 13.3 - 14.3</p>
       </div>
     </div>
   </div>
 </div>
 
-<div class="testimonials-section max-width-1200 auto-margin">
-  <div class="has-text-centered">
-    <h1 class="gradient-text mx-5">Šta su studenti rekli o KONTEH-u...</h1>
+<section class="akademski-program">
+  <h2>AKADEMSKI PROGRAM</h2>
+  <p>Opis o tome šta je akademski program i koliko godina postoji.</p>
+  <ul>
+    <li><strong>Startup SharkTank</strong> - X-satni hackathon koji izaziva studente u stvaranju inovacija.</li>
+    <li><strong>Konferencija o AI</strong> - Panel sa stručnjacima koji diskutuje o aktuelnim temama.</li>
+  </ul>
+</section>
+
+<section class="stats">
+  <div>
+    <h2>19</h2>
+    <p>Godina postojanja</p>
   </div>
-  <div class="columns">
-    <div class="column">
-      <testimonial-card
-        title="Apliciranje za stručne prakse"
-        name="Vesna Prica"
-        description="KONTEH pruža studentima odličnu priliku da se upoznaju sa radom različitih kompanija koje omogućuju apliciranje za stručne prakse, koje će u daljem radu studente usmeriti za poslovne mogućnosti."
-        studentInfo="Primenjeno softversko inženjerstvo, 3. godina"
-      ></testimonial-card>
-    </div>
-    <div class="column">
-      <testimonial-card
-        [center]="true"
-        title="Super atmosfera!"
-        name="Miloš Popović"
-        description="Sjajan način da se upoznamo sa firmama iz naše oblasti. Odlično je što možemo da dobijemo neku percepciju o tome šta će nas čekati nakon završavanja fakulteta, odnosno kada se zaposlimo. Prošle godine je bila super atmosfera, preporučujem da posetite, nebitno koja ste godina fakulteta."
-        studentInfo="Softversko inženjerstvo i informacione tehnologije, 2. godina"
-      ></testimonial-card>
-    </div>
-    <div class="column">
-      <testimonial-card
-        title="Odskočna daska"
-        name="Vuk Čabrilo"
-        description="KONTEH je odskočna daska u industriju, i realan prikaz mogućnosti u toku i nakon studija."
-        studentInfo="Računarstvo i automatika, 2. godina"
-      ></testimonial-card>
-    </div>
+  <div>
+    <h2>30+</h2>
+    <p>Vodećih kompanija</p>
   </div>
-</div>
+  <div>
+    <h2>16k</h2>
+    <p>Posetilaca</p>
+  </div>
+</section>
+
+<section class="sajam">
+  <h2>SAJAM</h2>
+  <p>Svake godine, preko 30 kompanija dolazi kako bi predstavilo svoje poslovne mogućnosti studentima.</p>
+  <ul>
+    <li>Mogućnost razgovora sa kompanijama o poslovima i praksama.</li>
+    <li>Saznajte više o vrednostima kompanija.</li>
+    <li>Učestvujte u igrama i osvojite nagrade!</li>
+  </ul>
+</section>
+
+<section class="ostavi-cv">
+  <h2>OSTAVI CV</h2>
+  <button class="submit-cv">Prijavi se</button>
+</section>

@@ -1,6 +1,30 @@
 @import "./../../../../app/custom-theme.scss";
 
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.page_content{
+  z-index: 10;
+}
+
 .companies-section {
+  z-index: 10;
 }
 
 .company-title {
