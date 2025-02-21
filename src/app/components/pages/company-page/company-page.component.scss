@@ -41,13 +41,13 @@ h1 {
 h2 {
   font-size: 28px;
   margin-bottom: 0px;
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 h3 {
   margin-bottom: 20px;
   font-weight: bold;
-  color: white;
+  color: rgba(255, 255, 255, 0.85);
 
   &:hover {
     color: $blue;
@@ -75,7 +75,7 @@ mat-chip {
 
 .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled)
   .mdc-evolution-chip__text-label {
-  color: white !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .location {
