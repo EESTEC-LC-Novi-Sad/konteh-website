@@ -3,18 +3,23 @@
 .about-section {
 }
 
+.has-text-centered.mb-5 {
+  margin-bottom: 0 !important;
+}
+
 .about-section h1 {
-  font-size: 55px;
-  line-height: 68px;
-  font-weight: 500;
-  margin: 20px auto;
+  color:white;
+  margin: 30px auto;
+  letter-spacing: 0.1em;
+  font-size: 2rem;
+  margin-bottom: 0;
 }
 
 .about-section h2 {
   font-size: 30px;
   line-height: 35px;
   font-weight: 600;
-  color: $blue;
+  color: white;
   margin: 40px auto;
 }
 
@@ -79,3 +84,4 @@ hr {
   width: 33% !important;
   display: inline-block;
 }
+
