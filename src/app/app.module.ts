@@ -43,6 +43,7 @@ import { ScheduleCardComponent } from './components/pages/schedule/schedule-card
 import { SchedulePageComponent } from './components/pages/schedule/schedule-page/schedule-page.component';
 import { LecturerCardComponent } from './components/pages/schedule/lecturer-card/lecturer-card.component';
 import { DiamondCompanyCardComponent } from './components/pages/companies/diamond-company-card/diamond-company-card.component';
+import { MediaSponsorsComponent } from './components/pages/companies/media-sponsors/media-sponsors.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { DiamondCompanyCardComponent } from './components/pages/companies/diamon
     SchedulePageComponent,
     LecturerCardComponent,
     DiamondCompanyCardComponent,
+    MediaSponsorsComponent,
   ],
   imports: [
     BrowserModule,
