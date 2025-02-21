@@ -1,7 +1,7 @@
 <div class="header-cover"></div>
 
 <div class="is-flex is-flex-direction-column has-text-centered sponsors-section">
-  <h1 class = "title">Robni Pokrovitelji</h1>
+  <h1 class = "title">Medijski pokrovitelji</h1>
   <div *ngIf="!showSponsors">
     <h2 class="alt-font">USKORO!</h2>
 
@@ -13,20 +13,21 @@
   </div>
 
   <div *ngIf="showSponsors" class="max-width-1200 auto-margin content">
-    <h3>Generalni robni pokrovitelj</h3>
+    <h3>Generalni medijski pokrovitelj</h3>
     <div class="sponsor-card">
-      <sponsor-card [sponsor]="knjaz"></sponsor-card>
+      <sponsor-card [sponsor]="rtv"></sponsor-card>
     </div>
-    <h3>Robni sponzori</h3>
+    <h3>Medijski pokrovitelji</h3>
     <div>
-      <mat-spinner class="auto-margin my-5" *ngIf="merchLoading"></mat-spinner>
-      <p *ngIf="merchSponsors.length == 0 && !merchLoading" class="my-5">
+      <mat-spinner class="auto-margin my-5" *ngIf="mediaLoading"></mat-spinner>
+      <p *ngIf="mediaSponsors.length == 0 && !mediaLoading" class="my-5">
         Uskoro!
       </p>
-      <div class="sponsor-card" *ngFor="let sponsor of merchSponsors">
+      <div class="sponsor-card" *ngFor="let sponsor of mediaSponsors">
         <sponsor-card [sponsor]="sponsor"></sponsor-card>
       </div>
     </div>
+
 
     <h3>Partneri sajma</h3>
     <div>

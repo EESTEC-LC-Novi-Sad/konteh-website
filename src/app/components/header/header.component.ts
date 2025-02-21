@@ -43,8 +43,11 @@ export class HeaderComponent implements OnInit {
       case '/pokrovitelji':
         this.tab = 5;
         break;
-      case '/kontakt':
+      case '/mediji':
         this.tab = 6;
+        break;
+      case '/kontakt':
+        this.tab = 7;
         break;
       default:
         this.tab = 0;
@@ -72,6 +75,9 @@ export class HeaderComponent implements OnInit {
         break;
       case 6:
         this.router.navigate(['kontakt']);
+        break;
+      case 7:
+        this.router.navigate(['mediji']);
         break;
       default:
         this.router.navigate(['']);
