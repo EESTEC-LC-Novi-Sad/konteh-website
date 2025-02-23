@@ -11,21 +11,21 @@
             class="is-flex is-flex-direction-row is-align-items-center location mb-3"
           >
             <mat-icon>location_on</mat-icon>
-            <h5>• {{ offer.location }}</h5>
+            <h4>• {{ offer.location }}</h4>
           </div>
           <div
             class="is-flex is-flex-direction-row is-align-items-center remote"
             *ngIf="offer.remoteOption"
           >
             <mat-icon>settings_input_antenna</mat-icon>
-            <h5>• Mogućnost remote rada</h5>
+            <h4>• Mogućnost remote rada</h4>
           </div>
           <div
             class="is-flex is-flex-direction-row is-align-items-center non-remote"
             *ngIf="!offer.remoteOption"
           >
             <mat-icon>apartment</mat-icon>
-            <h5>• Rad iz kancelarije</h5>
+            <h4>• Rad iz kancelarije</h4>
           </div>
           <div
             class="is-flex is-flex-direction-row is-align-items-start chips tags mt-5"

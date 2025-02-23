@@ -119,9 +119,13 @@ export class OffersComponent implements OnInit {
       let offerText: string =
         o.positionName + o.company.fields.name + o.location;
 
-      for (let tag of o.tags) {
-        offerText = offerText + tag;
+      //some offers dont have tags
+      if(o.tags){
+        for (let tag of o.tags) {
+          offerText = offerText + tag;
+        }
       }
+
 
       offerText = offerText.toLowerCase().replace(/ /g, '').trim();
 
