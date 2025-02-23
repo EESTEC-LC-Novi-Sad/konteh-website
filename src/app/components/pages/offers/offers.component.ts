@@ -107,7 +107,9 @@ export class OffersComponent implements OnInit {
       let anySelected = false;
       if (this.selectedDepartments.some((item) => item.selected == true)) {
         return this.selectedDepartments.some((item) => {
-          return o.uniDepartments.includes(item.name) && item.selected;
+          if(o.uniDepartments){
+            return o.uniDepartments.includes(item.name) && item.selected;
+          }
         });
       } else {
         return true;
