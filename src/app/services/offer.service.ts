@@ -70,10 +70,9 @@ export class OfferService {
       offer.howToApply = item.fields.howToApply;
       offer.visibleUntil = new Date(item.fields.visibleUntil);
 
-      retVal.push(offer);
-      /**if (today < offer.visibleUntil) {
+      if (today < offer.visibleUntil) {
         retVal.push(offer);
-      }**/
+      }
     }
 
     return retVal;
