@@ -40,14 +40,14 @@
 }
 
 .header-content h1 {
-  font-size: 62px;
+  font-size: 3.875rem;
   margin-bottom: 5vh;
   letter-spacing: 0.3em;
   font-weight: bold;
 }
 
 .header-content p {
-  font-size: 22px;
+  font-size: 1.375rem;
   margin-top: 10px;
 }
 
@@ -69,15 +69,28 @@
 }
 
 .event-info div h3 {
-  font-size: 22px;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
 .event-info div p {
-  font-size: 16px;
+  font-size: 1.1rem;
 }
 
 @media (max-width: 768px) {
+  .header-content{
+    padding-top: 50px;
+  }
+
+  .header-content h1 {
+    margin-bottom: 2vh;
+    letter-spacing: 0.3em;
+    font-weight: bold;
+  }
+  .header-content p {
+    margin-top: 10px;
+  }
+
   .event-info {
     flex-direction: column;
     align-items: center;
@@ -87,14 +100,7 @@
     margin-top: 20px;
   }
 
-  .event-info div h3 {
-    font-size: 24px !important;
-    font-weight: bold;
-  }
 
-  .event-info div p {
-    font-size: 22px !important;
-  }
 }
 
 .akademski-program {
@@ -132,6 +138,15 @@
   .image-content img {
     max-width: 80%; /* Prevents image from being too large on mobile */
   }
+
+  .ostavi-cv {
+    p {
+      width: 100% !important;
+      text-align: center;
+      margin: 0;
+    }
+  }
+
 }
 
 .content-wrapper {
@@ -216,8 +231,14 @@
   h2 {
     font-size: 28px;
   }
-
+  p {
+    font-size: 18px;
+    width: 50%;
+    margin: 2rem auto;
+    text-align: center;
+  }
 }
+
 
 .submit-cv {
   background: var(--primary-color);
