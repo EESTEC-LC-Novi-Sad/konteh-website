@@ -164,6 +164,8 @@
 .sajam {
   padding: 50px 20px;
   text-align: center;
+  display: flex;
+  justify-content: center;
 
   background: linear-gradient(to bottom,
     #123B73 90%,  /* 95% of the background is this color */
@@ -172,7 +174,7 @@
 
 
   h2 {
-    color: var(--dark-blue-primary);
+    color: #3bc0f8;
     font-size: 28px;
     font-weight: bold;
   }
@@ -218,11 +220,11 @@
 }
 
 .submit-cv {
-  background: white;
-  color: #001f3f;
+  background: var(--primary-color);
+  color: white;
   padding: 10px 20px;
   font-size: 18px;
-  border: none;
+  border: var(--primary-color) 2px solid;
   cursor: pointer;
   border-radius: 5px;
 

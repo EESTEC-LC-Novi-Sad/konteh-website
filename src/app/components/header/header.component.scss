@@ -99,6 +99,12 @@ $medium: 900px;
 .header-button {
   background: var(--primary-color) !important;
   margin-left: 20px;
+  border: var(--primary-color) 2px solid !important;
+  &:hover {
+    background: #001f3f !important;
+    color: white !important;
+    border: var(--primary-color) 2px solid !important;
+  }
 }
 
 .mat-icon {
@@ -110,11 +116,13 @@ $medium: 900px;
 .mat-mdc-unelevated-button {
   --mdc-filled-button-container-color: var(--primary-color) !important;
   --mdc-filled-button-label-text-color: white !important;
+  border: var(--primary-color) 2px solid !important;
 }
 
 .mat-mdc-unelevated-button.mat-accent {
   --mdc-filled-button-container-color: var(--primary-color) !important;
   --mdc-filled-button-label-text-color: white !important;
+  border: var(--primary-color) 2px solid !important;
 }
 
 .mat-menu-content {
@@ -123,9 +131,11 @@ $medium: 900px;
 
 .mat-menu-item {
   color: white !important;
-
+  border: var(--primary-color) 2px solid !important;
   &:hover {
-    color: var(--primary-color) !important;
+    background: #001f3f;
+    color: white;
+    border: var(--primary-color) 2px solid !important;
   }
 }
 
@@ -143,8 +153,9 @@ $medium: 900px;
 }
 
 ::ng-deep .mat-menu-item:hover {
-  background-color: #ffffff1a !important;
-  color: var(--primary-color) !important;
+  background-color: #001f3f !important;
+  color: white !important;
+  border: var(--primary-color) 2px solid !important;
 }
 
 .navbar-container .mat-menu{
