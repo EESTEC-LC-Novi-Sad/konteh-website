@@ -1,3 +1,4 @@
+/* General Styles */
 .header {
   position: relative;
   width: 100%;
@@ -9,96 +10,107 @@
   text-align: center;
   color: white;
   background: none !important;
-
-  .video-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-  }
-
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 2;
-  }
-
-  .header-content {
-    position: absolute;
-    z-index: 3;
-    max-width: 800px;
-    padding: 20px;
-
-    h1 {
-      font-size: 62px;
-      letter-spacing: 0.3em;
-      font-weight: bold;
-    }
-
-    p {
-      font-size: 20px;
-      margin-top: 10px;
-    }
-
-    .event-info {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 20px;
-
-      div {
-        text-align: center;
-
-        h3 {
-          font-size: 22px;
-          font-weight: bold;
-        }
-
-        p {
-          font-size: 16px;
-        }
-      }
-    }
-
-    @media (max-width: 1140px) and (min-width: 0px) {
-      h1{
-        letter-spacing: 0.1em;
-      }
-    }
-  }
-
 }
 
-.akademski-program {
-  background: #f4f4f4;
-  padding: 50px 20px;
-  text-align: center;
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
 
-  h2 {
-    color: #001f3f;
-    font-size: 28px;
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.header-content {
+  position: absolute;
+  z-index: 3;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.header-content h1 {
+  font-size: 62px;
+  margin-bottom: 5vh;
+  letter-spacing: 0.3em;
+  font-weight: bold;
+}
+
+.header-content p {
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+.title-description {
+  font-size: 22px;
+}
+
+/* Event Info Section */
+.event-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 80px; /* Increased space between items */
+}
+
+.event-info div {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.event-info div h3 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.event-info div p {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .event-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .akademski-title{
+    margin-top: 20px;
+  }
+
+  .event-info div h3 {
+    font-size: 24px !important;
     font-weight: bold;
   }
 
-  p {
-    font-size: 18px;
+  .event-info div p {
+    font-size: 22px !important;
   }
+}
 
-  ul {
-    list-style-type: none;
-    padding: 0;
+.akademski-program, .sajam {
+  background: #f4f4f4;
+  padding: 50px 20px;
+  text-align: center;
+}
 
-    li {
-      font-size: 18px;
-      margin: 10px 0;
-    }
-  }
+.akademski-program h2, .sajam h2 {
+  color: #001f3f;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.akademski-program p, .sajam p {
+  font-size: 18px;
 }
 
 .stats {
@@ -107,44 +119,19 @@
   background-color: #001f3f;
   color: white;
   padding: 40px 20px;
-
-  div {
-    text-align: center;
-
-    h2 {
-      font-size: 36px;
-      font-weight: bold;
-    }
-
-    p {
-      font-size: 18px;
-    }
-  }
 }
 
-.sajam {
-  padding: 50px 20px;
+.stats div {
   text-align: center;
+}
 
-  h2 {
-    color: #001f3f;
-    font-size: 28px;
-    font-weight: bold;
-  }
+.stats div h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
 
-  p {
-    font-size: 18px;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-
-    li {
-      font-size: 18px;
-      margin: 10px 0;
-    }
-  }
+.stats div p {
+  font-size: 18px;
 }
 
 .ostavi-cv {
@@ -152,18 +139,18 @@
   color: white;
   text-align: center;
   padding: 50px 20px;
+}
 
-  h2 {
-    font-size: 28px;
-  }
+.ostavi-cv h2 {
+  font-size: 28px;
+}
 
-  .submit-cv {
-    background: white;
-    color: #001f3f;
-    padding: 10px 20px;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
+.submit-cv {
+  background: white;
+  color: #001f3f;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
 }
