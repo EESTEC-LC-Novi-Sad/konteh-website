@@ -53,10 +53,10 @@
 
 
 .active{
-  background-color: $gradient-end;
+  background-color: var(--primary-color);
 
   &:hover{
-    background-color: $gradient-end !important;
+    background-color: var(--primary-color) !important;
   }
 }
 
