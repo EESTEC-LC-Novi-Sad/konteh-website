@@ -97,52 +97,124 @@
   }
 }
 
-.akademski-program, .sajam {
-  background: #f4f4f4;
+.akademski-program {
+  background: #020B29;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+
+  p {
+    font-size: 16px;
+  }
+
+
+  h2 {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column; /* Stack elements vertically */
+    text-align: center; /* Center text for better readability */
+  }
+
+  .text-content {
+    text-align: center; /* Align text to center on mobile */
+  }
+
+  .image-content {
+    margin-top: 20px; /* Adds spacing between text and image */
+  }
+
+  .image-content img {
+    max-width: 80%; /* Prevents image from being too large on mobile */
+  }
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px; /* Space between text and image */
+}
+
+.text-content {
+  flex: 1; /* Takes up remaining space */
+  color: white;
+  text-align: left;
+}
+
+.image-content {
+  flex: 1; /* Equal width for text and image */
+  display: flex;
+  justify-content: center;
+}
+
+.image-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+.sajam {
   padding: 50px 20px;
   text-align: center;
+
+  background: linear-gradient(to bottom,
+    #123B73 90%,  /* 95% of the background is this color */
+    #123B73 92%,  /* Start transition */
+    var(--dark-blue-primary) 100%);
+
+
+  h2 {
+    color: var(--dark-blue-primary);
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 18px;
+  }
 }
 
-.akademski-program h2, .sajam h2 {
-  color: #001f3f;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.akademski-program p, .sajam p {
-  font-size: 18px;
-}
+/*#001f3f*/
 
 .stats {
   display: flex;
   justify-content: space-around;
-  background-color: #001f3f;
+  background: linear-gradient(to bottom, #020B29, #123B73);
   color: white;
   padding: 40px 20px;
-}
 
-.stats div {
-  text-align: center;
-}
+  div {
+    text-align: center;
 
-.stats div h2 {
-  font-size: 36px;
-  font-weight: bold;
-}
+    h2 {
+      font-size: 38px;
+      font-weight: bold;
+    }
 
-.stats div p {
-  font-size: 18px;
+    p {
+      font-size: 22px;
+    }
+  }
 }
 
 .ostavi-cv {
-  background-color: #001f3f;
+  background-color: var(--dark-blue-primary);
   color: white;
   text-align: center;
   padding: 50px 20px;
-}
 
-.ostavi-cv h2 {
-  font-size: 28px;
+  h2 {
+    font-size: 28px;
+  }
+
 }
 
 .submit-cv {
@@ -153,4 +225,9 @@
   border: none;
   cursor: pointer;
   border-radius: 5px;
+
+  &:hover {
+    background: #001f3f;
+    color: white;
+  }
 }
