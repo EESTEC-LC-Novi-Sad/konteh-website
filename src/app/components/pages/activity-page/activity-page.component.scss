@@ -1,5 +1,19 @@
-@import "./../../../../app/custom-theme.scss";
 
+.background{
+  background: linear-gradient(to bottom, #020B29 30%, rgba(0, 0, 0, 0) 100%) !important;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.page{
+  z-index: 1;
+}
 
 a{
   color: var(--primary-color);
@@ -7,6 +21,7 @@ a{
 
 .activity-div{
   h1{
+    z-index: 10;
     color:white;
     margin: 30px auto;
     letter-spacing: 0.1em;
@@ -25,17 +40,22 @@ a{
 }
 
 button {
-  background-color: var(--primary-color) !important;
+  z-index: 10;
   text-transform: uppercase;
-  border-radius: 10px;
-  color: white;
+  color: white !important;
+  background: var(--primary-color) !important;
   padding: 20px;
   margin-top: 15px;
+  border: var(--primary-color) 2px solid;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 20px;
 
   &:hover {
-    cursor: pointer;
-    opacity: 0.85;
+    background: #001f3f !important;
+    color: white;
   }
+
 }
 
 
@@ -49,6 +69,7 @@ button {
   font-size: 17px;
   width: 65% !important;
   text-align: left;
+  z-index: 10;
 
   @media (max-width: 850px) {
     width: 80% !important;
@@ -58,6 +79,7 @@ button {
 }
 
 .img{
+  z-index: 10;
   width: 35% !important;
   margin-left: 30px;
   margin-top: 30px;
@@ -78,3 +100,4 @@ button {
     height: 300px;
   }
 }
+
