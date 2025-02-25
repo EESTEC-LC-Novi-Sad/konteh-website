@@ -10,44 +10,54 @@
   z-index: 0;
 }
 
+strong{
+  color: white;
+  font-weight: bold;
+}
+
+h2{
+  color: white;
+}
+
+p {
+  font-size: 1.125em;
+}
+
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.73);
   z-index: 1;
 }
-.page_content{
-  z-index: 10;
-}
 
-.companies-section {
-  z-index: 10;
+.page_content {
+  position: relative;
+  z-index: 2;
 }
 
 .about-section {
+  h1 {
+    color:white;
+    margin: 30px auto;
+    letter-spacing: 0.1em;
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-size: 30px;
+    line-height: 35px;
+    font-weight: 600;
+    color: white;
+    margin: 40px auto;
+  }
 }
 
 .has-text-centered.mb-5 {
   margin-bottom: 0 !important;
-}
-
-.about-section h1 {
-  color:white;
-  margin: 30px auto;
-  letter-spacing: 0.1em;
-  font-size: 2rem;
-  margin-bottom: 0;
-}
-
-.about-section h2 {
-  font-size: 30px;
-  line-height: 35px;
-  font-weight: 600;
-  color: white;
-  margin: 40px auto;
 }
 
 hr {
@@ -55,16 +65,23 @@ hr {
   border: 1px solid $blue;
 }
 
+.section-5{
+  font-size: 1rem;
+  color: white;
+}
+
 .section-2 {
-  background-color: white;
+  background: #09153B;
   margin-top: 100px;
   margin-bottom: 100px;
   padding-top: 20px;
   padding-bottom: 50px;
+
+
 }
 
 .section-7 {
-  background-color: white;
+  background-color: #123B73;
   margin-top: 100px;
   /*margin-bottom: 100px;*/
   padding-top: 20px;
@@ -76,35 +93,31 @@ hr {
   margin-bottom: 100px;
   padding-top: 50px;
   padding-bottom: 50px;
-}
 
-.section-4 h2 {
-  color: white;
-  margin-top: 0px;
-}
-
-.section-4 p {
-  color: white;
-  font-size: 18px;
-  font-weight: 800;
+  h2 {
+    color: white;
+    margin-top: 0px;
+  }
+  p {
+    color: white;
+    font-weight: 800;
+  }
 }
 
 .section-6 {
+  background-color: #09153B;
   margin-top: 100px;
   margin-bottom: 50px;
   padding-top: 50px;
   padding-bottom: 50px;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: white;
-}
 
-.section-6 p {
-  font-size: 16px;
-}
 
-.section-6 h2 {
-  margin-top: 0px;
+
+  h2 {
+    margin-top: 0px;
+  }
 }
 
 .square-image {
@@ -112,3 +125,18 @@ hr {
   display: inline-block;
 }
 
+
+.submit-btn {
+  background: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: var(--primary-color) 2px solid;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &:hover {
+    background: #001f3f;
+    color: white;
+  }
+}

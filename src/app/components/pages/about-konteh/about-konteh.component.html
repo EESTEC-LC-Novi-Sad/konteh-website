@@ -1,3 +1,8 @@
+<video autoplay muted loop class="video-bg">
+  <source src="/assets/background_video1.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
+<div class="page_content">
 
 <div class="is-flex is-flex-direction-column about-section">
   <div class="has-text-centered mb-5">
@@ -12,7 +17,7 @@
         <img class="round-borders" src="/assets/konteh1.jpg" />
       </div>
       <div class="column pl-5">
-        <h2 class="gradient-text alt-font">Šta je KONTEH?</h2>
+        <h2>Šta je KONTEH?</h2>
         <hr />
         <p>
           <strong>KONTEH</strong> predstavlja jedinstveni Sajam, koji pored
@@ -36,7 +41,7 @@
     <div class="max-width-1000 auto-margin px-3">
       <div class="columns">
         <div class="column">
-          <h2 class="gradient-text alt-font">Šta vas očekuje na Akademskim danima?</h2>
+          <h2>Šta vas očekuje na Akademskim danima?</h2>
           <hr />
           <p>
             Ovaj trodnevni akademski program održaće se u Naučno-tehnološkom parku.
@@ -65,7 +70,7 @@
         <img class="round-borders" src="/assets/konteh16.jpg" />
       </div>
       <div class="column pl-5">
-        <h2 class="gradient-text alt-font">Šta Vas očekuje na Sajmu?</h2>
+        <h2>Šta Vas očekuje na Sajmu?</h2>
         <hr />
         <p>
           U toku Sajma kompanije izlagači će, kao i prethodnih godina, imati priliku da
@@ -157,8 +162,8 @@
               tehničkih nauka u Novom Sadu.
             </p>
             <div class="mt-5">
-              <a mat-raised-button href="https://cv.konteh.org/" target="_blank"
-                >ZAUZMI SVOJE MESTO</a
+              <a mat-raised-button class="submit-btn" href="https://cv.konteh.org/" target="_blank"
+                >Zauzmi svoje mesto</a
               >
             </div>
           </div>
@@ -189,13 +194,7 @@
           Univerziteta u Novom Sadu i to kroz direktan kontakt sa
           zainteresovanim studentima i diplomcima tokom dva dana trajanja Sajma,
           gde se kompanijama nudi mogućnost obavljanja prvog intervjua već na
-          licu mesta. <br /><br />
-          Sajam KONTEH (Kontakti u tehnici)
-          <strong>prvi put organizovan je 2006. godine</strong> i od tada se
-          tradicionalno realizuje svake godine u kontinualno rastućem spektru
-          studenata i kompanija. Tim koordinatora menja se na godišnjem nivou,
-          kako bi se podsticao eksplorativni karakter samog projekta, te dao
-          priliku za uvođenje inovacija koju svaka nova generacija donosi!
+          licu mesta. <br />
         </div>
       </div>
     </div>
@@ -208,7 +207,7 @@
           class="column is-flex is-flex-direction-column is-justify-content-center"
         >
           <div>
-            <h2 class="gradient-text alt-font">Organizatori</h2>
+            <h2>Organizatori</h2>
             <p>
               Organizacioni tim sajma KONTEH čine aktivni članovi udruženja
               studenata EESTEC, u ambiciji da i ove godine ostvare fundamentalnu
@@ -233,9 +232,8 @@
               >.
             </p>
             <button
-              class="mt-5"
+              class="mt-5 submit-btn"
               mat-flat-button
-              color="accent"
               (click)="openPolicy()"
             >
               Politika privatnosti
@@ -248,4 +246,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

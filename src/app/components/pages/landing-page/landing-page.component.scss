@@ -223,7 +223,10 @@
 }
 
 .ostavi-cv {
-  background-color: var(--dark-blue-primary);
+  background: linear-gradient(to bottom,
+    var(--dark-blue-primary) 90%,  /* 95% of the background is this color */
+    var(--dark-blue-primary) 92%,  /* Start transition */
+    rgb(0,0,0) 100%);
   color: white;
   text-align: center;
   padding: 50px 20px;
