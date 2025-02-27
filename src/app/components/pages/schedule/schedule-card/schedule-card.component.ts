@@ -19,6 +19,7 @@ export class ScheduleCardComponent {
   }
 
   ngOnInit(): void {
+    console.log(this.schedule.image);
     this.activatedRoute.params.subscribe((params) => {
       const id = params['id'];
     });
