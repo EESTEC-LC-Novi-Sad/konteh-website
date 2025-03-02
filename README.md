@@ -1,27 +1,3 @@
-# KONTEH sajt
-
-Zvanični veb-sajt KONTEH sajma poslovnih mogućnosti i stručnih praksi. Sajt se može naći ovdje: [KONTEH Website](https://www.konteh.org/)
-
-## O KONTEH-u
-
-KONTEH je godišnji događaj koji organizuje **EESTEC LC Novi Sad** i okuplja preko **30 vodećih tehnoloških kompanija**. Sajam pruža studentima i mladim profesionalcima priliku za:
-
-- Upoznavanje sa vodećim IT i tech kompanijama.
-- Prisustvovanje predavanjima, panelima i radionicama.
-- Pronalazak prakse ili prvog zaposlenja.
-
-## O sajtu
-
-Ovaj veb-sajt, razvijen u **Angularu**, služi kao centralno mesto za informisanje korisnika o svim aspektima KONTEH-a.  
-
-### Ključne funkcionalnosti:
-
-- **Akademski dani** – Informacije o predavanjima, panelima i takmičenjima.
-- **Sajam** – Lista kompanija učesnica i njihove otvorene pozicije za juniore i prakse.
-- **Ostavi CV** – Mogućnost kreiranja naloga i postavljanja CV-a u bazu kojoj imaju pristup vodeće kompanije - partneri KONTEH-a.
-
----
-
 # KONTEH Website
 
 The official website of the KONTEH career fair and internship opportunities. The website can be found here: [KONTEH Website](https://www.konteh.org/)
@@ -46,6 +22,31 @@ This website, built with **Angular**, serves as a central platform for providing
 
 
 ---
+
+# KONTEH sajt
+
+Zvanični veb-sajt KONTEH sajma poslovnih mogućnosti i stručnih praksi. Sajt se može naći ovdje: [KONTEH Website](https://www.konteh.org/)
+
+## O KONTEH-u
+
+KONTEH je godišnji događaj koji organizuje **EESTEC LC Novi Sad** i okuplja preko **30 vodećih tehnoloških kompanija**. Sajam pruža studentima i mladim profesionalcima priliku za:
+
+- Upoznavanje sa vodećim IT i tech kompanijama.
+- Prisustvovanje predavanjima, panelima i radionicama.
+- Pronalazak prakse ili prvog zaposlenja.
+
+## O sajtu
+
+Ovaj veb-sajt, razvijen u **Angularu**, služi kao centralno mesto za informisanje korisnika o svim aspektima KONTEH-a.  
+
+### Ključne funkcionalnosti:
+
+- **Akademski dani** – Informacije o predavanjima, panelima i takmičenjima.
+- **Sajam** – Lista kompanija učesnica i njihove otvorene pozicije za juniore i prakse.
+- **Ostavi CV** – Mogućnost kreiranja naloga i postavljanja CV-a u bazu kojoj imaju pristup vodeće kompanije - partneri KONTEH-a.
+
+---
+
 ## Pokretanje aplikacije
 
 U okviru root foldera Angular aplikacije potrebno je pokrenuti komande:
