@@ -103,14 +103,36 @@
 
 }
 
-.akademski-program {
+.okontehu{
   background: #020B29;
+  background: linear-gradient(to bottom,
+    rgba(0, 0, 0, 0.72) 0%,
+    #020B29 12%,
+    #020B29 90%,  /* 95% of the background is this color */
+    #020B29 100%);
   padding: 50px 20px;
   display: flex;
   justify-content: center;
 
   p {
-    font-size: 16px;
+    font-size: 18px;
+  }
+
+
+  h2 {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+  }}
+
+.akademski-program{
+  background: #123B73;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+
+  p {
+    font-size: 18px;
   }
 
 
@@ -178,15 +200,20 @@
 
 .sajam {
   padding: 50px 20px;
-  text-align: center;
+  background: linear-gradient(to bottom,
+    rgba(0, 0, 0, 0.72) 0%,
+    var(--dark-blue-primary) 12%,
+    var(--dark-blue-primary) 90%,  /* 95% of the background is this color */
+    var(--dark-blue-primary) 100%);
+  text-align: justify;
   display: flex;
   justify-content: center;
-
+  /**
   background: linear-gradient(to bottom,
-    #123B73 95%,  /* 95% of the background is this color */
-    #123B73 98%,  /* Start transition */
+    #123B73 95%,
+    #123B73 98%,
     var(--dark-blue-primary) 100%);
-
+  **/
 
   h2 {
     color: #3bc0f8;
@@ -196,6 +223,8 @@
 
   p {
     font-size: 18px;
+    //text-align: justify;
+
   }
 }
 
@@ -206,7 +235,7 @@
   justify-content: space-around;
   background: linear-gradient(to bottom, #020B29, #123B73);
   color: white;
-  padding: 40px 20px;
+  padding: 50px 20px;
 
   div {
     text-align: center;
@@ -222,11 +251,23 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .stats div h2 {
+    font-size: 48px; /* Increase heading size */
+  }
+
+  .stats div p {
+    font-size: 26px; /* Increase paragraph size */
+  }
+}
+
 .ostavi-cv {
   background: linear-gradient(to bottom,
+    rgba(0, 0, 0, 0.72) 0%,
+    var(--dark-blue-primary) 12%,
     var(--dark-blue-primary) 90%,  /* 95% of the background is this color */
-    var(--dark-blue-primary) 92%,  /* Start transition */
-    rgb(0,0,0) 100%);
+    var(--dark-blue-primary) 88%,  /* Start transition */
+    rgb(0,0,0.71) 100%);
   color: white;
   text-align: center;
   padding: 50px 20px;
