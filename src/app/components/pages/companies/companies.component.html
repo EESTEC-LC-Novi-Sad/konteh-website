@@ -9,15 +9,11 @@
   <h1 class="company-title">Kompanije</h1>
   <div *ngIf="!showCompanies">
     <h2 class="alt-font">USKORO!</h2>
-
-    <div>
-      <button mat-flat-button color="primary" (click)="openHomepage()">
-        Povratak na početnu stranicu
-      </button>
-    </div>
   </div>
 
-  <div *ngIf="showCompanies" class="max-width-1200 auto-margin content">
+    <h3 class="alt-font">USKORO!</h3>
+
+    <div *ngIf="!showCompanies" class="max-width-1200 auto-margin content">
     <div
       class="auto-margin stretch-width my-5 py-5"
       *ngIf="companies.length == 0"
@@ -30,7 +26,6 @@
       <p *ngIf="exclusiveCompany.name != ''" class="my-5">Uskoro!</p>
       <div
         class="exclusive-card company-card"
-        *ngIf="exclusiveCompany.name == ''"
       >
         <exclusive-company-card
           [company]="exclusiveCompany"
@@ -48,47 +43,34 @@
       <h3>Platinum pokrovitelji</h3>
       <div>
         <p *ngIf="platinumCompanies.length != 0" class="my-5">Uskoro!</p>
-        <div *ngIf="platinumCompanies.length == 0">
         <div class="company-card" *ngFor="let company of platinumCompanies">
           <platinum-company-card [company]="company"></platinum-company-card>
         </div>
-      </div>
       </div>
 
       <h3>Zlatni pokrovitelji</h3>
       <div>
         <p *ngIf="goldCompanies.length != 0" class="my-5">Uskoro!</p>
-        <div *ngIf="goldCompanies.length == 0">
-
         <div class="company-card" *ngFor="let company of goldCompanies">
           <gold-company-card [company]="company"></gold-company-card>
-        </div>
         </div>
       </div>
 
       <h3>Srebrni pokrovitelji</h3>
       <div>
         <p *ngIf="silverCompanies.length != 0" class="my-5">Uskoro!</p>
-        <div *ngIf="silverCompanies.length == 0">
-
         <div class="company-card" *ngFor="let company of silverCompanies">
           <silver-company-card [company]="company"></silver-company-card>
-        </div>
-
         </div>
       </div>
 
       <h3>Bronzani pokrovitelji</h3>
       <div>
         <p *ngIf="bronzeCompanies.length != 0" class="my-5">Uskoro!</p>
-
-        <div *ngIf="silverCompanies.length == 0">
-
         <div class="company-card" *ngFor="let company of bronzeCompanies">
           <bronze-company-card [company]="company"></bronze-company-card>
         </div>
         </div>
-      </div>
     </div>
   </div>
   </div>
