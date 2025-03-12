@@ -39,4 +39,9 @@ export class LandingPageComponent implements OnInit {
     this.dialog.open(PolicyComponent);
   }
 
+  openCVLink() {
+    window.open("https://cv.konteh.org/", "_blank");
+  }
+
+
 }
