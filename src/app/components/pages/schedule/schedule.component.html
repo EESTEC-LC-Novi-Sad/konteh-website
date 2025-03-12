@@ -1,36 +1,34 @@
-<div class="header-cover"></div>
-
 <div
   class="is-flex is-flex-direction-column has-text-centered schedule-section"
 >
   <div *ngIf="schedules.length == 0">
-    <h1>Raspored</h1>
+    <h1 class="title">Raspored</h1>
     <p>
       Trenutno nema objavljenih rasporeda.
     </p>
   </div>
   <div *ngIf="schedules.length != 0">
-    <h1>Raspored</h1>
+    <h1 class = "title">Raspored</h1>
 
     <mat-spinner class="auto-margin my-5" *ngIf="scheduleLoading"></mat-spinner>
     <div class="max-width-1200 auto-margin column" *ngIf="!scheduleLoading">
       <div class="date-filter">
-        <div class="date" (click)="filterSchedule(6)"
-          [ngClass]="{'active': selectedDay == 6}"
+        <div class="date" (click)="filterSchedule(14)"
+          [ngClass]="{'active': selectedDay == 14}"
         >
-          <h3>6. mart</h3>
+          <h3>14. MAJ</h3>
         </div>
-        <div class="date" (click)="filterSchedule(8)"
-          [ngClass]="{'active': selectedDay == 8}"
+        <div class="date" (click)="filterSchedule(15)"
+          [ngClass]="{'active': selectedDay == 15}"
 
         >
-          <h3>8. mart</h3>
+          <h3>15. MAJ</h3>
         </div>
-        <div class="date" (click)="filterSchedule(9)"
-          [ngClass]="{'active': selectedDay == 9}"
+        <div class="date" (click)="filterSchedule(16)"
+          [ngClass]="{'active': selectedDay == 16}"
 
         >
-          <h3>9. mart</h3>
+          <h3>16. MAJ</h3>
         </div>
       </div>
 

@@ -1,44 +1,39 @@
 <div class="header-container wide-menu">
   <div
-    class="header-content is-flex is-flex-direction-row is-justify-content-space-between py-5 is-align-items-center"
+    class="header-content is-flex is-flex-direction-row is-justify-content-space-between is-align-items-center"
   >
     <div>
       <a [routerLink]="['/']">
-        <img class="logo clickable" src="../../../assets/logoWhite.png" />
+        <img class="logo clickable" src="../../../assets/logoWhiteSimple.png" />
       </a>
     </div>
 
     <div class="navbar-container">
       <div class="is-flex is-flex-direction-row is-align-items-center">
-        <span class="home-button">
-          <a [routerLink]="['/']">
-            <button mat-icon-button color="primary">
-              <mat-icon>home</mat-icon>
-            </button>
-          </a>
-        </span>
         <div>
           <a
             class="navigation-item"
-            [ngClass]="{ selected: tab == 1 }"
+            [ngClass]="{ selected: tab === 1 }"
             [routerLink]="['/o-konteh-u']"
           >
             O KONTEH-u
           </a>
         </div>
+
         <div>
           <a
             class="navigation-item"
-            [ngClass]="{ selected: tab == 2 }"
-            [routerLink]="['/aktivnosti']"   
+            [ngClass]="{ selected: tab === 2 }"
+            [routerLink]="['/aktivnosti']"
           >
             Aktivnosti
           </a>
         </div>
+
         <div>
           <a
             class="navigation-item"
-            [ngClass]="{ selected: tab == 3 }"
+            [ngClass]="{ selected: tab === 3 }"
             [routerLink]="['/raspored']"
           >
             Raspored
@@ -47,7 +42,7 @@
         <div>
           <a
             class="navigation-item"
-            [ngClass]="{ selected: tab == 4 }"
+            [ngClass]="{ selected: tab === 4 }"
             [routerLink]="['/kompanije']"
           >
             Kompanije
@@ -56,7 +51,7 @@
         <div>
           <a
             class="navigation-item"
-            [ngClass]="{ selected: tab == 5 }"
+            [ngClass]="{ selected: tab === 5 }"
             [routerLink]="['/pokrovitelji']"
           >
             Pokrovitelji
@@ -65,7 +60,16 @@
         <div>
           <a
             class="navigation-item"
-            [ngClass]="{ selected: tab == 6 }"
+            [ngClass]="{ selected: tab === 6 }"
+            [routerLink]="['/mediji']"
+          >
+            Mediji
+          </a>
+        </div>
+        <div>
+          <a
+            class="navigation-item"
+            [ngClass]="{ selected: tab === 7 }"
             [routerLink]="['/kontakt']"
           >
             Kontakt
@@ -75,8 +79,7 @@
           <a
             mat-flat-button
             [routerLink]="['/oglasi']"
-            class="header-button"
-            color="accent"
+            class="header-button primary-button"
             >OGLASI</a
           >
         </div>
@@ -85,7 +88,7 @@
             mat-flat-button
             href="https://cv.konteh.org/"
             target="_blank"
-            class="header-button"
+            class="header-button primary-button"
             >OSTAVI CV</a
           >
         </div>
@@ -98,13 +101,13 @@
   class="mobile-menu header-container-mobile is-flex is-justify-content-space-between"
 >
   <a [routerLink]="['/']">
-    <img class="logo clickable" src="../../../assets/logoWhite.png" />
+    <img class="logo clickable" src="../../../assets/logoWhiteSimple.png" />
   </a>
 
   <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon>more_vert</mat-icon>
   </button>
-  <mat-menu #menu="matMenu" xPosition="before">
+  <mat-menu #menu="matMenu" xPosition="before" >
     <div class="navbar-container mat-menu">
       <div class="mb-2 py-2" (click)="switchSelectedMenuItem(0)">
         <a class="navigation-item-mobile" [ngClass]="{ selected: tab == 0 }">
@@ -141,22 +144,20 @@
           Kontakt
         </a>
       </div>
-      <div class="py-2" *ngIf="showOffers">
+      <div class="py-2 primary-button" *ngIf="showOffers">
         <a
           mat-flat-button
           [routerLink]="['/oglasi']"
-          class="header-button"
-          color="accent"
+          class="header-button primary-button"
           >OGLASI</a
         >
       </div>
       <div class="py-2">
         <a
           mat-flat-button
-          color="primary"
           href="https://cv.konteh.org/"
           target="_blank"
-          class="header-button"
+          class="header-button primary-button"
           >OSTAVI CV</a
         >
       </div>

@@ -1,16 +1,26 @@
+<div class = "background-image">
 <div class="header-cover"></div>
 
 <div
 class="is-flex is-flex-direction-column has-text-centered activity-section"
 >
-  <h1>Aktivnosti</h1>
+  <video autoplay muted loop playsinline class="video-bg">
+    <source src="/assets/background_video1.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+  <div class = "page_content">
+  <h1 class="title">AKTIVNOSTI</h1>
   <mat-spinner class="auto-margin my-5" *ngIf="activityLoading"></mat-spinner>
-  <p *ngIf="activities.length == 0 && !activityLoading">
+  <p > <!--*ngIf="activities.length == 0 && !activityLoading"-->
     Trenutno nema objavljenih aktivnosti.
   </p>
-  <div *ngFor="let activity of activities" class="mt-5 stretch-width">
-    <div class="max-width-900 auto-margin">
-      <activity-card [activity]="activity"></activity-card>
+  <div *ngIf="false">
+    <div *ngFor="let activity of activities" class="mt-5 stretch-width">
+      <div class="max-width-900 auto-margin">
+        <activity-card [activity]="activity"></activity-card>
+      </div>
+    </div>
     </div>
   </div>
+</div>
 </div>

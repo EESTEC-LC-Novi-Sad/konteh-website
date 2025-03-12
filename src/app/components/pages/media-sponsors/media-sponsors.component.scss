@@ -1,0 +1,45 @@
+@import "./../../../../app/custom-theme.scss";
+
+.sponsors-section {
+}
+
+.title {
+  color:white;
+  margin: 40px auto 0 auto;
+  letter-spacing: 0.2em;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.sponsors-section h2 {
+  font-size: 50px;
+  line-height: 50px;
+  font-weight: 600;
+  color: $blue;
+  margin: 40px auto;
+}
+
+h3 {
+  color: var(--primary-color);
+  font-size: 22px;
+  letter-spacing: 0.1em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  @media (min-width: 430px) {
+    font-size: 24px;
+  }
+}
+
+.sponsor-card {
+  width: 300px;
+  margin: 0px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+}
+
+p {
+  font-size: large;
+  font-weight: bold;
+}

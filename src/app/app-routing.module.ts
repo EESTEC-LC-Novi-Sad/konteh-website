@@ -13,6 +13,7 @@ import { ScheduleComponent } from './components/pages/schedule/schedule.componen
 import { SponsorsComponent } from './components/pages/sponsors/sponsors.component';
 import { ActivityListViewComponent } from './components/pages/activity-page/activity-list-view/activity-list-view.component';
 import { SchedulePageComponent } from './components/pages/schedule/schedule-page/schedule-page.component';
+import {MediaSponsorsComponent} from "./components/pages/media-sponsors/media-sponsors.component";
 
 var baseTitle = 'KONTEH - ';
 
@@ -55,6 +56,11 @@ const routes: Routes = [
     path: 'pokrovitelji',
     component: SponsorsComponent,
     title: baseTitle + 'Pokrovitelji',
+  },
+  {
+    path: 'mediji',
+    component: MediaSponsorsComponent,
+    title: baseTitle + 'Mediji',
   },
   {
     path: 'oglas/:id',

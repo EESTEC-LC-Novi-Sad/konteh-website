@@ -1,18 +1,38 @@
 @import "./../../../../app/custom-theme.scss";
 
-.companies-section {
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
 }
 
-.companies-section h1 {
-  font-size: 55px;
-  line-height: 60px;
-  font-weight: 500;
-  margin: 20px auto;
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+.page_content{
+  z-index: 10;
+}
 
-  @media (max-width: 425px) {
-    font-size: 40px;
-    line-height: 45px;
-  }
+.companies-section {
+  z-index: 10;
+}
+
+.company-title {
+  color:white;
+  margin: 40px auto 0 auto;
+  letter-spacing: 0.2em;
+  font-size: 2rem;
+  text-transform: uppercase;
 }
 
 .companies-section h2 {
@@ -20,18 +40,19 @@
   line-height: 50px;
   font-weight: 600;
   color: $blue;
-  margin: 40px auto;
+  margin: 40px auto 0 auto;
 }
 
 h3 {
-  color: $blue;
-  font-size: 24px;
-  margin-top: 30px;
+  color: var(--primary-color);
+  font-size: 22px;
+  letter-spacing: 0.1em;
+  margin-top: 20px;
   margin-bottom: 20px;
 
   @media (min-width: 430px) {
-    
-  font-size: 36px;
+
+  font-size: 24px;
   }
 }
 

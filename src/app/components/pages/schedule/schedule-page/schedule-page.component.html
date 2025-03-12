@@ -1,5 +1,3 @@
-<div class="header-cover"></div>
-
 <div class="max-width-1200 auto-margin mt-5 pl-5">
   <nav class="breadcrumb" aria-label="breadcrumbs">
     <ul>
@@ -12,35 +10,31 @@
 <mat-spinner class="auto-margin m-5" *ngIf="schedule.title== ''"></mat-spinner>
 
 <div class="card-container max-width-1200 auto-margin is-flex is-flex-direction-column">
-  <h1>{{schedule.title}}</h1>
   <div class="columns">
-    <div class="column">
-      <div
-        class="is-flex is-flex-direction-row is-align-items-center location mb-3"
-        >
+    <!-- Left column: Title and details -->
+    <div class="column is-three-quarters">
+      <h1>{{schedule.title}}</h1>
+      <div class="is-flex is-flex-direction-row is-align-items-center location mb-3">
         <mat-icon>location_on</mat-icon>
-        <h4> {{ schedule.location }}</h4>
+        <h4>{{ schedule.location }}</h4>
       </div>
-      <div
-        class="is-flex is-flex-direction-row is-align-items-center location mb-3"
-        >
+      <div class="is-flex is-flex-direction-row is-align-items-center location mb-3">
         <mat-icon>calendar_today</mat-icon>
-        <h4> {{ schedule.startTime | date : "dd/MM/yyyy" }}</h4>
-        <h4> {{schedule.startTime | date: "HH:mm"}} - {{schedule.endTime | date: "HH:mm"}}</h4>
+        <h4>{{ schedule.startTime | date : "dd/MM/yyyy" }}</h4>
+        <h4>{{schedule.startTime | date: "HH:mm"}} - {{schedule.endTime | date: "HH:mm"}}</h4>
       </div>
-      <div
-        class="is-flex is-flex-direction-row is-align-items-center location mb-3"
-        *ngIf="trackName != ''"
-        >
-        <button style="background-color: {{color}};">
-        </button>
+      <div class="is-flex is-flex-direction-row is-align-items-center location mb-3" *ngIf="trackName != ''">
+        <button style="background-color: {{color}};"></button>
         <h4 style="color: {{color}};">{{trackName}}</h4>
       </div>
     </div>
-    <div class="column" *ngIf="schedule.image != null && schedule.image != ''">
-        <img src="{{ schedule.image }}" />
+
+    <!-- Right column: Logo -->
+    <div class="column is-one-quarter" *ngIf="schedule.image != null && schedule.image != ''">
+      <img class="logo-image" src="{{ schedule.image }}" alt="Event Logo">
     </div>
   </div>
+
   <h2
     *ngIf="schedule.content != null && schedule.content != ''"
     >

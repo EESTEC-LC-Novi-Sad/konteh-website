@@ -107,7 +107,9 @@ export class OffersComponent implements OnInit {
       let anySelected = false;
       if (this.selectedDepartments.some((item) => item.selected == true)) {
         return this.selectedDepartments.some((item) => {
-          return o.uniDepartments.includes(item.name) && item.selected;
+          if(o.uniDepartments){
+            return o.uniDepartments.includes(item.name) && item.selected;
+          }
         });
       } else {
         return true;
@@ -119,9 +121,13 @@ export class OffersComponent implements OnInit {
       let offerText: string =
         o.positionName + o.company.fields.name + o.location;
 
-      for (let tag of o.tags) {
-        offerText = offerText + tag;
+      //some offers dont have tags
+      if(o.tags){
+        for (let tag of o.tags) {
+          offerText = offerText + tag;
+        }
       }
+
 
       offerText = offerText.toLowerCase().replace(/ /g, '').trim();
 

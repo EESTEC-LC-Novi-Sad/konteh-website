@@ -34,6 +34,25 @@ export class ScheduleComponent implements OnInit {
       this.schedules.sort((a, b) => new Date(a.startTime).getTime() - new Date(b.startTime).getTime());
       this.filteredSchedules = this.schedules;
       this.scheduleLoading = false;
+
+
+
+      const today = new Date();
+      const firstDa = new Date(2025, 4, 14); // Months are 0-based, so 4 = May
+
+
+      if (today.getFullYear() === 2025 &&
+        today.getMonth() === 5 &&
+        today.getDate() === 15) {
+        this.filterSchedule(15);
+      } else if(today.getFullYear() === 2025 &&
+        today.getMonth() === 5 &&
+        today.getDate() === 16){
+        this.filterSchedule(16);
+      }else{
+        this.filterSchedule(14);
+      }
+
     });
   }
 

@@ -19,6 +19,7 @@ export class ScheduleCardComponent {
   }
 
   ngOnInit(): void {
+    console.log(this.schedule.image);
     this.activatedRoute.params.subscribe((params) => {
       const id = params['id'];
     });
@@ -28,13 +29,13 @@ export class ScheduleCardComponent {
       this.color = 'rgb(143, 179, 231)';
     } else if(this.schedule.track === 'autorobo'){
       this.trackName = "AutoRobo evolucija: Sledeća brzina";
-      this.color = 'rgb(185, 37, 37)';
+      this.color = 'rgb(255,99,51)';
     } else if(this.schedule.track === 'igraliste'){
       this.trackName = "Igralište Inovatora: Tehnologija i trendovi";
-      this.color = 'rgb(27, 56, 105)';
+      this.color = 'rgb(250,200,91)';
     } else if(this.schedule.track === 'kiber'){
       this.trackName = "KiberProstor: Poslednja granica";
-      this.color = 'rgb(4, 5, 4)';
+      this.color = 'rgb(255,141,255)';
     }
   }
 

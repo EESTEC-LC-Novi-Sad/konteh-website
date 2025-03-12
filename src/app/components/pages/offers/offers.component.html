@@ -1,7 +1,5 @@
-<div class="header-cover"></div>
-
 <div class="is-flex is-flex-direction-column has-text-centered offers-section">
-  <h1>Otvorene juniorske pozicije i prakse</h1>
+  <h1 class = "offers-title">Otvorene juniorske pozicije i prakse</h1>
   <div *ngIf="!showOffers">
     <h2 class="alt-font">USKORO!</h2>
     <div>
@@ -78,7 +76,6 @@
 
           <button
             mat-fab
-            color="info"
             matTooltip="Poništi pretragu"
             (click)="cancelSearch()"
           >
@@ -159,7 +156,6 @@
 
             <button
               mat-fab
-              color="info"
               matTooltip="Poništi pretragu"
               (click)="cancelSearch()"
             >
@@ -239,7 +235,6 @@
 
           <button
             mat-fab
-            color="info"
             matTooltip="Poništi pretragu"
             (click)="cancelSearch()"
           >
@@ -265,7 +260,7 @@
       </div>
       <div
         *ngFor="let offer of displayOffers"
-        class="mt-5 max-width-1200 auto-margin"
+        class="mt-5 max-width-1000 auto-margin"
       >
         <offer-card [offer]="offer"></offer-card>
       </div>

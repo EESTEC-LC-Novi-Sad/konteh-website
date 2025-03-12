@@ -1,17 +1,27 @@
 @import "./../../../../../app/custom-theme.scss";
 
+a{
+  color: var(--primary-color) !important;
+}
+
 .card-container{
     margin-top: 30px;
-    background-color: white;
     border-radius: 20px;
-    padding: 60px;
+  color: white;
+  background-color: var(--dark-blue-primary);
+  padding: 60px;
+    box-shadow:
+      0px 5px 5px rgba(211, 211, 211, 0.6),  /* Bottom */
+      0px -5px 5px rgba(211, 211, 211, 0.6), /* Top */
+      5px 0px 5px rgba(211, 211, 211, 0.6),  /* Right */
+      -5px 0px 5px rgba(211, 211, 211, 0.6); /* Left */
 
     h1{
         font-size: 30px;
         font-weight: 600;
         margin: 0;
         margin-bottom: 35px;
-        color: $gradient-start;
+        color: white;
 
         @media (max-width: 425px) {
         font-size: 40px;
@@ -83,4 +93,11 @@ h4 {
 .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled)
   .mdc-evolution-chip__text-label {
   color: white !important;
+}
+
+.logo-image {
+  max-width: 150px;
+  max-height: 150px;
+  display: block;
+  margin: auto;
 }
