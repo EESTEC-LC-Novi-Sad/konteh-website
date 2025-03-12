@@ -267,10 +267,10 @@
 
 .ostavi-cv {
   background: linear-gradient(to bottom,
-    rgba(0, 0, 0, 0.72) 0%,
-    var(--dark-blue-primary) 12%,
-    var(--dark-blue-primary) 90%,  /* 95% of the background is this color */
-    var(--dark-blue-primary) 88%,  /* Start transition */
+    rgb(0,0,0.71) 0%,
+    #09153b 12%,
+    #09153b 90%,  /* 95% of the background is this color */
+    #09153b 88%,  /* Start transition */
     rgb(0,0,0.71) 100%);
   color: white;
   text-align: center;
@@ -284,6 +284,7 @@
     width: 50%;
     margin: 2rem auto;
     text-align: center;
+    line-height: 1.8;
   }
 }
 
