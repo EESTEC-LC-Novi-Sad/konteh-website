@@ -22,6 +22,8 @@ h2{
 p {
   font-size: 18px;
   line-height: 1.8;
+  text-align: justify;
+
 }
 
 .overlay {
@@ -55,6 +57,10 @@ p {
     color: white;
     margin: 40px auto;
   }
+}
+
+.textt{
+  font-weight: normal !important;
 }
 
 .has-text-centered.mb-5 {

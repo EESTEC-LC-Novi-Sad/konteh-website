@@ -40,14 +40,14 @@
 }
 
 .header-content h1 {
-  font-size: 3.875rem;
+  font-size: 3.8rem;
   margin-bottom: 5vh;
   letter-spacing: 0.3em;
   font-weight: bold;
 }
 
 .header-content p {
-  font-size: 1.375rem;
+  font-size: 1.3rem;
   margin-top: 10px;
 }
 
@@ -267,7 +267,7 @@
 
 .ostavi-cv {
   background: linear-gradient(to bottom,
-    rgb(0,0,0.71) 0%,
+    var(--dark-blue-primary) 0%,
     #09153b 12%,
     #09153b 90%,  /* 95% of the background is this color */
     #09153b 88%,  /* Start transition */
