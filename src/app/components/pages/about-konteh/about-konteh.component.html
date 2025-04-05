@@ -1,4 +1,13 @@
-<video autoplay muted loop playsinline class="video-bg">
+<video
+  #bgVideo
+  autoplay
+  muted
+  playsinline
+  loop
+  [attr.disableRemotePlayback]="true"
+  [attr.x-webkit-airplay]="'deny'"
+  class="video-bg"
+>
   <source src="/assets/background_video1.mp4" type="video/mp4">
 </video>
 <div class="overlay"></div>
