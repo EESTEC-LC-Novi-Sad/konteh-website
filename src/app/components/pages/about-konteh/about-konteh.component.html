@@ -1,4 +1,8 @@
-<div class="header-cover"></div>
+<video autoplay muted loop playsinline class="video-bg">
+  <source src="/assets/background_video1.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
+<div class="page_content">
 
 <div class="is-flex is-flex-direction-column about-section">
   <div class="has-text-centered mb-5">
@@ -10,76 +14,92 @@
       <div
         class="column is-flex is-flex-direction-column is-justify-content-space-around"
       >
-        <img class="round-borders" src="/assets/konteh1.jpg" />
+        <img class="round-borders" src="/assets/konteh_hol.JPG" />
       </div>
       <div class="column pl-5">
-        <h2 class="gradient-text alt-font">Šta je KONTEH?</h2>
-        <hr />
         <p>
-          <strong>KONTEH</strong> predstavlja jedinstveni Sajam, koji pored
-          prilika za zapošljavanje nudi i raznovrsnu ponudu stručnih praksi, i
-          kao takav može da poveže kompanije sa dve bitne tačke za njihov
-          razvoj: obrazovnim institucijama i ljudskim resursima (studentima,
-          odnosno diplomcima kao kandidatima za posao). <br /><br />
-          Sajam poslovnih mogućnosti i stručnih praksi
-          <strong>KONTEH</strong> pruža kompanijama mogućnost da se predstave i
-          upoznaju sa najkvalitetnijim visoko obrazovnim kadrom koji dolazi sa
-          Univerziteta u Novom Sadu i to kroz direktan kontakt sa
-          zainteresovanim studentima i diplomcima tokom dva dana trajanja Sajma,
-          gde se kompanijama nudi mogućnost obavljanja prvog intervjua već na
-          licu mesta.
+          Kada smo pokrenuli KONTEH, vodila nas je jednostavna ideja – studenti zaslužuju jasniji put od fakulteta do prve poslovne prilike. Iz sopstvenog iskustva znali smo koliko je važno imati direktan kontakt sa kompanijama, videti kakve su mogućnosti na tržištu i dobiti priliku za praksu ili posao.
+          <br><br>
+          Već 19 godina, KONTEH je prerastao u mnogo više od sajma. Postao je mesto gde se studenti i poslodavci povezuju na pravi način – kroz razgovor, razmenu znanja i prilike za profesionalni razvoj. Naša misija ostaje ista: pomoći mladim ljudima da naprave prve korake u karijeri i olakšati kompanijama da pronađu talentovane buduće stručnjake.
         </p>
       </div>
     </div>
   </div>
 
-  <div class="section-2">
-    <div class="max-width-1000 auto-margin px-3">
-      <div class="columns">
-        <div class="column">
-          <h2 class="gradient-text alt-font">Šta vas očekuje na Akademskim danima?</h2>
-          <hr />
-          <p>
-            Ovaj trodnevni akademski program održaće se u Naučno-tehnološkom parku. 
-            Prvog dana ćete imati priliku da prisustvujete <strong>panel diskusiji</strong> 
-            vođenoj od strane stručnjaka koji će razmatrati ključne teme. Sledećeg dana će se održati <strong>predavanja</strong> 
-            u okviru 4 različita track-a na aktuelne teme industrije. Takođe, pored predavanja, 
-            biće Speed dating sa kompanijama učesnicama, NGO i StartUP zona. Poslednjeg dana, 
-            fokus će biti na <strong>studiji slučaja</strong>, gde ćete sa svojim timom imati priliku da rešavate 
-            probleme određene teme. 
-          </p>
-        </div>
-        <div
-          class="column is-4 is-flex is-flex-direction-column is-justify-content-space-around"
-        >
-          <img class="round-borders" src="/assets/konteh11.jpg" />
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="mt-5">
+  <div class="section-4 gradient-background">
     <div class="columns max-width-1200 auto-margin">
-      <div
-        class="column is-flex is-flex-direction-column is-justify-content-space-around"
-      >
-        <img class="round-borders" src="/assets/konteh16.jpg" />
+      <div class="column">
+        <div
+          class="stretch-height is-flex is-flex-direction-column is-justify-content-space-around px-5"
+        >
+          <div>
+            <h2>Organizacija</h2>
+            <p class = "textt">
+              EESTEC (Electrical Engineering Students’ European Association) je
+              neprofitno, nepolitičko udruženje studenata osnovano u cilju da
+              poveže studente elektrotehnike i računarstva širom Evrope. EESTEC
+              LC Novi Sad osnovan je 2001. godine i okuplja studente Fakulteta
+              tehničkih nauka u Novom Sadu sa brojnih odseka elektrotehnike.
+              Danas naš lokalni komitet broji preko 320 članova i jedan je od
+              najaktivnijih i najbrojnijih.
+            </p>
+            <div class="mt-5">
+              <button
+                class="mt-5 submit-btn"
+                mat-flat-button
+                (click)="openPolicy()"
+              >
+                Politika privatnosti
+              </button>
+
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="column pl-5">
-        <h2 class="gradient-text alt-font">Šta Vas očekuje na Sajmu?</h2>
-        <hr />
-        <p>
-          U toku Sajma kompanije izlagači će, kao i prethodnih godina, imati priliku da 
-          predstave svoju delatnost studentima pomoću <strong>promotivnog materijala</strong> i kroz neposredni 
-          kontakt sa njima. Studenti i kandidati za posao će, sa druge strane, pored mogućnosti 
-          da na licu mesta uruče svoj CV poslodavcima za koje su zainteresovani, moći isti da 
-          ostave i u <strong>elektronskoj bazi</strong> koja će biti na raspolaganju svim kompanijama-učesnicama 
-          tokom narednih godinu dana, čime direktno sebi uvećavaju šansu za dobijanje radnog mesta 
-          ili prakse.
-        </p>
+      <div class="column">
+        <img class="round-borders" src="/assets/eestec5.jpg" />
       </div>
     </div>
   </div>
+
+  <div class="section-6">
+    <div class="max-width-1200 auto-margin">
+      <div class="columns">
+        <!-- Image column moved first -->
+        <div class="column">
+          <img class="round-borders" src="/assets/tim.jpeg" />
+        </div>
+        <!-- Text column moved second -->
+        <div
+          class="column is-flex is-flex-direction-column is-justify-content-center"
+        >
+          <div>
+            <p>
+              Organizacioni tim sajma KONTEH čine aktivni članovi udruženja
+              studenata EESTEC, u ambiciji da i ove godine ostvare fundamentalnu
+              kariku između kompanija i studenata u potrazi za stručnom praksom
+              i prvim uspešnim koracima ka razvoju svoje karijere.
+            </p>
+            <p>
+              Pored KONTEH-a, EESTEC LC Novi Sad godinama organizuje još mnoge
+              projekte, kao što su Soft Skills Academy, razmene studenata i
+              EESTech challenge. Više o nama možete pročitati na
+              <a href="http://www.eestecns.org" target="_blank"
+              >EESTEC LC Novi Sad</a
+              >.
+            </p>
+
+            <a mat-raised-button class="submit-btn" href="https://cv.konteh.org/" target="_blank"
+            >Zauzmi svoje mesto</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
   <div class="section-7">
     <div class="max-width-1200 auto-margin">
@@ -141,112 +161,5 @@
     </div>
   </div>
 
-  <div class="section-4 gradient-background">
-    <div class="columns max-width-1200 auto-margin">
-      <div class="column">
-        <div
-          class="stretch-height is-flex is-flex-direction-column is-justify-content-space-around px-5"
-        >
-          <div>
-            <h2>Organizacija</h2>
-            <p>
-              Studentska organizacija EESTEC LC Novi Sad, želeći da studentima i
-              diplomcima Univerziteta u Novom Sadu predstavi mogućnosti
-              zaposlenja i razvoja karijere u kompanijama koje posluju u našoj
-              zemlji, organizuje KONTEH – Sajam poslovnih mogućnosti i stručnih
-              praksi, na najvećem fakultetu u Republici Srbiji, Fakultetu
-              tehničkih nauka u Novom Sadu.
-            </p>
-            <div class="mt-5">
-              <a mat-raised-button href="https://cv.konteh.org/" target="_blank"
-                >ZAUZMI SVOJE MESTO</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column">
-        <img class="round-borders" src="/assets/konteh.jpg" />
-      </div>
-    </div>
-  </div>
-
-  <div class="section-5 max-width-1200 auto-margin">
-    <div class="columns">
-      <div class="column is-7">
-        <img class="round-borders" src="/assets/konteh13.jpg" />
-      </div>
-      <div
-        class="column is-flex is-flex-direction-column is-justify-content-center"
-      >
-        <div>
-          <strong>KONTEH</strong> predstavlja jedinstveni sajam, koji pored
-          prilika za zapošljavanje nudi i raznovrsnu ponudu stručnih praksi, i
-          kao takav može da poveže kompanije sa dve bitne tačke za njihov
-          razvoj: obrazovnim institucijama i ljudskim resursima (studentima,
-          odnosno diplomcima kao kandidatima za posao).<br /><br />
-          <strong>KONTEH</strong> pruža kompanijama mogućnost da se predstave i
-          upoznaju sa najkvalitetnijim visoko obrazovnim kadrom koji dolazi sa
-          Univerziteta u Novom Sadu i to kroz direktan kontakt sa
-          zainteresovanim studentima i diplomcima tokom dva dana trajanja Sajma,
-          gde se kompanijama nudi mogućnost obavljanja prvog intervjua već na
-          licu mesta. <br /><br />
-          Sajam KONTEH (Kontakti u tehnici)
-          <strong>prvi put organizovan je 2006. godine</strong> i od tada se
-          tradicionalno realizuje svake godine u kontinualno rastućem spektru
-          studenata i kompanija. Tim koordinatora menja se na godišnjem nivou,
-          kako bi se podsticao eksplorativni karakter samog projekta, te dao
-          priliku za uvođenje inovacija koju svaka nova generacija donosi!
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-6">
-    <div class="max-width-1200 auto-margin">
-      <div class="columns">
-        <div
-          class="column is-flex is-flex-direction-column is-justify-content-center"
-        >
-          <div>
-            <h2 class="gradient-text alt-font">Organizatori</h2>
-            <p>
-              Organizacioni tim sajma KONTEH čine aktivni članovi udruženja
-              studenata EESTEC, u ambiciji da i ove godine ostvare fundamentalnu
-              kariku između kompanija i studenata u potrazi za stručnom praksom
-              i prvim uspešnim koracima ka razvoju svoje karijere.
-            </p>
-            <p>
-              EESTEC (Electrical Engineering Students’ European Association) je
-              neprofitno, nepolitičko udruženje studenata osnovano u cilju da
-              poveže studente elektrotehnike i računarstva širom Evrope. EESTEC
-              LC Novi Sad osnovan je 2001. godine i okuplja studente Fakulteta
-              tehničkih nauka u Novom Sadu sa brojnih odseka elektrotehnike.
-              Danas naš lokalni komitet broji preko 320 članova i jedan je od
-              najaktivnijih i najbrojnijih.
-            </p>
-            <p>
-              Pored KONTEH-a, EESTEC LC Novi Sad godinama organizuje još mnoge
-              projekte, kao što su Soft Skills Academy, razmene studenata i
-              EESTech challenge. Više o nama možete pročitati na
-              <a href="http://www.eestecns.org" target="_blank"
-                >EESTEC LC Novi Sad</a
-              >.
-            </p>
-            <button
-              class="mt-5"
-              mat-flat-button
-              color="accent"
-              (click)="openPolicy()"
-            >
-              Politika privatnosti
-            </button>
-          </div>
-        </div>
-        <div class="column is-4">
-          <img class="round-borders" src="/assets/konteh12.jpg" />
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
+

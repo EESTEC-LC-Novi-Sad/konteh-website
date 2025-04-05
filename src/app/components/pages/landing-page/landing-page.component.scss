@@ -1,179 +1,305 @@
-@import "./../../../../app/custom-theme.scss";
-
-.landing-section {
+/* General Styles */
+.header {
+  position: relative;
   width: 100%;
-  min-height: 850px;
-  height: fit-content;
-  background-image: linear-gradient(90deg, $gradient-start, $gradient-end);
-  background-size: cover;
-  background-position: left;
+  height: 80vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background: none !important;
 }
 
-.cards-wrapper {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: row ;
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-
-  @media (max-width: 800px) {
-    flex-direction: column;
-    margin-top: 170px !important;
-    margin-bottom: 150px !important;
-  }
-}
-
-.card-big {
-  border-radius: 50px;
-  background-color: rgba(240, 240, 240, 0.8) !important;
-  padding: 40px;
-  padding-top: 50px !important;
-  width: 350px;
-  min-height: 450px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 50px !important;
-}
-
-.landing-content {
-  color: white;
-  margin: auto;
-  max-width: 1200px;
-  width: 90%;
-}
-
-.card-title{
-  font-family: "Roboto Condensed", sans-serif !important;
-}
-
-.landing-content h2 {
-  font-size: 38px;
-  font-weight: 500 !important;
-  color: #3A517D;
-}
-
-.landing-content h3{
-  font-size: 27px;
-  color: #4A4E5F;
-}
-
-.landing-content button {
-  font-family: "Roboto Flex" sans-serif !important;
-  margin-top: 30px;
-  padding: 5px;
-  background-color: $blue;
-  font-size: 24px;
-  border-radius: 50px;
-  color: white;
-  border: none;
-  width: 80% !important;
-
-  &:hover {
-    cursor: pointer;
-    opacity: 0.85;
-  }
-}
-
-.cards-section {
-  margin-top: -65px;
-  display: none;
-
-  @media (min-width: 881px) {
-    display: flex;
-  }
-}
-
-.cards-section-mobile {
-  margin-top: -65px;
-  display: none;
-
-  @media (max-width: 880px) and (min-width: 0px) {
-    display: block;
-  }
-}
-
-.companies-section {
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-
-.companies-section img {
-  display: block;
-  margin: auto;
-  object-fit: contain;
-  width: 80%;
   height: 100%;
-  transition: all 0.3s;
+  object-fit: cover;
+  z-index: 1;
+}
 
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.1);
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.header-content {
+  position: absolute;
+  z-index: 3;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.header-content h1 {
+  font-size: 3.8rem;
+  margin-bottom: 5vh;
+  letter-spacing: 0.3em;
+  font-weight: bold;
+}
+
+.header-content p {
+  font-size: 1.3rem;
+  margin-top: 10px;
+}
+
+.title-description {
+  font-size: 22px;
+}
+
+/* Event Info Section */
+.event-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 80px; /* Increased space between items */
+}
+
+.event-info div {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.event-info div h3 {
+  font-size: 1.9rem;
+  font-weight: bold;
+}
+
+.event-info div p {
+  font-size: 1.3rem;
+}
+
+@media (max-width: 768px) {
+  .header-content{
+    padding-top: 50px;
   }
 
-  @media (max-width: 769px) {
-    width: 50%;
-    max-width: 200px;
+  .header-content h1 {
+    margin-bottom: 2vh;
+    letter-spacing: 0.3em;
+    font-weight: bold;
+  }
+  .header-content p {
+    margin-top: 10px;
+  }
+
+  .event-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .akademski-title{
     margin-top: 20px;
   }
+
+
 }
 
-.starting-section {
-  background: linear-gradient(90deg, $gradient-start, $gradient-end);
-  margin-top: 200px;
-  padding-bottom: 100px;
-  padding-top: 100px;
-}
+.okontehu{
+  background: #020B29;
+  background: linear-gradient(to bottom,
+    rgba(0, 0, 0, 0.72) 0%,
+    #020B29 12%,
+    #020B29 90%,  /* 95% of the background is this color */
+    #020B29 100%);
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
 
-.starting-section .card {
-  border-radius: 20px;
-  padding: 50px;
-  margin-top: -150px;
+  p {
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: justify;
+  }
 
-  @media (max-width: 865px) and (min-width: 0px) {
-    width: 90% !important;
+
+  h2 {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+  }}
+
+.akademski-program{
+  background: #123B73;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+
+  p {
+    font-size: 18px;
+    text-align: justify;
+    line-height: 1.8;
+  }
+
+
+  h2 {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
   }
 }
 
-.starting-section h1 {
-  font-size: 36px;
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column; /* Stack elements vertically */
+    text-align: center; /* Center text for better readability */
+  }
+
+  .text-content {
+    text-align: center; /* Align text to center on mobile */
+  }
+
+  .image-content {
+    margin-top: 20px; /* Adds spacing between text and image */
+  }
+
+  .image-content img {
+    max-width: 80%; /* Prevents image from being too large on mobile */
+  }
+
+  .ostavi-cv {
+    p {
+      width: 100% !important;
+      text-align: center;
+      margin: 0;
+    }
+  }
+
 }
 
-.starting-section .column {
-  transition: all 0.2s;
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px; /* Space between text and image */
+}
+
+.text-content {
+  flex: 1; /* Takes up remaining space */
+  color: white;
+  text-align: left;
+}
+
+.image-content {
+  flex: 1; /* Equal width for text and image */
+  display: flex;
+  justify-content: center;
+}
+
+.image-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+.sajam {
+  padding: 50px 20px;
+  background: linear-gradient(to bottom,
+    rgba(0, 0, 0, 0.72) 0%,
+    var(--dark-blue-primary) 12%,
+    var(--dark-blue-primary) 90%,  /* 95% of the background is this color */
+    var(--dark-blue-primary) 100%);
+  text-align: justify;
+  display: flex;
+  justify-content: center;
+  /**
+  background: linear-gradient(to bottom,
+    #123B73 95%,
+    #123B73 98%,
+    var(--dark-blue-primary) 100%);
+  **/
+
+  h2 {
+    color: #3bc0f8;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 18px;
+    text-align: justify;
+    line-height: 1.8;
+  }
+}
+
+/*#001f3f*/
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  background: linear-gradient(to bottom, #020B29, #123B73);
+  color: white;
+  padding: 50px 20px;
+
+  div {
+    text-align: center;
+
+    h2 {
+      font-size: 38px;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 22px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .stats div h2 {
+    font-size: 48px; /* Increase heading size */
+  }
+
+  .stats div p {
+    font-size: 26px; /* Increase paragraph size */
+  }
+}
+
+.ostavi-cv {
+  background: linear-gradient(to bottom,
+    var(--dark-blue-primary) 0%,
+    #09153b 12%,
+    #09153b 90%,  /* 95% of the background is this color */
+    #09153b 88%,  /* Start transition */
+    rgb(0,0,0.71) 100%);
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+
+  h2 {
+    font-size: 28px;
+  }
+  p {
+    font-size: 18px;
+    width: 50%;
+    margin: 2rem auto;
+    text-align: center;
+    line-height: 1.8;
+  }
+}
+
+
+.submit-cv {
+  background: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: var(--primary-color) 2px solid;
+  cursor: pointer;
+  border-radius: 5px;
+
   &:hover {
-    transform: scale(1.1);
+    background: #001f3f;
+    color: white;
   }
-}
-
-.about-section {
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-
-.about-section h1 {
-  font-weight: 800;
-  font-size: 40px;
-  line-height: 50px;
-}
-
-.companies-section {
-  // CHANGE THIS vvv
-  //  display: none;
-  // CHANGE THIS ^^^
-}
-
-.testimonials-section .colum {
-  height: 100%;
-}
-
-.testimonials-section {
-  margin: 100px auto;
-}
-
-.testimonials-section h1 {
-  font-weight: 800;
-  font-size: 30px;
-  line-height: 40px;
-  margin-bottom: 40px;
 }

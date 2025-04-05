@@ -1,29 +1,55 @@
 @import "./../../../../app/custom-theme.scss";
 
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.page_content {
+  position: relative;
+  z-index: 2;
+}
+
 .contact-section {
 }
 
-.contact-section h1 {
-  font-size: 55px;
-  line-height: 60px;
-  font-weight: 500;
-  margin: 20px auto;
+.contact_title {
+  z-index: 99;
+  color:white;
+  margin: 30px auto;
+  letter-spacing: 0.3em;
+  font-size: 2rem;
 }
 
-.contact-section h2 {
-  font-size: 50px;
-  line-height: 50px;
-  font-weight: 600;
-  color: $blue;
-  margin: 40px auto;
+
+
+.link{
+  color: var(--primary-color);
 }
 
 .coordinators {
+  z-index: 1000;
   text-align: center;
   display: inline;
 }
 
 .coordinator-card {
+  z-index: 1000;
   width: 300px;
   margin: 0px;
   display: inline-block;
@@ -31,6 +57,7 @@
 }
 
 .button-section {
+  z-index: 1000;
   margin-top: 50px;
   margin-bottom: 50px;
 }
@@ -43,4 +70,5 @@
 
 .map-section {
   box-shadow: 0px 0px 10px gray;
+  z-index: 1000;
 }

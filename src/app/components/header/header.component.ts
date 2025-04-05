@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {NavigationEnd, Router} from '@angular/router';
 import { environment } from 'src/environments/environment';
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-header',
@@ -11,30 +12,42 @@ export class HeaderComponent implements OnInit {
   tab: number = 0;
   showOffers = environment.showOffers;
 
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.toggleSelectedMenuItem();
-    }, 20);
+    this.toggleSelectedMenuItem();
+
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.toggleSelectedMenuItem();
+      }
+    });
   }
+
 
   toggleSelectedMenuItem() {
     switch (this.router.url) {
       case '/o-konteh-u':
         this.tab = 1;
         break;
-      case '/raspored':
+      case '/aktivnosti':
         this.tab = 2;
         break;
-      case '/kompanije':
+      case '/raspored':
         this.tab = 3;
         break;
-      case '/pokrovitelji':
+      case '/kompanije':
         this.tab = 4;
         break;
-      case '/kontakt':
+      case '/pokrovitelji':
         this.tab = 5;
+        break;
+      case '/mediji':
+        this.tab = 6;
+        break;
+      case '/kontakt':
+        this.tab = 7;
         break;
       default:
         this.tab = 0;
@@ -62,6 +75,9 @@ export class HeaderComponent implements OnInit {
         break;
       case 6:
         this.router.navigate(['kontakt']);
+        break;
+      case 7:
+        this.router.navigate(['mediji']);
         break;
       default:
         this.router.navigate(['']);

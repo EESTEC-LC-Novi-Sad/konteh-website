@@ -1,5 +1,6 @@
 
-<div (click)="route()" class="card-dontainer">
+<div (click)="route()" class="card-container" [ngClass]="{'hasLogo': schedule.image !== undefined,
+'noLogo': schedule.image == undefined}">
     <div class="columns">
       <div class="column">
         <div class="is-flex is-flex-direction-column is-align-items-start">
@@ -30,7 +31,7 @@
         </div>
       </div>
       <div
-        class="is-4 is-flex is-flex-direction-column "
+        class="is-4 is-flex is-flex-direction-column schedule-image"
         *ngIf="schedule.image != null && schedule.image != ''"
         >
         <img src="{{ schedule.image }}" />

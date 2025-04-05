@@ -38,6 +38,7 @@ export class ScheduleService {
       schedule.type = item.fields.type;
       schedule.company = item.fields.company;
       schedule.track = item.fields.track;
+
       if(new Date(schedule.startTime) > today){
         retVal.push(schedule);
       }

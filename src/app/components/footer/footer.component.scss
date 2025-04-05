@@ -4,33 +4,51 @@
   border-top: solid 1px $text-color;
   width: 80%;
   margin: 40px auto 10px auto;
+  z-index: 10000;
+}
+
+.mat-icon-button .mat-mdc-button-touch-target{
+  color: white;
+  fill: white;
 }
 
 .align-center {
   text-align: center;
 }
 
+.clickable{
+  color: var(--primary-color);
+}
+
 .mat-icon {
-  color: $text-color;
+  color: white;
+  fill: white;
 }
 
 .social-icons {
+  color: white;
   margin-bottom: 30px;
   margin-top: 20px;
 }
 
 .social-button {
+  fill: white;
+  color: white;
   width: 50px;
   height: 50px;
+
 }
 
 .social-icon {
   width: 25px;
+  color: white;
+  fill: white;
 }
 
 img {
-  filter: invert(0.8);
   margin-bottom: 8px !important;
+  color: white;
+  fill: white;
 }
 
 h2 {
