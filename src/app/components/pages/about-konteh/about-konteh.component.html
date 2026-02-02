@@ -1,174 +1,157 @@
-<video
-  #bgVideo
-  autoplay
-  muted
-  playsinline
-  loop
-  [attr.disableRemotePlayback]="true"
-  [attr.x-webkit-airplay]="'deny'"
-  class="video-bg"
->
+<video #bgVideo autoplay muted playsinline loop [attr.disableRemotePlayback]="true" [attr.x-webkit-airplay]="'deny'"
+  class="video-bg">
   <source src="/assets/background_video1.mp4" type="video/mp4">
 </video>
 <div class="overlay"></div>
 <div class="page_content">
 
-<div class="is-flex is-flex-direction-column about-section">
-  <div class="has-text-centered mb-5">
-    <h1 class="mb-5">O KONTEH-u</h1>
-  </div>
+  <div class="is-flex is-flex-direction-column about-section">
+    <div class="has-text-centered mb-5">
+      <h1 class="mb-5">O KONTEH-u</h1>
+    </div>
 
-  <div class="mt-5">
-    <div class="columns max-width-1200 auto-margin">
-      <div
-        class="column is-flex is-flex-direction-column is-justify-content-space-around"
-      >
-        <img class="round-borders" src="/assets/konteh_hol.JPG" />
-      </div>
-      <div class="column pl-5">
-        <p>
-          Kada smo pokrenuli KONTEH, vodila nas je jednostavna ideja – studenti zaslužuju jasniji put od fakulteta do prve poslovne prilike. Iz sopstvenog iskustva znali smo koliko je važno imati direktan kontakt sa kompanijama, videti kakve su mogućnosti na tržištu i dobiti priliku za praksu ili posao.
-          <br><br>
-          Već 19 godina, KONTEH je prerastao u mnogo više od sajma. Postao je mesto gde se studenti i poslodavci povezuju na pravi način – kroz razgovor, razmenu znanja i prilike za profesionalni razvoj. Naša misija ostaje ista: pomoći mladim ljudima da naprave prve korake u karijeri i olakšati kompanijama da pronađu talentovane buduće stručnjake.
-        </p>
+    <div class="mt-5">
+      <div class="columns max-width-1200 auto-margin">
+        <div class="column is-flex is-flex-direction-column is-justify-content-space-around">
+          <img class="round-borders" src="/assets/konteh_hol.JPG" />
+        </div>
+        <div class="column pl-5">
+          <p>
+            Kada smo pokrenuli KONTEH, vodila nas je jednostavna ideja – studenti zaslužuju jasniji put od fakulteta do
+            prve poslovne prilike. Iz sopstvenog iskustva znali smo koliko je važno imati direktan kontakt sa
+            kompanijama, videti kakve su mogućnosti na tržištu i dobiti priliku za praksu ili posao.
+            <br><br>
+            Već 19 godina, KONTEH je prerastao u mnogo više od sajma. Postao je mesto gde se studenti i poslodavci
+            povezuju na pravi način – kroz razgovor, razmenu znanja i prilike za profesionalni razvoj. Naša misija
+            ostaje ista: pomoći mladim ljudima da naprave prve korake u karijeri i olakšati kompanijama da pronađu
+            talentovane buduće stručnjake.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
 
 
-  <div class="section-4 gradient-background">
-    <div class="columns max-width-1200 auto-margin">
-      <div class="column">
-        <div
-          class="stretch-height is-flex is-flex-direction-column is-justify-content-space-around px-5"
-        >
-          <div>
-            <h2>Organizacija</h2>
-            <p class = "textt">
-              EESTEC (Electrical Engineering Students’ European Association) je
-              neprofitno, nepolitičko udruženje studenata osnovano u cilju da
-              poveže studente elektrotehnike i računarstva širom Evrope. EESTEC
-              LC Novi Sad osnovan je 2001. godine i okuplja studente Fakulteta
-              tehničkih nauka u Novom Sadu sa brojnih odseka elektrotehnike.
-              Danas naš lokalni komitet broji preko 320 članova i jedan je od
-              najaktivnijih i najbrojnijih.
-            </p>
-            <div class="mt-5">
-              <button
-                class="mt-5 submit-btn"
-                mat-flat-button
-                (click)="openPolicy()"
-              >
-                Politika privatnosti
-              </button>
+    <div class="section-4 gradient-background">
+      <div class="columns max-width-1200 auto-margin">
+        <div class="column">
+          <div class="stretch-height is-flex is-flex-direction-column is-justify-content-space-around px-5">
+            <div>
+              <h2>Organizacija</h2>
+              <p class="textt">
+                EESTEC (Electrical Engineering Students’ European Association) je
+                neprofitno, nepolitičko udruženje studenata osnovano u cilju da
+                poveže studente elektrotehnike i računarstva širom Evrope. EESTEC
+                LC Novi Sad osnovan je 2001. godine i okuplja studente Fakulteta
+                tehničkih nauka u Novom Sadu sa brojnih odseka elektrotehnike.
+                Danas naš lokalni komitet broji preko 320 članova i jedan je od
+                najaktivnijih i najbrojnijih.
+              </p>
+              <div class="mt-5">
+                <button class="mt-5 submit-btn" mat-flat-button (click)="openPolicy()">
+                  Politika privatnosti
+                </button>
 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <img class="round-borders" src="/assets/eestec5.jpg" />
+        </div>
+      </div>
+    </div>
+
+    <div class="section-6">
+      <div class="max-width-1200 auto-margin">
+        <div class="columns">
+          <!-- Image column moved first -->
+          <div class="column">
+            <img class="round-borders" src="/assets/org-tim.jpg" />
+          </div>
+          <!-- Text column moved second -->
+          <div class="column is-flex is-flex-direction-column is-justify-content-center">
+            <div>
+              <p>
+                Organizacioni tim sajma KONTEH čine aktivni članovi udruženja
+                studenata EESTEC, u ambiciji da i ove godine ostvare fundamentalnu
+                kariku između kompanija i studenata u potrazi za stručnom praksom
+                i prvim uspešnim koracima ka razvoju svoje karijere.
+              </p>
+              <p>
+                Pored KONTEH-a, EESTEC LC Novi Sad godinama organizuje još mnoge
+                projekte, kao što su Soft Skills Academy, razmene studenata i
+                EESTech challenge. Više o nama možete pročitati na
+                <a href="http://www.eestecns.org" target="_blank">EESTEC LC Novi Sad</a>.
+              </p>
+
+              <a mat-raised-button class="submit-btn" href="https://cv.konteh.org/" target="_blank">Zauzmi svoje
+                mesto</a>
             </div>
           </div>
         </div>
       </div>
-      <div class="column">
-        <img class="round-borders" src="/assets/eestec5.jpg" />
+    </div>
+
+
+
+    <div class="section-7">
+      <div class="max-width-1200 auto-margin">
+        <lightgallery [settings]="settings">
+          <a href="/assets/sajam02.jpg">
+            <div class="square-image">
+              <square-image imgSrc="/assets/sajam02.jpg"> </square-image>
+            </div>
+          </a>
+
+          <a href="/assets/konteh9.jpg">
+            <div class="square-image">
+              <square-image imgSrc="/assets/konteh9.jpg"> </square-image>
+            </div>
+          </a>
+
+          <a href="/assets/sajam03.jpg">
+            <div class="square-image">
+              <square-image imgSrc="/assets/sajam03.jpg"> </square-image>
+            </div>
+          </a>
+
+          <a href="/assets/konteh3.jpg">
+            <div class="square-image">
+              <square-image imgSrc="/assets/konteh3.jpg"> </square-image>
+            </div>
+          </a>
+
+          <a href="/assets/konteh4.jpg">
+            <div class="square-image">
+              <square-image imgSrc="/assets/konteh4.jpg"> </square-image>
+            </div>
+          </a>
+
+          <a href="/assets/konteh5.jpg">
+            <div class="square-image">
+              <square-image imgSrc="/assets/konteh5.jpg"> </square-image>
+            </div>
+          </a>
+
+          <a href="/assets/konteh6.jpg">
+            <div class="square-image">
+              <square-image imgSrc="/assets/konteh6.jpg"> </square-image>
+            </div>
+          </a>
+
+          <a href="/assets/sajam04.jpg">
+            <div class="square-image">
+              <square-image imgSrc="/assets/sajam04.jpg"> </square-image>
+            </div>
+          </a>
+
+          <a href="/assets/sajam05.jpg">
+            <div class="square-image">
+              <square-image imgSrc="/assets/sajam05.jpg"> </square-image>
+            </div>
+          </a>
+        </lightgallery>
       </div>
     </div>
+
   </div>
-
-  <div class="section-6">
-    <div class="max-width-1200 auto-margin">
-      <div class="columns">
-        <!-- Image column moved first -->
-        <div class="column">
-          <img class="round-borders" src="/assets/tim.jpeg" />
-        </div>
-        <!-- Text column moved second -->
-        <div
-          class="column is-flex is-flex-direction-column is-justify-content-center"
-        >
-          <div>
-            <p>
-              Organizacioni tim sajma KONTEH čine aktivni članovi udruženja
-              studenata EESTEC, u ambiciji da i ove godine ostvare fundamentalnu
-              kariku između kompanija i studenata u potrazi za stručnom praksom
-              i prvim uspešnim koracima ka razvoju svoje karijere.
-            </p>
-            <p>
-              Pored KONTEH-a, EESTEC LC Novi Sad godinama organizuje još mnoge
-              projekte, kao što su Soft Skills Academy, razmene studenata i
-              EESTech challenge. Više o nama možete pročitati na
-              <a href="http://www.eestecns.org" target="_blank"
-              >EESTEC LC Novi Sad</a
-              >.
-            </p>
-
-            <a mat-raised-button class="submit-btn" href="https://cv.konteh.org/" target="_blank"
-            >Zauzmi svoje mesto</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="section-7">
-    <div class="max-width-1200 auto-margin">
-      <lightgallery [settings]="settings">
-        <a href="/assets/konteh14.jpg">
-          <div class="square-image">
-            <square-image imgSrc="/assets/konteh14.jpg"> </square-image>
-          </div>
-        </a>
-
-        <a href="/assets/konteh9.jpg">
-          <div class="square-image">
-            <square-image imgSrc="/assets/konteh9.jpg"> </square-image>
-          </div>
-        </a>
-
-        <a href="/assets/konteh2.jpg">
-          <div class="square-image">
-            <square-image imgSrc="/assets/konteh2.jpg"> </square-image>
-          </div>
-        </a>
-
-        <a href="/assets/konteh3.jpg">
-          <div class="square-image">
-            <square-image imgSrc="/assets/konteh3.jpg"> </square-image>
-          </div>
-        </a>
-
-        <a href="/assets/konteh4.jpg">
-          <div class="square-image">
-            <square-image imgSrc="/assets/konteh4.jpg"> </square-image>
-          </div>
-        </a>
-
-        <a href="/assets/konteh5.jpg">
-          <div class="square-image">
-            <square-image imgSrc="/assets/konteh5.jpg"> </square-image>
-          </div>
-        </a>
-
-        <a href="/assets/konteh6.jpg">
-          <div class="square-image">
-            <square-image imgSrc="/assets/konteh6.jpg"> </square-image>
-          </div>
-        </a>
-
-        <a href="/assets/konteh15.jpg">
-          <div class="square-image">
-            <square-image imgSrc="/assets/konteh15.jpg"> </square-image>
-          </div>
-        </a>
-
-        <a href="/assets/konteh8.jpg">
-          <div class="square-image">
-            <square-image imgSrc="/assets/konteh8.jpg"> </square-image>
-          </div>
-        </a>
-      </lightgallery>
-    </div>
-  </div>
-
-</div>
-
