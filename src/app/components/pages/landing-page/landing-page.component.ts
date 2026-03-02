@@ -62,7 +62,10 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
 
   constructor(private router: Router, public dialog: MatDialog) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+      this.updateCountdown();
+      this.countdownInterval = setInterval(() => this.updateCountdown(), 1000);
+  }
 
   redirectToWebsite(url: string): void {
     console.log('Redirecting to website...');
@@ -85,5 +88,27 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
     window.open("https://cv.konteh.org/", "_blank");
   }
 
+countdown = { days: 0, hours: 0, minutes: 0, seconds: 0 };
+private countdownInterval: any;
+
+ngOnDestroy(): void {
+  if (this.countdownInterval) clearInterval(this.countdownInterval);
+}
+
+updateCountdown(): void {
+  const target = new Date('2026-03-18T09:30:00').getTime();
+  const now = new Date().getTime();
+  const diff = target - now;
+  if (diff <= 0) {
+    this.countdown = { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    return;
+  }
+  this.countdown = {
+    days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+    minutes: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
+    seconds: Math.floor((diff % (1000 * 60)) / 1000)
+  };
+}
 
 }
