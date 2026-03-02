@@ -304,3 +304,70 @@
     color: white;
   }
 }
+
+.countdown-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.countdown-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 14px 22px;
+  min-width: 80px;
+  backdrop-filter: blur(8px);
+
+  .countdown-number {
+    font-size: 38px;
+    font-weight: bold;
+    line-height: 1;
+    color: #3bc0f8;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .countdown-label {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 6px;
+  }
+}
+
+.countdown-separator {
+  font-size: 32px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 18px;
+}
+
+@media (max-width: 768px) {
+  .countdown-card {
+    padding: 10px 14px;
+    min-width: 60px;
+
+    .countdown-number {
+      font-size: 28px;
+    }
+  }
+
+  .countdown-separator {
+    font-size: 24px;
+  }
+}
+
+.countdown-label-title {
+  font-size: 16px;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 28px;
+  margin-bottom: 0;
+}
