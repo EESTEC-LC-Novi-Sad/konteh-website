@@ -13,22 +13,16 @@
     <mat-spinner class="auto-margin my-5" *ngIf="scheduleLoading"></mat-spinner>
     <div class="max-width-1200 auto-margin column" *ngIf="!scheduleLoading">
       <div class="date-filter">
-        <div class="date" (click)="filterSchedule(14)"
-          [ngClass]="{'active': selectedDay == 14}"
+        <div class="date" (click)="filterSchedule(day1)"
+          [ngClass]="{'active': selectedDate?.getTime() === day1.getTime()}"
         >
-          <h3>14. MAJ</h3>
+          <h3>18. MART</h3>
         </div>
-        <div class="date" (click)="filterSchedule(15)"
-          [ngClass]="{'active': selectedDay == 15}"
+        <div class="date" (click)="filterSchedule(day2)"
+          [ngClass]="{'active': selectedDate?.getTime() === day2?.getTime()}"
 
         >
-          <h3>15. MAJ</h3>
-        </div>
-        <div class="date" (click)="filterSchedule(16)"
-          [ngClass]="{'active': selectedDay == 16}"
-
-        >
-          <h3>16. MAJ</h3>
+          <h3>19. MART</h3>
         </div>
       </div>
 
