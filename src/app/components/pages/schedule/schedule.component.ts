@@ -13,57 +13,37 @@ import { Schedule } from 'src/app/model/schedule';
 })
 export class ScheduleComponent implements OnInit {
 
-  // showSchedule = environment.showSchedule;
+  showSchedule = environment.showSchedule;
 
   schedules: Schedule[] = [];
   filteredSchedules: Schedule[] = [];
 
   scheduleLoading: boolean = true;
 
-  selectedDay: number = 0;
+  selectedDate: Date | null = null;
+
+  day1: Date = new Date(2026, 2, 18);
+  day2: Date = new Date(2026, 2, 19);
 
   constructor(
     private router: Router,
     private scheduleService: ScheduleService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.scheduleService.getAllSchedule().subscribe((data) => {
-      console.log(data);
       this.schedules = this.scheduleService.convertDataToSchedules(data);
       this.schedules.sort((a, b) => new Date(a.startTime).getTime() - new Date(b.startTime).getTime());
       this.filteredSchedules = this.schedules;
       this.scheduleLoading = false;
 
-
-
-      const today = new Date();
-      const firstDa = new Date(2025, 4, 14); // Months are 0-based, so 4 = May
-
-
-      if (today.getFullYear() === 2025 &&
-        today.getMonth() === 5 &&
-        today.getDate() === 15) {
-        this.filterSchedule(15);
-      } else if(today.getFullYear() === 2025 &&
-        today.getMonth() === 5 &&
-        today.getDate() === 16){
-        this.filterSchedule(16);
-      }else{
-        this.filterSchedule(14);
-      }
-
+      this.filterSchedule(this.day1)
     });
   }
 
-  filterSchedule(day: number){
-    if(day === this.selectedDay) {
-      this.selectedDay = 0;
-      this.filteredSchedules = this.schedules;
-      return;
-    }
-    this.selectedDay = day;
-    this.filteredSchedules = this.schedules.filter((schedule) => new Date(schedule.startTime).getDate() === day);
+  filterSchedule(date: Date) {
+    this.selectedDate = date;
+    this.filteredSchedules = this.schedules.filter((schedule) => new Date(schedule.startTime).getDate() === date.getDate());
   }
 
   openHomepage() {
