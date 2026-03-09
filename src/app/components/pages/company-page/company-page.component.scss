@@ -26,6 +26,12 @@ a{
   }
 }
 
+.logo {
+  background-size: cover;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
 .logo img {
   max-height: 130px;
   max-width: 200px;

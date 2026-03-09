@@ -13,6 +13,15 @@
   &:hover {
     transform: scale(1.10);
   }
+  .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex: 1;
+    object-fit: contain;
+  }
 }
 
 img {

@@ -84,4 +84,25 @@ export class CompanyPageComponent implements OnInit {
     }
     return documentToHtmlString(richText);
   }
+
+  get backgroundImage() {
+    function getURL(company: Company) {
+      switch (company.tier) {
+        case 'Ekskluzivni':
+          return "../../../../assets/ekskluzivni.png"
+        case 'Dijamant':
+          return "../../../../assets/dijamant.png"
+        case 'Platinum':
+          return "../../../../assets/platina.png"
+        case 'Zlatni':
+          return "../../../../assets/zlato.png"
+        case 'Srebrni':
+          return "../../../../assets/srebro.png"
+        case 'Bronzani':
+          return "../../../../assets/bronza.png"
+      }
+      return "../../../../assets/srebro.png";
+    }
+    return `url(${getURL(this.company)})`;
+  }
 }
