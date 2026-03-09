@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ActivityGroup } from 'src/app/model/activity-group';
 import { ActivityGroupService } from 'src/app/services/activity-group.service';
 
@@ -10,11 +10,11 @@ import { ActivityGroupService } from 'src/app/services/activity-group.service';
 })
 export class ActivityListViewComponent implements OnInit, AfterViewInit {
   @ViewChild('bgVideo') bgVideo!: ElementRef<HTMLVideoElement>;
-
-  activityGroups: ActivityGroup[] = [];
-  groupsLoading = true;
+  group: ActivityGroup | null = null;
+  groupLoading = true;
 
   constructor(
+    private route: ActivatedRoute,
     private router: Router,
     private activityGroupService: ActivityGroupService
   ) {}
@@ -41,9 +41,11 @@ export class ActivityListViewComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.activityGroupService.getAllActivityGroups().subscribe((data) => {
-      this.activityGroups = this.activityGroupService.convertDataToActivityGroups(data);
-      this.groupsLoading = false;
+    this.route.params.subscribe(params => {
+      this.activityGroupService.getById(params['id']).subscribe((data) => {
+        this.group = this.activityGroupService.convertDataToActivityGroup(data);
+        this.groupLoading = false;
+      });
     });
   }
 }
