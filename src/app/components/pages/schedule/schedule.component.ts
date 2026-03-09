@@ -63,6 +63,8 @@ export class ScheduleComponent implements OnInit, AfterViewInit {
       this.schedules.sort((a, b) => new Date(a.startTime).getTime() - new Date(b.startTime).getTime());
       this.filteredSchedules = this.schedules;
       this.scheduleLoading = false;
+
+      this.filterSchedule(this.day1)
     });
   }
 
