@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ScheduleService } from 'src/app/services/schedule.service';
 import { OnInit } from '@angular/core';
@@ -11,7 +11,34 @@ import { Schedule } from 'src/app/model/schedule';
   templateUrl: './schedule.component.html',
   styleUrls: ['./schedule.component.scss'],
 })
-export class ScheduleComponent implements OnInit {
+export class ScheduleComponent implements OnInit, AfterViewInit {
+  @ViewChild('bgVideo') bgVideo!: ElementRef<HTMLVideoElement>;
+
+  ngAfterViewInit(): void {
+    const video = this.bgVideo.nativeElement;
+
+    video.muted = true; // Critical in some browsers
+    video.setAttribute('playsinline', 'true');
+    video.setAttribute('muted', 'true'); // also attribute
+    video.setAttribute('autoplay', 'true'); // safety net
+
+    video.load(); // reinitialize
+
+    video.play().then(() => {
+      console.log('Video autoplayed');
+    }).catch(err => {
+      console.warn('Autoplay blocked, waiting for user interaction:', err);
+      this.setupFallbackAutoplay(video);
+    });
+  }
+  setupFallbackAutoplay(video: HTMLVideoElement) {
+    const tryPlay = () => {
+      video.play().catch(err => console.warn('Still failed to play:', err));
+      document.removeEventListener('click', tryPlay);
+    };
+
+    document.addEventListener('click', tryPlay);
+  }
 
   showSchedule = environment.showSchedule;
 
@@ -36,8 +63,6 @@ export class ScheduleComponent implements OnInit {
       this.schedules.sort((a, b) => new Date(a.startTime).getTime() - new Date(b.startTime).getTime());
       this.filteredSchedules = this.schedules;
       this.scheduleLoading = false;
-
-      this.filterSchedule(this.day1)
     });
   }
 
