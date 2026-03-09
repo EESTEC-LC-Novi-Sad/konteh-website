@@ -11,7 +11,8 @@ import { ActivityGroupService } from 'src/app/services/activity-group.service';
 export class ActivityPageComponent implements OnInit, AfterViewInit {
   @ViewChild('bgVideo') bgVideo!: ElementRef<HTMLVideoElement>;
 
-  activityGroup: ActivityGroup = new ActivityGroup();
+  activityGroups: ActivityGroup[] = [];
+  groupedActivities: { type: string; groups: ActivityGroup[] }[] = [];
   groupLoading = true;
 
   constructor(
@@ -35,11 +36,20 @@ export class ActivityPageComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-  this.route.params.subscribe((params) => {
-    this.activityGroupService.getById(params['id']).subscribe((data) => {
-      this.activityGroup = this.activityGroupService.convertDataToActivityGroup(data);
-      this.groupLoading = false;
-    });
+  this.activityGroupService.getAllActivityGroups().subscribe((data) => {
+    this.activityGroups = this.activityGroupService.convertDataToActivityGroups(data);
+    this.groupedActivities = this.groupByType(this.activityGroups);
+    this.groupLoading = false;
   });
-}
+  }
+
+  private groupByType(groups: ActivityGroup[]): { type: string; groups: ActivityGroup[] }[] {
+    const map = new Map<string, ActivityGroup[]>();
+    for (const group of groups) {
+      const type = group.type || 'Ostalo';
+      if (!map.has(type)) map.set(type, []);
+      map.get(type)!.push(group);
+    }
+    return Array.from(map.entries()).map(([type, groups]) => ({ type, groups }));
+  }
 }

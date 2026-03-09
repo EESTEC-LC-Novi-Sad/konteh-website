@@ -1,0 +1,55 @@
+.group-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card {
+  background: rgba(4, 13, 35, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 28px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  position: relative;
+
+  &:hover {
+    border-color: rgba(100, 255, 218, 0.4);
+    transform: translateY(-4px);
+
+    .arrow { opacity: 1; transform: translateX(4px); }
+  }
+
+  h3 {
+    margin-top: 6px;
+    margin-bottom: 8px;
+    font-size: 22px;
+    color: #e6f1ff;
+  }
+}
+
+.card-number {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 4px;
+  display: block;
+  letter-spacing: 1px;
+}
+
+.group-description {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 4px;
+  line-height: 1.6;
+}
+
+.arrow {
+  font-size: 22px;
+  color: var(--primary-color);
+  opacity: 0.5;
+  transition: opacity 0.2s, transform 0.2s;
+  padding-left: 16px;
+  flex-shrink: 0;
+}

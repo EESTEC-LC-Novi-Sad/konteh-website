@@ -1,41 +1,30 @@
 <div class="background-image">
-  <div class="header-cover"></div>
-  <div class="is-flex is-flex-direction-column has-text-centered activity-section">
-    <video
-      #bgVideo
-      autoplay
-      muted
-      playsinline
-      loop
-      [attr.disableRemotePlayback]="true"
-      [attr.x-webkit-airplay]="'deny'"
-      class="video-bg"
-    >
-      <source src="/assets/background_video1.mp4" type="video/mp4">
-    </video>
-    <div class="overlay"></div>
-    <div class="page_content">
+  <video #bgVideo autoplay muted playsinline loop
+    [attr.disableRemotePlayback]="true"
+    [attr.x-webkit-airplay]="'deny'"
+    class="video-bg">
+    <source src="/assets/background_video1.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
 
-      <div class="max-width-900 auto-margin breadcrumb-nav">
-        <a [routerLink]="['/aktivnosti']" class="back-link">← Aktivnosti</a>
-      </div>
+  <div class="page_content">
+    <h1 class="main-title">AKTIVNOSTI</h1>
+    <mat-spinner class="auto-margin my-5" *ngIf="groupLoading"></mat-spinner>
 
-      <mat-spinner class="auto-margin my-5" *ngIf="groupLoading"></mat-spinner>
-
-      <ng-container *ngIf="!groupLoading">
-        <span class="group-type-label">{{ activityGroup.type }}</span>
-        <h1 class="title">{{ activityGroup.name }}</h1>
-        <p class="group-desc max-width-900 auto-margin" *ngIf="activityGroup.description">
-          {{ activityGroup.description }}
-        </p>
-
-        <div class="max-width-900 auto-margin mt-5">
-          <div *ngFor="let activity of activityGroup.activity" class="mt-4 stretch-width">
-            <activity-card [activity]="activity.fields"></activity-card>
-          </div>
+    <div *ngIf="!groupLoading" class="sections-wrapper max-width-900 auto-margin">
+      <ng-container *ngFor="let section of groupedActivities">
+        <div class="section-header">
+          <h2>{{ section.type }}</h2>
+        </div>
+        <div class="track-grid">
+          <activity-group-card
+            *ngFor="let group of section.groups; let i = index"
+            [group]="group"
+            [index]="i"
+            [showNumber]="section.groups.length > 1">
+          </activity-group-card>
         </div>
       </ng-container>
-
     </div>
   </div>
 </div>
