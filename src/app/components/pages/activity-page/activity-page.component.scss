@@ -1,14 +1,5 @@
 @import "./../../../../app/custom-theme.scss";
 
-.background {
-  background: linear-gradient(to bottom, #020B29 30%, rgba(0, 0, 0, 0) 100%) !important;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  object-fit: cover;
-  z-index: 0;
-}
-
 .video-bg {
   position: fixed;
   top: 0; left: 0;
@@ -25,91 +16,21 @@
   z-index: 1;
 }
 
-.page { z-index: 1; }
 .page_content { z-index: 10; position: relative; }
-.activity-section { z-index: 10; }
 
-a { color: var(--primary-color); }
-
-.activity-div {
-  h1 {
-    z-index: 10;
-    color: white;
-    margin: 30px auto;
-    letter-spacing: 0.1em;
-    font-size: 2.5em;
-    text-transform: uppercase;
-
-    @media (max-width: 425px) {
-      font-size: 32px;
-      line-height: 45px;
-    }
-  }
-
-  div { color: rgba(255, 255, 255, 0.79); }
-}
-
-button {
-  z-index: 10;
-  text-transform: uppercase;
-  color: white !important;
-  background: var(--primary-color) !important;
-  padding: 20px;
-  margin-top: 15px;
-  border: var(--primary-color) 2px solid;
-  cursor: pointer;
-  border-radius: 5px;
+.main-title {
+  text-align: center;
+  font-size: 42px;
+  letter-spacing: 6px;
+  font-weight: 300;
   margin-bottom: 20px;
-
-  &:hover {
-    background: #001f3f !important;
-    color: white;
-  }
-}
-
-.center-wrapper {
-  @media (max-width: 850px) {
-    flex-direction: column !important;
-  }
-}
-
-.text {
-  font-size: 17px;
-  width: 65% !important;
-  text-align: left;
-  z-index: 10;
-
-  @media (max-width: 850px) {
-    width: 80% !important;
-    text-align: justify;
-    margin: auto;
-  }
-}
-
-.img {
-  z-index: 10;
-  width: 35% !important;
-  margin-left: 30px;
-  margin-top: 30px;
-  background-position: center;
-  background-size: cover;
-  border-radius: 20px;
-  min-height: 200px;
-  min-width: 300px;
-  max-height: 900px;
-
-  @media (max-width: 850px) {
-    margin: auto;
-    margin-top: 30px;
-    width: 250px !important;
-    max-width: 250px !important;
-    min-height: 0;
-    height: 300px;
-  }
+  text-transform: uppercase;
+  color: white;
+  padding-top: 60px;
 }
 
 .sections-wrapper {
-  padding: 40px 20px 80px;
+  padding: 10px 20px 80px;
   text-align: left;
 }
 
@@ -132,105 +53,6 @@ button {
   }
 }
 
-
-.card-container {
-  background-size: cover;
-  border-radius: 20px;
-  box-shadow: 0px 10px 20px black;
-  width: 100%;
-  min-height: 120px;
-  border: rgb(121, 214, 226) solid 1px;
-  transition: all 0.3s;
-  margin-bottom: 16px;
-
-  &:hover {
-    transform: scale(1.03);
-
-    .arrow {
-      opacity: 1;
-      transform: translateX(4px);
-    }
-  }
-}
-
-.card-text { flex: 1; }
-
-.card-number {
-  color: var(--primary-color);
-  font-weight: bold;
-  font-size: 16px;
-  margin-bottom: 4px;
-  display: block;
-  letter-spacing: 1px;
-}
-
-h1 {
-  font-weight: bold;
-  margin-top: 6px !important;
-  margin-bottom: 4px !important;
-  color: white;
-}
-
-.group-description {
-  font-size: 13px;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.65);
-  margin-top: 4px;
-  line-height: 1.6;
-}
-
-.breadcrumb-nav {
-  text-align: left;
-  padding-top: 20px;
-}
-
-.back-link {
-  color: var(--primary-color);
-  font-size: 13px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  text-decoration: none;
-
-  &:hover { opacity: 0.7; }
-}
-
-.group-type-label {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: var(--primary-color);
-  font-weight: 600;
-  display: block;
-  margin-bottom: 8px;
-}
-
-.group-desc {
-  font-size: 15px;
-  font-weight: 300;
-  opacity: 0.7;
-  line-height: 1.8;
-}
-
-.arrow {
-  font-size: 22px;
-  color: var(--primary-color);
-  opacity: 0.5;
-  transition: opacity 0.2s, transform 0.2s;
-  padding-left: 16px;
-  flex-shrink: 0;
-}
-
-.main-title {
-  text-align: center;
-  font-size: 42px;
-  letter-spacing: 6px;
-  font-weight: 300;
-  margin-bottom: 40px;
-  text-transform: uppercase;
-  color: white;
-  padding-top: 60px;
-}
-
 .track-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -244,34 +66,4 @@ h1 {
   activity-group-card:only-child {
     grid-column: 1 / -1;
   }
-}
-
-.card {
-  background: rgba(4, 13, 35, 0.75); 
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 28px;
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s ease, border-color 0.3s ease;
-  position: relative;
-
-  &:hover {
-    border-color: rgba(100, 255, 218, 0.4);
-    transform: translateY(-4px);
-
-    .arrow { opacity: 1; transform: translateX(4px); }
-  }
-
-  h3 {
-    margin-top: 6px;
-    margin-bottom: 8px;
-    font-size: 18px;
-    color: #e6f1ff;
-  }
-}
-
-.group-card-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
 }
