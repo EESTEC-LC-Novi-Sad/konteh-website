@@ -1,34 +1,42 @@
-<div class = "background-image">
-<div class="header-cover"></div>
-
-<div
-class="is-flex is-flex-direction-column has-text-centered activity-section"
->
-  <video
-    #bgVideo
-    autoplay
-    muted
-    playsinline
-    loop
-    [attr.disableRemotePlayback]="true"
-    [attr.x-webkit-airplay]="'deny'"
-    class="video-bg"
-  >    <source src="/assets/background_video1.mp4" type="video/mp4">
-  </video>
-  <div class="overlay"></div>
-  <div class = "page_content">
-  <h1 class="title">AKTIVNOSTI</h1>
-  <mat-spinner class="auto-margin my-5" *ngIf="activityLoading"></mat-spinner>
-  <p > <!--*ngIf="activities.length == 0 && !activityLoading"-->
-    Trenutno nema objavljenih aktivnosti.
-  </p>
-  <div *ngIf="false">
-    <div *ngFor="let activity of activities" class="mt-5 stretch-width">
-      <div class="max-width-900 auto-margin">
-        <activity-card [activity]="activity"></activity-card>
+<div class="background-image">
+  <div class="header-cover"></div>
+  <div class="is-flex is-flex-direction-column has-text-centered activity-section">
+    <video
+      #bgVideo
+      autoplay
+      muted
+      playsinline
+      loop
+      [attr.disableRemotePlayback]="true"
+      [attr.x-webkit-airplay]="'deny'"
+      class="video-bg"
+    >
+      <source src="/assets/background_video1.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="page_content">
+      <h1 class="title">AKTIVNOSTI</h1>
+      <mat-spinner class="auto-margin my-5" *ngIf="groupsLoading"></mat-spinner>
+      <div *ngIf="!groupsLoading" class="max-width-900 auto-margin">
+        <div *ngFor="let group of activityGroups" class="mt-5 stretch-width">
+          <a [routerLink]="['/aktivnosti', group.id]" class="group-card-link">
+            <div class="card-container group-card">
+              <div class="columns">
+                <div class="column">
+                  <div class="is-flex is-flex-direction-column is-align-items-start">
+                    <span class="group-type">{{ group.type }}</span>
+                    <h2>{{ group.name }}</h2>
+                    <p class="group-description">{{ group.description }}</p>
+                  </div>
+                </div>
+                <div class="is-flex is-align-items-center arrow-col">
+                  <span class="arrow">→</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
-    </div>
   </div>
-</div>
 </div>

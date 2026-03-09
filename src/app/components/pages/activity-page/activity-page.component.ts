@@ -1,48 +1,45 @@
-import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-import { Activity } from 'src/app/model/activity';
-import { ActivityService } from 'src/app/services/activity.service';
-import { activities } from './activities';
+import { ActivityGroup } from 'src/app/model/activity-group';
+import { ActivityGroupService } from 'src/app/services/activity-group.service';
 
 @Component({
   selector: 'activity-page',
   templateUrl: './activity-page.component.html',
-  styleUrls: ['./activity-page.component.scss'],
+  styleUrls: ['./activity-page.component.scss']
 })
-export class ActivityPageComponent {
-  activity: any;
+export class ActivityPageComponent implements OnInit, AfterViewInit {
+  @ViewChild('bgVideo') bgVideo!: ElementRef<HTMLVideoElement>;
+
+  activityGroup: ActivityGroup = new ActivityGroup();
+  groupLoading = true;
 
   constructor(
-    private router: Router,
     private route: ActivatedRoute,
-    private activityService: ActivityService,
-    private titleService: Title
+    private router: Router,
+    private activityGroupService: ActivityGroupService
   ) {}
 
-  ngOnInit(): void {
-    this.route.params.subscribe((params) => {
-      const id = params['id'];
-
-      this.activity = activities.find((activity) => activity.id == id);
+  ngAfterViewInit(): void {
+    const video = this.bgVideo.nativeElement;
+    video.muted = true;
+    video.setAttribute('playsinline', 'true');
+    video.setAttribute('muted', 'true');
+    video.setAttribute('autoplay', 'true');
+    video.load();
+    video.play().catch(err => {
+      console.warn('Autoplay blocked:', err);
+      const tryPlay = () => { video.play(); document.removeEventListener('click', tryPlay); };
+      document.addEventListener('click', tryPlay);
     });
   }
 
-  redirect(): void {
-    switch (this.activity.id) {
-      case 1:
-        window.open("", '_blank');
-        break;
-      case 2:
-        window.open("https://docs.google.com/forms/d/e/1FAIpQLSdbnYJteDXdqXUEK9Cr7QhB8y4mxBgNFv-Bqja4XNu-RjExgQ/viewform", '_blank');
-        break;
-      case 3:
-        window.open("https://docs.google.com/forms/d/e/1FAIpQLSdI_vOlWeS30PQd_h1OgOhf3iqab_26lCHQNdGtZAfeDEyl0g/viewform", '_blank');
-        break;
-      case 6:
-        window.open("https://docs.google.com/forms/d/e/1FAIpQLScF6uXtiTy4SvUtjF9HiyCjDSwMznakbsNuXfRmjbxiz67rRw/viewform", '_blank');
-        break;
-    }
-  }
+  ngOnInit(): void {
+  this.route.params.subscribe((params) => {
+    this.activityGroupService.getById(params['id']).subscribe((data) => {
+      this.activityGroup = this.activityGroupService.convertDataToActivityGroup(data);
+      this.groupLoading = false;
+    });
+  });
+}
 }

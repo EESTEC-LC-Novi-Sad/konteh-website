@@ -1,35 +1,41 @@
-<div class = "background">
-</div>
+<div class="background-image">
+  <div class="header-cover"></div>
+  <div class="is-flex is-flex-direction-column has-text-centered activity-section">
+    <video
+      #bgVideo
+      autoplay
+      muted
+      playsinline
+      loop
+      [attr.disableRemotePlayback]="true"
+      [attr.x-webkit-airplay]="'deny'"
+      class="video-bg"
+    >
+      <source src="/assets/background_video1.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="page_content">
 
-<div class = "page">
-<div class="max-width-1200 auto-margin mt-5 pl-5">
-  <nav class="breadcrumb" aria-label="breadcrumbs">
-    <ul>
-      <li><a [routerLink]="['/']">KONTEH</a></li>
-      <li><a [routerLink]="['/aktivnosti']">Aktivnosti</a></li>
-    </ul>
-  </nav>
-</div>
-
-<mat-spinner class="auto-margin m-5" *ngIf="activity.name == ''"></mat-spinner>
-<div class="is-flex is-justify-content-center">
-  <div class="max-width-1200 is-flex is-flex-direction-column has-text-centered activity-div is-align-items-center">
-    <h1>{{activity.name}}</h1>
-    <button mat-flat-button *ngIf="activity.hasLink" class="blue" (click)="redirect()">
-      Prijavi se!
-    </button>
-
-    <div class="is-flex is-flex-direction-row max-width-1000 center-wrapper">
-      <div class="text is-flex is-align-items-center">
-        <div [innerHTML]="activity.text"></div>
+      <div class="max-width-900 auto-margin breadcrumb-nav">
+        <a [routerLink]="['/aktivnosti']" class="back-link">← Aktivnosti</a>
       </div>
-      <div class="img" [style.backgroundImage]="'url(' + activity.photo + ')'">
-      </div>
+
+      <mat-spinner class="auto-margin my-5" *ngIf="groupLoading"></mat-spinner>
+
+      <ng-container *ngIf="!groupLoading">
+        <span class="group-type-label">{{ activityGroup.type }}</span>
+        <h1 class="title">{{ activityGroup.name }}</h1>
+        <p class="group-desc max-width-900 auto-margin" *ngIf="activityGroup.description">
+          {{ activityGroup.description }}
+        </p>
+
+        <div class="max-width-900 auto-margin mt-5">
+          <div *ngFor="let activity of activityGroup.activity" class="mt-4 stretch-width">
+            <activity-card [activity]="activity.fields"></activity-card>
+          </div>
+        </div>
+      </ng-container>
+
     </div>
-    <button mat-flat-button class="blue" [routerLink]="['/raspored']">
-      Pogledaj raspored
-    </button>
   </div>
-</div>
-
 </div>
