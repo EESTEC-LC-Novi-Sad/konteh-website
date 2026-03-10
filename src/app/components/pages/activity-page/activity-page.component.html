@@ -6,13 +6,26 @@
     <source src="/assets/background_video1.mp4" type="video/mp4">
   </video>
   <div class="overlay"></div>
-
   <div class="page_content">
     <h1 class="main-title">AKTIVNOSTI</h1>
     <mat-spinner class="auto-margin my-5" *ngIf="groupLoading"></mat-spinner>
-
     <div *ngIf="!groupLoading" class="sections-wrapper max-width-900 auto-margin">
       <ng-container *ngFor="let section of groupedActivities">
+
+        <ng-container *ngIf="section.showCategoryHeader">
+          <div class="category-header">
+            <h1 class="category-title">
+              {{ section.category === 'sajam' ? 'Sajamske Aktivnosti' : 'Akademske Aktivnosti' }}
+            </h1>
+            <span class="date-badge">
+              {{ section.category === 'sajam' ? '25. - 26. MART 2026.' : '18. - 19. MART 2026.' }}
+              <span class="location">
+                {{ section.category === 'sajam' ? 'LOKACIJA: HOL FTN-A' : 'LOKACIJA: KAMPUS FTN-A' }}
+              </span>
+            </span>
+          </div>
+        </ng-container>
+
         <div class="section-header">
           <h2>{{ section.type }}</h2>
         </div>
@@ -24,6 +37,7 @@
             [showNumber]="section.groups.length > 1">
           </activity-group-card>
         </div>
+
       </ng-container>
     </div>
   </div>

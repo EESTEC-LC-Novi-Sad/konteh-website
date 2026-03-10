@@ -12,7 +12,7 @@ export class ActivityPageComponent implements OnInit, AfterViewInit {
   @ViewChild('bgVideo') bgVideo!: ElementRef<HTMLVideoElement>;
 
   activityGroups: ActivityGroup[] = [];
-  groupedActivities: { type: string; groups: ActivityGroup[] }[] = [];
+  groupedActivities: { type: string; category: string; groups: ActivityGroup[]; showCategoryHeader: boolean }[] = [];
   groupLoading = true;
 
   constructor(
@@ -42,31 +42,40 @@ export class ActivityPageComponent implements OnInit, AfterViewInit {
     this.groupLoading = false;
   });
   }
-
- private readonly TYPE_ORDER = [
-  'Keynote',
-  'Track',
-  'Panel',
-  'Radionice',
-  'Takmičenje',
-  'Sajam'
+private readonly TYPE_CONFIG: { type: string; category: string }[] = [
+  { type: 'keynote',    category: 'akademski' },
+  { type: 'track',      category: 'akademski' },
+  { type: 'diskusije',  category: 'akademski' },
+  { type: 'panel',      category: 'akademski' },
+  { type: 'radionice',  category: 'akademski' },
+  { type: 'sajam',      category: 'sajam' },
+  { type: 'takmičenje', category: 'sajam' },
 ];
 
-private groupByType(groups: ActivityGroup[]): { type: string; groups: ActivityGroup[] }[] {
+private groupByType(groups: ActivityGroup[]): typeof this.groupedActivities {
   const map = new Map<string, ActivityGroup[]>();
   for (const group of groups) {
     const type = group.type || 'Ostalo';
     if (!map.has(type)) map.set(type, []);
     map.get(type)!.push(group);
   }
-  return Array.from(map.entries())
-    .map(([type, groups]) => ({ type, groups }))
+
+  const sorted = Array.from(map.entries())
+    .map(([type, groups]) => {
+      const config = this.TYPE_CONFIG.find(c => c.type === type.toLowerCase());
+      return { type, category: config?.category ?? 'akademski', groups, showCategoryHeader: false };
+    })
     .sort((a, b) => {
-      const indexA = this.TYPE_ORDER.indexOf(a.type);
-      const indexB = this.TYPE_ORDER.indexOf(b.type);
-      const orderA = indexA === -1 ? 999 : indexA;
-      const orderB = indexB === -1 ? 999 : indexB;
-      return orderA - orderB;
+      const indexA = this.TYPE_CONFIG.findIndex(c => c.type === a.type.toLowerCase());
+      const indexB = this.TYPE_CONFIG.findIndex(c => c.type === b.type.toLowerCase());
+      return (indexA === -1 ? 999 : indexA) - (indexB === -1 ? 999 : indexB);
     });
+
+  // mark where category changes
+  sorted.forEach((section, i) => {
+    section.showCategoryHeader = i === 0 || section.category !== sorted[i - 1].category;
+  });
+
+  return sorted;
 }
 }

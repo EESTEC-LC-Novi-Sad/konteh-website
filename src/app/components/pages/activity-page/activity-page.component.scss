@@ -27,6 +27,7 @@
   text-transform: uppercase;
   color: white;
   padding-top: 60px;
+  font-weight: 400;
 }
 
 .sections-wrapper {
@@ -43,6 +44,7 @@
   h2 {
     font-size: 20px;
     margin: 0;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: white;
@@ -66,4 +68,40 @@
   activity-group-card:only-child {
     grid-column: 1 / -1;
   }
+}
+
+.category-header {
+  margin-top: 80px;
+  text-align: center;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.category-title {
+  font-size: 34px;
+  letter-spacing: 6px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.date-badge {
+  display: block;
+  color: var(--primary-color);
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.location {
+  font-size: 14px;
+  display: block;
+  margin-top: 4px;
+  opacity: 0.9;
+  font-weight: 500;
+  font-style: bold;
 }
