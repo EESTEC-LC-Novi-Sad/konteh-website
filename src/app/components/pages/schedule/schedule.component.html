@@ -28,12 +28,12 @@
     <div class="max-width-1200 auto-margin column" *ngIf="!scheduleLoading">
       <div class="date-filter">
         <div class="date" (click)="filterSchedule(day1)"
-          [ngClass]="{'active': selectedDate?.getTime() === day1.getTime()}"
+          [ngClass]="{'active': scheduleStateService.selectedDate?.getTime() === day1.getTime()}"
         >
           <h3>18. MART</h3>
         </div>
         <div class="date" (click)="filterSchedule(day2)"
-          [ngClass]="{'active': selectedDate?.getTime() === day2?.getTime()}"
+          [ngClass]="{'active': scheduleStateService.selectedDate?.getTime() === day2?.getTime()}"
 
         >
           <h3>19. MART</h3>
