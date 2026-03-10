@@ -43,13 +43,30 @@ export class ActivityPageComponent implements OnInit, AfterViewInit {
   });
   }
 
-  private groupByType(groups: ActivityGroup[]): { type: string; groups: ActivityGroup[] }[] {
-    const map = new Map<string, ActivityGroup[]>();
-    for (const group of groups) {
-      const type = group.type || 'Ostalo';
-      if (!map.has(type)) map.set(type, []);
-      map.get(type)!.push(group);
-    }
-    return Array.from(map.entries()).map(([type, groups]) => ({ type, groups }));
+ private readonly TYPE_ORDER = [
+  'Keynote',
+  'Track',
+  'Panel',
+  'Radionice',
+  'Takmičenje',
+  'Sajam'
+];
+
+private groupByType(groups: ActivityGroup[]): { type: string; groups: ActivityGroup[] }[] {
+  const map = new Map<string, ActivityGroup[]>();
+  for (const group of groups) {
+    const type = group.type || 'Ostalo';
+    if (!map.has(type)) map.set(type, []);
+    map.get(type)!.push(group);
   }
+  return Array.from(map.entries())
+    .map(([type, groups]) => ({ type, groups }))
+    .sort((a, b) => {
+      const indexA = this.TYPE_ORDER.indexOf(a.type);
+      const indexB = this.TYPE_ORDER.indexOf(b.type);
+      const orderA = indexA === -1 ? 999 : indexA;
+      const orderB = indexB === -1 ? 999 : indexB;
+      return orderA - orderB;
+    });
+}
 }
