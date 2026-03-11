@@ -17,7 +17,7 @@
     <div *ngIf="!groupLoading && group" class="max-width-900 auto-margin sections-wrapper">
       <span class="group-type-label">{{ group.type }}</span>
       <h1 class="title">{{ group.name }}</h1>
-      <p class="group-desc">{{ group.description }}</p>
+      <p class="group-desc" [innerHTML]="renderDescription(group.description)"></p>
 
       <div class="location-badge" *ngIf="group.activity && group.activity.length > 0">
           <mat-icon>location_on</mat-icon>
