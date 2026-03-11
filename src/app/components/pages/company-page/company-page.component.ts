@@ -59,12 +59,16 @@ export class CompanyPageComponent implements OnInit {
             let allActivities =
               this.activityService.convertDataToActivities(data);
             for (let activity of allActivities) {
-              if (activity.company.fields.name == this.company.name) {
-                this.activities.push(activity);
+              let companies = activity.company as any[];
+              if (!companies || !Array.isArray(companies)) {
+                continue;
+              }
+              if(companies.find(c => c?.fields?.name === this.company.name)) {
+                this.activities.push(activity)
               }
             }
             this.activitiesLoading = false;
-          });
+          }, (err) => {this.activitiesLoading = false; this.activities = []});
         },
 
         (err) => {
