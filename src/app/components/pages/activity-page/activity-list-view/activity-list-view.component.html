@@ -1,34 +1,41 @@
-<div class = "background-image">
-<div class="header-cover"></div>
-
-<div
-class="is-flex is-flex-direction-column has-text-centered activity-section"
->
-  <video
-    #bgVideo
-    autoplay
-    muted
-    playsinline
-    loop
+<div class="background-image">
+  <video #bgVideo autoplay muted playsinline loop
     [attr.disableRemotePlayback]="true"
     [attr.x-webkit-airplay]="'deny'"
-    class="video-bg"
-  >    <source src="/assets/background_video1.mp4" type="video/mp4">
+    class="video-bg">
+    <source src="/assets/background_video1.mp4" type="video/mp4">
   </video>
   <div class="overlay"></div>
-  <div class = "page_content">
-  <h1 class="title">AKTIVNOSTI</h1>
-  <mat-spinner class="auto-margin my-5" *ngIf="activityLoading"></mat-spinner>
-  <p > <!--*ngIf="activities.length == 0 && !activityLoading"-->
-    Trenutno nema objavljenih aktivnosti.
-  </p>
-  <div *ngIf="false">
-    <div *ngFor="let activity of activities" class="mt-5 stretch-width">
-      <div class="max-width-900 auto-margin">
-        <activity-card [activity]="activity"></activity-card>
+
+  <div class="page_content">
+    <div class="max-width-900 auto-margin">
+      <a routerLink="/aktivnosti" class="back-link">← Sve aktivnosti</a>
+    </div>
+
+    <mat-spinner class="auto-margin my-5" *ngIf="groupLoading"></mat-spinner>
+
+    <div *ngIf="!groupLoading && group" class="max-width-900 auto-margin sections-wrapper">
+      <span class="group-type-label">{{ group.type }}</span>
+      <h1 class="title">{{ group.name }}</h1>
+      <p class="group-desc" [innerHTML]="renderDescription(group.description)"></p>
+
+      <div class="location-badge" *ngIf="group.activity && group.activity.length > 0">
+          <mat-icon>location_on</mat-icon>
+        <span>{{ group.activity[0].fields?.location }}</span>
+      </div>
+
+      <div class="activities-list mt-5">
+        <div *ngFor="let activity of group.activity" class="activity-card">
+          <div class="activity-card-header">
+            <h3>{{ activity.fields?.name }}</h3>
+            <span class="activity-time" *ngIf="activity.fields?.date">
+              <mat-icon>schedule</mat-icon>
+              {{ activity.fields?.date | date: 'dd.MM.yyyy HH:mm' }}
+            </span>
+          </div>
+          <p [innerHTML]="renderDescription(activity.fields?.description)"></p>
+        </div>
       </div>
     </div>
-    </div>
   </div>
-</div>
 </div>

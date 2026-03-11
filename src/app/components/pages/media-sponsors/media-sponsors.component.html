@@ -1,34 +1,39 @@
-<div class="is-flex is-flex-direction-column has-text-centered sponsors-section">
-  <h1 class = "title">Medijski pokrovitelji</h1>
-  <div *ngIf="showSponsors">
-    <h3 class="alt-font">USKORO!</h3>
-  </div>
+<div class="background-image">
+  <video #bgVideo autoplay muted playsinline loop
+    [attr.disableRemotePlayback]="true"
+    [attr.x-webkit-airplay]="'deny'"
+    class="video-bg">
+    <source src="/assets/background_video1.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
 
-  <div *ngIf="!showSponsors" class="max-width-1200 auto-margin content">
-    <h3>Generalni medijski pokrovitelj</h3>
-    <div class="sponsor-card">
-      <sponsor-card [sponsor]="rtv"></sponsor-card>
+  <div class="page_content">
+    <h1 class="main-title">MEDIJSKI POKROVITELJI</h1>
+
+    <div *ngIf="!showSponsors" class="coming-soon">
+      <h3>USKORO!</h3>
     </div>
-    <h3>Medijski pokrovitelji</h3>
-    <div>
-      <mat-spinner class="auto-margin my-5" *ngIf="mediaLoading"></mat-spinner>
-      <p *ngIf="mediaSponsors.length == 0 && !mediaLoading" class="my-5">
-        Uskoro!
-      </p>
-      <div class="sponsor-card" *ngFor="let sponsor of mediaSponsors">
-        <sponsor-card [sponsor]="sponsor"></sponsor-card>
+
+    <div *ngIf="showSponsors" class="max-width-1200 auto-margin content">
+      <div class="section">
+        <h3 class="section-title">Medijski pokrovitelji</h3>
+        <mat-spinner class="auto-margin my-5" *ngIf="mediaLoading"></mat-spinner>
+        <p *ngIf="mediaSponsors.length === 0 && !mediaLoading" class="coming-soon-text">Uskoro!</p>
+        <div class="sponsors-grid">
+          <div class="sponsor-card" *ngFor="let sponsor of mediaSponsors">
+            <sponsor-card [sponsor]="sponsor"></sponsor-card>
+          </div>
+        </div>
       </div>
-    </div>
-
-
-    <h3>Partneri sajma</h3>
-    <div>
-      <mat-spinner class="auto-margin my-5" *ngIf="partnerLoading"></mat-spinner>
-      <p *ngIf="partnerSponsors.length == 0 && !partnerLoading" class="my-5">
-        Uskoro!
-      </p>
-      <div class="sponsor-card" *ngFor="let sponsor of partnerSponsors">
-        <sponsor-card [sponsor]="sponsor"></sponsor-card>
+      <div class="section">
+        <h3 class="section-title">Partneri sajma</h3>
+        <mat-spinner class="auto-margin my-5" *ngIf="partnerLoading"></mat-spinner>
+        <p *ngIf="partnerSponsors.length === 0 && !partnerLoading" class="coming-soon-text">Uskoro!</p>
+        <div class="sponsors-grid">
+          <div class="sponsor-card" *ngFor="let sponsor of partnerSponsors">
+            <sponsor-card [sponsor]="sponsor"></sponsor-card>
+          </div>
+        </div>
       </div>
     </div>
   </div>

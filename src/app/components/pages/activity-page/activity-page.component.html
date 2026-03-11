@@ -1,35 +1,44 @@
-<div class = "background">
-</div>
+<div class="background-image">
+  <video #bgVideo autoplay muted playsinline loop
+    [attr.disableRemotePlayback]="true"
+    [attr.x-webkit-airplay]="'deny'"
+    class="video-bg">
+    <source src="/assets/background_video1.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+  <div class="page_content">
+    <h1 class="main-title">AKTIVNOSTI</h1>
+    <mat-spinner class="auto-margin my-5" *ngIf="groupLoading"></mat-spinner>
+    <div *ngIf="!groupLoading" class="sections-wrapper max-width-900 auto-margin">
+      <ng-container *ngFor="let section of groupedActivities">
 
-<div class = "page">
-<div class="max-width-1200 auto-margin mt-5 pl-5">
-  <nav class="breadcrumb" aria-label="breadcrumbs">
-    <ul>
-      <li><a [routerLink]="['/']">KONTEH</a></li>
-      <li><a [routerLink]="['/aktivnosti']">Aktivnosti</a></li>
-    </ul>
-  </nav>
-</div>
+        <ng-container *ngIf="section.showCategoryHeader">
+          <div class="category-header">
+            <h1 class="category-title">
+              {{ section.category === 'sajam' ? 'Sajamske Aktivnosti' : 'Akademske Aktivnosti' }}
+            </h1>
+            <span class="date-badge">
+              {{ section.category === 'sajam' ? '25. - 26. MART 2026.' : '18. - 19. MART 2026.' }}
+              <span class="location">
+                {{ section.category === 'sajam' ? 'LOKACIJA: HOL FTN-A' : 'LOKACIJA: KAMPUS FTN-A' }}
+              </span>
+            </span>
+          </div>
+        </ng-container>
 
-<mat-spinner class="auto-margin m-5" *ngIf="activity.name == ''"></mat-spinner>
-<div class="is-flex is-justify-content-center">
-  <div class="max-width-1200 is-flex is-flex-direction-column has-text-centered activity-div is-align-items-center">
-    <h1>{{activity.name}}</h1>
-    <button mat-flat-button *ngIf="activity.hasLink" class="blue" (click)="redirect()">
-      Prijavi se!
-    </button>
+        <div class="section-header">
+          <h2>{{ section.type }}</h2>
+        </div>
+        <div class="track-grid">
+          <activity-group-card
+            *ngFor="let group of section.groups; let i = index"
+            [group]="group"
+            [index]="i"
+            [showNumber]="section.groups.length > 1">
+          </activity-group-card>
+        </div>
 
-    <div class="is-flex is-flex-direction-row max-width-1000 center-wrapper">
-      <div class="text is-flex is-align-items-center">
-        <div [innerHTML]="activity.text"></div>
-      </div>
-      <div class="img" [style.backgroundImage]="'url(' + activity.photo + ')'">
-      </div>
+      </ng-container>
     </div>
-    <button mat-flat-button class="blue" [routerLink]="['/raspored']">
-      Pogledaj raspored
-    </button>
   </div>
-</div>
-
 </div>
