@@ -19,9 +19,20 @@
       <h1 class="title">{{ group.name }}</h1>
       <p class="group-desc">{{ group.description }}</p>
 
+      <div class="location-badge" *ngIf="group.activity && group.activity.length > 0">
+          <mat-icon>location_on</mat-icon>
+        <span>{{ group.activity[0].fields?.location }}</span>
+      </div>
+
       <div class="activities-list mt-5">
         <div *ngFor="let activity of group.activity" class="activity-card">
-          <h3>{{ activity.fields?.name }}</h3>
+          <div class="activity-card-header">
+            <h3>{{ activity.fields?.name }}</h3>
+            <span class="activity-time" *ngIf="activity.fields?.date">
+              <mat-icon>schedule</mat-icon>
+              {{ activity.fields?.date | date: 'dd.MM.yyyy HH:mm' }}
+            </span>
+          </div>
           <p [innerHTML]="renderDescription(activity.fields?.description)"></p>
         </div>
       </div>
