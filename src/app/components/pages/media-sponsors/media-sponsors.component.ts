@@ -16,7 +16,6 @@ export class MediaSponsorsComponent implements OnInit, AfterViewInit {
   showSponsors = environment.showSponsors;
   mediaSponsors: MediaSponsor[] = [];
   partnerSponsors: ParnerSponsor[] = [];
-  rtv: MediaSponsor = new MediaSponsor();
   mediaLoading = true;
   partnerLoading = true;
 
@@ -46,10 +45,7 @@ export class MediaSponsorsComponent implements OnInit, AfterViewInit {
       this.partnerLoading = false;
     });
     this.mediaService.getAllMediaSponsors().subscribe((data) => {
-      const all = this.mediaService.convertDataToMediaSponsors(data);
-      this.mediaSponsors = all.filter(e => e.name !== 'RTV');
-      const r = all.find(e => e.name === 'RTV');
-      this.rtv = r !== undefined ? r : this.rtv;
+      this.mediaSponsors = this.mediaService.convertDataToMediaSponsors(data);
       this.mediaLoading = false;
     });
   }
