@@ -49,7 +49,8 @@ private readonly TYPE_CONFIG: { type: string; category: string }[] = [
   { type: 'panel',      category: 'akademski' },
   { type: 'radionice',  category: 'akademski' },
   { type: 'sajam',      category: 'sajam' },
-  { type: 'takmičenje', category: 'sajam' },
+  { type: 'takmičenje', category: 'akademski' },
+  {type: 'simulacija intervjua', category: 'sajam' }
 ];
 
 private groupByType(groups: ActivityGroup[]): typeof this.groupedActivities {
