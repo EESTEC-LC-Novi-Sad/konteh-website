@@ -93,4 +93,12 @@
     line-height: 1.6;
     margin: 0;
   }
+
+  ::ng-deep {
+    p { font-size: 14px; font-weight: 300; color: rgba(255, 255, 255, 0.65); line-height: 1.6; margin-bottom: 8px; }
+    strong, b { color: white; font-weight: 600; }
+    ul { list-style-type: disc; padding-left: 24px; margin-bottom: 8px; }
+    ol { list-style-type: decimal; padding-left: 24px; margin-bottom: 8px; }
+    li { font-size: 14px; color: rgba(255, 255, 255, 0.65); line-height: 1.7; margin-bottom: 4px; }
+  }
 }

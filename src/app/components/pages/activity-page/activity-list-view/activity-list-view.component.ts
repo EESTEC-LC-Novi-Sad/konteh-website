@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 import { ActivatedRoute, Router } from '@angular/router';
 import { ActivityGroup } from 'src/app/model/activity-group';
 import { ActivityGroupService } from 'src/app/services/activity-group.service';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 @Component({
   selector: 'activity-list-view',
@@ -50,10 +51,12 @@ export class ActivityListViewComponent implements OnInit, AfterViewInit {
   }
 
   renderDescription(description: any): string {
-  if (!description) return '';
-  if (typeof description === 'string') return description;
-  return description.content
-    ?.map((block: any) => block.content?.map((inline: any) => inline.value || '').join(''))
-    .join(' ') ?? '';
-}
+    if (!description) return '';
+    if (typeof description === 'string') return description;
+    try {
+      return documentToHtmlString(description);
+    } catch {
+      return '';
+    }
+  }
 }
