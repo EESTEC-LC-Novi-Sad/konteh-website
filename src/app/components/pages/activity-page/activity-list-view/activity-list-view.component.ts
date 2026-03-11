@@ -1,62 +1,55 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ActivityGroup } from 'src/app/model/activity-group';
-import { ActivityGroupService } from 'src/app/services/activity-group.service';
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
+import { Router } from '@angular/router';
+import { Activity } from 'src/app/model/activity';
+import { ActivityService } from 'src/app/services/activity.service';
+import { activities } from '../activities';
 
 @Component({
   selector: 'activity-list-view',
   templateUrl: './activity-list-view.component.html',
   styleUrls: ['./activity-list-view.component.scss']
 })
-export class ActivityListViewComponent implements OnInit, AfterViewInit {
+export class ActivityListViewComponent implements AfterViewInit {
   @ViewChild('bgVideo') bgVideo!: ElementRef<HTMLVideoElement>;
-  group: ActivityGroup | null = null;
-  groupLoading = true;
-
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private activityGroupService: ActivityGroupService
-  ) {}
 
   ngAfterViewInit(): void {
     const video = this.bgVideo.nativeElement;
-    video.muted = true;
+
+    video.muted = true; // Critical in some browsers
     video.setAttribute('playsinline', 'true');
-    video.setAttribute('muted', 'true');
-    video.setAttribute('autoplay', 'true');
-    video.load();
-    video.play().catch(err => {
-      console.warn('Autoplay blocked:', err);
+    video.setAttribute('muted', 'true'); // also attribute
+    video.setAttribute('autoplay', 'true'); // safety net
+
+    video.load(); // reinitialize
+
+    video.play().then(() => {
+      console.log('Video autoplayed');
+    }).catch(err => {
+      console.warn('Autoplay blocked, waiting for user interaction:', err);
       this.setupFallbackAutoplay(video);
     });
   }
-
   setupFallbackAutoplay(video: HTMLVideoElement) {
     const tryPlay = () => {
-      video.play().catch(err => console.warn('Still failed:', err));
+      video.play().catch(err => console.warn('Still failed to play:', err));
       document.removeEventListener('click', tryPlay);
     };
+
     document.addEventListener('click', tryPlay);
   }
 
+
+  activities = activities;
+  activityLoading: boolean = true;
+
+  constructor(
+    private router: Router,) { }
+
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.activityGroupService.getById(params['id']).subscribe((data) => {
-        this.group = this.activityGroupService.convertDataToActivityGroup(data);
-        this.groupLoading = false;
-      });
-    });
+    this.activityLoading = false;
   }
 
-  renderDescription(description: any): string {
-    if (!description) return '';
-    if (typeof description === 'string') return description;
-    try {
-      return documentToHtmlString(description);
-    } catch {
-      return '';
-    }
+  openHomepage() {
+    this.router.navigate(['']);
   }
 }
