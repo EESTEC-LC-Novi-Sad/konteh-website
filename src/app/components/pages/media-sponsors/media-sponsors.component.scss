@@ -1,45 +1,78 @@
 @import "./../../../../app/custom-theme.scss";
 
-.sponsors-section {
+.video-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  object-fit: cover;
+  z-index: 0;
 }
 
-.title {
-  color:white;
-  margin: 40px auto 0 auto;
-  letter-spacing: 0.2em;
-  font-size: 2rem;
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.page_content {
+  position: relative;
+  z-index: 10;
+  padding-bottom: 80px;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 42px;
+  letter-spacing: 6px;
+  font-weight: 300;
+  color: white;
   text-transform: uppercase;
+  padding-top: 60px;
+  margin-bottom: 30px;
 }
 
-.sponsors-section h2 {
-  font-size: 50px;
-  line-height: 50px;
-  font-weight: 600;
-  color: $blue;
-  margin: 40px auto;
+.section {
+  margin-top: 15px;
+  text-align: center;
+  padding-bottom: 20px;
 }
 
-h3 {
+.section-title {
   color: var(--primary-color);
   font-size: 22px;
-  letter-spacing: 0.1em;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
 
   @media (min-width: 430px) {
     font-size: 24px;
   }
 }
 
+.sponsors-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .sponsor-card {
   width: 300px;
-  margin: 0px;
   display: inline-block;
   vertical-align: top;
   padding: 10px;
 }
 
-p {
-  font-size: large;
-  font-weight: bold;
+.coming-soon {
+  text-align: center;
+  margin-top: 40px;
+  color: var(--primary-color);
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+.coming-soon-text {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
 }
