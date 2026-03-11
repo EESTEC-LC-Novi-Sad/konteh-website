@@ -48,4 +48,12 @@ export class ActivityListViewComponent implements OnInit, AfterViewInit {
       });
     });
   }
+
+  renderDescription(description: any): string {
+  if (!description) return '';
+  if (typeof description === 'string') return description;
+  return description.content
+    ?.map((block: any) => block.content?.map((inline: any) => inline.value || '').join(''))
+    .join(' ') ?? '';
+}
 }

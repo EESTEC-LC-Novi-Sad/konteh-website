@@ -22,7 +22,7 @@
       <div class="activities-list mt-5">
         <div *ngFor="let activity of group.activity" class="activity-card">
           <h3>{{ activity.fields?.name }}</h3>
-          <p>{{ activity.fields?.description }}</p>
+          <p [innerHTML]="renderDescription(activity.fields?.description)"></p>
         </div>
       </div>
     </div>
