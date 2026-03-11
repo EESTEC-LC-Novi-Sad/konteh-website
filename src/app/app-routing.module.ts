@@ -78,10 +78,15 @@ const routes: Routes = [
     title: baseTitle + 'Aktivnost',
   },
   {
-    path: 'aktivnosti',
-    component: ActivityListViewComponent,
-    title: baseTitle + 'Aktivnosti',
-  },
+  path: 'aktivnosti',
+  component: ActivityPageComponent,  
+  title: baseTitle + 'Aktivnosti',
+},
+{
+  path: 'aktivnosti/:id',
+  component: ActivityListViewComponent,  
+  title: baseTitle + 'Aktivnosti',
+},
   {
     path: '**',
     component: NotFoundComponent,
