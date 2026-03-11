@@ -144,6 +144,11 @@
           Kontakt
         </a>
       </div>
+      <div class="mb-2 py-2" (click)="switchSelectedMenuItem(7)">
+        <a class="navigation-item-mobile" [ngClass]="{ selected: tab == 7 }">
+          Mediji
+        </a>
+      </div>
       <div class="py-2 primary-button" *ngIf="showOffers">
         <a
           mat-flat-button
