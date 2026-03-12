@@ -40,8 +40,7 @@
     >
     {{descriptionTxt}}
   </h2>
-  <p>{{schedule.content}}</p>
-
+    <p [innerHTML]="renderDescription(schedule.content)"></p>
   <h2>{{lecturerTxt}}</h2>
   <div *ngIf="schedule.lecturers != null" class="lecturer-wraper">
     <div *ngFor="let lecturer of schedule.lecturers; let id = index">

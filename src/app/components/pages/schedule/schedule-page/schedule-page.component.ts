@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Schedule } from 'src/app/model/schedule';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 @Component({
   selector: 'schedule-page',
@@ -32,4 +33,15 @@ export class SchedulePageComponent {
 
   lecturerTxt : String = this.schedule.type == "panel" ? "Panelisti" : "Predavači";
   descriptionTxt : String = this.schedule.type == "panel" ? "O temi" : "Sadržaj predavanja";
+
+
+  renderDescription(content: any): string {
+    if (!content) return '';
+    if (typeof content === 'string') return content;
+    try {
+      return documentToHtmlString(content);
+    } catch {
+      return '';
+    }
+  }
 }
