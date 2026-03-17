@@ -6,6 +6,9 @@ import { Router } from "@angular/router";
 import { PartnerService } from "../../../services/partner.service";
 import { MediaService } from "../../../services/media.service";
 
+
+const mainMediaSponsorName = environment.mainMediaSponsorName;
+
 @Component({
   selector: 'media-sponsors',
   templateUrl: './media-sponsors.component.html',
@@ -18,6 +21,7 @@ export class MediaSponsorsComponent implements OnInit, AfterViewInit {
   partnerSponsors: ParnerSponsor[] = [];
   mediaLoading = true;
   partnerLoading = true;
+  mainMediaSponsor: MediaSponsor | null = null;
 
   constructor(
     private router: Router,
@@ -47,6 +51,8 @@ export class MediaSponsorsComponent implements OnInit, AfterViewInit {
     this.mediaService.getAllMediaSponsors().subscribe((data) => {
       this.mediaSponsors = this.mediaService.convertDataToMediaSponsors(data);
       this.mediaLoading = false;
+      this.mainMediaSponsor = this.mediaSponsors.find(s => s.name === mainMediaSponsorName) || null;
+      this.mediaSponsors = this.mediaSponsors.filter(s => s.name !== mainMediaSponsorName);
     });
   }
 }
