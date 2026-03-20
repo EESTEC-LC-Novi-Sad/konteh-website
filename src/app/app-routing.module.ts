@@ -14,6 +14,7 @@ import { SponsorsComponent } from './components/pages/sponsors/sponsors.componen
 import { ActivityListViewComponent } from './components/pages/activity-page/activity-list-view/activity-list-view.component';
 import { SchedulePageComponent } from './components/pages/schedule/schedule-page/schedule-page.component';
 import {MediaSponsorsComponent} from "./components/pages/media-sponsors/media-sponsors.component";
+import {CatalogueComponent} from "./components/pages/catalogue/catalogue.component";
 
 var baseTitle = 'KONTEH - ';
 
@@ -79,14 +80,19 @@ const routes: Routes = [
   },
   {
   path: 'aktivnosti',
-  component: ActivityPageComponent,  
+  component: ActivityPageComponent,
   title: baseTitle + 'Aktivnosti',
 },
 {
   path: 'aktivnosti/:id',
-  component: ActivityListViewComponent,  
+  component: ActivityListViewComponent,
   title: baseTitle + 'Aktivnosti',
 },
+  {
+    path: "katalog",
+    component: CatalogueComponent,
+    title: baseTitle + 'Katalog',
+  },
   {
     path: '**',
     component: NotFoundComponent,

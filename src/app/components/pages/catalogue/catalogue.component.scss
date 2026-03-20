@@ -1,0 +1,19 @@
+@import "./../../../../app/custom-theme.scss";
+
+h1 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  @media (max-width: 430px) {
+
+    font-size: 1.25rem;
+  }
+}
+
+p {
+  font-size: large;
+  font-weight: bold;
+}
