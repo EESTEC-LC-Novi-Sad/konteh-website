@@ -96,7 +96,7 @@ ngOnDestroy(): void {
 }
 
 updateCountdown(): void {
-  const target = new Date('2026-03-18T09:30:00').getTime();
+  const target = new Date('2026-03-25T09:30:00').getTime();
   const now = new Date().getTime();
   const diff = target - now;
   if (diff <= 0) {

@@ -1,142 +1,141 @@
 <div class="header">
-  <video #bgVideo autoplay muted playsinline loop [attr.disableRemotePlayback]="true" [attr.x-webkit-airplay]="'deny'"
-    class="video-bg">
-    <source src="assets/background_video1.mp4" type="video/mp4" />
-  </video>
-  <div class="overlay"></div>
-  <div class="header-content">
-    <h1>KONTEH</h1>
-    <p class="title-description">Najveći sajam poslovnih mogućnosti i praksi u regionu</p>
-    <div class="event-info">
-      <div class="akademski-title">
-        <h3>Akademski Program</h3>
-        <p>
-          Fakultet tehničkih nauka
-          <br/>
-          18. i 19. mart 2026.
-        </p>
-      </div>
-      <div>
-        <h3>Sajam</h3>
-        <p>
-          Fakultet tehničkih nauka
-          <br/>
-          25. i 26. mart 2026.
-        </p>
-      </div>
-    </div>
+	<video #bgVideo autoplay muted playsinline loop [attr.disableRemotePlayback]="true" [attr.x-webkit-airplay]="'deny'"
+     class="video-bg">
+		<source src="assets/background_video1.mp4" type="video/mp4" />
+	</video>
+	<div class="overlay"></div>
+	<div class="header-content">
+		<h1>KONTEH</h1>
+		<p class="title-description">Najveći sajam poslovnih mogućnosti i praksi u regionu</p>
+		<div class="event-info">
+			<div class="akademski-title">
+				<h3>Akademski Program</h3>
+				<p>
+				Fakultet tehničkih nauka
+				<br/>
+				18. i 19. mart 2026.
+				</p>
+			</div>
+			<div>
+				<h3>Sajam</h3>
+				<p>
+				Fakultet tehničkih nauka
+				<br/>
+				25. i 26. mart 2026.
+				</p>
+			</div>
+		</div>
 
-<p class="title-description">Vreme do početka sajma:</p>
-<div class="countdown-grid">
-      <div class="countdown-card">
-        <span class="countdown-number">{{ countdown.days | number:'2.0-0' }}</span>
-        <span class="countdown-label">Dana</span>
-      </div>
-      <div class="countdown-separator">:</div>
-      <div class="countdown-card">
-        <span class="countdown-number">{{ countdown.hours | number:'2.0-0' }}</span>
-        <span class="countdown-label">Sati</span>
-      </div>
-      <div class="countdown-separator">:</div>
-      <div class="countdown-card">
-        <span class="countdown-number">{{ countdown.minutes | number:'2.0-0' }}</span>
-        <span class="countdown-label">Minuta</span>
-      </div>
-      <div class="countdown-separator">:</div>
-      <div class="countdown-card">
-        <span class="countdown-number">{{ countdown.seconds | number:'2.0-0' }}</span>
-        <span class="countdown-label">Sekundi</span>
-      </div>
-    </div>
-  </div>
+		<p class="title-description">Vreme do početka sajma:</p>
+		<div class="countdown-grid">
+			<div class="countdown-card">
+				<span class="countdown-number">{{ countdown.days | number:'2.0-0' }}</span>
+				<span class="countdown-label">Dana</span>
+			</div>
+			<div class="countdown-separator">:</div>
+			<div class="countdown-card">
+				<span class="countdown-number">{{ countdown.hours | number:'2.0-0' }}</span>
+				<span class="countdown-label">Sati</span>
+			</div>
+			<div class="countdown-separator">:</div>
+			<div class="countdown-card">
+				<span class="countdown-number">{{ countdown.minutes | number:'2.0-0' }}</span>
+				<span class="countdown-label">Minuta</span>
+			</div>
+			<div class="countdown-separator">:</div>
+			<div class="countdown-card">
+				<span class="countdown-number">{{ countdown.seconds | number:'2.0-0' }}</span>
+				<span class="countdown-label">Sekundi</span>
+			</div>
+		</div>
+	</div>
 </div>
-
 <section class="okontehu">
-  <div class="content-wrapper">
-    <div class="text-content">
-      <h2>O KONTEH-U</h2>
-      <p>KONTEH je sajam poslovnih mogućnosti i stručnih praksi na Fakultetu tehničkih nauka u Novom Sadu.
-        Kroz godine iskustva, okupili smo <b>najprestižnije kompanije</b> u regionu i povezali ih sa studentima željnim
-        znanja,
-        prilika i karijernog napretka.
+	<div class="content-wrapper">
+		<div class="text-content">
+			<h2>O KONTEH-U</h2>
+			<p>KONTEH je sajam poslovnih mogućnosti i stručnih praksi na Fakultetu tehničkih nauka u Novom Sadu.
+			Kroz godine iskustva, okupili smo <b>najprestižnije kompanije</b> u regionu i povezali ih sa studentima željnim
+			znanja,
+			prilika i karijernog napretka.
 
-        <br><br>Ovo je tvoja prilika da napraviš prvi korak ka uspešnoj budućnosti! KONTEH ima za cilj povezivanje
-        studenata sa poslodavcima, promociju mogućnosti zapošljavanja i stručnih praksi, kao i <b>podsticanje
-          profesionalnog razvoja</b> kroz interaktivne radionice i inspirativna predavanja.
-      </p>
-    </div>
-    <div class="image-content">
-      <img src="assets/konteh.jpg" alt="O kontehu">
-    </div>
-  </div>
+			<br><br>Ovo je tvoja prilika da napraviš prvi korak ka uspešnoj budućnosti! KONTEH ima za cilj povezivanje
+			studenata sa poslodavcima, promociju mogućnosti zapošljavanja i stručnih praksi, kao i <b>podsticanje
+				profesionalnog razvoja</b> kroz interaktivne radionice i inspirativna predavanja.
+			</p>
+		</div>
+		<div class="image-content">
+			<img src="assets/konteh.jpg" alt="O kontehu">
+		</div>
+	</div>
 </section>
 
 <section class="stats">
-  <div>
-    <h2>20</h2>
-    <p><b>Godina postojanja</b></p>
-  </div>
-  <div>
-    <h2>30+</h2>
-    <p><b>Vodećih kompanija</b></p>
-  </div>
-  <div>
-    <h2>17k</h2>
-    <p><b>Posetilaca</b></p>
-  </div>
+	<div>
+		<h2>20</h2>
+		<p><b>Godina postojanja</b></p>
+	</div>
+	<div>
+		<h2>30+</h2>
+		<p><b>Vodećih kompanija</b></p>
+	</div>
+	<div>
+		<h2>17k</h2>
+		<p><b>Posetilaca</b></p>
+	</div>
 </section>
 
 <section class="akademski-program">
-  <div class="content-wrapper">
-    <div class="image-content">
-      <img src="assets/predavanje01.jpg" alt="Akademski Program">
-    </div>
-    <div class="text-content">
-      <h2>AKADEMSKI PROGRAM</h2>
-      <p>
-        U okviru KONTEH-a, Akademski dani predstavljaju novi segment posvećen
-        dodatnom profesionalnom usavršavanju studenata. Program je dizajniran da
-        pruži dubok uvid u aktuelne tehnološke trendove - od primenjene veštačke
-        inteligencije i razvoja video igara do arhitekture kompleksnih inženjerskih sistema,
-        kroz formate keynote <b>predavanja</b>, <b>tematskih track-ova</b> i <b>panel diskusija</b>.
-        <br /> <br />
-        Pored toga, organizuje se <b>algoritamsko takmičenje</b> gde studenti imaju priliku
-        da se oprobaju u različitim veštinama računarstva, upoznajući se sa
-        kompanijama i stičući dragoceno iskustvo.
-      </p>
-    </div>
+	<div class="content-wrapper">
+		<div class="image-content">
+			<img src="assets/predavanje01.jpg" alt="Akademski Program">
+		</div>
+		<div class="text-content">
+			<h2>AKADEMSKI PROGRAM</h2>
+			<p>
+			U okviru KONTEH-a, Akademski dani predstavljaju novi segment posvećen
+			dodatnom profesionalnom usavršavanju studenata. Program je dizajniran da
+			pruži dubok uvid u aktuelne tehnološke trendove - od primenjene veštačke
+			inteligencije i razvoja video igara do arhitekture kompleksnih inženjerskih sistema,
+			kroz formate keynote <b>predavanja</b>, <b>tematskih track-ova</b> i <b>panel diskusija</b>.
+			<br /> <br />
+			Pored toga, organizuje se <b>algoritamsko takmičenje</b> gde studenti imaju priliku
+			da se oprobaju u različitim veštinama računarstva, upoznajući se sa
+			kompanijama i stičući dragoceno iskustvo.
+			</p>
+		</div>
 
-  </div>
+	</div>
 </section>
 
 
 
 
 <section class="sajam">
-  <div class="content-wrapper">
+	<div class="content-wrapper">
 
-    <div class="text-content">
-      <h2>SAJAM</h2>
-      <p>Na KONTEH sajmu možete očekivati prisustvo više od 30 renomiranih kompanija,
-        kao sto su Schneider Electric, RT-RK, Elsys i Continental. Studenti će imati mogućnost direktnog razgovora i
-        <b>upoznavanja sa predstavnicima kompanija</b>, ostavljanja svojih radnih biografija (CV) i napretka ka
-        ostvarivanju svojih profesionalnih ciljeva.
-        <br><br>
-        Pored toga, posetioci će imati priliku da učestvuju u <b>simulaciji razgovora za posao</b> koja će im pomoći da
-        se pripreme za buduće intervjue, uz savete i sugestije iskusnih HR menadžera.
+		<div class="text-content">
+			<h2>SAJAM</h2>
+			<p>Na KONTEH sajmu možete očekivati prisustvo više od 30 renomiranih kompanija,
+			kao sto su Schneider Electric, RT-RK, Elsys i Continental. Studenti će imati mogućnost direktnog razgovora i
+			<b>upoznavanja sa predstavnicima kompanija</b>, ostavljanja svojih radnih biografija (CV) i napretka ka
+			ostvarivanju svojih profesionalnih ciljeva.
+			<br><br>
+			Pored toga, posetioci će imati priliku da učestvuju u <b>simulaciji razgovora za posao</b> koja će im pomoći da
+			se pripreme za buduće intervjue, uz savete i sugestije iskusnih HR menadžera.
 
-      </p>
-    </div>
-    <div class="image-content">
-      <img src="assets/sajam01.jpg" alt="Sajam">
-    </div>
-  </div>
+			</p>
+		</div>
+		<div class="image-content">
+			<img src="assets/sajam01.jpg" alt="Sajam">
+		</div>
+	</div>
 </section>
 
 <section class="ostavi-cv">
-  <h2>OSTAVI CV</h2>
-  <p>Tražiš praksu ili prvi posao? Ne čekaj da ti prilike same dođu – napravi prvi korak!
-    Ostavljanjem svog CV-a u našu bazu, omogućavaš kompanijama da te pronađu i kontaktiraju kada se otvori pozicija
-    savršena za tebe. Jedan klik može biti početak tvoje uspešne karijere!</p>
-  <button mat-flat-button (click)="openCVLink()" class="submit-cv">Prijavi se</button>
+	<h2>OSTAVI CV</h2>
+	<p>Tražiš praksu ili prvi posao? Ne čekaj da ti prilike same dođu – napravi prvi korak!
+	Ostavljanjem svog CV-a u našu bazu, omogućavaš kompanijama da te pronađu i kontaktiraju kada se otvori pozicija
+	savršena za tebe. Jedan klik može biti početak tvoje uspešne karijere!</p>
+	<button mat-flat-button (click)="openCVLink()" class="submit-cv">Prijavi se</button>
 </section>
