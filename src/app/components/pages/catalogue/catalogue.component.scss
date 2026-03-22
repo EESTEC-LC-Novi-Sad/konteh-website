@@ -17,3 +17,17 @@ p {
   font-size: large;
   font-weight: bold;
 }
+
+.iframe_katalog {
+  position: relative;
+  top: 0;
+  left: 0;
+  border: none;
+}
+
+.iframe-container {
+  margin: 0 auto;
+  width: 90%;
+  height: 100vh;
+  overflow: hidden;
+}
