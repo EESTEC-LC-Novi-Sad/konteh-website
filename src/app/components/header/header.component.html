@@ -66,10 +66,19 @@
             Mediji
           </a>
         </div>
-        <div>
+	<div>
           <a
             class="navigation-item"
             [ngClass]="{ selected: tab === 7 }"
+            [routerLink]="['/katalog']"
+          >
+            Katalog
+          </a>
+        </div>
+        <div>
+          <a
+            class="navigation-item"
+            [ngClass]="{ selected: tab === 8 }"
             [routerLink]="['/kontakt']"
           >
             Kontakt
@@ -141,12 +150,17 @@
       </div>
       <div class="mb-2 py-2" (click)="switchSelectedMenuItem(6)">
         <a class="navigation-item-mobile" [ngClass]="{ selected: tab == 6 }">
-          Kontakt
+          Mediji
         </a>
       </div>
       <div class="mb-2 py-2" (click)="switchSelectedMenuItem(7)">
         <a class="navigation-item-mobile" [ngClass]="{ selected: tab == 7 }">
-          Mediji
+          Katalog
+        </a>
+      </div>
+      <div class="mb-2 py-2" (click)="switchSelectedMenuItem(8)">
+        <a class="navigation-item-mobile" [ngClass]="{ selected: tab == 8 }">
+          Kontakt
         </a>
       </div>
       <div class="py-2 primary-button" *ngIf="showOffers">
