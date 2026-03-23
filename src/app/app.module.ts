@@ -45,6 +45,7 @@ import { LecturerCardComponent } from './components/pages/schedule/lecturer-card
 import { DiamondCompanyCardComponent } from './components/pages/companies/diamond-company-card/diamond-company-card.component';
 import { MediaSponsorsComponent } from './components/pages/media-sponsors/media-sponsors.component';
 import { ActivityGroupCardComponent } from './components/pages/activity-page/activity-group-card/activity-group-card.component';
+import { CatalogueComponent } from './components/pages/catalogue/catalogue.component';
 
 @NgModule({
   declarations: [
@@ -84,6 +85,7 @@ import { ActivityGroupCardComponent } from './components/pages/activity-page/act
     LecturerCardComponent,
     DiamondCompanyCardComponent,
     MediaSponsorsComponent,
+    CatalogueComponent,
   ],
   imports: [
     BrowserModule,
