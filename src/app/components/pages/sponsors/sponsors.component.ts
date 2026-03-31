@@ -8,6 +8,9 @@ import { MerchService } from 'src/app/services/merch.service';
 import { PartnerService } from 'src/app/services/partner.service';
 import { environment } from 'src/environments/environment';
 
+const GENERAL_SPONSOR_NAME = "Coca-Cola HBC"
+const PREMIUM_SPONSOR_NAME = "Nescafe"
+
 @Component({
   selector: 'sponsors',
   templateUrl: './sponsors.component.html',
@@ -16,13 +19,11 @@ import { environment } from 'src/environments/environment';
 export class SponsorsComponent implements OnInit {
   showSponsors = environment.showSponsors;
 
-  mediaSponsors: MediaSponsor[] = [];
   merchSponsors: MerchSponsor[] = [];
   partnerSponsors: ParnerSponsor[] = [];
-  knjaz: MerchSponsor = new MerchSponsor();
-  rtv: MediaSponsor = new MediaSponsor();
+  general: MerchSponsor = new MerchSponsor();
+  premium: MerchSponsor = new MerchSponsor();
 
-  mediaLoading: boolean = true;
   merchLoading: boolean = true;
   partnerLoading: boolean = true;
 
@@ -30,7 +31,6 @@ export class SponsorsComponent implements OnInit {
     private router: Router,
     private partnerService: PartnerService,
     private merchService: MerchService,
-    private mediaService: MediaService
   ) { }
 
   ngOnInit(): void {
@@ -39,23 +39,16 @@ export class SponsorsComponent implements OnInit {
       this.partnerLoading = false;
     });
 
-    this.mediaService.getAllMediaSponsors().subscribe((data) => {
-      const all = this.mediaService.convertDataToMediaSponsors(data);
-      this.mediaSponsors = all.filter(e => e.name !== 'RTV');
-      const r = all.find(e => e.name === 'RTV');
-      this.rtv = r !== undefined ? r : this.rtv;
-      this.mediaLoading = false;
-    });
     this.merchService.getAllMerchSponsors().subscribe((data) => {
       const all = this.merchService.convertDataToMerchSponsors(data);
-      this.merchSponsors = all.filter(e => e.name !== 'Knjaz Miloš');
-      const k = all.find(e => e.name === 'Knjaz Miloš');
-      this.knjaz = k != undefined ? k : this.knjaz;
+      this.merchSponsors = all.filter(e => e.name !== GENERAL_SPONSOR_NAME && e.name !== PREMIUM_SPONSOR_NAME);
+      this.general = all.find(e => e.name === GENERAL_SPONSOR_NAME) ?? new MerchSponsor();
+      this.premium = all.find(e => e.name === PREMIUM_SPONSOR_NAME) ?? new MerchSponsor();
       this.merchLoading = false;
     });
   }
 
   openHomepage() {
-    this.router.navigate(['']);
+    this.router.navigate(['']).then();
   }
 }
